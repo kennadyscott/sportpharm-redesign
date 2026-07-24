@@ -197,7 +197,7 @@
     </div>
   </div>
   <script>
-    (function(){var m=document.getElementById("pmodal");function show(){m.classList.add("show");document.body.style.overflow="hidden";}function hide(){m.classList.remove("show");document.body.style.overflow="";localStorage.setItem("sp_persona_seen","1");}document.getElementById("pclose").addEventListener("click",hide);m.addEventListener("click",function(e){if(e.target===m)hide();});[].forEach.call(m.querySelectorAll(".pcard"),function(c){c.addEventListener("click",function(){localStorage.setItem("sp_persona",c.getAttribute("data-persona"));localStorage.setItem("sp_persona_seen","1");});});if(/[?&]welcome/.test(location.search)||!localStorage.getItem("sp_persona_seen"))show();})();
+    (function(){var m=document.getElementById("pmodal");function show(){m.classList.add("show");document.body.style.overflow="hidden";}function hide(){m.classList.remove("show");document.body.style.overflow="";localStorage.setItem("sp_persona_seen","1");}document.getElementById("pclose").addEventListener("click",hide);m.addEventListener("click",function(e){if(e.target===m)hide();});[].forEach.call(m.querySelectorAll(".pcard"),function(c){c.addEventListener("click",function(){localStorage.setItem("sp_persona",c.getAttribute("data-persona"));localStorage.setItem("sp_persona_seen","1");});});var _qs=location.search;var _chose=/[?&]persona=/.test(_qs);if(_chose){var _p=(_qs.match(/[?&]persona=([^&]+)/)||[])[1]||"";localStorage.setItem("sp_persona",_p==="everyday"?"index.html":decodeURIComponent(_p));localStorage.setItem("sp_persona_seen","1");}if(/[?&]welcome/.test(_qs)||(!_chose&&!localStorage.getItem("sp_persona_seen")))show();})();
   </script>
 </body>
 </html>
