@@ -173,6 +173,15 @@ textarea.inp{resize:vertical;min-height:260px;line-height:1.6;font-size:14px}
 .barrow .track{height:8px;background:var(--soft);border-radius:5px;overflow:hidden}
 .barrow .track i{display:block;height:100%;background:linear-gradient(90deg,var(--navy-3),var(--red));border-radius:5px}
 .barrow .num{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.funnel-row{margin-bottom:17px}
+.funnel-lbl{display:flex;align-items:baseline;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:6px}
+.funnel-lbl b{font-size:16px;font-variant-numeric:tabular-nums}
+.funnel-bar{height:26px;background:var(--soft);border-radius:7px;overflow:hidden}
+.funnel-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--navy),var(--red));border-radius:7px;transition:width .6s ease}
+.funnel-drop{margin-top:5px;font-size:11px;color:var(--amber);font-weight:700}
+.prod-atc{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line);text-align:center}
+.prod-atc b{display:block;font-size:27px;font-family:"Bebas Neue",sans-serif;line-height:1}
+.prod-atc span{display:block;margin-top:4px;font-size:10.5px;color:var(--muted);line-height:1.35}
 .feed{display:flex;flex-direction:column}
 .feed li{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);list-style:none;font-size:13px}
 .feed li:last-child{border:0}
@@ -227,6 +236,7 @@ textarea.inp{resize:vertical;min-height:260px;line-height:1.6;font-size:14px}
 <div id="drawer"></div>
 <div id="toast"></div>
 
+<script src="assets/track.js"></script>
 <script>
 /* ============ ICONS ============ */
 const I={
@@ -305,7 +315,7 @@ const NAV=[
  {id:'blog',label:'Blog & Content',icon:'blog',count:()=>state.articles.length},
  {id:'products',label:'Products',icon:'prod',count:()=>state.products.length},
  {id:'leads',label:'Leads',icon:'lead',count:()=>state.leads.filter(l=>l.status==='new').length},
- {id:'analytics',label:'Analytics',icon:'chart'},
+ {id:'analytics',label:'Store Analytics',icon:'chart'},
  {id:'settings',label:'Settings',icon:'gear'}
 ];
 function renderNav(active){
@@ -528,24 +538,54 @@ function leadDrawer(id,V){
 
 /* ============ ANALYTICS ============ */
 function viewAnalytics(V){
- const topPages=[['/ (Everyday Athlete)',4820],['/wasabirub',3110],['/sports-medicine',2240],['/articles',1980],['/pro-athlete',1540],['/injuries',1120]];
- const topArt=[...state.articles].filter(a=>a.status==='published').sort((a,b)=>b.views-a.views);
- const max=Math.max(...topPages.map(p=>p[1]));
+ const a=window.SPA?window.SPA.ensure():null;
+ if(!a){V.innerHTML='<div class="pagehead"><h2 class="disp" style="font-size:30px">Store Analytics</h2></div><div class="card pad">Analytics tracker not loaded.</div>';return;}
+ const P={wasabirub:{name:'WasabiRub',col:'#d6202a'},superhot:{name:'Super Hot',col:'#e25b2f'},icetrarub:{name:'IcetraRub',col:'#2677b9'}};
+ const visits=a.funnel.visits, pvw=a.funnel.productViews, atc=a.funnel.addToCart, co=a.funnel.checkout;
+ const bounce=a.sessions.total?Math.round((1-a.sessions.engaged/a.sessions.total)*100):0;
+ const abandon=a.cart.added?Math.round((1-a.cart.checkout/a.cart.added)*100):0;
+ const conv=visits?((co/visits)*100).toFixed(1):'0.0';
+ const days=Object.keys(a.daily).sort();
+ const trend=days.map(d=>a.daily[d].visits); const trendData=trend.length>1?trend:[0,0];
+ const funnel=[['Store visit',visits],['Viewed a product',pvw],['Added to cart',atc],['Checked out',co]];
+ const fmax=funnel[0][1]||1;
+ const prodRows=Object.keys(P).map(k=>({k,name:P[k].name,col:P[k].col,clicks:a.products[k].clicks,views:a.products[k].views,atc:a.products[k].addToCart}));
+ const totalClicks=prodRows.reduce((s,r)=>s+r.clicks,0)||1;
+ const clicks=Object.keys(a.clicks).map(k=>[k,a.clicks[k]]).sort((x,y)=>y[1]-x[1]).slice(0,8);
+ const cmax=clicks.length?clicks[0][1]:1;
+ const pages=Object.keys(a.pageviews).map(k=>[k,a.pageviews[k]]).sort((x,y)=>y[1]-x[1]);
+ const pmax=pages.length?pages[0][1]:1;
+ const kpi=(val,lbl,tr,dir)=>`<div class="kpi"><div class="k-val">${val}</div><div class="k-lbl">${lbl}</div><div class="k-trend ${dir}">${dir==='up'?'▲':'▼'} ${tr}</div></div>`;
+ const prodDonut=(()=>{const r=52,c=2*Math.PI*r;let off=0;const segs=prodRows.map(rr=>{const len=c*(rr.clicks/totalClicks);const s=`<circle cx="70" cy="70" r="${r}" fill="none" stroke="${rr.col}" stroke-width="20" stroke-dasharray="${len.toFixed(1)} ${(c-len).toFixed(1)}" stroke-dashoffset="${(-off).toFixed(1)}" transform="rotate(-90 70 70)"/>`;off+=len;return s;}).join('');
+   return `<div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap"><svg viewBox="0 0 140 140" width="130" height="130">${segs}<text x="70" y="65" text-anchor="middle" font-family="Bebas Neue" font-size="26" fill="#10233f">${(totalClicks/1000).toFixed(1)}k</text><text x="70" y="85" text-anchor="middle" font-size="9.5" fill="#6b7a90">product clicks</text></svg><div class="legend" style="flex-direction:column;gap:11px;margin:0">${prodRows.map(rr=>`<span><i style="background:${rr.col}"></i>${rr.name} <b style="color:var(--ink);margin-left:4px">${Math.round(rr.clicks/totalClicks*100)}%</b></span>`).join('')}</div></div>`;
+ })();
  V.innerHTML=`
- <div class="pagehead"><div><h2 class="disp" style="font-size:30px">Analytics</h2><div class="sub">Traffic, audience &amp; content performance · last 30 days</div></div></div>
+ <div class="pagehead"><div><h2 class="disp" style="font-size:30px">WasabiRub Store Analytics</h2><div class="sub">Product cluster · Find Your Rub, product pages &amp; How It Works · last 30 days</div></div><span class="pill p-blue"><i class="dot"></i>Live — updates as visitors browse</span></div>
  <div class="kpis">
-   <div class="kpi"><div class="k-val">42.3k</div><div class="k-lbl">Total page views</div><div class="k-trend up">▲ 12.4%</div></div>
-   <div class="kpi"><div class="k-val">9,847</div><div class="k-lbl">Unique visitors</div><div class="k-trend up">▲ 8.1%</div></div>
-   <div class="kpi"><div class="k-val">2:48</div><div class="k-lbl">Avg. time on site</div><div class="k-trend up">▲ 14s</div></div>
-   <div class="kpi"><div class="k-val">3.9%</div><div class="k-lbl">Lead conversion</div><div class="k-trend up">▲ 0.6%</div></div>
+   ${kpi(visits.toLocaleString(),'Store visits','9.4%','up')}
+   ${kpi(bounce+'%','Bounce rate','2.1%','down')}
+   ${kpi(atc.toLocaleString(),'Add-to-cart events','12.7%','up')}
+   ${kpi(abandon+'%','Cart abandonment','1.3%','down')}
  </div>
- <div class="card" style="margin-bottom:16px"><div class="sec-h"><h3>Traffic trend</h3></div><div class="pad">${areaChart(TRAFFIC,'#E0312A')}</div></div>
+ <div class="card" style="margin-bottom:16px"><div class="sec-h"><h3>Store traffic · daily visits</h3><span class="pill p-green"><i class="dot"></i>${conv}% visit → checkout</span></div><div class="pad">${areaChart(trendData,'#d6202a')}</div></div>
  <div class="grid2">
-   <div class="card"><div class="sec-h"><h3>Top pages</h3></div><div class="pad"><div class="barlist">${topPages.map(([n,v])=>`<div class="barrow"><span class="t-sub" style="color:var(--ink);font-weight:600">${esc(n)}</span><div class="track"><i style="width:${(v/max*100).toFixed(0)}%"></i></div><span class="num">${v.toLocaleString()}</span></div>`).join('')}</div></div></div>
-   <div class="card"><div class="sec-h"><h3>Audience split</h3></div><div class="pad">${donut()}</div></div>
+   <div class="card"><div class="sec-h"><h3>Conversion funnel</h3></div><div class="pad">${funnel.map((f,i)=>{const pct=Math.max(4,Math.round(f[1]/fmax*100));const drop=i?(100-Math.round(f[1]/(funnel[i-1][1]||1)*100)):0;return `<div class="funnel-row"><div class="funnel-lbl"><span>${f[0]}</span><b>${f[1].toLocaleString()}</b></div><div class="funnel-bar"><i style="width:${pct}%"></i></div>${i?`<div class="funnel-drop">▼ ${drop}% drop-off from “${funnel[i-1][0]}”</div>`:''}</div>`;}).join('')}</div></div>
+   <div class="card"><div class="sec-h"><h3>Product interest share</h3></div><div class="pad">${prodDonut}</div></div>
  </div>
- <div class="card" style="margin-top:16px"><div class="sec-h"><h3>Top performing articles</h3><a href="#blog">Manage →</a></div>
-   <table class="tbl"><thead><tr><th>Article</th><th>Category</th><th>Views</th><th>Trend</th></tr></thead><tbody>${topArt.map((a,i)=>`<tr><td><div class="cellflex"><span class="disp" style="font-size:20px;color:var(--muted);width:20px">${i+1}</span><div class="t-title">${esc(a.title)}</div></div></td><td><span class="tag">${esc(a.category)}</span></td><td style="font-weight:700;font-variant-numeric:tabular-nums">${a.views.toLocaleString()}</td><td><span class="pill p-green"><i class="dot"></i>▲ ${(6+i*3)}%</span></td></tr>`).join('')}</tbody></table></div>`;
+ <div class="grid2" style="margin-top:16px">
+   <div class="card"><div class="sec-h"><h3>WasabiRub vs Super Hot vs IcetraRub</h3><span class="t-sub">by clicks</span></div><div class="pad"><div class="barlist">${prodRows.map(r=>`<div class="barrow"><span class="t-sub" style="color:var(--ink);font-weight:700"><i style="display:inline-block;width:9px;height:9px;border-radius:50%;background:${r.col};margin-right:8px;vertical-align:middle"></i>${r.name}</span><div class="track"><i style="width:${Math.round(r.clicks/totalClicks*100)}%;background:linear-gradient(90deg,${r.col}88,${r.col})"></i></div><span class="num">${r.clicks.toLocaleString()}</span></div>`).join('')}</div>
+     <div class="prod-atc">${prodRows.map(r=>`<div><b style="color:${r.col}">${r.atc.toLocaleString()}</b><span>${r.name}<br>add-to-cart</span></div>`).join('')}</div></div></div>
+   <div class="card"><div class="sec-h"><h3>Most-clicked elements</h3></div><div class="pad"><div class="barlist">${clicks.map(([n,v])=>`<div class="barrow"><span class="t-sub" style="color:var(--ink);font-weight:600">${esc(n)}</span><div class="track"><i style="width:${Math.round(v/cmax*100)}%"></i></div><span class="num">${v.toLocaleString()}</span></div>`).join('')}</div></div></div>
+ </div>
+ <div class="grid2" style="margin-top:16px">
+   <div class="card"><div class="sec-h"><h3>Pages in the store cluster</h3></div><div class="pad"><div class="barlist">${pages.map(([n,v])=>`<div class="barrow"><span class="t-sub" style="color:var(--ink);font-weight:600">${esc(n)}</span><div class="track"><i style="width:${Math.round(v/pmax*100)}%"></i></div><span class="num">${v.toLocaleString()}</span></div>`).join('')}</div></div></div>
+   <div class="card"><div class="sec-h"><h3>Cart</h3><span class="t-sub">mock checkout</span></div><div class="pad" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center;align-items:center">
+     <div><div class="disp" style="font-size:36px">${a.cart.added.toLocaleString()}</div><div class="t-sub">Carts started</div></div>
+     <div><div class="disp" style="font-size:36px;color:var(--green)">${a.cart.checkout.toLocaleString()}</div><div class="t-sub">Checked out</div></div>
+     <div><div class="disp" style="font-size:36px;color:var(--red)">${(a.cart.added-a.cart.checkout).toLocaleString()}</div><div class="t-sub">Abandoned</div></div>
+   </div></div>
+ </div>
+ <p class="t-sub" style="margin:16px 2px 0">Prototype: events are captured in this browser (localStorage) with a seeded 30-day baseline. In production this maps onto a real analytics pipeline. Browse the store, then return here — the numbers move.</p>`;
 }
 
 /* ============ SETTINGS ============ */
@@ -563,7 +603,7 @@ function viewSettings(V){
      <button class="btn btn-ghost btn-sm" id="resetData" style="width:100%">Reset demo data</button>
    </div>
  </div>`;
- $('#resetData').onclick=()=>confirmDel('Reset all demo data?','This restores the original sample articles, products and leads.',()=>{['articles','products','leads'].forEach(k=>{state[k]=JSON.parse(JSON.stringify(SEED[k]));save(k);});toast('Demo data reset');router();});
+ $('#resetData').onclick=()=>confirmDel('Reset all demo data?','This restores the original sample articles, products, leads and store analytics.',()=>{['articles','products','leads'].forEach(k=>{state[k]=JSON.parse(JSON.stringify(SEED[k]));save(k);});if(window.SPA)window.SPA.reset();toast('Demo data reset');router();});
 }
 
 /* ============ MODAL / CONFIRM ============ */

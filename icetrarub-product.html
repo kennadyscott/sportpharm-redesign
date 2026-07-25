@@ -132,7 +132,7 @@
     <div class="nav-right">
       <nav aria-label="Main navigation">
         <div class="menu">
-          <a class="menu-top" href="products.html">FIND YOUR RUB <span class="caret">▾</span></a>
+          <a class="menu-top" href="find-your-rub.html">FIND YOUR RUB <span class="caret">▾</span></a>
           <div class="dropdown">
             <a href="wasabirub-product.html">WasabiRub</a>
             <a href="superhot-product.html">Super Hot</a>
@@ -252,7 +252,7 @@
       <nav class="footer-col" aria-label="Footer menu">
         <p class="footer-heading">Menu</p>
         <div class="footer-menu">
-          <a href="products.html">Products</a>
+          <a href="find-your-rub.html">Products</a>
           <a href="coming-soon.html?f=About">About</a>
           <a href="coming-soon.html?f=FAQ">FAQ</a>
           <a href="#contact" data-open-contact>Contact</a>
@@ -367,5 +367,6 @@
     /* Mock add-to-cart — no store link yet; updates the nav cart count + flashes confirmation */
     (function(){var count=0,badge=document.querySelector(".cart-count"),qtyEl=document.getElementById("quantity-value");document.querySelectorAll("[data-add-to-cart]").forEach(function(btn){btn.addEventListener("click",function(e){e.preventDefault();var add=btn.dataset.addToCart==="qty"?(parseInt(qtyEl&&qtyEl.textContent||"1",10)||1):1;count+=add;if(badge)badge.textContent=count;var html=btn.innerHTML;btn.innerHTML="ADDED ✓";setTimeout(function(){btn.innerHTML=html;},1400);});});})();
   </script>
+  <script src="assets/track.js"></script>
 </body>
 </html>
