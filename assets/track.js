@@ -82,7 +82,8 @@
       pageview(meta.page,meta.product);
       document.addEventListener('click',function(e){
         var t=e.target; if(!t||!t.closest) return;
-        if(t.closest('[data-add-to-cart]')){ addToCart(cur); click('Add to Cart'); return; }
+        var atcBtn=t.closest('[data-add-to-cart]');
+        if(atcBtn){ addToCart(atcBtn.getAttribute('data-product')||cur); click('Add to Cart'); return; }
         var a=t.closest('a[href]'); if(!a) return;
         var href=a.getAttribute('href')||'';
         var p=prodFromHref(href);
