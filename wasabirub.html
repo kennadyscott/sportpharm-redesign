@@ -101,9 +101,21 @@
     .result-buy a{padding:16px 20px;border-radius:10px;background:var(--deep);color:#fff;font-size:11px;font-weight:900;letter-spacing:.08em}
     .proof{max-width:980px;padding:32px 40px 28px;text-align:center}
     .quote-mark{color:var(--red);font-family:Georgia,serif;font-size:60px;line-height:.5}
-    blockquote{max-width:900px;margin:20px auto;font-size:clamp(26px,3.2vw,39px);font-weight:900;line-height:1.2;letter-spacing:-.04em}
+    blockquote{max-width:860px;margin:18px auto 0;font-size:clamp(19px,2.4vw,29px);font-weight:900;line-height:1.32;letter-spacing:-.02em}
     .proof p{color:#68736f;font-size:10px;font-weight:900;letter-spacing:.14em}
-    .stars{margin-top:16px;color:var(--red);font-size:17px;letter-spacing:5px}.stars span{margin-left:12px;color:#68736f;font-size:9px;letter-spacing:.12em}
+    .stars{margin-top:16px;color:var(--red);font-size:16px;letter-spacing:5px}.stars span{margin-left:12px;color:#68736f;font-size:9px;letter-spacing:.12em}
+    .tcarousel{display:grid;max-width:900px;margin:0 auto}
+    .tslide{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .5s ease;display:flex;flex-direction:column;align-items:center;justify-content:center}
+    .tslide.is-active{opacity:1;visibility:visible}
+    .tattr{margin-top:22px}
+    .tattr b{display:block;font-size:14px;font-weight:900;color:var(--ink);letter-spacing:.01em}
+    .tattr span{display:block;font-size:10.5px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#8a938f;margin-top:5px}
+    .tnav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:30px}
+    .tarrow{width:38px;height:38px;border-radius:50%;border:1px solid #d7dcd9;background:#fff;color:var(--ink);font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.18s}
+    .tarrow:hover{border-color:var(--red);color:var(--red)}
+    .tdots{display:flex;gap:8px}
+    .tdot{width:8px;height:8px;border-radius:50%;background:#d2d7d4;border:0;cursor:pointer;padding:0;transition:.2s}
+    .tdot.is-active{background:var(--red);width:22px;border-radius:5px}
     .bundle{display:grid;grid-template-columns:1fr 1fr;margin-bottom:0;background:var(--paper)}
     .bundle-image{position:relative;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(circle,#fff,#e9ebec 72%)}
     .bundle-image img{width:68%;max-width:390px}
@@ -220,10 +232,85 @@
 
     <section class="proof shell" id="proof">
       <div class="quote-mark">“</div>
-      <blockquote>“I get WasabiRub for my players to use and they love it. They request it specifically now.”</blockquote>
-      <p><b>SAMANTHA M.</b></p>
-      <div class="stars">★★★★★ <span>5.0 PRODUCT RATING</span></div>
+      <div class="tcarousel" id="tcarousel">
+        <div class="tslide is-active">
+          <blockquote>“I’ve used a lot of topical pain relief gels, and this stuff is easily one of the best. You can tell this is professional-grade and not your average store-bought stuff. If you’re a runner, lifter, or just dealing with everyday aches and pains, this stuff is money.”</blockquote>
+          <div class="stars">★★★★★</div>
+          <div class="tattr"><b>Matt Furstenburg</b><span>CEO &amp; Co-Founder, Grip Boost Inc.</span></div>
+        </div>
+        <div class="tslide">
+          <blockquote>“We’ve had good results with a variety of SportPharm’s topicals and compounded medications. WasabiRub helps manage muscle soreness and minor strains so our athletes can stay available and ready.”</blockquote>
+          <div class="stars">★★★★★</div>
+          <div class="tattr"><b>Joel Lockhart</b><span>Assistant Athletic Trainer, St. Louis City Soccer Club</span></div>
+        </div>
+        <div class="tslide">
+          <blockquote>“With our match schedule and constant travel, we needed something fast, portable, and effective. WasabiRub helps manage muscle soreness and minor strains so our athletes can stay available and ready.”</blockquote>
+          <div class="stars">★★★★★</div>
+          <div class="tattr"><b>Najeeb Emmanuel, MS, LAT, ATC, PES</b><span>Assistant Athletic Trainer, FIU Soccer</span></div>
+        </div>
+        <div class="tslide">
+          <blockquote>“WasabiRub is in our kit every day. It gives players fast, localized relief and helps them stay game-ready.”</blockquote>
+          <div class="stars">★★★★★</div>
+          <div class="tattr"><b>Dr. Javier García, DAT, ATC, SMTC</b><span>Head Athletic Trainer, Seton Hall Basketball</span></div>
+        </div>
+        <div class="tslide">
+          <blockquote>“Our guys absolutely love using WasabiRub. The cooling and heating sensation lasts much longer than most products we’ve tried, and the feedback from our players has been outstanding. It helps take the edge off soreness and pain quickly while keeping our athletes feeling ready to perform. It has become a staple in our training room.”</blockquote>
+          <div class="stars">★★★★★</div>
+          <div class="tattr"><b>Michael Feliciano, MS, ATC, PES</b><span>Minor League Athletic Training, Boston Red Sox</span></div>
+        </div>
+        <div class="tslide">
+          <blockquote>“The WasabiRub is constantly being used by several players right now. The feedback has been really positive from them all, and even helped a guy with neck and shoulder issues get through a few workdays. The biggest talking point has been the longevity of its use each time — no multiple applications on game days.”</blockquote>
+          <div class="stars">★★★★★</div>
+          <div class="tattr"><b>Daniel Medd</b><span>Head Coach, South West Sydney Academy of Sport Inc.</span></div>
+        </div>
+        <div class="tslide">
+          <blockquote>“I trust SportPharm to recommend medications that are effective and safe for athletes. Their knowledge and attention to clean sport give me confidence every time.”</blockquote>
+          <div class="stars">★★★★★</div>
+          <div class="tattr"><b>Mandy Marquardt</b><span>Professional Sprint Cyclist, Team USA</span></div>
+        </div>
+        <div class="tslide">
+          <blockquote>“Fast, reliable service and competitive pricing. SportPharm makes it easy to get our athletes the medications they need without delays.”</blockquote>
+          <div class="stars">★★★★★</div>
+          <div class="tattr"><b>James Tuffy, MHA, LAT, ATC</b><span>Assistant Athletic Director, St. Thomas University</span></div>
+        </div>
+      </div>
+      <div class="tnav">
+        <button class="tarrow" id="tprev" aria-label="Previous testimonial">‹</button>
+        <div class="tdots" id="tdots"></div>
+        <button class="tarrow" id="tnext" aria-label="Next testimonial">›</button>
+      </div>
     </section>
+    <script>
+      (function(){
+        var car=document.getElementById("tcarousel");if(!car)return;
+        var slides=[].slice.call(car.querySelectorAll(".tslide"));
+        var dotsWrap=document.getElementById("tdots");
+        var i=0,timer=null,DELAY=3000;
+        slides.forEach(function(_,idx){
+          var d=document.createElement("button");
+          d.className="tdot"+(idx===0?" is-active":"");
+          d.setAttribute("aria-label","Testimonial "+(idx+1));
+          d.addEventListener("click",function(){go(idx);reset();});
+          dotsWrap.appendChild(d);
+        });
+        var dots=[].slice.call(dotsWrap.children);
+        function go(n){
+          slides[i].classList.remove("is-active");dots[i].classList.remove("is-active");
+          i=(n+slides.length)%slides.length;
+          slides[i].classList.add("is-active");dots[i].classList.add("is-active");
+        }
+        function next(){go(i+1);}
+        function start(){timer=setInterval(next,DELAY);}
+        function stop(){clearInterval(timer);}
+        function reset(){stop();start();}
+        var pn=document.getElementById("tnext"),pp=document.getElementById("tprev");
+        if(pn)pn.addEventListener("click",function(){next();reset();});
+        if(pp)pp.addEventListener("click",function(){go(i-1);reset();});
+        car.addEventListener("mouseenter",stop);
+        car.addEventListener("mouseleave",start);
+        if(!window.matchMedia||!window.matchMedia("(prefers-reduced-motion: reduce)").matches)start();
+      })();
+    </script>
 
     <section class="difference shell" id="difference">
       <div class="section-title"><p class="eyebrow dark"><i></i> WHY IT FEELS DIFFERENT</p><h2>MOST RUBS PICK<br>ONE LANE. <em>THIS ONE<br>DOES THREE.</em></h2></div>
