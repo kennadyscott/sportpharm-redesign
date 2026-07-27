@@ -45,7 +45,7 @@
     .eyebrow{display:flex;align-items:center;gap:9px;margin:0 0 16px;font-size:10px;font-weight:900;letter-spacing:.17em}
     .eyebrow i{display:block;width:28px;height:3px;background:var(--red)}
     .hero{position:relative;overflow:hidden;min-height:570px;background:var(--deep);color:#fff}
-    .hero:before{content:none}
+    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:64px 64px}
     .hero-grid{position:relative;display:grid;grid-template-columns:1.12fr .88fr;align-items:center;min-height:570px}
     .hero-copy{padding:48px 0}
     h1,h2{margin:0;font-weight:1000;letter-spacing:-.06em}
@@ -58,7 +58,7 @@
     .hero-product{position:relative;display:flex;align-items:center;justify-content:center;min-height:520px}
     .hero-product img{position:relative;z-index:2;width:min(330px,74%);filter:drop-shadow(0 28px 30px rgba(0,0,0,.42));animation:float 5s ease-in-out infinite}
     .hero-product:after{content:"";position:absolute;width:310px;height:310px;background:radial-gradient(circle,rgba(39,134,90,.4),rgba(39,134,90,.12) 45%,transparent 72%);filter:blur(10px)}
-    .orbit{display:none}
+    .orbit{position:absolute;z-index:1;border:1px solid rgba(255,255,255,.11);border-radius:50%}
     .orbit.one{width:380px;height:380px}.orbit.two{width:470px;height:470px}
     .temp{position:absolute;z-index:4;font-size:10px;font-weight:1000;letter-spacing:.18em}
     .temp:before{content:"";display:inline-block;width:7px;height:7px;margin-right:8px;border-radius:50%}
@@ -225,7 +225,7 @@
         <div class="hero-product">
           <div class="orbit one"></div><div class="orbit two"></div>
           <div class="temp cool">COOL</div><div class="temp heat">HEAT</div>
-          <img src="assets/wr-wasabirub.png" alt="WasabiRub triple-action sports topical pain relief gel">
+          <img src="assets/wr-wasabirub.png?v=2" alt="WasabiRub triple-action sports topical pain relief gel">
         </div>
       </div>
     </section>
@@ -331,7 +331,7 @@
           <button class="hot" role="tab" data-product="2"><small>HOT</small><b>Super Hot</b><span>Max heat</span></button>
         </div>
         <div class="result">
-          <div class="result-image"><img id="product-image" alt="WasabiRub" src="assets/wr-wasabirub.png"></div>
+          <div class="result-image"><img id="product-image" alt="WasabiRub" src="assets/wr-wasabirub.png?v=2"></div>
           <div class="result-copy">
             <p class="eyebrow dark"><i></i> YOUR MATCH</p>
             <h3 id="product-name">WasabiRub</h3>
@@ -343,7 +343,7 @@
     </section>
 
     <section class="bundle shell">
-      <div class="bundle-image"><img src="assets/wr-duo.png" alt="WasabiRub OG Heat Duo"><span class="save">SAVE<br><b>$10</b></span></div>
+      <div class="bundle-image"><img src="assets/wr-duo.png?v=2" alt="WasabiRub OG Heat Duo"><span class="save">SAVE<br><b>$10</b></span></div>
       <div class="bundle-copy"><p class="eyebrow dark"><i></i> WANT BOTH?</p><h2>THE OG<br><em>HEAT DUO.</em></h2><p>Balanced everyday heat plus double-strength intensity. Two recovery modes, one better price.</p><div><strong>$59.99</strong><s>$69.90</s></div><a class="primary" href="https://sportpharm.com/product/duo-bundle-original-super-hot/">SHOP THE DUO <span>→</span></a></div>
     </section>
 
@@ -420,17 +420,17 @@
     const products = [
       {
         name:"IcetraRub", price:"$39.95", note:"Pure cooling",
-        image:"assets/wr-icetrarub.png",
+        image:"assets/wr-icetrarub.png?v=2",
         link:"https://sportpharm.com/product/icetrarub-otc-sports-topical-menthol-cream/"
       },
       {
         name:"WasabiRub", price:"$29.95", note:"Balanced cool + heat",
-        image:"assets/wr-wasabirub.png",
+        image:"assets/wr-wasabirub.png?v=2",
         link:"wasabirub-product.html"
       },
       {
         name:"Super Hot", price:"$39.95", note:"Max heat",
-        image:"assets/wr-superhot.png",
+        image:"assets/wr-superhot.png?v=2",
         link:"https://sportpharm.com/product/wasabirub-super-hot-otc-sports-topical-pain-relief-gel/"
       }
     ];
