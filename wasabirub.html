@@ -56,7 +56,7 @@
     .text-link{border-bottom:1px solid #82918a;padding-bottom:4px;font-size:11px;font-weight:900;letter-spacing:.1em}
     .trust-row{display:flex;flex-wrap:wrap;gap:18px;margin-top:25px;color:#a9b7b1;font-size:8px;font-weight:900;letter-spacing:.08em}
     .hero-product{position:relative;display:flex;align-items:center;justify-content:center;min-height:520px}
-    .hero-product img{position:relative;z-index:2;width:min(420px,88%);filter:drop-shadow(0 28px 30px rgba(0,0,0,.42));animation:float 5s ease-in-out infinite}
+    .hero-product img{position:relative;z-index:2;width:min(330px,74%);filter:drop-shadow(0 28px 30px rgba(0,0,0,.42));animation:float 5s ease-in-out infinite}
     .hero-product:after{content:"";position:absolute;width:310px;height:310px;background:radial-gradient(circle,rgba(39,134,90,.4),rgba(39,134,90,.12) 45%,transparent 72%);filter:blur(10px)}
     .orbit{position:absolute;z-index:1;border:1px solid rgba(255,255,255,.11);border-radius:50%}
     .orbit.one{width:380px;height:380px}.orbit.two{width:470px;height:470px}
@@ -285,7 +285,7 @@
         var car=document.getElementById("tcarousel");if(!car)return;
         var slides=[].slice.call(car.querySelectorAll(".tslide"));
         var dotsWrap=document.getElementById("tdots");
-        var i=0,timer=null,DELAY=3000;
+        var i=0,timer=null,DELAY=7000;
         slides.forEach(function(_,idx){
           var d=document.createElement("button");
           d.className="tdot"+(idx===0?" is-active":"");
