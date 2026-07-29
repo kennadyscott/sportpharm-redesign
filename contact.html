@@ -282,9 +282,9 @@ section{padding:70px 0}
   <div id="pageContactSuccess" class="contact-form" hidden>
     <div class="check" style="width:64px;height:64px;margin:0 auto 18px;border-radius:50%;background:#e8f0fe;color:var(--blue);display:flex;align-items:center;justify-content:center">
       <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2 6 10 7L22 6"></path></svg></div>
-    <h2 style="text-align:center;font-size:30px;margin:0 0 10px">One last step.</h2>
+    <h2 style="text-align:center;font-size:30px;margin:0 0 10px">Message sent.</h2>
     <p id="pcSuccessMsg" style="text-align:center;color:var(--muted);line-height:1.7"></p>
-    <p class="modal-fallback" style="text-align:center">Nothing opened? Email us directly at <a href="mailto:info@sportpharm.com">info@sportpharm.com</a>.</p>
+    <p class="modal-fallback" style="text-align:center">Prefer email? Reach us any time at <a href="mailto:info@sportpharm.com">info@sportpharm.com</a>.</p>
   </div>
   <aside class="contact-aside">
     <h3>Other ways to reach us</h3>
@@ -311,6 +311,8 @@ section{padding:70px 0}
     var d=Object.fromEntries(new FormData(f).entries());
     var name=(d.name||"").trim(),email=(d.email||"").trim(),phone=(d.phone||"").trim(),
         topic=(d.topic||"").trim(),msg=(d.message||"").trim();
+    var btn=f.querySelector('button[type="submit"]');
+    if(btn){btn.disabled=true;btn.dataset.label=btn.innerHTML;btn.innerHTML="Sending…";}
     try{
       var K="sp_admin_leads",leads=JSON.parse(localStorage.getItem(K)||"[]");
       leads.unshift({id:"l"+Date.now(),name:name,email:email,persona:"Everyday Athlete",
@@ -318,14 +320,19 @@ section{padding:70px 0}
         message:msg+(phone?"\n\nPhone: "+phone:"")});
       localStorage.setItem(K,JSON.stringify(leads));
     }catch(err){}
-    var a=document.createElement("a");
-    a.href="mailto:info@sportpharm.com?subject="+encodeURIComponent("Website enquiry — "+topic+" — "+name)+
-      "&body="+encodeURIComponent("Name: "+name+"\nEmail: "+email+(phone?"\nPhone: "+phone:"")+"\nTopic: "+topic+"\n\n"+msg);
-    a.style.display="none";document.body.appendChild(a);a.click();a.remove();
-    document.getElementById("pcSuccessMsg").textContent="Thanks, "+(name.split(" ")[0]||"there")+
-      " — your email app should have opened with this message ready to go. Give it a quick send and we'll take it from there.";
-    f.hidden=true; document.getElementById("pageContactSuccess").hidden=false;
-    window.scrollTo({top:f.getBoundingClientRect().top+window.scrollY-120,behavior:"smooth"});
+    fetch("https://formsubmit.co/ajax/info@sportpharm.com",{
+      method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},
+      body:JSON.stringify({name:name,email:email,phone:phone,topic:topic,message:msg,
+        _subject:"SportPharm enquiry — "+topic+" — "+name,_template:"table",page:"Contact page"})
+    }).then(function(r){return r.json();}).then(function(){
+      document.getElementById("pcSuccessMsg").textContent="Thanks, "+(name.split(" ")[0]||"there")+
+        " — your message is on its way to our team. We'll be in touch shortly.";
+      f.hidden=true; document.getElementById("pageContactSuccess").hidden=false;
+      window.scrollTo({top:f.getBoundingClientRect().top+window.scrollY-120,behavior:"smooth"});
+    }).catch(function(){
+      document.getElementById("pcSuccessMsg").textContent="We couldn't send that automatically. Please email us directly at info@sportpharm.com.";
+      f.hidden=true; document.getElementById("pageContactSuccess").hidden=false;
+    }).finally(function(){ if(btn){btn.disabled=false;btn.innerHTML=btn.dataset.label||"Send message";} });
   });
 })();
 </script>
