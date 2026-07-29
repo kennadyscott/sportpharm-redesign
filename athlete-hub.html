@@ -310,6 +310,29 @@ footer{background:var(--navy-950);border-top:1px solid var(--line);padding:60px 
   .hero h1{font-size:2.4rem}
 }
 .res-card,.action-item{cursor:pointer}
+    .modal-overlay{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(16,24,32,.62)}
+    .modal-overlay.open{display:flex}
+    .modal{position:relative;width:100%;max-width:480px;max-height:calc(100vh - 40px);overflow:auto;background:#fff;color:var(--ink);border-radius:16px;padding:34px;box-shadow:0 30px 80px rgba(0,0,0,.42)}
+    .modal-close{position:absolute;top:14px;right:14px;width:34px;height:34px;border:0;background:transparent;color:#8a938f;font-size:26px;line-height:1;cursor:pointer;border-radius:8px}
+    .modal-close:hover{background:var(--paper);color:var(--ink)}
+    .modal-eyebrow{display:flex;align-items:center;gap:9px;margin:0 0 10px;font-size:10px;font-weight:900;letter-spacing:.17em;text-transform:uppercase;color:var(--red)}
+    .modal-eyebrow i{display:block;width:24px;height:3px;background:var(--red)}
+    .modal h2{font-size:34px;line-height:.95;margin:0 0 10px}
+    .modal-sub{margin:0 0 16px;font-size:14px;line-height:1.55;color:#5f6a66}
+    .modal-source{display:inline-flex;align-items:center;gap:6px;margin-bottom:20px;padding:6px 11px;border-radius:20px;background:var(--paper);font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#66716d}
+    .modal-source b{color:var(--ink)}
+    .field{margin-bottom:14px}
+    .field label{display:block;margin-bottom:6px;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#6b746f}
+    .field input,.field textarea{width:100%;padding:12px 13px;border:1px solid #d5dad7;border-radius:9px;font:inherit;font-size:14px;color:var(--ink);background:#fff;transition:border-color .15s}
+    .field input:focus,.field textarea:focus{outline:none;border-color:var(--red)}
+    .field textarea{resize:vertical;min-height:96px}
+    .modal .primary{width:100%;margin-top:6px;cursor:pointer;border:0}
+    .modal-success{text-align:center;padding:14px 0 6px}
+    .modal-success .check{width:64px;height:64px;margin:0 auto 18px;border-radius:50%;background:#e2eee8;color:var(--green);display:flex;align-items:center;justify-content:center}
+    .modal-success .check svg{width:32px;height:32px}
+    .modal-success p{color:#5f6a66;line-height:1.6;font-size:14px}
+.modal-fallback{margin:14px 0 0;padding-top:12px;border-top:1px solid #e4e7ea;font-size:12.5px;color:#7b8aa1;line-height:1.6}
+.modal-fallback a{color:#c62b23;font-weight:800}
 </style>
 </head>
 <body>
@@ -605,7 +628,7 @@ footer{background:var(--navy-950);border-top:1px solid var(--line);padding:60px 
       <div class="foot-col"><h5>Injuries</h5><a href="injuries.html#body-part">Body Map</a><a href="injuries.html#sport">By Sport</a><a href="injuries.html#library">Injury Library</a><a href="concussion.html">Concussions</a></div>
       <div class="foot-col"><h5>Recovery</h5><a href="recovery-timelines.html">Timelines</a><a href="rehab-exercises.html">Rehab Exercises</a><a href="return-to-play.html">Return-to-Play</a><a href="recovery-tools.html">Recovery Tools</a></div>
       <div class="foot-col"><h5>For Pros</h5><a href="sports-medicine.html">Pro Hub</a><a href="coming-soon.html?f=Professional+Protocols">Protocols</a><a href="coming-soon.html?f=Professional+Products">Professional Products</a><a href="coming-soon.html?f=Professional+Education">Education</a></div>
-      <div class="foot-col"><h5>Company</h5><a href="coming-soon.html?f=About+SportPharm">About</a><a href="coming-soon.html?f=The+Blog">Blog</a><a href="coming-soon.html?f=Contact">Contact</a><a href="coming-soon.html?f=Careers">Careers</a></div>
+      <div class="foot-col"><h5>Company</h5><a href="coming-soon.html?f=About+SportPharm">About</a><a href="coming-soon.html?f=The+Blog">Blog</a><a href="#contact" data-open-contact>Contact</a><a href="coming-soon.html?f=Careers">Careers</a></div>
     </div>
     <div class="foot-bottom">
       <div>© 2026 SportPharm. All rights reserved.</div>
@@ -656,5 +679,81 @@ footer{background:var(--navy-950);border-top:1px solid var(--line);padding:60px 
   if(btn){ btn.addEventListener('click', function(){ go(input ? input.value : ''); }); }
 })();
 </script>
+<div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+    <div class="modal">
+      <button class="modal-close" type="button" aria-label="Close" data-close>&times;</button>
+      <div id="contactFormWrap">
+        <p class="modal-eyebrow"><i></i> Contact Us</p>
+        <h2 id="contactTitle">Get in touch.</h2>
+        <p class="modal-sub">Questions about training, recovery or our products? Send us a note and our team will reply from info@sportpharm.com.</p>
+        <span class="modal-source">From <b>Athlete Hub</b></span>
+        <form id="contactForm" novalidate>
+          <div class="field"><label for="cf_name">Name</label><input id="cf_name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="cf_email">Email</label><input id="cf_email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="cf_phone">Phone <span style="text-transform:none;color:#9aa3a0">(optional)</span></label><input id="cf_phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="cf_message">Message</label><textarea id="cf_message" name="message" required></textarea></div>
+          <button class="primary" type="submit">Send message <span>→</span></button>
+        </form>
+      </div>
+      <div id="contactSuccess" class="modal-success" hidden>
+        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2 6 10 7L22 6"></path></svg></div>
+        <h2>One last step.</h2>
+        <p id="successMsg"></p>
+        <p class="modal-fallback">Nothing opened? Email us directly at <a href="mailto:info@sportpharm.com">info@sportpharm.com</a>.</p>
+      </div>
+    </div>
+  </div>
+<script>
+    /* Contact modal — feeds the SportPharm admin dashboard (shared localStorage
+       'sp_admin_leads', same schema as admin.html) AND initiates an email to
+       info@sportpharm.com. In the production Next.js + Payload build this POSTs
+       to an API route that creates a Payload Lead and sends the notification. */
+    (function(){
+      const SOURCE = "Athlete Hub";
+      const modal = document.getElementById("contactModal");
+      const form = document.getElementById("contactForm");
+      const wrap = document.getElementById("contactFormWrap");
+      const success = document.getElementById("contactSuccess");
+      function openModal(e){ if(e) e.preventDefault(); wrap.hidden=false; success.hidden=true; modal.classList.add("open"); document.body.style.overflow="hidden"; setTimeout(()=>document.getElementById("cf_name").focus(),40); }
+      function closeModal(){ modal.classList.remove("open"); document.body.style.overflow=""; }
+      document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("[data-open-contact]");if(t){openModal(e);}});  /* delegated: also catches dynamically-rendered result links */
+      modal.addEventListener("click",e=>{ if(e.target===modal || e.target.hasAttribute("data-close")) closeModal(); });
+      document.addEventListener("keydown",e=>{ if(e.key==="Escape" && modal.classList.contains("open")) closeModal(); });
+
+      form.addEventListener("submit",e=>{
+        e.preventDefault();
+        if(!form.reportValidity()) return;
+        const d = Object.fromEntries(new FormData(form).entries());
+        const name=(d.name||"").trim(), email=(d.email||"").trim(), phone=(d.phone||"").trim(), message=(d.message||"").trim();
+
+        // 1) Feed the admin Leads dashboard
+        try{
+          const KEY="sp_admin_leads";
+          const leads=JSON.parse(localStorage.getItem(KEY)||"[]");
+          leads.unshift({
+            id:"l"+Date.now(),
+            name, email,
+            persona:"Everyday Athlete",
+            source:SOURCE,
+            status:"new",
+            date:new Date().toISOString().slice(0,10),
+            message: message + (phone ? "\n\nPhone: "+phone : "")
+          });
+          localStorage.setItem(KEY,JSON.stringify(leads));
+        }catch(err){}
+
+        // 2) Initiate an email to info@sportpharm.com
+        const subject=encodeURIComponent("New inquiry — "+name);
+        const body=encodeURIComponent("Name: "+name+"\nEmail: "+email+(phone?"\nPhone: "+phone:"")+"\nSource: "+SOURCE+"\n\n"+message);
+        const a=document.createElement("a");
+        a.href="mailto:info@sportpharm.com?subject="+subject+"&body="+body;
+        a.style.display="none"; document.body.appendChild(a); a.click(); a.remove();
+
+        // 3) Success state
+        document.getElementById("successMsg").textContent="Thanks, "+(name.split(" ")[0]||"there")+" — your email app should have opened with this message ready to go. Give it a quick send and we'll take it from there.";
+        wrap.hidden=true; success.hidden=false; form.reset();
+      });
+    })();
+  </script>
 </body>
 </html>
