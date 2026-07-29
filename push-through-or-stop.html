@@ -462,6 +462,43 @@ a{color:inherit;text-decoration:none}
 
   warns.forEach(function(w){w.addEventListener("change",function(){if(w.checked)none.checked=false;syncQ3();});});
   none.addEventListener("change",function(){if(none.checked)warns.forEach(function(w){w.checked=false;});syncQ3();});
+
+  var R={
+    urgent:{flag:"Seek care now",cls:"flag-care",h:"Get this checked promptly.",
+      p:"What you selected can point to something that needs hands-on evaluation. Rather than working through a self-guided path, contact a healthcare professional now — or use urgent or emergency care if symptoms are severe, rapidly worsening, or followed a head impact.",
+      a:[["See the Warning Signs","#warning"],["Talk to SportPharm","mailto:info@sportpharm.com"]]},
+    pharmacist:{flag:"Starting point",cls:"flag-start",h:"Start with a pharmacist.",
+      p:"A pharmacist can help you compare pain-relief options, identify overlapping ingredients and account for your current medications.",
+      a:[["Ask SportPharm","mailto:info@sportpharm.com"],["Explore Topical Pain Relief","wasabirub.html"],["Learn About WasabiRub","wasabirub.html"]]},
+    sportsmed:{flag:"Starting point",cls:"flag-start",h:"Sports medicine may be a helpful starting point.",
+      p:"Because this is tied to activity and continues to affect you, a sports-medicine evaluation may help you understand what\u2019s happening and how to return safely.",
+      a:[["See What to Bring to Your Appointment","coming-soon.html?f=What+to+Bring+to+Your+Appointment"]]},
+    pt:{flag:"Starting point",cls:"flag-start",h:"Physical therapy may be a helpful starting point.",
+      p:"When pain changes how you move, a movement-focused evaluation can identify what\u2019s limiting you and build a plan to rebuild strength and mobility.",
+      a:[["See What to Bring to Your Appointment","coming-soon.html?f=What+to+Bring+to+Your+Appointment"]]},
+    primary:{flag:"Starting point",cls:"flag-start",h:"Primary care is a solid place to start.",
+      p:"When symptoms are hard to categorize or you\u2019re not sure where to begin, primary care can assess broadly and coordinate referrals or imaging if they\u2019re needed.",
+      a:[["See What to Bring to Your Appointment","coming-soon.html?f=What+to+Bring+to+Your+Appointment"]]}
+  };
+  function decide(){
+    if(answers.warn.length) return R.urgent;              /* safety override */
+    if(answers.q1==="relief") return R.pharmacist;
+    if(answers.q1==="moving") return answers.q2==="yes" ? R.sportsmed : R.pt;
+    if(answers.q1==="returning") return R.sportsmed;
+    if(answers.q1==="started") return answers.q2==="yes" ? R.sportsmed : R.primary;
+    return R.primary;
+  }
+  seeBtn.addEventListener("click",function(){
+    if(seeBtn.disabled) return;
+    answers.warn=warns.filter(function(w){return w.checked;}).map(function(w){return w.value;});
+    var r=decide();
+    document.getElementById("resultBody").innerHTML=
+      '<div class="result-body"><span class="result-flag '+r.cls+'">'+r.flag+'</span><h3>'+r.h+'</h3><p>'+r.p+'</p>'+
+      '<div class="result-actions">'+r.a.map(function(x){return '<a href="'+x[1]+'">'+x[0]+' <span>\u2192</span></a>';}).join("")+'</div>'+
+      '<p class="result-note">This is general guidance, not a diagnosis. SportPharm doesn\u2019t evaluate or treat injuries \u2014 a qualified professional should assess anything that concerns you.</p></div>';
+    show("result");
+  });
+  document.getElementById("restartGuide").addEventListener("click",open);
 })();
 </script>
 </body>
