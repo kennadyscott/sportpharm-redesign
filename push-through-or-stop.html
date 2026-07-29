@@ -15,20 +15,11 @@ a.btn,.path-card{text-decoration:none}
 button{cursor:pointer}
 button:focus-visible,a:focus-visible{outline:3px solid #73a7f2;outline-offset:3px}
 .shell{width:min(1180px,calc(100% - 48px));margin-inline:auto}
-.site-header{height:76px;padding:0 max(24px,calc((100vw - 1180px)/2));display:flex;align-items:center;gap:34px;background:#fff;position:sticky;top:0;z-index:20;box-shadow:0 2px 14px #0b1c3020}
-.brand{text-decoration:none;color:var(--red);line-height:.82;margin-right:auto}
-.brand span{font-weight:900;font-style:italic;font-size:25px;letter-spacing:-1.6px}
-.brand small{display:block;color:#1b1b1b;font-family:Georgia,serif;font-size:8px;margin-top:6px}
-nav{display:flex;align-items:center;gap:25px}
-nav a{font-size:12px;text-transform:uppercase;color:var(--ink);text-decoration:none;font-weight:700}
-nav a:hover{color:var(--red)}
-.header-actions{display:flex;gap:10px}
 .btn{border:0;padding:14px 20px;text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:.02em;transition:.2s}
 .btn:hover{transform:translateY(-1px);filter:brightness(.96)}
 .primary{background:var(--red);color:#fff}
 .navy{background:var(--navy);color:#fff}
 .outline{background:#fff;border:1px solid #8d98a7;color:var(--ink)}
-.menu-toggle{display:none;background:none;border:0;font-weight:800}
 .hero{min-height:610px;position:relative;color:#fff;display:flex;align-items:center;overflow:hidden}
 .hero-image{position:absolute;inset:0;background:url("assets/pts-hero.jpg") center/cover no-repeat}
 .hero-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,20,38,.93) 0%,rgba(4,20,38,.72) 33%,rgba(4,20,38,.08) 62%,transparent 100%)}
@@ -116,8 +107,6 @@ footer h3{font-size:12px;text-transform:uppercase;margin-bottom:12px}
 .legal{border-top:1px solid #ffffff20;margin-top:38px;padding-top:20px;font-size:10px;color:#758397}
 
 @media(max-width:900px){
-  .site-header{height:66px}.menu-toggle{display:block}.header-actions{display:none}
-  nav{display:none;position:absolute;top:66px;left:0;right:0;background:#fff;padding:24px;box-shadow:0 10px 20px #0002;flex-direction:column;align-items:flex-start}nav.open{display:flex}
   .hero{min-height:620px}.hero-image{background-position:62% center}.hero-image:after{background:linear-gradient(90deg,rgba(4,20,38,.94),rgba(4,20,38,.55))}
   h1{font-size:60px}.path-grid{grid-template-columns:1fr 1fr}.warning-wrap,.split,.pharmacy{grid-template-columns:1fr}
   .warning-image{height:330px}.split img{order:-1}.tracker-grid{grid-template-columns:1fr 1fr}.tracker-paper{grid-column:1/-1}.support-grid{grid-template-columns:repeat(3,1fr)}
@@ -171,7 +160,7 @@ footer h3{font-size:12px;text-transform:uppercase;margin-bottom:12px}
       <nav class="mainnav2">
         <div class="ni">
           <button class="nl">What Brings You Here <svg class="crt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
-          <div class="dd"><a href="#stop">Push Through or Stop?</a><a href="#recovery">Recovery Made Simple</a><a href="#pharmacy">Sports Pharmacy Explained</a><a href="#belong">Is This for Me?</a></div>
+          <div class="dd"><a class="on" href="push-through-or-stop.html">Push Through or Stop?</a><a href="index.html#recovery">Recovery Made Simple</a><a href="index.html#pharmacy">Sports Pharmacy Explained</a><a href="index.html#belong">Is This for Me?</a></div>
         </div>
         <a class="nl" href="articles.html">Articles</a>
         <a class="nl" href="coming-soon.html?f=Contact">Contact</a>
@@ -184,7 +173,7 @@ footer h3{font-size:12px;text-transform:uppercase;margin-bottom:12px}
     </div>
     <nav class="mobilemenu2" id="mobilemenu2">
       <div class="mm2-lbl">What Brings You Here</div>
-      <a href="#stop">Push Through or Stop?</a><a href="#recovery">Recovery Made Simple</a><a href="#pharmacy">Sports Pharmacy Explained</a><a href="#belong">Is This for Me?</a>
+      <a href="#stop">Push Through or Stop?</a><a href="index.html#recovery">Recovery Made Simple</a><a href="index.html#pharmacy">Sports Pharmacy Explained</a><a href="index.html#belong">Is This for Me?</a>
       <a href="articles.html">Articles</a>
       <a href="coming-soon.html?f=Contact">Contact</a>
       <a href="wasabirub.html">WasabiRub</a>
@@ -270,5 +259,9 @@ footer h3{font-size:12px;text-transform:uppercase;margin-bottom:12px}
     <div><h3>Company</h3><a href="https://sportpharm.com/about/">About us</a><a href="https://sportpharm.com/contact/">Contact</a><p>© 2026 SportPharm</p></div>
   </footer>
 </main>
+<script>
+    (function(){var b=document.querySelector(".header2 .menu"),m=document.getElementById("mobilemenu2");
+      if(b&&m)b.addEventListener("click",function(){m.classList.toggle("open");});})();
+  </script>
 </body>
 </html>
