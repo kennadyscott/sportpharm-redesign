@@ -187,6 +187,27 @@ footer h3{font-size:12px;text-transform:uppercase;margin-bottom:12px}
 .guide-next[disabled]:hover{background:#c62b23;transform:none}
 .guide-hint{margin:0 0 12px;font-size:12.5px;color:#b3261e;font-weight:700}
 .guide-hint[hidden]{display:none}
+    .modal-overlay{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(16,24,32,.62)}
+    .modal-overlay.open{display:flex}
+    .modal{position:relative;width:100%;max-width:480px;max-height:calc(100vh - 40px);overflow:auto;background:#fff;color:var(--ink);border-radius:16px;padding:34px;box-shadow:0 30px 80px rgba(0,0,0,.42)}
+    .modal-close{position:absolute;top:14px;right:14px;width:34px;height:34px;border:0;background:transparent;color:#8a938f;font-size:26px;line-height:1;cursor:pointer;border-radius:8px}
+    .modal-close:hover{background:var(--paper);color:var(--ink)}
+    .modal-eyebrow{display:flex;align-items:center;gap:9px;margin:0 0 10px;font-size:10px;font-weight:900;letter-spacing:.17em;text-transform:uppercase;color:var(--red)}
+    .modal-eyebrow i{display:block;width:24px;height:3px;background:var(--red)}
+    .modal h2{font-size:34px;line-height:.95;margin:0 0 10px}
+    .modal-sub{margin:0 0 16px;font-size:14px;line-height:1.55;color:#5f6a66}
+    .modal-source{display:inline-flex;align-items:center;gap:6px;margin-bottom:20px;padding:6px 11px;border-radius:20px;background:var(--paper);font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#66716d}
+    .modal-source b{color:var(--ink)}
+    .field{margin-bottom:14px}
+    .field label{display:block;margin-bottom:6px;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#6b746f}
+    .field input,.field textarea{width:100%;padding:12px 13px;border:1px solid #d5dad7;border-radius:9px;font:inherit;font-size:14px;color:var(--ink);background:#fff;transition:border-color .15s}
+    .field input:focus,.field textarea:focus{outline:none;border-color:var(--red)}
+    .field textarea{resize:vertical;min-height:96px}
+    .modal .primary{width:100%;margin-top:6px;cursor:pointer;border:0}
+    .modal-success{text-align:center;padding:14px 0 6px}
+    .modal-success .check{width:64px;height:64px;margin:0 auto 18px;border-radius:50%;background:#e2eee8;color:var(--green);display:flex;align-items:center;justify-content:center}
+    .modal-success .check svg{width:32px;height:32px}
+    .modal-success p{color:#5f6a66;line-height:1.6;font-size:14px}
 /* ---- site chrome ---- */
 a{color:inherit;text-decoration:none}
 
@@ -361,7 +382,7 @@ a{color:inherit;text-decoration:none}
   <section class="pharmacy shell" id="pharmacy"><div class="pharmacy-copy"><p class="eyebrow red">BEFORE YOU REACH FOR SOMETHING FOR THE PAIN</p><h2>PAIN RELIEF ISN’T<br>ONE-SIZE-FITS-ALL.</h2>
     <p>What works depends on where you hurt, what may be causing it, your medications and how you intend to use the product.</p>
     <div class="product-callout"><span>MEET</span><strong>WasabiRub</strong><p>Topical pain relief formulated for sore muscles, aches and everyday wear and tear.</p></div>
-    <a class="btn primary" href="wasabirub.html">Explore WasabiRub</a></div><img src="assets/pts-wasabirub.jpg" alt="WasabiRub topical pain relief beside a gym bag and towel">
+    <a class="btn primary" href="wasabirub.html">Explore WasabiRub</a></div><img src="assets/pts-wasabirub.jpg?v=2" alt="WasabiRub topical pain relief beside a gym bag and towel">
   </section>
 
   <section class="section shell" id="articles"><p class="eyebrow centered">KNOW MORE. MOVE SMARTER.</p><h2 class="centered">THE QUESTIONS ATHLETES ASK<br>WHEN SOMETHING HURTS.</h2>
@@ -375,7 +396,7 @@ a{color:inherit;text-decoration:none}
     </div>
   </section>
 
-  <section class="final-cta"><div class="shell"><h2>YOU DON’T HAVE TO GUESS<br>YOUR WAY THROUGH PAIN.</h2><p>Start with what you’re noticing. We’ll help you find a smarter next step.</p><div class="button-row"><a class="btn primary" href="#pathways">Find Your Next Step</a><a class="btn outline light-outline" href="mailto:info@sportpharm.com">Talk to SportPharm</a></div></div></section>
+  <section class="final-cta"><div class="shell"><h2>YOU DON’T HAVE TO GUESS<br>YOUR WAY THROUGH PAIN.</h2><p>Start with what you’re noticing. We’ll help you find a smarter next step.</p><div class="button-row"><a class="btn primary" href="#pathways">Find Your Next Step</a><a class="btn outline light-outline" href="#contact" data-open-contact>Talk to SportPharm</a></div></div></section>
   <footer class="footer" id="footer">
     <div><a class="brand" href="#top">SPORTPHARM<small style="color:#aab5c4">EVERYDAY ATHLETE</small></a><p>Sports pharmacy expertise. Practical guidance for real life.</p></div>
     <div><h3>Athletes</h3><a href="#pathways">Start here</a><a href="#stop">Pain & injury</a><a href="#recovery">Recovery basics</a></div>
@@ -466,7 +487,7 @@ a{color:inherit;text-decoration:none}
   var R={
     urgent:{flag:"Seek care now",cls:"flag-care",h:"Get this checked promptly.",
       p:"What you selected can point to something that needs hands-on evaluation. Rather than working through a self-guided path, contact a healthcare professional now — or use urgent or emergency care if symptoms are severe, rapidly worsening, or followed a head impact.",
-      a:[["See the Warning Signs","#warning"],["Talk to SportPharm","mailto:info@sportpharm.com"]]},
+      a:[["See the Warning Signs","#warning"],["Talk to SportPharm","#contact"]]},
     pharmacist:{flag:"Starting point",cls:"flag-start",h:"Start with a pharmacist.",
       p:"A pharmacist can help you compare pain-relief options, identify overlapping ingredients and account for your current medications.",
       a:[["Ask SportPharm","mailto:info@sportpharm.com"],["Explore Topical Pain Relief","wasabirub.html"],["Learn About WasabiRub","wasabirub.html"]]},
@@ -494,12 +515,87 @@ a{color:inherit;text-decoration:none}
     var r=decide();
     document.getElementById("resultBody").innerHTML=
       '<div class="result-body"><span class="result-flag '+r.cls+'">'+r.flag+'</span><h3>'+r.h+'</h3><p>'+r.p+'</p>'+
-      '<div class="result-actions">'+r.a.map(function(x){return '<a href="'+x[1]+'">'+x[0]+' <span>\u2192</span></a>';}).join("")+'</div>'+
+      '<div class="result-actions">'+r.a.map(function(x){return '<a href="'+x[1]+'"'+(x[1]==="#contact"?' data-open-contact':'')+'>'+x[0]+' <span>\u2192</span></a>';}).join("")+'</div>'+
       '<p class="result-note">This is general guidance, not a diagnosis. SportPharm doesn\u2019t evaluate or treat injuries \u2014 a qualified professional should assess anything that concerns you.</p></div>';
     show("result");
   });
   document.getElementById("restartGuide").addEventListener("click",open);
 })();
 </script>
+<div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+    <div class="modal">
+      <button class="modal-close" type="button" aria-label="Close" data-close>&times;</button>
+      <div id="contactFormWrap">
+        <p class="modal-eyebrow"><i></i> Contact Us</p>
+        <h2 id="contactTitle">Get in touch.</h2>
+        <p class="modal-sub">Questions about WasabiRub, bulk orders, or the pharmacy? Send us a note and our team will reply from info@sportpharm.com.</p>
+        <span class="modal-source">From <b>WasabiRub landing page</b></span>
+        <form id="contactForm" novalidate>
+          <div class="field"><label for="cf_name">Name</label><input id="cf_name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="cf_email">Email</label><input id="cf_email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="cf_phone">Phone <span style="text-transform:none;color:#9aa3a0">(optional)</span></label><input id="cf_phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="cf_message">Message</label><textarea id="cf_message" name="message" required></textarea></div>
+          <button class="primary" type="submit">Send message <span>→</span></button>
+        </form>
+      </div>
+      <div id="contactSuccess" class="modal-success" hidden>
+        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></div>
+        <h2>Message sent.</h2>
+        <p id="successMsg"></p>
+      </div>
+    </div>
+  </div>
+<script>
+    /* Contact modal — feeds the SportPharm admin dashboard (shared localStorage
+       'sp_admin_leads', same schema as admin.html) AND initiates an email to
+       info@sportpharm.com. In the production Next.js + Payload build this POSTs
+       to an API route that creates a Payload Lead and sends the notification. */
+    (function(){
+      const SOURCE = "Push Through or Stop page";
+      const modal = document.getElementById("contactModal");
+      const form = document.getElementById("contactForm");
+      const wrap = document.getElementById("contactFormWrap");
+      const success = document.getElementById("contactSuccess");
+      function openModal(e){ if(e) e.preventDefault(); wrap.hidden=false; success.hidden=true; modal.classList.add("open"); document.body.style.overflow="hidden"; setTimeout(()=>document.getElementById("cf_name").focus(),40); }
+      function closeModal(){ modal.classList.remove("open"); document.body.style.overflow=""; }
+      document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("[data-open-contact]");if(t){openModal(e);}});  /* delegated: also catches dynamically-rendered result links */
+      modal.addEventListener("click",e=>{ if(e.target===modal || e.target.hasAttribute("data-close")) closeModal(); });
+      document.addEventListener("keydown",e=>{ if(e.key==="Escape" && modal.classList.contains("open")) closeModal(); });
+
+      form.addEventListener("submit",e=>{
+        e.preventDefault();
+        if(!form.reportValidity()) return;
+        const d = Object.fromEntries(new FormData(form).entries());
+        const name=(d.name||"").trim(), email=(d.email||"").trim(), phone=(d.phone||"").trim(), message=(d.message||"").trim();
+
+        // 1) Feed the admin Leads dashboard
+        try{
+          const KEY="sp_admin_leads";
+          const leads=JSON.parse(localStorage.getItem(KEY)||"[]");
+          leads.unshift({
+            id:"l"+Date.now(),
+            name, email,
+            persona:"Everyday Athlete",
+            source:SOURCE,
+            status:"new",
+            date:new Date().toISOString().slice(0,10),
+            message: message + (phone ? "\n\nPhone: "+phone : "")
+          });
+          localStorage.setItem(KEY,JSON.stringify(leads));
+        }catch(err){}
+
+        // 2) Initiate an email to info@sportpharm.com
+        const subject=encodeURIComponent("New inquiry — "+name);
+        const body=encodeURIComponent("Name: "+name+"\nEmail: "+email+(phone?"\nPhone: "+phone:"")+"\nSource: "+SOURCE+"\n\n"+message);
+        const a=document.createElement("a");
+        a.href="mailto:info@sportpharm.com?subject="+subject+"&body="+body;
+        a.style.display="none"; document.body.appendChild(a); a.click(); a.remove();
+
+        // 3) Success state
+        document.getElementById("successMsg").textContent="Thanks, "+(name.split(" ")[0]||"there")+"! Your message is on its way to our team at info@sportpharm.com — sent from the WasabiRub landing page. We'll be in touch shortly.";
+        wrap.hidden=true; success.hidden=false; form.reset();
+      });
+    })();
+  </script>
 </body>
 </html>
