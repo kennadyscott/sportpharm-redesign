@@ -125,16 +125,11 @@ h2{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;
 .lifestyle-image{background-position: center;
   background-size: cover;
   height: 285px;}
-.first-5k .lifestyle-image{background-image: url("images/everyday-athlete-hero.png");
-  background-position: 56% center;}
-.staying-strong .lifestyle-image{background-image: url("images/real-life-workout.png");
-  background-position: 62% center;}
-.weekends .lifestyle-image{background-image: url("images/everyday-athlete-hero.png");
-  background-position: 73% center;}
-.finding-time .lifestyle-image{background-image: url("images/real-life-workout.png");
-  background-position: 47% center;}
-.returning .lifestyle-image{background-image: url("images/everyday-athlete-hero.png");
-  background-position: 91% center;}
+
+
+
+
+
 .lifestyle-card h3{color: var(--navy);
   font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;
   font-size: 20px;
@@ -446,6 +441,16 @@ h1,h2,h3,.display{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-seri
 @media(max-width:950px){.menu{background:none;border:0;display:block}.menu i{background:var(--navy);display:block;height:2px;margin:5px;width:24px}.footer{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.footer{grid-template-columns:1fr}}
 @media(max-width:1120px){.mainnav2,.caps2{display:none}.header2 .menu{display:block;margin-left:auto}}
+
+/* ---- lifestyle grid (top-level so it applies on desktop too) ---- */
+.lifestyle-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;align-items:start}
+.lifestyle-card{margin:0;text-align:center}
+.lifestyle-image{aspect-ratio:4/5;height:auto;overflow:hidden;border-radius:6px;background:#eef1f5}
+.lifestyle-image img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;transition:transform .35s ease}
+.lifestyle-card:hover .lifestyle-image img{transform:scale(1.04)}
+.lifestyle-card h3{margin:12px 0 0;font-size:14px;line-height:1.3;min-height:2.6em;display:flex;align-items:flex-start;justify-content:center;text-align:center}
+@media(max-width:1080px){.lifestyle-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.lifestyle-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
   </head>
   <body>
