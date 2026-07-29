@@ -87,9 +87,13 @@ section{padding:70px 0}
 .relief-copy h2{font-size:clamp(30px,3.5vw,46px);margin:0 0 18px}
 .relief-copy p{color:#cbd6e6;line-height:1.75;margin-bottom:14px}
 .relief-actions{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-top:24px}
-.relief-product{position:relative;border-radius:10px;overflow:hidden}
-.relief-product img{border-radius:10px}
-.product-tag{position:absolute;left:0;bottom:0;background:#fff;color:var(--ink);padding:16px 22px}
+.relief-product{position:relative;display:flex;align-items:center;justify-content:center;min-height:460px}
+.relief-product img{position:relative;z-index:2;width:min(300px,68%);filter:drop-shadow(0 26px 30px rgba(0,0,0,.45))}
+.r-orbit{position:absolute;z-index:1;border:1px solid rgba(255,255,255,.12);border-radius:50%}
+.r-orbit.one{width:330px;height:330px}
+.r-orbit.two{width:430px;height:430px}
+.relief-product::after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(224,49,42,.28),transparent 70%);filter:blur(8px)}
+.product-tag{position:absolute;z-index:3;left:0;bottom:14px;background:#fff;color:var(--ink);padding:16px 22px}
 .product-tag span{display:block;font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
 .product-tag strong{font-size:16px}
 
@@ -312,7 +316,8 @@ section{padding:70px 0}
       </div>
     </div>
     <div class="relief-product" id="wasabirub">
-      <img src="assets/pts-wasabirub.jpg?v=2" alt="WasabiRub topical pain relief beside a gym bag and towel">
+      <div class="r-orbit one"></div><div class="r-orbit two"></div>
+      <img src="assets/wr-wasabirub.png?v=3" alt="WasabiRub topical pain relief">
       <div class="product-tag"><span>Topical relief</span><strong>Made to keep up.</strong></div>
     </div>
   </section>
