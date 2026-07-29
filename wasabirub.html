@@ -66,6 +66,11 @@
     .temp.heat{right:5%;bottom:31%;color:#dc896f}.temp.heat:before{background:var(--orange)}
     .price{position:absolute;z-index:4;right:6%;top:16%;display:flex;flex-direction:column;align-items:center;justify-content:center;width:88px;height:88px;border-radius:50%;background:var(--red);color:#fff;transform:rotate(5deg);box-shadow:0 8px 30px rgba(0,0,0,.3)}
     .price small{font-size:8px;font-weight:900}.price b{font-size:22px}
+    .tsbadge{position:absolute;z-index:5;top:2%;right:9%;display:flex;flex-direction:column;align-items:center;gap:5px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.45))}
+    .hero-product .tsbadge img{width:50px;height:auto;animation:none;filter:none}
+    .tsbadge b{font-size:10.5px;font-weight:900;letter-spacing:.02em;color:#eef4f6;line-height:1}
+    .tsbadge b sup{font-size:6px;vertical-align:top}
+    .tsbadge i{font-size:7.5px;font-weight:800;letter-spacing:.24em;color:#9fb7c1;font-style:normal;margin-top:2px}
     @keyframes float{50%{transform:translateY(-7px) rotate(-1deg)}}
     .difference{display:grid;grid-template-columns:.82fr 1.18fr;gap:70px;padding:24px 0 78px}
     .eyebrow.dark{color:#52605b}
@@ -225,7 +230,8 @@
         <div class="hero-product">
           <div class="orbit one"></div><div class="orbit two"></div>
           <div class="temp cool">COOL</div><div class="temp heat">HEAT</div>
-          <img src="assets/wr-wasabirub-hero.png?v=5" alt="WasabiRub triple-action sports topical pain relief gel — TruShield Certified">
+          <span class="tsbadge"><img src="assets/trushield-shield.png" alt=""><b>TruShield<sup>™</sup></b><i>CERTIFIED</i></span>
+          <img src="assets/wr-wasabirub-hero.png?v=6" alt="WasabiRub triple-action sports topical pain relief gel — TruShield Certified">
         </div>
       </div>
     </section>
