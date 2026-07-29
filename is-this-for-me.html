@@ -351,7 +351,7 @@ h2{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;
 .closing-actions{display: flex;
   flex-direction: column;
   gap: 12px;}
-@media (max-width: 1080px){.lifestyle-grid{grid-template-columns: repeat(3, 1fr);}.fit-grid,
+@media (max-width: 1080px){.lifestyle-grid{grid-template-columns:repeat(5,1fr);gap:16px;align-items:start}.fit-grid,
   .pathway-grid,
   .story-grid{grid-template-columns: repeat(2, 1fr);}.support{grid-template-columns: 1fr;}}
 @media (max-width: 700px){.hero{min-height: 720px;}.hero > img{object-position: 65% center;}.hero-overlay{background: linear-gradient(
@@ -365,8 +365,13 @@ h2{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;
   .pathway-grid,
   .story-grid,
   .closing-cta,
-  footer{grid-template-columns: 1fr;}.lifestyle-image{height:355px;overflow:hidden;border-radius:4px}
-.lifestyle-image img{width:100%;height:100%;object-fit:cover;display:block}.spectrum{padding: 70px 21px;}.spectrum-line{align-items: stretch;
+  footer{grid-template-columns: 1fr;}.lifestyle-image{aspect-ratio:4/5;height:auto;overflow:hidden;border-radius:6px;background:#eef1f5}
+.lifestyle-image img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block;transition:transform .35s ease}
+.lifestyle-card{margin:0;text-align:center}
+.lifestyle-card:hover .lifestyle-image img{transform:scale(1.04)}
+.lifestyle-card h3{margin:12px 0 0;font-size:14px;line-height:1.3;letter-spacing:.02em;min-height:2.6em;display:flex;align-items:flex-start;justify-content:center}
+@media(max-width:1100px){.lifestyle-grid{grid-template-columns:repeat(3,1fr)!important;gap:18px}}
+@media(max-width:640px){.lifestyle-grid{grid-template-columns:repeat(2,1fr)!important}}.spectrum{padding: 70px 21px;}.spectrum-line{align-items: stretch;
     display: flex;
     flex-direction: column;
     gap: 18px;}.spectrum-line > i{border-left: 1px dashed rgba(255, 255, 255, 0.45);
