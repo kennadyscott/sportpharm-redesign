@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Push Through or Stop? | SportPharm</title>
+  <meta name="description" content="Know what to notice and choose a smarter next step when something hurts.">
+  <style>
+:root { --navy:#10294c; --navy2:#061a32; --red:#ef2b2d; --ink:#18263b; --blue:#204e91; --muted:#65758b; --line:#dce3ec; --soft:#f4f7fa; }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+button,a{font:inherit}
+a.btn,.path-card{text-decoration:none}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible{outline:3px solid #73a7f2;outline-offset:3px}
+.shell{width:min(1180px,calc(100% - 48px));margin-inline:auto}
+.site-header{height:76px;padding:0 max(24px,calc((100vw - 1180px)/2));display:flex;align-items:center;gap:34px;background:#fff;position:sticky;top:0;z-index:20;box-shadow:0 2px 14px #0b1c3020}
+.brand{text-decoration:none;color:var(--red);line-height:.82;margin-right:auto}
+.brand span{font-weight:900;font-style:italic;font-size:25px;letter-spacing:-1.6px}
+.brand small{display:block;color:#1b1b1b;font-family:Georgia,serif;font-size:8px;margin-top:6px}
+nav{display:flex;align-items:center;gap:25px}
+nav a{font-size:12px;text-transform:uppercase;color:var(--ink);text-decoration:none;font-weight:700}
+nav a:hover{color:var(--red)}
+.header-actions{display:flex;gap:10px}
+.btn{border:0;padding:14px 20px;text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:.02em;transition:.2s}
+.btn:hover{transform:translateY(-1px);filter:brightness(.96)}
+.primary{background:var(--red);color:#fff}
+.navy{background:var(--navy);color:#fff}
+.outline{background:#fff;border:1px solid #8d98a7;color:var(--ink)}
+.menu-toggle{display:none;background:none;border:0;font-weight:800}
+.hero{min-height:610px;position:relative;color:#fff;display:flex;align-items:center;overflow:hidden}
+.hero-image{position:absolute;inset:0;background:url("assets/pts-hero.jpg") center/cover no-repeat}
+.hero-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,20,38,.93) 0%,rgba(4,20,38,.72) 33%,rgba(4,20,38,.08) 62%,transparent 100%)}
+.hero-content{position:relative;z-index:1}
+.hero-content>*{max-width:505px}
+.eyebrow{font-size:11px;letter-spacing:.16em;font-weight:900;margin:0 0 12px;text-transform:uppercase}
+.eyebrow:after{content:"";display:block;width:36px;height:3px;background:var(--red);margin-top:10px}
+.eyebrow.centered:after{margin:10px auto 0}
+.eyebrow.light{color:#fff}.eyebrow.red{color:var(--red)}
+h1,h2,.footer-brand{font-family:"Arial Narrow",Impact,sans-serif;font-stretch:condensed;font-weight:900;letter-spacing:-.025em}
+h1{font-size:76px;line-height:.92;margin:0 0 22px}
+h2{font-size:44px;line-height:1;margin:0 0 18px}
+h3{margin:0}
+.hero-lede{font-size:20px;line-height:1.45;font-weight:700;margin:0 0 10px}
+.hero-copy{font-size:15px;line-height:1.6;color:#d5dce5;margin:0 0 27px}
+.button-row{display:flex;align-items:center;gap:22px}
+.text-link{border:0;background:none;text-transform:uppercase;font-size:11px;font-weight:800}
+.light-link{color:#fff}
+.section{padding-block:78px}
+.centered{text-align:center}
+.intro{color:var(--muted);margin-top:-8px}
+.path-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+.path-card{text-align:left;min-height:245px;border:1px solid var(--line);background:#fff;padding:26px;display:flex;flex-direction:column;align-items:flex-start;position:relative;box-shadow:0 8px 25px #10294c0a}
+.path-card.active,.path-card:hover{border:2px solid var(--red);padding:25px}
+.path-icon{width:54px;height:54px;border:2px solid var(--blue);color:var(--blue);border-radius:50%;display:grid;place-items:center;font-size:25px;font-weight:900;margin-bottom:22px}
+.path-card.active .path-icon{border-color:var(--red);color:var(--red)}
+.path-card strong{font-size:17px;margin-bottom:10px;color:var(--navy)}
+.path-card span:not(.path-icon){color:var(--muted);line-height:1.5;font-size:14px}
+.path-card b{position:absolute;right:24px;bottom:20px;color:var(--red)}
+.warning-wrap{display:grid;grid-template-columns:43% 57%;background:#fff4f4;border:1px solid #ffd1d1;margin-bottom:78px}
+.warning-image img{width:100%;height:100%;object-fit:cover}
+.warning-content{padding:42px}
+.warning-content>p:not(.eyebrow){color:var(--muted);line-height:1.55}
+.warning-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:24px 0}
+.warning-grid span{font-size:13px;font-weight:700;color:var(--ink)}
+.warning-grid span::first-letter{color:var(--red)}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px}
+.compare-card{padding:34px;border-radius:3px}
+.compare-card h3{text-transform:uppercase;font-family:"Arial Narrow",Impact,sans-serif;font-size:23px}
+.compare-card ul{padding-left:20px;line-height:2;color:#425268}
+.expected{background:#f1f7ff;border:1px solid #a9c8f2}.expected h3{color:var(--blue)}
+.investigate{background:#fff8f8;border:2px solid #f2a0a1}.investigate h3{color:var(--red)}
+.disclaimer{text-align:center;font-size:12px;color:var(--muted);margin-top:16px}
+.framework{background:linear-gradient(120deg,var(--navy),#08213f);color:#fff;padding:64px 0}
+.framework-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:38px}
+.framework-grid article{display:flex;gap:24px;padding:0 34px;border-right:1px solid #ffffff40}
+.framework-grid article:first-child{padding-left:0}.framework-grid article:last-child{border:0}
+.framework-grid b{font-family:"Arial Narrow",Impact,sans-serif;font-size:58px;font-weight:400;color:#fff}
+.framework-grid h3{font-size:18px;margin-top:8px}.framework-grid p{font-size:14px;color:#c8d3df;line-height:1.5}
+.split{display:grid;grid-template-columns:1fr 1.15fr;gap:60px;align-items:center}
+.split-copy>p:not(.eyebrow){color:var(--muted);line-height:1.7}
+.split img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0}
+.chips span{border:1px solid #cbd8e8;color:var(--navy);padding:11px 13px;font-size:12px;font-weight:700;background:#f8fbff}
+.tracker{background:var(--soft)}
+.tracker-grid{display:grid;grid-template-columns:1fr 1.05fr .8fr;gap:38px;align-items:center}
+.tracker-grid>img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.tracker-grid>div:nth-child(2)>p:not(.eyebrow){color:var(--muted);line-height:1.6}
+.tracker-paper{background:#fff;padding:28px;box-shadow:0 14px 30px #10294c18;transform:rotate(1deg)}
+.tracker-paper h3{font-size:19px;margin-bottom:18px}
+.tracker-paper label{display:block;font-size:11px;font-weight:700;margin:14px 0;color:#4d5a6d}.tracker-paper label span{display:block;border-bottom:1px solid #bbc4cf;margin-top:7px}
+.support-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:32px 0 26px}
+.support-grid button{background:#fff;border:1px solid var(--line);padding:22px 10px;color:var(--navy);display:flex;flex-direction:column;gap:12px;align-items:center}
+.support-grid button:hover{border-color:var(--red)}
+.support-grid b{font-size:31px;color:var(--blue)}.support-grid span{font-weight:800;font-size:13px}
+.pharmacy{display:grid;grid-template-columns:44% 56%;background:linear-gradient(120deg,#f5f7f8,#fff);margin-bottom:75px;overflow:hidden}
+.pharmacy-copy{padding:55px}
+.pharmacy-copy>p:not(.eyebrow):not(.product-callout p){color:var(--muted);line-height:1.65}
+.pharmacy>img{width:100%;height:100%;object-fit:cover;object-position:65% center}
+.product-callout{border-left:3px solid var(--red);padding-left:16px;margin:25px 0}.product-callout span{font-size:10px;font-weight:900;color:var(--red);display:block}.product-callout strong{font-size:25px;color:#277243}.product-callout p{margin:6px 0;font-size:13px;color:var(--muted)}
+.article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.article-grid article{border:1px solid var(--line);background:#fff;box-shadow:0 8px 22px #10294c0b}
+.article-grid img{width:100%;height:165px;object-fit:cover}
+.article-grid article>div{padding:20px}
+.article-grid small{color:var(--red);font-size:9px;font-weight:900}
+.article-grid h3{font-size:17px;line-height:1.3;margin:7px 0 17px}.article-grid a{font-size:11px;font-weight:800;color:var(--navy);text-decoration:none}
+.final-cta{background:linear-gradient(90deg,#082341f2,#082341de),url('/assets/pts-hero.jpg') center/cover;color:#fff;padding:60px 0}
+.final-cta h2{font-size:48px}.final-cta p{color:#cbd6e0}
+.light-outline{color:#fff;border-color:#fff5;background:transparent}
+footer{background:#07111e;color:#fff;padding:55px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:50px}
+.footer-brand{font-style:italic;font-size:26px;color:var(--red)}
+footer p,footer a{display:block;color:#9eabba;font-size:12px;line-height:1.8;text-decoration:none;margin:4px 0}
+footer h3{font-size:12px;text-transform:uppercase;margin-bottom:12px}
+.legal{border-top:1px solid #ffffff20;margin-top:38px;padding-top:20px;font-size:10px;color:#758397}
+
+@media(max-width:900px){
+  .site-header{height:66px}.menu-toggle{display:block}.header-actions{display:none}
+  nav{display:none;position:absolute;top:66px;left:0;right:0;background:#fff;padding:24px;box-shadow:0 10px 20px #0002;flex-direction:column;align-items:flex-start}nav.open{display:flex}
+  .hero{min-height:620px}.hero-image{background-position:62% center}.hero-image:after{background:linear-gradient(90deg,rgba(4,20,38,.94),rgba(4,20,38,.55))}
+  h1{font-size:60px}.path-grid{grid-template-columns:1fr 1fr}.warning-wrap,.split,.pharmacy{grid-template-columns:1fr}
+  .warning-image{height:330px}.split img{order:-1}.tracker-grid{grid-template-columns:1fr 1fr}.tracker-paper{grid-column:1/-1}.support-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:600px){
+  .shell{width:min(100% - 28px,1180px)}.section{padding-block:55px}h1{font-size:48px}h2{font-size:36px}
+  .hero{min-height:600px}.hero-image{background-position:68% center}.hero-content{padding-top:90px}.hero-content>*{max-width:90%}
+  .path-grid,.compare-grid,.framework-grid,.tracker-grid,.article-grid{grid-template-columns:1fr}
+  .warning-grid{grid-template-columns:1fr}.warning-content{padding:28px}.framework-grid article{border-right:0;border-bottom:1px solid #ffffff30;padding:24px 0}
+  .support-grid{grid-template-columns:1fr 1fr}.pharmacy-copy{padding:35px 25px}.pharmacy>img{min-height:260px}.footer-grid{grid-template-columns:1fr 1fr}.final-cta h2{font-size:38px}
+}
+
+/* ---- site chrome ---- */
+    .header{align-items:center;background:#fff;border-bottom:1px solid #e5e9ef;display:grid;grid-template-columns:190px 1fr auto;height:76px;padding:0 4vw;position:sticky;top:0;z-index:30}.brand{color:var(--red);font-family:Georgia,serif;font-size:27px;font-style:italic;font-weight:900;letter-spacing:-2px}.brand small{color:#111;display:block;font-family:Arial,sans-serif;font-size:7px;font-style:normal;letter-spacing:.2px;margin-top:-3px}.nav{display:flex;gap:28px;justify-content:center}.nav a{font-size:12px;font-weight:800}.header-actions{display:flex;gap:10px}.menu{display:none}
+    @media(max-width:950px){.header{grid-template-columns:1fr auto}.header-actions{display:none}.menu{background:none;border:0;display:block}.menu i{background:var(--navy);display:block;height:2px;margin:5px;width:24px}.nav{background:#fff;display:none;flex-direction:column;grid-column:1/-1;left:0;padding:25px 4vw;position:absolute;top:75px;width:100%}.nav.open{display:flex}.path-grid{grid-template-columns:repeat(2,1fr)}.belong{grid-template-columns:1fr}.cards3,.article-grid,.pharmacy-grid{grid-template-columns:1fr}.image-card img,.article img{height:300px}.recovery-grid{grid-template-columns:1fr}.recovery-card:not(:last-child)::after{bottom:-30px;left:50%;right:auto;top:auto;transform:rotate(90deg)}.product{grid-template-columns:1fr}.product img{height:420px}.footer{grid-template-columns:repeat(2,1fr)}}
+    .header2{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.98);border-bottom:1px solid #e5e9ef}
+    .h2wrap{display:flex;align-items:center;gap:18px;height:76px;padding:0 4vw}
+    .logo2{display:flex;flex-direction:column;line-height:1;flex-shrink:0}
+    .logo2 img{width:150px;display:block}
+    .logo2 .tag2{font-family:Georgia,serif;font-weight:700;font-size:10px;color:var(--ink);margin-top:5px;white-space:nowrap;text-transform:none;letter-spacing:normal;font-stretch:normal}
+    .mainnav2{display:flex;align-items:center;gap:2px;margin-left:auto;font-family:"Inter",Arial,sans-serif}
+    .ni{position:relative}
+    .nl{display:inline-flex;align-items:center;gap:5px;background:none;border:0;cursor:pointer;font-family:"Inter",Arial,sans-serif;font-weight:600;font-size:14px;color:var(--ink);padding:8px 11px;border-radius:7px;white-space:nowrap;text-transform:none;letter-spacing:normal}
+    .nl:hover{color:var(--red)}
+    .nl .crt{width:11px;height:11px;opacity:.5}
+    .dd{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px;min-width:232px;box-shadow:0 20px 40px -16px #10294a40;opacity:0;visibility:hidden;transform:translateY(6px);transition:.16s;z-index:40}
+    .ni:hover .dd{opacity:1;visibility:visible;transform:translateY(0)}
+    .dd a{display:block;padding:9px 12px;border-radius:7px;font-weight:600;font-size:13.5px;color:var(--ink);text-transform:none;letter-spacing:normal}
+    .dd a:hover{background:var(--soft);color:var(--red)}
+    .dd a.on{color:var(--red)}
+    .caps2{display:flex;align-items:center;gap:10px;margin-left:14px;padding-left:16px;border-left:1px solid var(--line)}
+    .cap2{display:inline-flex;align-items:center;gap:7px;font-family:"Bebas Neue","Arial Narrow",sans-serif;font-size:17px;letter-spacing:.05em;text-transform:uppercase;padding:9px 18px;border-radius:999px;white-space:nowrap;transition:.16s;font-stretch:normal}
+    .cap2 svg{width:15px;height:15px}
+    .capred{background:var(--red);color:#fff;box-shadow:0 9px 24px -9px rgba(224,49,42,.55)}.capred:hover{transform:translateY(-1px)}
+    .ptoggle{display:inline-flex;align-items:center;gap:2px;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:3px}
+    .pt-opt{font-family:"Inter",Arial,sans-serif;font-weight:700;font-size:11.5px;color:var(--muted);padding:8px 13px;border-radius:999px;white-space:nowrap;transition:.15s;text-transform:none;letter-spacing:normal}
+    .pt-opt:hover{color:var(--ink)}
+    .pt-opt.on{background:var(--navy);color:#fff}
+    .mobilemenu2{display:none;flex-direction:column;background:#fff;border-bottom:1px solid var(--line);padding:12px 4vw 20px;font-family:"Inter",Arial,sans-serif}
+    .mobilemenu2.open{display:flex}
+    .mobilemenu2 a{font-weight:600;font-size:14px;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--line);text-transform:none}
+    .mm2-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);padding:12px 0 2px}
+    @media(max-width:1120px){.mainnav2,.caps2{display:none}.header2 .menu{display:block;margin-left:auto}}
+</style>
+</head>
+<body>
+<main>
+  <header class="header2">
+    <div class="h2wrap">
+      <a class="logo2" href="index.html"><img src="assets/wordmark-dark.png" alt="SportPharm"><span class="tag2">Stay ready for whatever moves you.</span></a>
+      <nav class="mainnav2">
+        <div class="ni">
+          <button class="nl">What Brings You Here <svg class="crt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="dd"><a href="#stop">Push Through or Stop?</a><a href="#recovery">Recovery Made Simple</a><a href="#pharmacy">Sports Pharmacy Explained</a><a href="#belong">Is This for Me?</a></div>
+        </div>
+        <a class="nl" href="articles.html">Articles</a>
+        <a class="nl" href="coming-soon.html?f=Contact">Contact</a>
+      </nav>
+      <div class="caps2">
+        <a class="cap2 capred" href="wasabirub.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="9" width="18" height="7" rx="3.5" transform="rotate(-45 12 12)"/><path d="M8.5 8.5l7 7"/></svg> WasabiRub</a>
+        <div class="ptoggle" role="group" aria-label="Choose your experience"><a class="pt-opt on" href="index.html">Everyday Athlete</a><a class="pt-opt" href="pro-athlete.html">Pro Athlete</a><a class="pt-opt" href="sports-medicine.html">Healthcare / AT</a></div>
+      </div>
+      <button class="menu" aria-label="Toggle navigation" aria-expanded="false"><i></i><i></i><i></i></button>
+    </div>
+    <nav class="mobilemenu2" id="mobilemenu2">
+      <div class="mm2-lbl">What Brings You Here</div>
+      <a href="#stop">Push Through or Stop?</a><a href="#recovery">Recovery Made Simple</a><a href="#pharmacy">Sports Pharmacy Explained</a><a href="#belong">Is This for Me?</a>
+      <a href="articles.html">Articles</a>
+      <a href="coming-soon.html?f=Contact">Contact</a>
+      <a href="wasabirub.html">WasabiRub</a>
+      <div class="mm2-lbl">I&rsquo;m a</div>
+      <a href="index.html">Everyday Athlete</a><a href="pro-athlete.html">Pro Athlete</a><a href="sports-medicine.html">Healthcare / Athletic Trainer</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="top"><div class="hero-image"></div><div class="hero-content shell">
+    <p class="eyebrow light">EVERYDAY ATHLETE</p><h1>PUSH THROUGH<br>OR STOP?</h1>
+    <p class="hero-lede">When something hurts, knowing what to do next isn’t always obvious.</p>
+    <p class="hero-copy">Know what to notice—and choose a smarter next step for your body and your goals.</p>
+    <div class="button-row"><a class="btn primary" href="#pathways">Find Your Next Step</a><a class="text-link light-link" href="#warning">See the Warning Signs →</a></div>
+  </div></section>
+
+  <section class="section shell" id="pathways"><p class="eyebrow centered">START HERE</p><h2 class="centered">WHAT BEST DESCRIBES WHAT’S HAPPENING?</h2>
+    <div class="path-grid">
+      <a class="path-card active" href="#soreness"><span class="path-icon">↗</span><strong>It just started</strong><span>A new ache, tweak or sudden change.</span><b>→</b></a>
+      <a class="path-card" href="#tracker"><span class="path-icon">↻</span><strong>It keeps coming back</strong><span>Pain that repeatedly interrupts progress.</span><b>→</b></a>
+      <a class="path-card" href="#framework"><span class="path-icon">?</span><strong>I’m not sure if I should train</strong><span>Decide whether to continue, modify or pause.</span><b>→</b></a>
+      <a class="path-card" href="#support"><span class="path-icon">+</span><strong>I’m ready to get it checked</strong><span>Find the right kind of professional support.</span><b>→</b></a>
+    </div>
+  </section>
+
+  <section class="warning-wrap shell" id="warning"><div class="warning-image"><img src="assets/pts-warning.jpg" alt="Everyday athlete moving carefully at home"></div><div class="warning-content">
+    <p class="eyebrow red">KNOW WHEN TO PAUSE</p><h2>PAUSE AND PAY ATTENTION.</h2>
+    <p>Stop activity and seek appropriate care if something feels serious, is getting worse or changes how your body functions.</p>
+    <div class="warning-grid"><span>▲ Major swelling or bruising</span><span>▲ Numbness or tingling</span><span>▲ Inability to bear weight</span><span>▲ Severe or worsening pain</span><span>▲ Instability or giving way</span><span>▲ Symptoms after a head impact</span></div>
+    <a class="btn navy" href="sports-medicine.html">Know When to Seek Care</a>
+  </div></section>
+
+  <section class="section shell" id="soreness"><p class="eyebrow centered">READ THE SIGNALS</p><h2 class="centered">SORENESS—OR A SIGN TO SLOW DOWN?</h2>
+    <div class="compare-grid"><article class="compare-card expected"><h3>✓ More like expected soreness</h3><ul><li>Shows up after a new or harder workout</li><li>Improves with light movement and warm-up</li><li>Feels general across worked muscles</li><li>Gradually clears with rest and recovery</li></ul></article>
+    <article class="compare-card investigate"><h3>△ Worth pausing to investigate</h3><ul><li>Begins during a specific movement or incident</li><li>Changes your form or how you move</li><li>Feels sharp, localized or concentrated in a joint</li><li>Persists, worsens or repeatedly returns</li></ul></article></div>
+    <p class="disclaimer">These patterns provide context, not a diagnosis. If you are concerned, consult an appropriate healthcare professional.</p>
+  </section>
+
+  <section class="framework" id="framework"><div class="shell"><p class="eyebrow light">A SIMPLE WAY FORWARD</p><h2>STOP. CHECK. CHOOSE.</h2><div class="framework-grid">
+    <article><b>01</b><div><h3>STOP</h3><p>Pause long enough to notice what is happening.</p></div></article>
+    <article><b>02</b><div><h3>CHECK</h3><p>Ask what changed, what you feel and whether movement is affected.</p></div></article>
+    <article><b>03</b><div><h3>CHOOSE</h3><p>Continue carefully, modify, stop for the day or seek guidance.</p></div></article>
+  </div></div></section>
+
+  <section class="split section shell" id="modify"><div class="split-copy"><p class="eyebrow red">RECOVERY ISN’T QUITTING.</p><h2>CHANGING THE PLAN<br>IS STILL TRAINING.</h2>
+    <p>Smarter adjustments today can help you stay consistent tomorrow. Modification is a strategy—not a setback.</p>
+    <div class="chips"><span>Reduce the load</span><span>Change the movement</span><span>Shorten the session</span><span>Train something else</span><span>Take a recovery day</span></div>
+    <a class="btn primary" href="#articles">Explore Smart Modifications</a></div>
+    <img src="assets/pts-modify.jpg" alt="Woman modifying a strength workout with dumbbells">
+  </section>
+
+  <section class="tracker section" id="tracker"><div class="shell tracker-grid"><img src="assets/pts-warning.jpg" alt="Athlete using movement as part of recovery"><div>
+    <p class="eyebrow">WHEN IT KEEPS COMING BACK</p><h2>NOTICE THE PATTERN<br>BEFORE THE NEXT FLARE-UP.</h2><p>Track what you feel, what you do and what changes it. Patterns help you make better choices—and bring better information to a professional.</p><a class="btn navy" href="coming-soon.html?f=Pain+Pattern+Tracker">Download the Pain Pattern Tracker</a></div>
+    <div class="tracker-paper"><h3>Pain Pattern Tracker</h3><label>Where it hurts<span></span></label><label>When it begins<span></span></label><label>What triggers it<span></span></label><label>How long it lasts<span></span></label><label>What changes it<span></span></label></div>
+  </div></section>
+
+  <section class="section shell" id="support"><p class="eyebrow centered">YOUR NEXT STEP</p><h2 class="centered">READY TO GET IT CHECKED?</h2><p class="centered intro">These are common starting points—not a diagnosis.</p>
+    <div class="support-grid"><button><b>＋</b><span>Primary Care</span></button><button><b>⌁</b><span>Sports Medicine</span></button><button><b>↗</b><span>Physical Therapy</span></button><button><b>✚</b><span>Athletic Trainer</span></button><button><b>▣</b><span>Pharmacist</span></button></div>
+    <div class="centered"><button class="btn primary">Find the Right Support</button></div>
+  </section>
+
+  <section class="pharmacy shell" id="pharmacy"><div class="pharmacy-copy"><p class="eyebrow red">BEFORE YOU REACH FOR SOMETHING FOR THE PAIN</p><h2>PAIN RELIEF ISN’T<br>ONE-SIZE-FITS-ALL.</h2>
+    <p>What works depends on where you hurt, what may be causing it, your medications and how you intend to use the product.</p>
+    <div class="product-callout"><span>MEET</span><strong>WasabiRub</strong><p>Topical pain relief formulated for sore muscles, aches and everyday wear and tear.</p></div>
+    <a class="btn primary" href="wasabirub.html">Explore WasabiRub</a></div><img src="assets/pts-wasabirub.jpg" alt="WasabiRub topical pain relief beside a gym bag and towel">
+  </section>
+
+  <section class="section shell" id="articles"><p class="eyebrow centered">KNOW MORE. MOVE SMARTER.</p><h2 class="centered">THE QUESTIONS ATHLETES ASK<br>WHEN SOMETHING HURTS.</h2>
+    <div class="article-grid">
+      <article><img src="assets/pts-art-soreness.jpg" alt=""><div><small>RECOVERY</small><h3>Is This Normal Post-Workout Soreness?</h3><a href="injuries.html">Read Article →</a></div></article>
+      <article><img src="assets/pts-art-return.jpg" alt=""><div><small>RECURRING PAIN</small><h3>Why Does the Same Pain Keep Coming Back?</h3><a href="article-recovery-habits.html">Read Article →</a></div></article>
+      <article><img src="assets/pts-modify.jpg" alt=""><div><small>TRAINING</small><h3>Should I Work Out When Something Hurts?</h3><a href="coming-soon.html?f=Should+I+Work+Out+When+Something+Hurts">Read Article →</a></div></article>
+      <article><img src="assets/pts-warning.jpg" alt=""><div><small>MINDSET</small><h3>Why Pushing Through Isn’t a Recovery Plan</h3><a href="coming-soon.html?f=Why+Pushing+Through+Isnt+a+Recovery+Plan">Read Article →</a></div></article>
+      <article><img src="assets/pts-art-return.jpg" alt=""><div><small>MODIFY</small><h3>What Does Modifying a Workout Look Like?</h3><a href="coming-soon.html?f=What+Does+Modifying+a+Workout+Look+Like">Read Article →</a></div></article>
+      <article><img src="assets/pts-art-medication.jpg" alt=""><div><small>NEXT STEP</small><h3>When Is It Time to Get an Injury Checked?</h3><a href="article-nsaids.html">Read Article →</a></div></article>
+    </div>
+  </section>
+
+  <section class="final-cta"><div class="shell"><h2>YOU DON’T HAVE TO GUESS<br>YOUR WAY THROUGH PAIN.</h2><p>Start with what you’re noticing. We’ll help you find a smarter next step.</p><div class="button-row"><a class="btn primary" href="#pathways">Find Your Next Step</a><a class="btn outline light-outline" href="mailto:info@sportpharm.com">Talk to SportPharm</a></div></div></section>
+  <footer class="footer" id="footer">
+    <div><a class="brand" href="#top">SPORTPHARM<small style="color:#aab5c4">EVERYDAY ATHLETE</small></a><p>Sports pharmacy expertise. Practical guidance for real life.</p></div>
+    <div><h3>Athletes</h3><a href="#pathways">Start here</a><a href="#stop">Pain & injury</a><a href="#recovery">Recovery basics</a></div>
+    <div><h3>Sports Pharmacy</h3><a href="#pharmacy">Medication guidance</a><a href="#pharmacy">Supplement review</a><a href="mailto:info@sportpharm.com">Ask a question</a></div>
+    <div><h3>Company</h3><a href="https://sportpharm.com/about/">About us</a><a href="https://sportpharm.com/contact/">Contact</a><p>© 2026 SportPharm</p></div>
+  </footer>
+</main>
+</body>
+</html>
