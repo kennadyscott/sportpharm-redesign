@@ -11,17 +11,19 @@ is the trigger — that's when each of these stops being theoretical.
 ## 🔴 Blockers — must work before real traffic
 
 ### 1. Contact form actually delivers
-**Status: NOT CONNECTED.** The modal on 8 pages (`index`, `wasabirub`, `push-through-or-stop`,
-`wasabirub-product`, `superhot-product`, `icetrarub-product`, `find-your-rub`,
-`how-it-works`) writes to the *visitor's own* `localStorage` and fires a `mailto:`.
-Nothing reaches SportPharm. `mailto:` silently does nothing for most mobile/webmail users.
+**Status: WIRED — needs one activation click.** All 16 forms now POST to
+**FormSubmit** (`https://formsubmit.co/ajax/info@sportpharm.com`), which forwards
+submissions to info@sportpharm.com. No account needed.
 
-- [ ] Stand up the Supabase `leads` table (see `SPORTPHARM-HQ-BRIEF.md` §2b)
-- [ ] Repoint the modal on **all 8 pages** from `mailto:` → Supabase insert
-- [ ] RLS: INSERT allowed for anon, SELECT only for authenticated
-- [ ] **Submit one real test and confirm it lands in HQ** — don't assume
-- [ ] Revert the interim "One last step / your email app should have opened" copy back to
-      a true "Message sent." once delivery is real
+- [ ] **ACTIVATE:** submit the form once on the live site. FormSubmit emails
+      info@sportpharm.com a one-time confirmation link — click it. **Until that link is
+      clicked, nothing is delivered.**
+- [ ] Send a second test after activating and confirm it arrives
+- [ ] Decide whether to stay on FormSubmit or move to Supabase with the HQ build
+      (see `SPORTPHARM-HQ-BRIEF.md` §2b) — Supabase gives you a real leads inbox
+      rather than only email
+- [ ] **Privacy:** submissions pass through a third-party relay. Fine for general
+      enquiries; revisit before inviting anyone to send health details through it
 
 ### 2. Admin console is publicly reachable
 `admin.html` is a static file on GitHub Pages — **anyone who guesses the URL can open it.**
