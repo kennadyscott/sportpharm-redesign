@@ -11,17 +11,18 @@ is the trigger — that's when each of these stops being theoretical.
 ## 🔴 Blockers — must work before real traffic
 
 ### 1. Contact form actually delivers
-**Status: WIRED — needs one activation click.** All 16 forms now POST to
-**FormSubmit** (`https://formsubmit.co/ajax/info@sportpharm.com`), which forwards
-submissions to info@sportpharm.com. No account needed.
+**Status: ✅ LIVE AND ACTIVATED (2026-07-29).** All 16 forms POST to **FormSubmit**
+(`https://formsubmit.co/ajax/info@sportpharm.com`), which forwards to info@sportpharm.com.
+Endpoint verified returning `success:true`.
 
-- [ ] **ACTIVATE:** submit the form once on the live site. FormSubmit emails
-      info@sportpharm.com a one-time confirmation link — click it. **Until that link is
-      clicked, nothing is delivered.**
-- [ ] Send a second test after activating and confirm it arrives
-- [ ] Decide whether to stay on FormSubmit or move to Supabase with the HQ build
-      (see `SPORTPHARM-HQ-BRIEF.md` §2b) — Supabase gives you a real leads inbox
-      rather than only email
+- [x] Wire all 16 forms to real delivery
+- [x] Activate the form (one-time confirmation link — arrived in **spam**)
+- [ ] **Whitelist `formsubmit.co`** in the info@ mailbox — the activation email landed in
+      spam, so real enquiries will too until the sender is trusted. This is the likeliest
+      way to silently lose leads.
+- [ ] Confirm the "delivery test" message arrived, then send one more from the live site
+- [ ] Decide long-term: stay on FormSubmit (email only) or move to Supabase with the HQ
+      build (see `SPORTPHARM-HQ-BRIEF.md` §2b) for a real leads inbox with status tracking
 - [ ] **Privacy:** submissions pass through a third-party relay. Fine for general
       enquiries; revisit before inviting anyone to send health details through it
 
