@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Physical Therapy</title>
+  <g fill="none" stroke="#173A6A" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="48" cy="24" r="9"/>
+    <path d="M42 36c-5 5-7 12-7 22v16M54 36c7 5 10 13 11 24M38 48l16 13 19 2"/>
+    <path d="M18 72h84c7 0 11 5 11 11H18V72ZM24 83v20M106 83v20"/>
+    <circle cx="99" cy="62" r="7"/>
+    <path d="M72 63h20M27 91h16"/>
+  </g>
+</svg>

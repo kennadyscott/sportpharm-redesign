@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Primary Care</title>
+  <g fill="none" stroke="#173A6A" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="37" cy="18" r="4" fill="#173A6A" stroke="none"/>
+    <circle cx="73" cy="18" r="4" fill="#173A6A" stroke="none"/>
+    <path d="M37 21v19c0 12 8 21 18 21s18-9 18-21V21"/>
+    <path d="M55 61v8c0 15 10 25 23 25s22-9 22-21v-6"/>
+    <circle cx="100" cy="57" r="10"/>
+    <circle cx="100" cy="57" r="3" fill="#173A6A" stroke="none"/>
+  </g>
+</svg>

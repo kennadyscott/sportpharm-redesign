@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Sports Medicine</title>
+  <g fill="none" stroke="#173A6A" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17 78c10-2 16-9 22-18l10-15c3-4 7-4 10-1l8 9c6 7 14 11 25 13l10 2c6 1 10 6 10 12v7H22c-6 0-9-3-9-7 0-1 1-2 4-2Z"/>
+    <path d="M29 73c17 4 28 7 40 14M51 54l11 8M45 62l11 8M39 69l10 7M17 87h95"/>
+    <circle cx="96" cy="31" r="18" fill="#F7FAFD"/>
+    <path d="M96 23v16M88 31h16"/>
+  </g>
+</svg>
