@@ -119,9 +119,9 @@
 .tri span{font-size:13px;color:var(--muted);line-height:1.55}
 .tri .g b{background:#e5f4ec;color:#12925a}.tri .y b{background:#fbf1de;color:#c07806}.tri .r b{background:#fbe7e6;color:#b3261e}
 
-.pacts a{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:6px;padding:11px 15px;font-size:12px;font-weight:900;color:var(--ink);transition:.15s}
-.pacts a:first-child{background:var(--red);border-color:var(--red);color:#fff}
-.pacts a:not(:first-child):hover{border-color:var(--red);color:var(--red)}
+
+
+
 .pback{display:block;margin:auto auto 0;padding-top:18px;border:0;background:none;font:inherit;font-size:12px;font-weight:800;color:var(--muted);cursor:pointer}
 .pback:hover{color:var(--ink)}
 @media(max-width:1000px){.cards4{grid-template-columns:1fr 1fr}.pcols{grid-template-columns:1fr;gap:18px}.stop-stage{min-height:0}.stop-panel{position:static;margin-top:18px}}
@@ -336,22 +336,18 @@
   var PANELS={
     started:{t:"It just started",l:"Start with what happened.",
       notice:["When the discomfort began — today, or during a recent session","Whether it came on suddenly or gradually","Whether there was a fall, twist, impact or one specific movement","Whether it’s broad and spread out, or in one precise spot you can point to","Whether you can move and bear weight normally","Whether there’s swelling, bruising or a feeling of instability"],
-      today:"Pause the movement that aggravates it and reduce the load rather than testing it repeatedly. Keep moving comfortably elsewhere. Most ordinary soreness settles over a few days — what matters is whether the pattern improves or worsens.",
-      acts:[["Read: Soreness or Injury?","soreness-check.html"],["See when to get help","push-through-or-stop.html#support"]]},
+      today:"Pause the movement that aggravates it and reduce the load rather than testing it repeatedly. Keep moving comfortably elsewhere. Most ordinary soreness settles over a few days — what matters is whether the pattern improves or worsens."},
     recurring:{t:"It keeps coming back",l:"Look for the pattern, not just the pain.",
       notice:["Which movement or activity reliably triggers it","Whether it returns in the same place each time","How long it lasts once it appears","Whether your training volume or intensity changed recently","What you’ve already tried, and what actually helped","Whether it’s starting to affect performance or everyday movement"],
-      today:"Recurring discomfort that resolves and returns is usually telling you something about load, movement or recovery — not something that rest alone will settle. Tracking when it shows up is more useful than rating how much it hurts.",
-      acts:[["Understand the pattern","push-through-or-stop.html"],["Why rest isn’t fixing it","article-return-injury.html"],["When it deserves an evaluation","push-through-or-stop.html#support"]]},
+      today:"Recurring discomfort that resolves and returns is usually telling you something about load, movement or recovery — not something that rest alone will settle. Tracking when it shows up is more useful than rating how much it hurts."},
     train:{t:"I’m not sure I should train",l:"Train, modify or pause — a simple way to decide.",
       tri:[["g","Green","Mild, familiar soreness. It eases once you’re warmed up and doesn’t change how you move. Training as planned is reasonable."],
            ["y","Yellow","Pain that changes your technique, limits your range of motion, or makes you hesitant. Modify the session — reduce load, change the movement, or train something else."],
            ["r","Red","Severe pain, significant swelling, instability or giving way, inability to bear weight, numbness, or symptoms after a head impact. Stop and get it assessed."]],
-      today:"These are patterns to weigh, not permission. Nothing here can examine you — if something is worsening, or you’re unsure, an evaluation is the sensible call rather than a training decision.",
-      acts:[["Decide how to approach today","build-recovery-plan.html"],["See the warning signs","push-through-or-stop.html"]]},
+      today:"These are patterns to weigh, not permission. Nothing here can examine you — if something is worsening, or you’re unsure, an evaluation is the sensible call rather than a training decision."},
     checked:{t:"I’m ready to get it checked",l:"Match the concern to the right kind of professional.",
       notice:["<b>Primary care</b> — symptoms that are hard to categorise, or combined with other health concerns","<b>Sports medicine</b> — pain caused or aggravated by sport, recurring injuries, return-to-activity questions","<b>Physical therapy</b> — pain that changes how you move, rebuilding strength after injury","<b>Athletic trainer</b> — school, club or team athletes; immediate guidance and return-to-play","<b>Pharmacist</b> — choosing a product, checking interactions, clean-sport questions"],
-      today:"You don’t need to know which one is right before you start. The guided tool asks three questions and suggests a starting point — including flagging when something should be seen promptly rather than researched.",
-      acts:[["Find the right support","push-through-or-stop.html#support"],["Compare pain-relief options","pain-relief-options.html"]]}
+      today:"You don’t need to know which one is right before you start. The guided tool asks three questions and suggests a starting point — including flagging when something should be seen promptly rather than researched."}
   };
   var stage=document.getElementById("stopStage"), cards=document.getElementById("stopCards"),
       panel=document.getElementById("stopPanel"), body=document.getElementById("pbody");
