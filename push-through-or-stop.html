@@ -253,6 +253,38 @@ a{color:inherit;text-decoration:none}
 .modal-fallback a{color:#c62b23;font-weight:800}
 
 .path-icon{width:56px;height:56px;display:block;margin:0 auto 16px;object-fit:contain}
+
+/* ---- when-to-get-help modal ---- */
+.care-ov{position:fixed;inset:0;z-index:210;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(10,25,45,.66)}
+.care-ov.open{display:flex}
+.care{position:relative;width:100%;max-width:620px;max-height:calc(100vh - 40px);overflow:auto;background:#fff;border-radius:14px;padding:32px 34px 26px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.care-x{position:absolute;top:12px;right:16px;border:0;background:none;font-size:26px;line-height:1;color:#8a95a5;cursor:pointer}
+.care-x:hover{color:#13223a}
+.care h2{font-size:29px;margin:0 0 6px;line-height:1.06}
+.care .csub{margin:0 0 22px;color:#5f6b7d;font-size:14px}
+.tier{border:1px solid #e0e5ec;border-radius:10px;padding:20px 22px;margin-bottom:14px;border-left-width:5px}
+.tier.t1{border-left-color:#b3261e;background:#fdf5f4}
+.tier.t2{border-left-color:#c07806;background:#fdfaf3}
+.tier.t3{border-left-color:#174da0;background:#f5f8fd}
+.tier h3{font-size:18px;margin:0 0 4px}
+.tier .when{margin:0 0 10px;font-size:13px;color:#5f6b7d}
+.tier ul{margin:0 0 16px;padding-left:19px;font-size:14px;line-height:1.75;color:#42505f}
+.tier .tbtn{display:inline-flex;align-items:center;gap:8px;border-radius:7px;padding:11px 16px;font-size:13px;font-weight:800;border:0;cursor:pointer;text-decoration:none}
+.tier.t1 .tbtn{background:#b3261e;color:#fff}
+.tier.t2 .tbtn{background:#0a203d;color:#fff}
+.tier.t3 .tbtn{background:#fff;color:#0a203d;border:1px solid #c3ccd8}
+.tier .tbtn:hover{opacity:.9}
+.care-note{font-size:12px;color:#7a8595;line-height:1.65;border-top:1px solid #e6eaf0;padding-top:14px;margin:6px 0 0}
+/* provider view */
+.prov{display:grid;gap:10px;margin-bottom:18px}
+.prov div{display:grid;grid-template-columns:150px 1fr;gap:14px;padding:12px 14px;border:1px solid #e0e5ec;border-radius:8px;font-size:14px}
+.prov b{color:#13223a}
+.prov span{color:#5f6b7d;line-height:1.55}
+.care-acts{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:8px}
+.care-acts a,.care-acts button{display:inline-flex;align-items:center;gap:7px;border:1px solid #c3ccd8;background:#fff;border-radius:7px;padding:11px 15px;font:inherit;font-size:13px;font-weight:800;color:#13223a;cursor:pointer;text-decoration:none}
+.care-acts a:first-child{background:#0a203d;border-color:#0a203d;color:#fff}
+.care-acts a:not(:first-child):hover,.care-acts button:hover{border-color:#b3261e;color:#b3261e}
+@media(max-width:620px){.prov div{grid-template-columns:1fr;gap:3px}.care{padding:26px 20px 20px}}
 </style>
 </head>
 <body>
@@ -305,7 +337,7 @@ a{color:inherit;text-decoration:none}
     <p class="eyebrow red">KNOW WHEN TO PAUSE</p><h2>PAUSE AND PAY ATTENTION.</h2>
     <p>Stop activity and seek appropriate care if something feels serious, is getting worse or changes how your body functions.</p>
     <div class="warning-grid"><span>▲ Major swelling or bruising</span><span>▲ Numbness or tingling</span><span>▲ Inability to bear weight</span><span>▲ Severe or worsening pain</span><span>▲ Instability or giving way</span><span>▲ Symptoms after a head impact</span></div>
-    <a class="btn navy" href="sports-medicine.html">Know When to Seek Care</a>
+    <button class="btn navy" id="openCare">See When to Get Help</button>
   </div></section>
 
   <section class="section shell" id="soreness"><p class="eyebrow centered">READ THE SIGNALS</p><h2 class="centered">SORENESS—OR A SIGN TO SLOW DOWN?</h2>
@@ -604,5 +636,76 @@ a{color:inherit;text-decoration:none}
       });
     })();
   </script>
+<div class="care-ov" id="careModal" role="dialog" aria-modal="true" aria-labelledby="careTitle">
+  <div class="care">
+    <button class="care-x" data-care-close aria-label="Close">&times;</button>
+    <div id="careView"></div>
+  </div>
+</div>
+<script>
+/* When to get help — urgency-triaged, education only. No product content in here. */
+(function(){
+  var ov=document.getElementById("careModal"), view=document.getElementById("careView");
+  if(!ov) return;
+
+  var TRIAGE='<h2 id="careTitle">When should you get help?</h2>'+
+    '<p class="csub">Three levels, by urgency. If you are unsure, treat it as the more urgent one.</p>'+
+
+    '<div class="tier t1"><h3>Get emergency help now</h3>'+
+    '<p class="when">Contact emergency services for symptoms such as:</p>'+
+    '<ul><li>Loss of consciousness</li><li>Trouble breathing or chest pain</li><li>Uncontrolled bleeding</li>'+
+    '<li>A serious head, neck or spine injury</li><li>Sudden loss of movement or feeling</li>'+
+    '<li>Severe confusion or rapidly worsening symptoms</li></ul>'+
+    '<a class="tbtn" href="tel:911">Contact Emergency Services</a></div>'+
+
+    '<div class="tier t2"><h3>Seek prompt medical evaluation</h3>'+
+    '<p class="when">Consider urgent or same-day evaluation when you notice:</p>'+
+    '<ul><li>Inability to bear weight or use the affected area</li><li>Major or rapidly increasing swelling</li>'+
+    '<li>An obvious deformity</li><li>Numbness, tingling or significant weakness</li>'+
+    '<li>Instability or a joint that repeatedly gives way</li><li>Severe or worsening pain</li>'+
+    '<li>Symptoms following a head impact</li></ul>'+
+    '<button class="tbtn" data-care-providers>Find the Right Type of Care</button></div>'+
+
+    '<div class="tier t3"><h3>Schedule a professional evaluation</h3>'+
+    '<p class="when">Arrange an appointment when:</p>'+
+    '<ul><li>Pain keeps returning</li><li>Symptoms are not gradually improving</li>'+
+    '<li>The issue repeatedly interrupts training</li>'+
+    '<li>Your movement, strength or confidence has changed</li>'+
+    '<li>You are relying on pain relief to continue activity</li></ul>'+
+    '<button class="tbtn" data-care-providers>See Who Can Help</button></div>'+
+
+    '<p class="care-note">This is general education, not a diagnosis. SportPharm does not evaluate or treat injuries. '+
+    'If symptoms are severe, worsening, or you are unsure, seek care rather than waiting.</p>';
+
+  var PROVIDERS='<h2 id="careTitle">Which kind of care fits?</h2>'+
+    '<p class="csub">A starting point, not a rule. Any of these can redirect you if another fits better.</p>'+
+    '<div class="prov">'+
+    '<div><b>Primary care</b><span>General evaluation, or an uncertain starting point.</span></div>'+
+    '<div><b>Sports medicine</b><span>Activity-related injury, recurring pain or return-to-sport concerns.</span></div>'+
+    '<div><b>Physical therapy</b><span>Movement, strength, mobility and rehabilitation.</span></div>'+
+    '<div><b>Athletic trainer</b><span>Training modification, injury support and return-to-play.</span></div>'+
+    '<div><b>Pharmacist</b><span>Medication, topical relief, interactions and product-safety questions.</span></div>'+
+    '</div>'+
+    '<div class="care-acts">'+
+    '<a href="#contact" data-open-contact>Ask a SportPharm Pharmacist</a>'+
+    '<a href="tel:911" style="display:none"></a>'+
+    '<button data-care-back>&larr; Back to when to get help</button>'+
+    '</div>'+
+    '<p class="care-note">Contact your own healthcare provider for evaluation or treatment. '+
+    'A pharmacist can help with medication and product questions, but cannot diagnose an injury.</p>';
+
+  function render(html){ view.innerHTML=html; bind(); ov.querySelector(".care").scrollTop=0; }
+  function bind(){
+    view.querySelectorAll("[data-care-providers]").forEach(function(b){b.addEventListener("click",function(){render(PROVIDERS);});});
+    view.querySelectorAll("[data-care-back]").forEach(function(b){b.addEventListener("click",function(){render(TRIAGE);});});
+  }
+  function open(){ render(TRIAGE); ov.classList.add("open"); document.body.style.overflow="hidden"; }
+  function close(){ ov.classList.remove("open"); document.body.style.overflow=""; }
+  document.getElementById("openCare").addEventListener("click",open);
+  ov.querySelectorAll("[data-care-close]").forEach(function(b){b.addEventListener("click",close);});
+  ov.addEventListener("click",function(e){ if(e.target===ov) close(); });
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape" && ov.classList.contains("open")) close(); });
+})();
+</script>
 </body>
 </html>
