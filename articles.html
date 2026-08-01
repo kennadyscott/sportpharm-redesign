@@ -213,6 +213,41 @@ footer{background:#081428;color:#93a3b8;padding:52px 0 26px}
   .hero-copy{max-width:none}
 }
 @media(max-width:560px){.need .row{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}.final .wrap{flex-direction:column;align-items:flex-start}}
+
+/* ---- site chrome ---- */
+.menu{display:none}
+.header2{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.98);border-bottom:1px solid #e5e9ef}
+.h2wrap{display:flex;align-items:center;gap:18px;height:76px;padding:0 4vw}
+.logo2{display:flex;flex-direction:column;line-height:1;flex-shrink:0}
+.logo2 img{width:150px;display:block}
+.logo2 .tag2{font-family:Georgia,serif;font-weight:700;font-size:10px;color:var(--ink);margin-top:5px;white-space:nowrap;text-transform:none;letter-spacing:normal;font-stretch:normal}
+.mainnav2{display:flex;align-items:center;gap:2px;margin-left:auto;font-family:"Inter",Arial,sans-serif}
+.ni{position:relative}
+.nl{display:inline-flex;align-items:center;gap:5px;background:none;border:0;cursor:pointer;font-family:"Inter",Arial,sans-serif;font-weight:600;font-size:14px;color:var(--ink);padding:8px 11px;border-radius:7px;white-space:nowrap;text-transform:none;letter-spacing:normal}
+.nl:hover{color:var(--red)}
+.nl .crt{width:11px;height:11px;opacity:.5}
+.dd{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px;min-width:232px;box-shadow:0 20px 40px -16px #10294a40;opacity:0;visibility:hidden;transform:translateY(6px);transition:.16s;z-index:40}
+.ni:hover .dd{opacity:1;visibility:visible;transform:translateY(0)}
+.dd a{display:block;padding:9px 12px;border-radius:7px;font-weight:600;font-size:13.5px;color:var(--ink);text-transform:none;letter-spacing:normal}
+.dd a:hover{background:var(--soft);color:var(--red)}
+.dd a.on{color:var(--red)}
+.caps2{display:flex;align-items:center;gap:10px;margin-left:14px;padding-left:16px;border-left:1px solid var(--line)}
+.cap2{display:inline-flex;align-items:center;gap:7px;font-family:"Bebas Neue","Arial Narrow",sans-serif;font-size:17px;letter-spacing:.05em;text-transform:uppercase;padding:9px 18px;border-radius:999px;white-space:nowrap;transition:.16s;font-stretch:normal}
+.cap2 svg{width:15px;height:15px}
+.capred{background:var(--red);color:#fff;box-shadow:0 9px 24px -9px rgba(224,49,42,.55)}
+.capred:hover{transform:translateY(-1px)}
+.capnavy{background:var(--navy);color:#fff}
+.capnavy:hover{background:#123059;transform:translateY(-1px)}
+.ptoggle{display:inline-flex;align-items:center;gap:2px;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:3px}
+.pt-opt{font-family:"Inter",Arial,sans-serif;font-weight:700;font-size:11.5px;color:var(--muted);padding:8px 13px;border-radius:999px;white-space:nowrap;transition:.15s;text-transform:none;letter-spacing:normal}
+.pt-opt:hover{color:var(--ink)}
+.pt-opt.on{background:var(--navy);color:#fff}
+.mobilemenu2{display:none;flex-direction:column;background:#fff;border-bottom:1px solid var(--line);padding:12px 4vw 20px;font-family:"Inter",Arial,sans-serif}
+.mobilemenu2.open{display:flex}
+.mobilemenu2 a{font-weight:600;font-size:14px;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--line);text-transform:none}
+.mm2-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);padding:12px 0 2px}
+@media(max-width:950px){.menu{background:none;border:0;display:block}.menu i{background:var(--navy);display:block;height:2px;margin:5px;width:24px}}
+@media(max-width:1120px){.mainnav2,.caps2{display:none}.header2 .menu{display:block;margin-left:auto}}
 </style>
 <style>
 .artwrap{max-width:748px;margin:0 auto;padding:0 26px}
@@ -245,34 +280,33 @@ footer{background:#081428;color:#93a3b8;padding:52px 0 26px}
 </style>
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <a class="logo" href="index.html"><img src="assets/wordmark-dark.png" alt="SportPharm"><span class="tag">Stay ready for whatever moves you.</span></a>
-    <nav class="mainnav">
-      <div class="navitem">
-        <button class="navlink-dd" id="wbyhTrigger">What Brings You Here <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="dropdown"><a href="index.html" class="on">Everyday Athlete</a><a href="pro-athlete.html">Pro Athlete</a><a href="sports-medicine.html">Healthcare Professional</a></div>
+<header class="header2">
+    <div class="h2wrap">
+      <a class="logo2" href="index.html"><img src="assets/wordmark-dark.png" alt="SportPharm"><span class="tag2">Stay ready for whatever moves you.</span></a>
+      <nav class="mainnav2">
+        <div class="ni">
+          <button class="nl">What Brings You Here <svg class="crt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="dd"><a href="push-through-or-stop.html">Push Through or Stop?</a><a href="recovery-made-simple.html">Recovery Made Simple</a><a href="sports-pharmacy-explained.html">Sports Pharmacy Explained</a><a href="is-this-for-me.html">Is This for Me?</a></div>
+        </div>
+        <a class="nl" href="articles.html">Articles</a>
+        <a class="nl" href="#contact" data-open-contact>Contact</a>
+      </nav>
+      <div class="caps2">
+        <a class="cap2 capred" href="wasabirub.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="9" width="18" height="7" rx="3.5" transform="rotate(-45 12 12)"/><path d="M8.5 8.5l7 7"/></svg> WasabiRub</a>
+        <div class="ptoggle" role="group" aria-label="Choose your experience"><a class="pt-opt on" href="index.html">Everyday Athlete</a><a class="pt-opt" href="pro-athlete.html">Pro Athlete</a><a class="pt-opt" href="sports-medicine.html">Healthcare / AT</a></div>
       </div>
-      <a href="athlete-hub.html">Athlete Hub</a>
-      <a href="articles.html" class="on">Articles</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="nav-caps">
-      <a class="cap cap-red" href="wasabirub.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="9" width="18" height="7" rx="3.5" transform="rotate(-45 12 12)"/><path d="M8.5 8.5l7 7"/></svg> WasabiRub</a>
-      <a class="cap cap-navy" href="sports-medicine.html">For Professionals</a>
+      <button class="menu" aria-label="Toggle navigation" aria-expanded="false"><i></i><i></i><i></i></button>
     </div>
-    <button class="menu-btn" id="menuBtn" aria-label="Menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-  </div>
-  <nav class="mobilemenu" id="mobilemenu">
-    <div class="mm-lbl">What Brings You Here</div>
-    <a href="index.html" class="on">Everyday Athlete</a><a href="pro-athlete.html">Pro Athlete</a><a href="sports-medicine.html">Healthcare Professional</a>
-    <a href="athlete-hub.html">Athlete Hub</a>
-    <a href="sports-medicine.html">For Professionals</a>
-    <a href="wasabirub.html">WasabiRub</a>
-    <a href="articles.html">Articles</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+    <nav class="mobilemenu2" id="mobilemenu2">
+      <div class="mm2-lbl">What Brings You Here</div>
+      <a href="push-through-or-stop.html">Push Through or Stop?</a><a href="recovery-made-simple.html">Recovery Made Simple</a><a href="sports-pharmacy-explained.html">Sports Pharmacy Explained</a><a href="is-this-for-me.html">Is This for Me?</a>
+      <a href="articles.html">Articles</a>
+      <a href="#contact" data-open-contact>Contact</a>
+      <a href="wasabirub.html">WasabiRub</a>
+      <div class="mm2-lbl">I&rsquo;m a</div>
+      <a href="index.html">Everyday Athlete</a><a href="pro-athlete.html">Pro Athlete</a><a href="sports-medicine.html">Healthcare / Athletic Trainer</a>
+    </nav>
+  </header>
 <div class="idx-head wrap">
   <h1>Articles</h1>
   <p>Practical, evidence-informed guidance on recovery, medication, and getting back to what moves you.</p>
@@ -344,5 +378,6 @@ footer{background:#081428;color:#93a3b8;padding:52px 0 26px}
   if(force){show();}
 })();
 </script>
+<script>(function(){var b=document.querySelector(".header2 .menu"),m=document.getElementById("mobilemenu2");if(b&&m)b.addEventListener("click",function(){m.classList.toggle("open");});})();</script>
 </body>
 </html>
