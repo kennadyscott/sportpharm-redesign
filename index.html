@@ -101,7 +101,7 @@
 .stop-stage{position:relative;min-height:430px}
 #stopCards{transition:opacity .25s ease}
 #stopCards.fade{opacity:0;pointer-events:none}
-.stop-panel{position:absolute;inset:0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:26px 30px;overflow:auto;opacity:0;transition:opacity .25s ease}
+.stop-panel{position:absolute;inset:0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:26px 30px 20px;display:flex;flex-direction:column;overflow:auto;opacity:0;transition:opacity .25s ease}
 .stop-panel.show{opacity:1}
 .ptabs{display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:20px}
 .ptab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font:inherit;font-size:11.5px;font-weight:800;color:var(--muted);cursor:pointer;transition:.15s}
@@ -118,11 +118,11 @@
 .tri b{font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:20px;text-align:center}
 .tri span{font-size:13px;color:var(--muted);line-height:1.55}
 .tri .g b{background:#e5f4ec;color:#12925a}.tri .y b{background:#fbf1de;color:#c07806}.tri .r b{background:#fbe7e6;color:#b3261e}
-.pacts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+
 .pacts a{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:6px;padding:11px 15px;font-size:12px;font-weight:900;color:var(--ink);transition:.15s}
 .pacts a:first-child{background:var(--red);border-color:var(--red);color:#fff}
 .pacts a:not(:first-child):hover{border-color:var(--red);color:var(--red)}
-.pback{display:block;margin:18px auto 0;border:0;background:none;font:inherit;font-size:12px;font-weight:800;color:var(--muted);cursor:pointer}
+.pback{display:block;margin:auto auto 0;padding-top:18px;border:0;background:none;font:inherit;font-size:12px;font-weight:800;color:var(--muted);cursor:pointer}
 .pback:hover{color:var(--ink)}
 @media(max-width:1000px){.cards4{grid-template-columns:1fr 1fr}.pcols{grid-template-columns:1fr;gap:18px}.stop-stage{min-height:0}.stop-panel{position:static;margin-top:18px}}
 </style>
@@ -363,7 +363,7 @@
       : '<h4>What to notice</h4><ul>'+p.notice.map(function(x){return "<li>"+x+"</li>";}).join("")+'</ul>';
     body.innerHTML='<h3>'+p.t+'</h3><p class="plede">'+p.l+'</p><div class="pcols"><div>'+left+
       '</div><div><h4>'+(p.tri?"Worth remembering":"What may make sense today")+'</h4><p>'+p.today+'</p></div></div>'+
-      '<div class="pacts">'+p.acts.map(function(a){return '<a href="'+a[1]+'">'+a[0]+' <span aria-hidden="true">→</span></a>';}).join("")+'</div>';
+      '';
     stage.querySelectorAll(".ptab").forEach(function(t){t.classList.toggle("on",t.dataset.tab===k);});
   }
   function open(k){
