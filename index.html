@@ -93,6 +93,38 @@
 
 .path-icon{width:44px;height:44px;padding:9px;border-radius:50%;background:#f3f5f8;display:block;object-fit:contain}
 .round-icon{width:52px;height:52px;padding:0;border:0;display:block;margin:0 auto 28px;object-fit:contain}
+
+.cards4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:auto;max-width:1200px}
+.cards4 .image-card img{height:190px}
+.card-copy .arrow{border:0;background:none;padding:0;font:inherit;font-size:11px;font-weight:900;color:var(--red);cursor:pointer;text-align:left}
+.card-copy .arrow:hover{text-decoration:underline}
+.stop-stage{position:relative;min-height:430px}
+#stopCards{transition:opacity .25s ease}
+#stopCards.fade{opacity:0;pointer-events:none}
+.stop-panel{position:absolute;inset:0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:26px 30px;overflow:auto;opacity:0;transition:opacity .25s ease}
+.stop-panel.show{opacity:1}
+.ptabs{display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:20px}
+.ptab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font:inherit;font-size:11.5px;font-weight:800;color:var(--muted);cursor:pointer;transition:.15s}
+.ptab:hover{border-color:var(--red);color:var(--red)}
+.ptab.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.pbody h3{font-size:26px;margin:0 0 4px}
+.pbody .plede{color:var(--red);font-weight:800;font-size:13px;margin:0 0 16px}
+.pcols{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.pcols h4{font-family:Arial,sans-serif;font-size:10px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin:0 0 8px;text-transform:uppercase}
+.pcols ul{margin:0;padding-left:18px;color:var(--muted);font-size:13.5px;line-height:1.8}
+.pcols p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.7}
+.tri{display:grid;gap:8px;margin-top:4px}
+.tri div{display:grid;grid-template-columns:58px 1fr;gap:12px;align-items:start;padding:9px 11px;border-radius:6px;background:var(--soft)}
+.tri b{font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:20px;text-align:center}
+.tri span{font-size:13px;color:var(--muted);line-height:1.55}
+.tri .g b{background:#e5f4ec;color:#12925a}.tri .y b{background:#fbf1de;color:#c07806}.tri .r b{background:#fbe7e6;color:#b3261e}
+.pacts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.pacts a{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:6px;padding:11px 15px;font-size:12px;font-weight:900;color:var(--ink);transition:.15s}
+.pacts a:first-child{background:var(--red);border-color:var(--red);color:#fff}
+.pacts a:not(:first-child):hover{border-color:var(--red);color:var(--red)}
+.pback{display:block;margin:18px auto 0;border:0;background:none;font:inherit;font-size:12px;font-weight:800;color:var(--muted);cursor:pointer}
+.pback:hover{color:var(--ink)}
+@media(max-width:1000px){.cards4{grid-template-columns:1fr 1fr}.pcols{grid-template-columns:1fr;gap:18px}.stop-stage{min-height:0}.stop-panel{position:static;margin-top:18px}}
 </style>
 </head>
 <body>
@@ -151,11 +183,16 @@
     </section>
 
     <section class="block stop" id="stop">
-      <div class="intro"><p class="eyebrow" style="color:var(--red)">Pain & injury</p><h2>Push Through or Stop?</h2><p>Soreness, pain and injury don’t always come with clear instructions. Start by understanding what you’re feeling and what kind of next step may make sense.</p></div>
-      <div class="cards3">
-        <article class="image-card"><img src="assets/ea-recovery.jpg" alt="Runner noticing a new ache"><div class="card-copy"><h3>It just started</h3><p>Understand what to do when pain or discomfort first appears.</p><a class="arrow" href="#articles">Explore →</a></div></article>
-        <article class="image-card"><img src="assets/ea-recurring.jpg?v=2" alt="Everyday athlete lacing up at home before a workout"><div class="card-copy"><h3>It keeps coming back</h3><p>Explore why recurring discomfort deserves a closer look.</p><a class="arrow" href="#articles">Explore →</a></div></article>
-        <article class="image-card"><img src="assets/ea-return.jpg" alt="Athlete rebuilding with professional guidance"><div class="card-copy"><h3>I’m not sure I should train</h3><p>Learn what may help you decide whether to modify, rest or seek support.</p><a class="arrow" href="#articles">Explore →</a></div></article>
+      <div class="intro"><p class="eyebrow" style="color:var(--red)">Pain &amp; injury</p>
+        <h2>Start with what’s happening now<span>.</span></h2>
+        <p>You don’t need to diagnose yourself. Choose the situation that feels closest, and we’ll help you understand what to pay attention to and what kind of next step may make sense.</p></div>
+      <div class="stop-stage" id="stopStage">
+        <div class="cards4" id="stopCards"><article class="image-card"><img src="assets/ea-recovery.jpg" alt="Runner noticing a new ache"><div class="card-copy"><h3>It just started</h3><p>For discomfort that appeared today or during a recent activity.</p><button class="arrow" data-open="started">Check what to do next <span aria-hidden="true">→</span></button></div></article><article class="image-card"><img src="assets/ea-recurring.jpg?v=2" alt="Everyday athlete lacing up at home before a workout"><div class="card-copy"><h3>It keeps coming back</h3><p>For discomfort that improves, then repeatedly interrupts training.</p><button class="arrow" data-open="recurring">Understand the pattern <span aria-hidden="true">→</span></button></div></article><article class="image-card"><img src="assets/ea-return.jpg" alt="Athlete working with a trainer"><div class="card-copy"><h3>I’m not sure I should train</h3><p>For deciding whether today is a train, modify or pause day.</p><button class="arrow" data-open="train">Decide how to approach today <span aria-hidden="true">→</span></button></div></article><article class="image-card"><img src="assets/ea-medication.jpg" alt="Considering professional support"><div class="card-copy"><h3>I’m ready to get it checked</h3><p>For finding the right kind of professional support.</p><button class="arrow" data-open="checked">Find the right support <span aria-hidden="true">→</span></button></div></article></div>
+        <div class="stop-panel" id="stopPanel" hidden>
+          <div class="ptabs" role="tablist"><button class="ptab" data-tab="started">It just started</button><button class="ptab" data-tab="recurring">It keeps coming back</button><button class="ptab" data-tab="train">I’m not sure I should train</button><button class="ptab" data-tab="checked">I’m ready to get it checked</button></div>
+          <div class="pbody" id="pbody"></div>
+          <button class="pback" id="pback">← Back to all pathways</button>
+        </div>
       </div>
       <p class="safety">SportPharm provides education—not diagnosis or emergency care. Sudden, severe or worsening symptoms should be evaluated by a qualified healthcare professional.</p>
     </section>
@@ -293,5 +330,56 @@
       });
     })();
   </script>
+<script>
+/* Pathway guidance — cards swap in place for a focused panel (page height stays put) */
+(function(){
+  var PANELS={
+    started:{t:"It just started",l:"Start with what happened.",
+      notice:["When the discomfort began — today, or during a recent session","Whether it came on suddenly or gradually","Whether there was a fall, twist, impact or one specific movement","Whether it’s broad and spread out, or in one precise spot you can point to","Whether you can move and bear weight normally","Whether there’s swelling, bruising or a feeling of instability"],
+      today:"Pause the movement that aggravates it and reduce the load rather than testing it repeatedly. Keep moving comfortably elsewhere. Most ordinary soreness settles over a few days — what matters is whether the pattern improves or worsens.",
+      acts:[["Read: Soreness or Injury?","soreness-check.html"],["See when to get help","push-through-or-stop.html#support"]]},
+    recurring:{t:"It keeps coming back",l:"Look for the pattern, not just the pain.",
+      notice:["Which movement or activity reliably triggers it","Whether it returns in the same place each time","How long it lasts once it appears","Whether your training volume or intensity changed recently","What you’ve already tried, and what actually helped","Whether it’s starting to affect performance or everyday movement"],
+      today:"Recurring discomfort that resolves and returns is usually telling you something about load, movement or recovery — not something that rest alone will settle. Tracking when it shows up is more useful than rating how much it hurts.",
+      acts:[["Understand the pattern","push-through-or-stop.html"],["Why rest isn’t fixing it","article-return-injury.html"],["When it deserves an evaluation","push-through-or-stop.html#support"]]},
+    train:{t:"I’m not sure I should train",l:"Train, modify or pause — a simple way to decide.",
+      tri:[["g","Green","Mild, familiar soreness. It eases once you’re warmed up and doesn’t change how you move. Training as planned is reasonable."],
+           ["y","Yellow","Pain that changes your technique, limits your range of motion, or makes you hesitant. Modify the session — reduce load, change the movement, or train something else."],
+           ["r","Red","Severe pain, significant swelling, instability or giving way, inability to bear weight, numbness, or symptoms after a head impact. Stop and get it assessed."]],
+      today:"These are patterns to weigh, not permission. Nothing here can examine you — if something is worsening, or you’re unsure, an evaluation is the sensible call rather than a training decision.",
+      acts:[["Decide how to approach today","build-recovery-plan.html"],["See the warning signs","push-through-or-stop.html"]]},
+    checked:{t:"I’m ready to get it checked",l:"Match the concern to the right kind of professional.",
+      notice:["<b>Primary care</b> — symptoms that are hard to categorise, or combined with other health concerns","<b>Sports medicine</b> — pain caused or aggravated by sport, recurring injuries, return-to-activity questions","<b>Physical therapy</b> — pain that changes how you move, rebuilding strength after injury","<b>Athletic trainer</b> — school, club or team athletes; immediate guidance and return-to-play","<b>Pharmacist</b> — choosing a product, checking interactions, clean-sport questions"],
+      today:"You don’t need to know which one is right before you start. The guided tool asks three questions and suggests a starting point — including flagging when something should be seen promptly rather than researched.",
+      acts:[["Find the right support","push-through-or-stop.html#support"],["Compare pain-relief options","pain-relief-options.html"]]}
+  };
+  var stage=document.getElementById("stopStage"), cards=document.getElementById("stopCards"),
+      panel=document.getElementById("stopPanel"), body=document.getElementById("pbody");
+  if(!stage) return;
+  function render(k){
+    var p=PANELS[k]; if(!p) return;
+    var left = p.tri
+      ? '<h4>How it usually breaks down</h4><div class="tri">'+p.tri.map(function(x){return '<div class="'+x[0]+'"><b>'+x[1]+'</b><span>'+x[2]+'</span></div>';}).join("")+'</div>'
+      : '<h4>What to notice</h4><ul>'+p.notice.map(function(x){return "<li>"+x+"</li>";}).join("")+'</ul>';
+    body.innerHTML='<h3>'+p.t+'</h3><p class="plede">'+p.l+'</p><div class="pcols"><div>'+left+
+      '</div><div><h4>'+(p.tri?"Worth remembering":"What may make sense today")+'</h4><p>'+p.today+'</p></div></div>'+
+      '<div class="pacts">'+p.acts.map(function(a){return '<a href="'+a[1]+'">'+a[0]+' <span aria-hidden="true">→</span></a>';}).join("")+'</div>';
+    stage.querySelectorAll(".ptab").forEach(function(t){t.classList.toggle("on",t.dataset.tab===k);});
+  }
+  function open(k){
+    render(k);
+    stage.style.minHeight=Math.max(stage.offsetHeight,430)+"px";
+    cards.classList.add("fade");
+    panel.hidden=false; requestAnimationFrame(function(){panel.classList.add("show");});
+  }
+  function close(){
+    panel.classList.remove("show");
+    setTimeout(function(){panel.hidden=true;cards.classList.remove("fade");},220);
+  }
+  stage.querySelectorAll("[data-open]").forEach(function(b){b.addEventListener("click",function(){open(b.dataset.open);});});
+  stage.querySelectorAll(".ptab").forEach(function(t){t.addEventListener("click",function(){render(t.dataset.tab);});});
+  document.getElementById("pback").addEventListener("click",close);
+})();
+</script>
 </body>
 </html>
