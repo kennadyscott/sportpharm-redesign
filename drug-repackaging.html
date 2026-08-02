@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pharmacy Services | SportPharm</title><meta name="description" content="Compounding, drug repackaging, blister packaging, inventory management, supplement support, retail and concierge sports pharmacy for athletic trainers, physicians and professional teams."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Roboto+Condensed:wght@700;900&family=Roboto+Slab:wght@700;800&display=swap" rel="stylesheet"><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Drug Repackaging | SportPharm</title><meta name="description" content="Drug repackaging for athletes and teams &mdash; prescribed medications organized into pre-portioned blister packs and convenience containers, labelled with batch and lot, and verified by a pharmacist."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Roboto+Condensed:wght@700;900&family=Roboto+Slab:wght@700;800&display=swap" rel="stylesheet"><style>
 :root{
   --sp-red:#d6202a;--sp-red-2:#a3161e;
   --navy-900:#18232e;--navy-800:#22303e;
@@ -594,11 +594,57 @@ footer{background:#11181f;padding:40px 0;text-align:center}
 .cs-note-dot span{flex:0 0 9px;width:9px;height:9px;border-radius:50%;background:#d6202a;margin-top:5px}
 @media(max-width:700px){.cs-step{grid-template-columns:38px 1fr;gap:12px}
   .cs-dot{width:38px;height:38px;font-size:15px}
-  .cs-step:not(:last-child):before{left:19px;top:38px}}.h-spanel-tag{display:inline-block;margin-bottom:9px;padding:5px 12px;border-radius:999px;background:#fbe9ea;font-size:10.5px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#a3161e}.lnk{display:inline-flex;align-items:center;gap:7px;font-family:'Inter',system-ui,sans-serif;font-size:13.5px;font-weight:700;letter-spacing:.02em;color:#d6202a;text-decoration:none;border-bottom:2px solid #d6202a;padding-bottom:2px;transition:.16s ease}
+  .cs-step:not(:last-child):before{left:19px;top:38px}}.h-spanel-tag{display:inline-block;margin-bottom:9px;padding:5px 12px;border-radius:999px;background:#fbe9ea;font-size:10.5px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#a3161e}
+.cp-areas{background:#f4f5f6;border:1px solid #e0e3e6;border-radius:12px;padding:22px 22px 20px}
+.cp-chips{display:flex;flex-wrap:wrap;gap:8px}
+.cp-chip{display:inline-block;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid #dfe4ea;
+  font-size:13px;font-weight:600;color:#24303c}
+.cp-sub{margin:8px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.cp-sub li{font-size:12.5px;line-height:1.5;color:#656e77}
+.cp-sub li::marker{color:#d6202a}
+#proof .t-stage{padding-top:60px}
+
+
+.w-wrap{max-width:1220px;margin:0 auto;display:grid;grid-template-columns:.64fr 1.36fr;gap:48px;align-items:start}
+.w-rail .h-h2{margin:0 0 16px}
+.w-rule{display:inline-block;width:34px;height:2px;background:#d6202a;margin-right:12px;vertical-align:middle}
+.w-lede{margin:0;font-size:14px;line-height:1.6;color:#656e77;max-width:34ch}
+.w-list{border-top:1px solid #e0e3e6}
+.w-row{border-bottom:1px solid #e0e3e6}
+.w-head{width:100%;display:grid;grid-template-columns:44px 1fr auto 16px;align-items:center;gap:16px;
+  padding:17px 4px;background:none;border:0;text-align:left;cursor:pointer;font:inherit}
+.w-head:hover .w-name{color:#d6202a}
+.w-head:focus-visible{outline:2px solid #d6202a;outline-offset:2px}
+.w-num{font-family:'Inter',system-ui,sans-serif;font-size:12.5px;font-weight:800;color:#adb4bb;letter-spacing:.04em;font-variant-numeric:tabular-nums}
+.w-row.open .w-num{color:#d6202a}
+.w-mid{min-width:0}
+.w-name{display:block;font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;font-stretch:condensed;font-weight:900;
+  text-transform:uppercase;letter-spacing:-.01em;font-size:20px;line-height:1;color:#24303c;transition:color .16s ease}
+.w-sub{display:block;margin-top:5px;font-size:13.5px;line-height:1.5;color:#656e77}
+.w-tag{white-space:nowrap;padding:5px 12px;border-radius:999px;background:#fbe9ea;
+  font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#a3161e}
+.w-chev{justify-self:end;width:9px;height:9px;border-right:2px solid #8a939c;border-bottom:2px solid #8a939c;
+  transform:rotate(45deg) translate(-2px,-2px);transition:transform .24s ease,border-color .16s ease}
+.w-row.open .w-chev{border-color:#d6202a;transform:rotate(225deg) translate(-2px,-2px)}
+.w-body{padding:0 4px 20px 60px}
+.w-body p{margin:0;font-size:14px;line-height:1.62;color:#4b5560;max-width:70ch;
+  padding-left:14px;border-left:2px solid #d6202a}
+@media(max-width:1000px){
+  .w-wrap{grid-template-columns:1fr;gap:30px}
+  .w-lede{max-width:60ch}
+  .w-head{grid-template-columns:34px 1fr 14px;gap:12px;padding:15px 2px}
+  .w-tag{display:none}
+  .w-body{padding:0 2px 18px 46px}}
+@media(max-width:560px){.w-name{font-size:18px}.w-body{padding-left:2px}}.h-sec.tight-who{padding:46px 0}.lnk{display:inline-flex;align-items:center;gap:7px;font-family:'Inter',system-ui,sans-serif;font-size:13.5px;font-weight:700;letter-spacing:.02em;color:#d6202a;text-decoration:none;border-bottom:2px solid #d6202a;padding-bottom:2px;transition:.16s ease}
 .lnk:hover{color:#a3161e;border-bottom-color:#a3161e;gap:11px}
 .lnk:focus-visible{outline:2px solid #d6202a;outline-offset:3px}
 .lnk-a{width:13px;height:13px;flex:0 0 13px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13.2 4.6 11.8 6l5 5H3v2h13.8l-5 5 1.4 1.4L20.6 12 13.2 4.6Z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13.2 4.6 11.8 6l5 5H3v2h13.8l-5 5 1.4 1.4L20.6 12 13.2 4.6Z'/%3E%3C/svg%3E") center/contain no-repeat}
-</style></head><body><header>
+.w-body p{margin:0;font-size:14px;line-height:1.62;color:#4b5560;max-width:70ch;padding-left:14px;border-left:2px solid #d6202a}
+.faq-ul{margin:0;list-style-position:outside;display:flex;flex-direction:column;gap:7px;font-size:14px;line-height:1.6;color:#4b5560;max-width:70ch;border-left:2px solid #d6202a;padding:2px 0 2px 32px}
+.faq-ul li::marker{color:#d6202a}
+.rp-vs{border-left:3px solid #d6202a}
+.rp-vs-p{margin:0 0 16px;font-size:14px;line-height:1.62;color:#4b5560}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is drug repackaging, and how does it differ from compounding?", "acceptedAnswer": {"@type": "Answer", "text": "Drug repackaging organizes already-manufactured medications into custom dose formats (e.g., daily blister packs, convenience containers). Unlike compounding, we’re not altering the medication—just improving how you take it, especially for travel or strict dosing schedules."}}, {"@type": "Question", "name": "Can all medications be repackaged?", "acceptedAnswer": {"@type": "Answer", "text": "Most oral solid-dose meds qualify, but injectable, sterile, or sensitive drug forms may be excluded. Our pharmacist reviews your Rx to ensure packaging suitability and compliance with storage guidelines."}}, {"@type": "Question", "name": "Who manages the anti-doping compliance in repackaged products?", "acceptedAnswer": {"@type": "Answer", "text": "Our pharmacists verify each medication’s status with respect to WADA, USADA, NCAA (or your athlete-governing body). Packets are clearly labeled with medication name, strength, batch/lot, and dosing instructions—ideal documentation for testing scenarios."}}, {"@type": "Question", "name": "How do you handle refills and changing training schedules?", "acceptedAnswer": {"@type": "Answer", "text": "We set up automatic refill reminders tied to your athletic calendar. If schedules shift—tournaments, travel, recovery blocks—we adapt your packaging plan accordingly to prevent missed doses."}}, {"@type": "Question", "name": "How quickly will I receive my repackaged medication?", "acceptedAnswer": {"@type": "Answer", "text": "Standard turnaround is 3–5 business days from Rx receipt—1–2 days for repackaging, plus 1–3 days shipping. Expedited shipping outpaces even tight travel plans."}}]}</script></head><body><header>
   <div class="wrap nav">
     <a class="logo" href="sports-medicine.html"><img src="assets/wordmark-dark.png" alt="SportPharm"><span class="logo-tag">Behind every athlete you care for.</span></a>
     <nav class="mainnav">
@@ -607,12 +653,12 @@ footer{background:#11181f;padding:40px 0;text-align:center}
         <div class="dropdown">
           <a href="compounding.html">Specialized Compounding</a>
           <a href="drug-repackaging.html">Drug Repackaging</a>
-          <a href="#services" data-openservice="blister">Blister Packaging</a>
-          <a href="#services" data-openservice="inventory">Inventory Management</a>
-          <a href="#services" data-openservice="retail">Retail Pharmacy</a>
-          <a href="#services" data-openservice="concierge">Concierge Pharmacy</a>
-          <a href="#services" data-openservice="supplements">Supplement Support</a>
-          <a href="#services" data-openservice="customized">Customized Services</a>
+          <a href="services.html?svc=blister#services">Blister Packaging</a>
+          <a href="services.html?svc=inventory#services">Inventory Management</a>
+          <a href="services.html?svc=retail#services">Retail Pharmacy</a>
+          <a href="services.html?svc=concierge#services">Concierge Pharmacy</a>
+          <a href="services.html?svc=supplements#services">Supplement Support</a>
+          <a href="services.html?svc=customized#services">Customized Services</a>
         </div>
       </div>
       <div class="navitem">
@@ -642,115 +688,90 @@ footer{background:#11181f;padding:40px 0;text-align:center}
     <button class="menu-btn" aria-label="Menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
   </div>
 </header><main><section class="h-hero">
-  <img class="h-hero-bg" src="assets/hcp-hero.jpg" alt="Athletic trainer assessing an athlete&rsquo;s knee in a training room">
+  <img class="h-hero-bg" src="assets/spx-routine.jpg" alt="Athlete sorting medications and supplements on a kitchen counter">
   <div class="h-wrap">
     <div class="h-hero-copy">
-      <p class="h-eyebrow">Pharmacy services</p>
-      <h1>Everything the training room<br><em>orders from us.</em></h1>
-      <p>Eight services, one pharmacy &mdash; compounding, repackaging, supply, and a pharmacist who knows your roster.</p>
+      <p class="h-eyebrow">Drug repackaging</p>
+      <h1>Same medication.<br><em>A format that travels.</em></h1>
+      <p>Prescribed medications delivered in clear, pre-portioned packets or containers &mdash; built for travel, training camps and competition schedules.</p>
       <div class="h-row">
-        <a class="h-btn solid" href="#services">See all eight &rarr;</a>
-        <a class="h-btn line" href="#" data-intake>Talk to our team</a>
+        <a class="h-btn solid" href="#" data-intake>Set up repackaging &rarr;</a>
+        <a class="h-btn line" href="#benefits">See what you get</a>
       </div>
-      <div class="h-trust"><span>Licensed sports pharmacy</span><span>Since 1995</span><span>East &amp; West divisions</span></div>
+      <div class="h-trust"><span>Tamper-evident</span><span>Batch &amp; lot labelled</span><span>Pharmacist verified</span></div>
     </div>
   </div>
 </section>
 
-<section class="h-sec" id="how-we-support">
+<section class="h-sec" id="overview">
   <div class="h-wrap">
     <div class="h-support">
       <div>
-        <p class="h-eyebrow on-light">How we help</p>
-        <h2 class="h-h2">How our pharmacy supports<br><em>your athlete care team.</em></h2>
-        <p class="h-lede">SportPharm partners directly with sports medicine teams to simplify medication management, improve athlete safety and deliver fast, compliant pharmaceutical support. Every service below exists because a training room asked for it.</p>
-        <div class="h-row"><a class="h-btn solid" href="#" data-intake>Contact our team &rarr;</a></div>
+        <p class="h-eyebrow on-light">Overview</p>
+        <h2 class="h-h2">What is <em>drug repackaging?</em></h2>
+        <p class="h-lede">Drug repackaging organizes already-manufactured medications into custom dose formats &mdash; daily blister packs, convenience containers. At SportPharm&trade;, we understand that dosing convenience, compliance and anti-doping assurance are essential for athletes. Our repackaging service delivers your prescribed medications in clear, easy-to-follow, pre-portioned packets or containers, ideal for travel, training camps and competition schedules.</p>
+        <div class="h-row"><a class="h-btn solid" href="#" data-intake>Ask about repackaging &rarr;</a></div>
       </div>
-      <div class="h-stats">
-        <div><b>1995</b><span>Serving sports medicine since</span></div>
-        <div><b>8</b><span>Services, from compounding to concierge</span></div>
-        <div><b>2</b><span>Divisions &mdash; Florida and California</span></div>
+      <div class="cp-areas rp-vs">
+        <p class="cs-sublab">Repackaging is not compounding</p>
+        <p class="rp-vs-p">Unlike compounding, we&rsquo;re not altering the medication &mdash; just improving how you take it, especially for travel or strict dosing schedules.</p>
+        <a class="lnk" href="compounding.html">See compounding instead<span class="lnk-a" aria-hidden="true"></span></a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="h-sec wide soft" id="services">
+<section class="h-sec wide cs-sec" id="benefits">
   <div class="h-wrap">
-    <p class="h-eyebrow on-light">Our services</p>
-    <h2 class="h-h2">Personalized pharmacy services for<br><em>athletes and sports medicine teams.</em></h2>
-    <div class="h-rail"><div class="h-rail-vp"><div class="h-rail-tr" id="svcTrack"><a class="h-sc" href="compounding.html" data-svc="compounding" aria-expanded="false"><span class="ic"><img src="assets/icons/svc-compounding.svg" alt="" width="24" height="24"></span><b>Compounding</b><i>Learn more</i></a><a class="h-sc" href="drug-repackaging.html" data-svc="repackaging" aria-expanded="false"><span class="ic"><img src="assets/icons/svc-repackaging.svg" alt="" width="24" height="24"></span><b>Drug Repackaging</b><i>Learn more</i></a><button class="h-sc" type="button" data-svc="blister" aria-expanded="false"><span class="ic"><img src="assets/icons/svc-repackaging.svg" alt="" width="24" height="24"></span><b>Blister Packaging</b><i>Learn more</i></button><button class="h-sc" type="button" data-svc="inventory" aria-expanded="false"><span class="ic"><img src="assets/icons/svc-customized.svg" alt="" width="24" height="24"></span><b>Inventory Management</b><i>Learn more</i></button><button class="h-sc" type="button" data-svc="supplements" aria-expanded="false"><span class="ic"><img src="assets/icons/svc-supplements.svg" alt="" width="24" height="24"></span><b>Supplements</b><i>Learn more</i></button><button class="h-sc" type="button" data-svc="retail" aria-expanded="false"><span class="ic"><img src="assets/icons/svc-retail.svg" alt="" width="24" height="24"></span><b>Retail Pharmacy</b><i>Learn more</i></button><button class="h-sc" type="button" data-svc="concierge" aria-expanded="false"><span class="ic"><img src="assets/icons/svc-concierge.svg" alt="" width="24" height="24"></span><b>Concierge Pharmacy</b><i>Learn more</i></button><button class="h-sc" type="button" data-svc="customized" aria-expanded="false"><span class="ic"><img src="assets/icons/svc-customized.svg" alt="" width="24" height="24"></span><b>Customized Services</b><i>Learn more</i></button></div></div><button class="h-rbtn prev" type="button" id="svcPrev" aria-label="Previous services"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button><button class="h-rbtn next" type="button" id="svcNext" aria-label="More services"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
-    <div class="h-spanel" id="svcPanel" hidden></div>
-  </div>
-</section>
-
-
-<section class="h-sec wide cs-sec" id="pharmacist">
-  <div class="h-wrap">
-    <div class="cs-tabs" role="tablist" aria-label="Pharmacy service">
-      <button class="cs-tab on" role="tab" id="csTabA" aria-controls="csPanA" aria-selected="true" type="button">
-        <span class="cs-tic a" aria-hidden="true"></span><b>Concierge Sports Pharmacist Support</b><span class="cs-cur">Current service</span></button>
-      <button class="cs-tab" role="tab" id="csTabB" aria-controls="csPanB" aria-selected="false" type="button">
-        <span class="cs-tic b" aria-hidden="true"></span><b>Compounding Pharmacy Services</b><span class="cs-chev" aria-hidden="true"></span></button>
-    </div>
-
-    <div class="cs-pan on" id="csPanA" role="tabpanel" aria-labelledby="csTabA">
-      <div class="cs-grid">
-        <div class="cs-left">
-          <p class="cs-eyebrow"><i aria-hidden="true"></i>Concierge sports pharmacist support</p>
-          <h3>One pharmacist.<br>Your whole<br><em>performance picture.</em></h3>
-          <p class="cs-lede">Concierge sports pharmacy connects medication expertise with the way an athlete trains, recovers, travels and competes. Your pharmacist works one-to-one &mdash; and alongside the rest of the care team.</p>
-          <div class="cs-tiles"><div class="cs-tile"><span class="cs-ck" aria-hidden="true"></span><span><b>Personalized review</b><span>Medications and supplements</span></span></div><div class="cs-tile b"><span class="cs-ck" aria-hidden="true"></span><span><b>Clean-sport guidance</b><span>Banned-substance awareness</span></span></div><div class="cs-tile b"><span class="cs-ck" aria-hidden="true"></span><span><b>Integrated care</b><span>Coordination across your team</span></span></div><div class="cs-tile"><span class="cs-ck" aria-hidden="true"></span><span><b>Ongoing support</b><span>Health, recovery and adherence</span></span></div></div>
-          <div class="h-row"><a class="h-btn solid" href="concierge-pharmacy.html">Explore concierge support &rarr;</a><a class="h-btn line" href="#" data-intake>Talk with SportPharm</a></div>
-        </div>
-
-        <div class="cs-hub">
-          <p class="cs-hub-eyebrow">How support comes together</p>
-          <h4>One connected view of the athlete.</h4>
-          <p class="cs-hub-sub">Five responsibilities informing clearer, more coordinated decisions.</p>
-          <div class="cs-orbit">
-            <div class="cs-core"><span class="cs-core-ic" aria-hidden="true"></span><span class="cs-core-lab">Your clinical sports</span><b>Pharmacist</b><span class="cs-core-sub">The connecting expert</span></div>
-            <div class="cs-hc" style="grid-area:a"><b>Assess</b><span>Health and performance<br>Labs and wearable data</span></div><div class="cs-hc" style="grid-area:b"><b>Personalize</b><span>Medication recommendations<br>Patient-specific factors</span></div><div class="cs-hc" style="grid-area:c"><b>Manage</b><span>Acute and chronic care<br>Medication therapy</span></div><div class="cs-hc" style="grid-area:d"><b>Educate + coordinate</b><span>Clean sport and medication<br>Care-team communication</span></div><div class="cs-hc" style="grid-area:e"><b>Optimize</b><span>Adherence and supplements<br>Care-plan alignment</span></div>
-          </div>
-          <div class="cs-flow"><span>Athlete information</span><i aria-hidden="true">&rarr;</i><span>Pharmacy expertise</span><i aria-hidden="true">&rarr;</i><span class="on">Clear next steps</span></div>
-        </div>
+    <div class="cs-grid">
+      <div class="cs-left">
+        <p class="cs-eyebrow"><i aria-hidden="true"></i>Key benefits</p>
+        <h3>Every dose, already<br><em>counted and labelled.</em></h3>
+        <p class="cs-lede">Four things change the moment a prescription arrives pre-portioned rather than in a bottle &mdash; for the athlete carrying it and for the staff accounting for it.</p>
+        <p class="cs-fine">Most oral solid-dose medications qualify. Injectable, sterile or sensitive forms may be excluded &mdash; a pharmacist reviews every prescription for packaging suitability.</p>
       </div>
-    </div>
-    <div class="cs-pan" id="csPanB" role="tabpanel" aria-labelledby="csTabB" hidden>
-      <div class="cs-grid">
-        <div class="cs-left">
-          <p class="cs-eyebrow"><i aria-hidden="true"></i>Specialized prescription support</p>
-          <h3>When a standard medication<br><em>doesn&rsquo;t fit the athlete.</em></h3>
-          <p class="cs-lede">A compounded medication is prepared for an individual patient when a prescriber determines that an available commercial product does not appropriately meet that patient&rsquo;s clinical needs.</p>
-          <p class="cs-sublab">Compounding may address</p>
-          <div class="cs-tiles"><div class="cs-tile"><span class="cs-ck ic-plus" aria-hidden="true"></span><span><b>A specific strength</b><span>Not commercially available</span></span></div><div class="cs-tile b"><span class="cs-ck ic-form" aria-hidden="true"></span><span><b>A different dosage form</b><span>Such as a liquid or topical</span></span></div><div class="cs-tile b"><span class="cs-ck ic-block" aria-hidden="true"></span><span><b>An ingredient sensitivity</b><span>Removing an avoidable excipient</span></span></div><div class="cs-tile"><span class="cs-ck ic-check" aria-hidden="true"></span><span><b>An individual clinical need</b><span>Defined by the prescriber</span></span></div></div>
-          <div class="h-row"><a class="h-btn solid" href="#services" data-openservice="compounding">Explore compounding &rarr;</a><a class="h-btn line" href="#" data-intake>Talk with SportPharm</a></div>
-          <p class="cs-fine">Compounded medications require a patient-specific prescription and are not FDA-approved products.</p>
-        </div>
-
-        <div class="cs-hub">
-          <p class="cs-hub-eyebrow">From prescription to delivery</p>
-          <h4>A specialized process.</h4>
-          <p class="cs-hub-sub">Four clear steps from prescription through clinical review, preparation and delivery.</p>
-          <ol class="cs-steps"><li class="cs-step"><span class="cs-dot red">1</span><div class="cs-scard"><span class="cs-slab red">Prescription received</span><b>Confirm the patient-specific need</b><span class="cs-sdesc">A valid prescription defines the medication, strength, dosage form and therapeutic goal.</span></div></li><li class="cs-step"><span class="cs-dot blue">2</span><div class="cs-scard"><span class="cs-slab blue">Clinical + sport review</span><b>Evaluate appropriateness and risk</b><span class="cs-sdesc">The pharmacist reviews dosing, interactions, allergies and applicable sport rules.</span></div></li><li class="cs-step"><span class="cs-dot blue">3</span><div class="cs-scard"><span class="cs-slab blue">Prepare + verify</span><b>Compound to the prescription</b><span class="cs-sdesc">Prepared, labeled and documented; the pharmacist verifies the final product.</span></div></li><li class="cs-step"><span class="cs-dot red">4</span><div class="cs-scard"><span class="cs-slab red">Dispense + support</span><b>Package, deliver and counsel</b><span class="cs-sdesc">Storage, handling and patient-use instructions accompany the medication.</span></div></li></ol>
-          <p class="cs-note-dot"><span aria-hidden="true"></span>Sport status can depend on the ingredient, route, dose and governing body.</p>
-        </div>
+      <div class="cs-hub">
+        <p class="cs-hub-eyebrow">What repackaging delivers</p>
+        <h4>Pre-sorted, verified, ready to travel.</h4>
+        <p class="cs-hub-sub">Standard turnaround is three to five business days from prescription receipt.</p>
+        <ol class="cs-steps"><li class="cs-step"><span class="cs-dot red">01</span><div class="cs-scard"><b>Precision &amp; Convenience</b><span class="cs-sdesc">Medication pre-sorted into daily/training-block packets.</span></div></li><li class="cs-step"><span class="cs-dot blue">02</span><div class="cs-scard"><b>Safety &amp; Compliance</b><span class="cs-sdesc">Standardized labeling, tamper-evident packaging, and easy transport.</span></div></li><li class="cs-step"><span class="cs-dot blue">03</span><div class="cs-scard"><b>Pharmacist Oversight</b><span class="cs-sdesc">Final checks ensure accuracy, dosing correctness, and athlete-specific compliance.</span></div></li><li class="cs-step"><span class="cs-dot red">04</span><div class="cs-scard"><b>Travel/Competition Ready</b><span class="cs-sdesc">Ideal for travel bags, training camps, race kits, and team use.</span></div></li></ol>
+        <p class="cs-note-dot"><span aria-hidden="true"></span>Packets are labelled with medication name, strength, batch and lot, and dosing instructions.</p>
       </div>
-    </div>
-
-    <div class="cs-foot">
-      <p>Services vary by pharmacist licensure, scope of practice and collaborative care relationships.</p>
-      <p class="cs-mark">Perform. Recover. Return.</p>
     </div>
   </div>
 </section>
 
-<section class="h-sec dark">
-  <div class="h-wrap">
-    <p class="h-eyebrow">Why teams choose SportPharm</p>
-    <h2 class="h-h2">A pharmacy, not a supplier.</h2>
-    <p class="h-sub">The difference matters when a formulation has to be right, a shipment has to arrive, or an athlete has a question nobody else can answer.</p>
-    <div class="h-cred"><div><b>30 yrs</b><span>Serving sports medicine since 1995, with divisions on both coasts.</span></div><div><b>Olympic</b><span>Founded by Robert Nickell, first pharmacist of the US Olympic Medical Team, Athens 2004.</span></div><div><b>TruShield</b><span>Certified products, with documentation your athletes and compliance staff can rely on.</span></div></div>
+<section class="h-sec light-proof" id="proof">
+  <div class="h-wrap t-wrap">
+    <div class="t-rail">
+      <p class="h-eyebrow on-light">What our athletes say</p>
+      <h2 class="h-h2">A medication coach<br><em>in the race kit.</em></h2>
+      <p class="t-lede">One athlete on what changed once every dose arrived pre-packed.</p>
+    </div>
+    <div class="t-stage">
+      <span class="t-mark" aria-hidden="true">&ldquo;</span>
+      <div class="t-car">
+        <figure class="t-slide on">
+          <div class="t-stars" aria-label="Rated 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>Managing multiple supplements, prescription meds, and recovery protocols during race season is a logistical nightmare&mdash;until I started using SportPharm&trade;&rsquo;s drug repackaging. Every dose is pre-packed with clear instructions, timing aligned with my training blocks, and I never have to worry about anti-doping issues. Their pharmacist even coordinates changes when race schedules shift. It&rsquo;s like having a medication coach in my race kit.</blockquote>
+          <figcaption class="t-attr"><span class="t-ini" aria-hidden="true">SP</span>
+            <span class="t-who"><b>Endurance athlete</b><span class="t-role">Race season, multi-medication schedule</span>
+            <span class="t-org">SportPharm athlete</span></span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="h-sec wide tight-who" id="faq">
+  <div class="h-wrap w-wrap">
+    <div class="w-rail">
+      <p class="h-eyebrow on-light"><i class="w-rule" aria-hidden="true"></i>Frequently asked questions</p>
+      <h2 class="h-h2">What to expect with<br><em>drug repackaging.</em></h2>
+      <p class="w-lede">Not sure whether your prescription qualifies? Ask a pharmacist directly.</p>
+      <div class="h-row"><a class="h-btn solid" href="#" data-intake>Ask a pharmacist &rarr;</a></div>
+    </div>
+    <div class="w-list"><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq0"><span class="w-num">01</span><span class="w-mid"><span class="w-name">What is drug repackaging, and how does it differ from compounding?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq0" hidden><p>Drug repackaging organizes already-manufactured medications into custom dose formats (e.g., daily blister packs, convenience containers). Unlike compounding, we’re not altering the medication—just improving how you take it, especially for travel or strict dosing schedules.</p></div></div><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq1"><span class="w-num">02</span><span class="w-mid"><span class="w-name">Can all medications be repackaged?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq1" hidden><p>Most oral solid-dose meds qualify, but injectable, sterile, or sensitive drug forms may be excluded. Our pharmacist reviews your Rx to ensure packaging suitability and compliance with storage guidelines.</p></div></div><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq2"><span class="w-num">03</span><span class="w-mid"><span class="w-name">Who manages the anti-doping compliance in repackaged products?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq2" hidden><p>Our pharmacists verify each medication’s status with respect to WADA, USADA, NCAA (or your athlete-governing body). Packets are clearly labeled with medication name, strength, batch/lot, and dosing instructions—ideal documentation for testing scenarios.</p></div></div><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq3"><span class="w-num">04</span><span class="w-mid"><span class="w-name">How do you handle refills and changing training schedules?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq3" hidden><p>We set up automatic refill reminders tied to your athletic calendar. If schedules shift—tournaments, travel, recovery blocks—we adapt your packaging plan accordingly to prevent missed doses.</p></div></div><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq4"><span class="w-num">05</span><span class="w-mid"><span class="w-name">How quickly will I receive my repackaged medication?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq4" hidden><p>Standard turnaround is 3–5 business days from Rx receipt—1–2 days for repackaging, plus 1–3 days shipping. Expedited shipping outpaces even tight travel plans.</p></div></div></div>
   </div>
 </section>
 
@@ -808,10 +829,10 @@ footer{background:#11181f;padding:40px 0;text-align:center}
       <ul>
         <li><a href="compounding.html">Compounding</a></li>
         <li><a href="drug-repackaging.html">Drug Repackaging</a></li>
-        <li><a href="#services" data-openservice="supplements">Supplement Support</a></li>
-        <li><a href="#services" data-openservice="inventory">Inventory Management</a></li>
-        <li><a href="#services" data-openservice="retail">Retail Pharmacy</a></li>
-        <li><a href="#services" data-openservice="concierge">Concierge Pharmacy</a></li>
+        <li><a href="services.html?svc=supplements#services">Supplement Support</a></li>
+        <li><a href="services.html?svc=inventory#services">Inventory Management</a></li>
+        <li><a href="services.html?svc=retail#services">Retail Pharmacy</a></li>
+        <li><a href="services.html?svc=concierge#services">Concierge Pharmacy</a></li>
       </ul>
     </nav>
 
@@ -864,7 +885,7 @@ footer{background:#11181f;padding:40px 0;text-align:center}
     <p><strong>Medical disclaimer:</strong> The content on this site is provided for general educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the guidance of a qualified healthcare provider for an official diagnosis and recovery plan.</p>
   </div>
 </footer><script>
-(function(){var D={"compounding": {"t": "Specialized Compounding", "tag": "Formulated to a specification", "d": "Custom medications formulated to meet the unique needs of each patient &mdash; topical pain relief, dosage adjustments and ingredient sensitivities. Transdermal gels, creams and sublingual drops, prepared from your physician&rsquo;s script, with allergen-free bases and dose adjustments a commercial product can&rsquo;t offer.", "h": "compounding.html", "l": "Learn more"}, "repackaging": {"t": "Drug Repackaging", "tag": "Unit-dose and team formats", "d": "Bulk medications repackaged into unit-dose or team-specific formats for accuracy, compliance and easy distribution. Sized for a travel kit and labelled for the training room, so what leaves the pharmacy is already in the format your staff hands out. Documentation travels with the order.", "h": "drug-repackaging.html", "l": "Learn more"}, "blister": {"t": "Blister Packaging", "tag": "Roster-wide distribution", "d": "Blister-pack formats that support organized distribution and compliance tracking across a roster or a clinic. One card per athlete, per course &mdash; compliance is visible at a glance rather than reconstructed later, which matters most on the road and through a long season.", "h": "#", "l": "Ask about blister packs &rarr;"}, "inventory": {"t": "Inventory Management", "tag": "Stocked without over-ordering", "d": "Smart tracking, monitoring and replenishment so clinics stay stocked and waste stays low. We watch par levels against your actual usage and replenish before you run short &mdash; fewer emergency orders, less expiry write-off, and a clear picture of what the training room actually consumes.", "h": "#", "l": "Ask about inventory &rarr;"}, "supplements": {"t": "Supplement Support", "tag": "Pharmacist-guided", "d": "Evidence-based supplement guidance for athletes, aimed at performance, recovery and wellness. A pharmacist reviews what an athlete is already taking against their medications, screens for banned substances, and flags interactions before they become a problem.", "h": "#", "l": "Ask about supplements &rarr;"}, "retail": {"t": "Retail Pharmacy", "tag": "Prescription and OTC", "d": "Full-service pharmacy covering prescription and over-the-counter medications, with a focus on athlete wellness and proactive care. Everything a conventional pharmacy does, staffed by people who understand a competition calendar &mdash; fills, transfers, refills and counselling, coordinated with the rest of your supply.", "h": "#", "l": "Talk to the pharmacy &rarr;"}, "concierge": {"t": "Concierge Sports Pharmacy", "tag": "One-to-one with athletes", "d": "Pharmacists working one-on-one with athletes on performance and long-term athlete health. A named pharmacist for the roster &mdash; medication reviews, clean-sport checks, travel planning and direct coordination with your physicians and trainers. Discreet by default.", "h": "concierge-pharmacy.html", "l": "Learn more"}, "customized": {"t": "Customized Services", "tag": "Built to your program", "d": "Healthcare and pharmacy programs built for athletes, teams and sports organizations, for needs beyond traditional pharmacy services. If your program needs something that isn&rsquo;t on this list, that conversation is the service &mdash; most of what we do now started as a request from a training room.", "h": "#", "l": "Start that conversation &rarr;"}},tr=document.getElementById("svcTrack"),panel=document.getElementById("svcPanel");if(!tr||!panel)return;var cards=[].slice.call(tr.children),prev=document.getElementById("svcPrev"),next=document.getElementById("svcNext"),page=0;function per(){var w=innerWidth;return w<=600?2:w<=860?3:w<=1100?4:5;}function pages(){return Math.max(1,Math.ceil(cards.length/per()));}function go(p){var n=pages();page=((p%n)+n)%n;var step=cards[0].getBoundingClientRect().width+12;tr.style.transform="translateX("+(-page*per()*step)+"px)";}function close(){panel.hidden=true;cards.forEach(function(c){c.setAttribute("aria-expanded","false");});}cards.forEach(function(c){c.addEventListener("click",function(ev){if(ev&&ev.preventDefault)ev.preventDefault();if(c.getAttribute("aria-expanded")==="true"){close();return;}var d=D[c.dataset.svc];cards.forEach(function(o){o.setAttribute("aria-expanded","false");});c.setAttribute("aria-expanded","true");panel.innerHTML='<div class="h-spanel-in"><button class="h-spanel-x" type="button" aria-label="Close">&times;</button>'+'<span class="h-spanel-tag">'+d.tag+"</span><h3>"+d.t+"</h3><p>"+d.d+"</p>"+(d.h==="#"?'<a class="lnk" href="#" data-intake>':'<a class="lnk" href="'+d.h+'">')+d.l+'<span class="lnk-a" aria-hidden="true"></span></a></div>';panel.hidden=false;panel.querySelector(".h-spanel-x").addEventListener("click",close);});});document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-openservice]");if(!a)return;var k=a.getAttribute("data-openservice"),c=cards.filter(function(x){return x.dataset.svc===k;})[0];if(!c)return;e.preventDefault();go(Math.floor(cards.indexOf(c)/per()));var tgt=document.getElementById("services");if(tgt)tgt.scrollIntoView({behavior:"smooth",block:"start"});setTimeout(function(){if(c.getAttribute("aria-expanded")!=="true")c.click();},420);});prev.addEventListener("click",function(){go(page-1);});next.addEventListener("click",function(){go(page+1);});var t;addEventListener("resize",function(){clearTimeout(t);t=setTimeout(function(){go(0);},140);});go(0);var svcParam=new URLSearchParams(location.search).get("svc");if(svcParam){var c0=cards.filter(function(x){return x.dataset.svc===svcParam;})[0];if(c0){go(Math.floor(cards.indexOf(c0)/per()));setTimeout(function(){c0.click();},300);}}})();
+(function(){var D={"compounding": {"t": "Specialized Compounding", "tag": "Formulated to a specification", "d": "Custom medications formulated to meet the unique needs of each patient &mdash; topical pain relief, dosage adjustments and ingredient sensitivities. Transdermal gels, creams and sublingual drops, prepared from your physician&rsquo;s script, with allergen-free bases and dose adjustments a commercial product can&rsquo;t offer.", "h": "compounding.html", "l": "Learn more"}, "repackaging": {"t": "Drug Repackaging", "tag": "Unit-dose and team formats", "d": "Bulk medications repackaged into unit-dose or team-specific formats for accuracy, compliance and easy distribution. Sized for a travel kit and labelled for the training room, so what leaves the pharmacy is already in the format your staff hands out. Documentation travels with the order.", "h": "drug-repackaging.html", "l": "Learn more"}, "blister": {"t": "Blister Packaging", "tag": "Roster-wide distribution", "d": "Blister-pack formats that support organized distribution and compliance tracking across a roster or a clinic. One card per athlete, per course &mdash; compliance is visible at a glance rather than reconstructed later, which matters most on the road and through a long season.", "h": "#", "l": "Ask about blister packs &rarr;"}, "inventory": {"t": "Inventory Management", "tag": "Stocked without over-ordering", "d": "Smart tracking, monitoring and replenishment so clinics stay stocked and waste stays low. We watch par levels against your actual usage and replenish before you run short &mdash; fewer emergency orders, less expiry write-off, and a clear picture of what the training room actually consumes.", "h": "#", "l": "Ask about inventory &rarr;"}, "supplements": {"t": "Supplement Support", "tag": "Pharmacist-guided", "d": "Evidence-based supplement guidance for athletes, aimed at performance, recovery and wellness. A pharmacist reviews what an athlete is already taking against their medications, screens for banned substances, and flags interactions before they become a problem.", "h": "#", "l": "Ask about supplements &rarr;"}, "retail": {"t": "Retail Pharmacy", "tag": "Prescription and OTC", "d": "Full-service pharmacy covering prescription and over-the-counter medications, with a focus on athlete wellness and proactive care. Everything a conventional pharmacy does, staffed by people who understand a competition calendar &mdash; fills, transfers, refills and counselling, coordinated with the rest of your supply.", "h": "#", "l": "Talk to the pharmacy &rarr;"}, "concierge": {"t": "Concierge Sports Pharmacy", "tag": "One-to-one with athletes", "d": "Pharmacists working one-on-one with athletes on performance and long-term athlete health. A named pharmacist for the roster &mdash; medication reviews, clean-sport checks, travel planning and direct coordination with your physicians and trainers. Discreet by default.", "h": "concierge-pharmacy.html", "l": "Learn more"}, "customized": {"t": "Customized Services", "tag": "Built to your program", "d": "Healthcare and pharmacy programs built for athletes, teams and sports organizations, for needs beyond traditional pharmacy services. If your program needs something that isn&rsquo;t on this list, that conversation is the service &mdash; most of what we do now started as a request from a training room.", "h": "#", "l": "Start that conversation &rarr;"}},tr=document.getElementById("svcTrack"),panel=document.getElementById("svcPanel");var cards=[].slice.call(tr.children),prev=document.getElementById("svcPrev"),next=document.getElementById("svcNext"),page=0;function per(){var w=innerWidth;return w<=600?2:w<=860?3:w<=1100?4:5;}function pages(){return Math.max(1,Math.ceil(cards.length/per()));}function go(p){var n=pages();page=((p%n)+n)%n;var step=cards[0].getBoundingClientRect().width+12;tr.style.transform="translateX("+(-page*per()*step)+"px)";}function close(){panel.hidden=true;cards.forEach(function(c){c.setAttribute("aria-expanded","false");});}cards.forEach(function(c){c.addEventListener("click",function(ev){if(ev&&ev.preventDefault)ev.preventDefault();if(c.getAttribute("aria-expanded")==="true"){close();return;}var d=D[c.dataset.svc];cards.forEach(function(o){o.setAttribute("aria-expanded","false");});c.setAttribute("aria-expanded","true");panel.innerHTML='<div class="h-spanel-in"><button class="h-spanel-x" type="button" aria-label="Close">&times;</button>'+'<span class="h-spanel-tag">'+d.tag+"</span><h3>"+d.t+"</h3><p>"+d.d+"</p>"+(d.h==="#"?'<a class="lnk" href="#" data-intake>':'<a class="lnk" href="'+d.h+'">')+d.l+'<span class="lnk-a" aria-hidden="true"></span></a></div>';panel.hidden=false;panel.querySelector(".h-spanel-x").addEventListener("click",close);});});document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-openservice]");if(!a)return;var k=a.getAttribute("data-openservice"),c=cards.filter(function(x){return x.dataset.svc===k;})[0];if(!c)return;e.preventDefault();go(Math.floor(cards.indexOf(c)/per()));document.getElementById("services").scrollIntoView({behavior:"smooth",block:"start"});setTimeout(function(){if(c.getAttribute("aria-expanded")!=="true")c.click();},420);});prev.addEventListener("click",function(){go(page-1);});next.addEventListener("click",function(){go(page+1);});var t;addEventListener("resize",function(){clearTimeout(t);t=setTimeout(function(){go(0);},140);});go(0);})();
 </script>
 <script>
 (function(){
@@ -1006,6 +1027,23 @@ footer{background:#11181f;padding:40px 0;text-align:center}
       e.preventDefault();
       var i=tabs.indexOf(t), n=tabs[(i+(e.key==="ArrowRight"?1:tabs.length-1))%tabs.length];
       n.focus(); select(n);
+    });
+  });
+})();
+</script><script>
+(function(){
+  var rows=[].slice.call(document.querySelectorAll(".w-row"));
+  if(!rows.length) return;
+  rows.forEach(function(r){
+    var btn=r.querySelector(".w-head"), body=r.querySelector(".w-body");
+    btn.addEventListener("click",function(){
+      var open=r.classList.contains("open");
+      rows.forEach(function(o){
+        o.classList.remove("open");
+        o.querySelector(".w-head").setAttribute("aria-expanded","false");
+        o.querySelector(".w-body").hidden=true;
+      });
+      if(!open){ r.classList.add("open"); btn.setAttribute("aria-expanded","true"); body.hidden=false; }
     });
   });
 })();
