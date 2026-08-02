@@ -92,11 +92,9 @@ The Athlete Hub — A Demand Engine for WasabiRub
  
  A correction I owe you
 
- Earlier I told you WordPress would be limiting — that we would be boxed in by its components and stuck with WooCommerce's product template. I was wrong, and I would rather correct it myself than have us decide on it.
+ Earlier I told you WordPress would be limiting — that we would be boxed in by its components and unable to build the design we wanted. I was wrong, and I would rather correct it myself than have us decide on it.
 
  The mistake was conflating WordPress with what most people actually encounter as WordPress: page builders like Elementor and Divi, and off-the-shelf themes. Those are limiting, and they are exactly where "dated" comes from. A custom theme is a different thing entirely — it renders our own markup verbatim, and none of those tools are involved.
-
- I was also wrong about the product pages, which matter most because the current ones are the weakest part of the site. I believed we would be locked inside WooCommerce's template. We would not — the detail is below, but a custom template replaces it completely and the pages we have already designed port essentially whole.
 
  What changed my assessment: auditing all 63 pages we have built — no server-side code, no build step, no API layer — and working through how WooCommerce template overrides actually function. The correction makes the recommendation stronger, not weaker. We can have the design we want and stay on the platform this company already knows and can staff. I had been treating those as a trade-off. They are not.
 
