@@ -85,7 +85,69 @@ answer.
 
 ---
 
-## 4. What this requires (be honest about it)
+## 4. The commerce problem this decision creates
+
+**This is the risk that has not been on the table, and it is the one that costs
+money directly.**
+
+SportPharm today is a WordPress site with WooCommerce. That is where the real
+cart lives, where checkout happens, and where orders, tax and shipping are
+configured. **The Athlete Hub is a separate static site with no backend and no
+cart of any kind.**
+
+Right now the hub "sells" by linking out to the store — it does that in **56
+places**. And every *Add to Cart* button on the hub is a simulation: it
+increments a badge and shows an "Added to cart" toast, and nothing is ever added
+to anything. Reload the page and it is gone. There is no cart on the hub and no
+way to check out from it.
+
+**Splitting the domains turns a system boundary into a domain boundary, at the
+exact moment the hub is designed to create.**
+
+The sequence we are trying to build is: someone reads an article about their
+pain, decides a topical is worth trying, and buys. Across two properties that
+becomes:
+
+1. Reads the article on **wasabirub.com**
+2. Clicks *Add to Cart* — sees a confirmation that means nothing
+3. Crosses to **sportpharm.com** to check out
+4. Arrives with an empty cart and starts over
+
+Most people do not start over. We would be spending 6–12 months earning the
+traffic and then dropping it at the checkout step.
+
+A cross-domain split also means no shared login session, cookie consent asked
+twice, and purchase attribution broken by default — so the hub cannot even prove
+it drove the sale it drove.
+
+### The three ways out
+
+| Option | What it means | Cost |
+|---|---|---|
+| **A. Hub never holds a cart** | Remove the cart affordance entirely; every product link goes straight to the WooCommerce product page | Cheap, honest, no dead ends. One extra click, and the hub never owns the transaction |
+| **B. Hub lives inside WordPress** | Rebuild the hub as pages on the existing install — one system, one cart | Rebuild cost; loses the current static build and its speed |
+| **C. Headless** | Hub stays static and talks to the WooCommerce Store API for a real cart | Real engineering, ongoing maintenance, most expensive |
+
+**Recommendation: A now, and revisit C only if the hub proves it converts.** What
+we must not do is launch the current state, where the button tells the customer
+something untrue.
+
+### This changes the domain decision
+
+Section 3 framed the domain choice as an SEO trade — new domain versus inherited
+authority. The cart problem adds a second axis, and it points the same way:
+
+**`sportpharm.com/athlete-hub` keeps the hub on the same origin as the store.**
+Same domain, same WooCommerce session, one cart, one consent banner, attribution
+intact. The commerce problem disappears rather than being managed.
+
+`wasabirub.com` still has the stronger brand argument for a product-led hub. But
+it now carries a build cost that `sportpharm.com/athlete-hub` does not — and that
+cost should be named before we choose, not discovered afterwards.
+
+---
+
+## 5. What this requires (be honest about it)
 
 **Ongoing, not one-time.**
 
@@ -104,18 +166,19 @@ review.
 
 ---
 
-## 5. Risks worth naming
+## 6. Risks worth naming
 
 | Risk | Reality |
 |---|---|
 | "This is a big change to a site that works" | The current site isn't failing — it just isn't acquiring anyone. This adds a channel; it doesn't remove the existing one. |
 | "SEO takes too long" | True. This is a 6–12 month investment, not a campaign. It compounds; ads stop the day you stop paying. |
 | "Health content is a liability" | Handled by clinical review, named reviewers and explicit non-diagnostic language — all already built into the content and the tools. |
+| "The domains can be joined up later" | The cart break is not cosmetic — it is a lost sale at the moment of intent. Cheapest to solve before the hub earns traffic, not after. |
 | "We'll write six articles and stop" | The most likely failure mode. Requires a named owner and a cadence before launch, not after. |
 
 ---
 
-## 6. What we'd measure
+## 7. What we'd measure
 
 Not traffic for its own sake:
 
@@ -130,9 +193,10 @@ Not traffic for its own sake:
 ## The decision
 
 1. **Approve the content-hub strategy** as a demand channel, not a redesign
-2. **Confirm the domain split** — sportpharm.com (company) / wasabirub.com (product + hub),
+2. **Decide how commerce works across the split** &mdash; option A, B or C above. This is now a precondition of the domain choice, not a follow-up to it
+3. **Confirm the domain split** — sportpharm.com (company) / wasabirub.com (product + hub),
    or the sportpharm.com/athlete-hub alternative if faster results matter more
-3. **Name an owner** for clinical review and publishing cadence
+4. **Name an owner** for clinical review and publishing cadence
 
 **Timing note:** the domain decision should be made *before* the article cluster
 publishes. Content that ranks at one address and later moves loses much of its
