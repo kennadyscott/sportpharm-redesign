@@ -134,7 +134,7 @@
     <p class="eyebrow">Prepared for leadership · Decision requested</p>
     <h1 class="disp">The Athlete Hub<br>is a <span>demand engine.</span></h1>
     <p class="lede">Not a redesign. A customer-acquisition channel that puts WasabiRub in front of people at the moment they are deciding what to do about pain.</p>
-    <div class="ask"><b>We are asking for three decisions:</b> approve the strategy, confirm the domain split, name an owner.</div>
+    <div class="ask"><b>We are asking for four decisions:</b> approve the strategy, size the store, confirm the domain and the single storefront, name an owner.</div>
   </div>
 </header>
 
@@ -334,6 +334,61 @@
 
 <section>
   <div class="wrap">
+    <h2 class="disp">How big is this store?</h2>
+    <p class="sub">The question that actually decides Stripe vs Shopify &mdash; more than any technical comparison does.</p>
+
+    <p>Everything in the previous section is scoped to what we sell today &mdash; three products, going on four. Change that premise and the answer changes with it.</p>
+
+    <div class="split">
+      <div class="opt b"><span class="tag">If it stays hub-driven</span><h3>Stripe &mdash; don't buy a platform</h3>
+        <p>A handful of products, one site. The cart pattern is proven, the ops work is configuration, and Payload's admin covers merchandising.</p></div>
+      <div class="opt a"><span class="tag">If it becomes the backbone</span><h3>Shopify &mdash; and the case is strong</h3>
+        <p>sportpharm.com moves onto it too, the catalogue grows, retail is in scope. The advantage compounds with each of those.</p></div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>At scale, Shopify gives us</th><th>Why it matters here</th></tr></thead>
+        <tbody>
+          <tr><td>Two storefronts, one backend</td><td>sportpharm.com and wasabirub.com as separate branded fronts on one catalogue, one inventory, one order desk &mdash; this <b>dissolves the two-stores problem</b> rather than managing it</td></tr>
+          <tr><td>POS</td><td>We have a physical pharmacy. Unified in-store and online inventory, customers and orders is a bigger prize than anything on the web side &mdash; and the custom stack has no answer for it</td></tr>
+          <tr><td>Abandoned checkout, native</td><td>Built in, nothing to maintain &mdash; see below</td></tr>
+          <tr><td>Catalogue tooling at volume</td><td>Variants, collections, bulk edit, CSV import, multi-location inventory</td></tr>
+          <tr><td>Ecosystem and hiring</td><td>Subscriptions, reviews and loyalty as installs rather than builds &mdash; and far easier to hire for than a bespoke admin</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="note"><b>What scales against it:</b> subscription tier, transaction fees if we do not use Shopify Payments, and app subscriptions &mdash; real money at volume. And we would still run Next.js for the hub's tools, so it is two systems either way. That is <b>not</b> the headless-WooCommerce trap: Shopify's Storefront API is a first-class headless product where WooCommerce's is a bolt-on.</p>
+
+    <h3 style="margin-top:34px">Abandoned cart, specifically</h3>
+    <p class="note">Leadership cares about this one, so it is worth being exact.</p>
+    <div class="tbl-wrap">
+      <table>
+        <tbody>
+          <tr><td>WooCommerce</td><td><b>Not a core feature.</b> It does not exist without a plugin (Tyche, FunnelKit, CartFlows) or an ESP integration. Worth establishing which plugin runs on sportpharm.com today and whether anyone maintains it &mdash; &ldquo;we have abandoned cart&rdquo; often means a plugin nobody has updated in two years</td></tr>
+          <tr><td>Shopify</td><td><b>Native.</b> Abandoned checkouts are a first-class object in admin with built-in recovery emails and configurable timing. Works on day one</td></tr>
+          <tr><td>Custom stack</td><td>Genuinely buildable, and already in the plan (Payload + Stripe + Mailchimp). Because the cart lives in <b>our own database</b> rather than a plugin's, we get better data &mdash; exact contents, exact staleness, our own trigger rules. A scheduled job and an email template, not a platform</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="trap">
+      <p class="hl">The constraint all three share</p>
+      <p class="note" style="margin:0">Recovery needs an email address. Anyone who fills a cart and leaves <b>before entering contact details is invisible to every system.</b> WooCommerce plugins capture it as the customer types at checkout; Shopify captures at the contact step. Nobody recovers a truly anonymous cart.</p>
+    </div>
+
+    <h3 style="margin-top:34px">On prescriptions, since it will come up</h3>
+    <p>Shopify prohibits prescription fulfilment. That looks like a dealbreaker for a pharmacy and mostly is not: <b>Rx does not belong in a retail cart under any of these options.</b> Dispensing runs through a pharmacy management system; what sits on a website is a refill or transfer request that hands off to it.</p>
+    <p class="note">WooCommerce imposes no such restriction &mdash; it is self-hosted software with no acceptable-use policy &mdash; but the gates simply move: the payment processor (pharmaceuticals are restricted by Stripe, PayPal and Square alike), state-by-state nonresident pharmacy licensure, DEA registration for controlled substances, and HIPAA obligations once prescription data is in scope.</p>
+    <div class="honest">
+      <p class="hl">Where it would genuinely matter</p>
+      <p class="note" style="margin:0">If we wanted <b>refill requests and OTC purchases inside one logged-in account experience.</b> That is a real product idea, and the one scenario where Shopify's policy is a hard constraint. If it is on anyone's roadmap, say so on Tuesday &mdash; it changes the answer. Specifics should be confirmed with compliance rather than taken from this document.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <h2 class="disp">What it actually requires</h2>
     <p class="sub">Ongoing, not one-time. This is the part that decides whether it works.</p>
     <ul>
@@ -380,8 +435,9 @@
     <div class="decide">
       <h2 class="disp">The decision</h2>
       <div class="dstep"><span class="dnum">1</span><div><b>Approve the strategy</b><span>As a demand channel, not a redesign.</span></div></div>
-      <div class="dstep"><span class="dnum">2</span><div><b>Confirm the domain &mdash; and the single store</b><span>Option A (wasabirub.com) or Option B (sportpharm.com/athlete-hub). Either way, decide that only one property sells.</span></div></div>
-      <div class="dstep"><span class="dnum">3</span><div><b>Name an owner</b><span>For clinical review and publishing cadence.</span></div></div>
+      <div class="dstep"><span class="dnum">2</span><div><b>Answer: how big is this store?</b><span>Three products on one site, or the company's commerce backbone. This decides Stripe vs Shopify more than any technical comparison does.</span></div></div>
+      <div class="dstep"><span class="dnum">3</span><div><b>Confirm the domain and the single store</b><span>Option A (wasabirub.com) or Option B (sportpharm.com/athlete-hub). Either way, only one property sells.</span></div></div>
+      <div class="dstep"><span class="dnum">4</span><div><b>Name an owner</b><span>For clinical review and publishing cadence.</span></div></div>
       <p class="timing"><b>On timing:</b> the domain decision should be made before the article cluster publishes. Content that ranks at one address and later moves loses much of its earned value, and our current hosting cannot redirect properly. Deciding now is free. Deciding in six months is not.</p>
     </div>
   </div>

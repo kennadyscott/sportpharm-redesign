@@ -231,6 +231,67 @@ Worth noting too: Shopify headless would not displace Payload for content. Using
 a commerce platform for commerce and a headless CMS for content is a common and
 sensible pairing &mdash; so this is not an all-or-nothing fork.
 
+### The question that actually decides this: how big is this store?
+
+Everything above is scoped to what we sell today &mdash; three products, going on four.
+Change that premise and the answer changes with it.
+
+**If this stays hub-driven &mdash; a handful of products, one site:** Stripe, and do not
+buy a platform. The cart pattern is proven, the ops work is configuration, and
+Payload's admin covers merchandising.
+
+**If this becomes the company's commerce backbone &mdash; sportpharm.com moves onto it
+too, the catalogue grows, retail is in scope:** the case for **Shopify** is
+strong, and grows with each of those.
+
+| At scale, Shopify gives us | Why it matters here |
+|---|---|
+| **Two storefronts, one backend** | sportpharm.com and wasabirub.com as separate branded fronts on one catalogue, one inventory, one order desk &mdash; this dissolves the two-stores problem rather than managing it |
+| **POS** | We have a physical pharmacy. Unified in-store and online inventory, customers and orders is a bigger prize than anything on the web side, and the custom stack has no answer for it |
+| **Abandoned checkout, native** | Built in, no plugin to maintain &mdash; see below |
+| **Catalogue tooling at volume** | Variants, collections, bulk edit, CSV import, multi-location inventory |
+| **Ecosystem and hiring** | Subscriptions, reviews, loyalty as installs rather than builds &mdash; and it is far easier to hire someone who already knows Shopify than to onboard them to a bespoke admin |
+
+**What scales against it:** subscription tier, transaction fees if we do not use
+Shopify Payments, and app subscriptions &mdash; real money at volume. And we would
+still run Next.js for the hub's tools, so it is two systems either way. That is
+**not** the headless-WooCommerce trap, though: Shopify's Storefront API is a
+first-class headless product where WooCommerce's is a bolt-on.
+
+### Abandoned cart, specifically
+
+Leadership cares about this one, so it is worth being exact.
+
+| | How it works |
+|---|---|
+| **WooCommerce** | **Not a core feature.** It does not exist without a plugin (Tyche, FunnelKit, CartFlows) or an ESP integration. Worth establishing which plugin runs on sportpharm.com today and whether anyone maintains it &mdash; "we have abandoned cart" often means a plugin nobody has updated in two years |
+| **Shopify** | **Native.** Abandoned checkouts are a first-class object in admin with built-in recovery emails and configurable timing. Works on day one, nothing to maintain |
+| **Custom stack** | Genuinely buildable, and already in the plan (Payload + Stripe + Mailchimp). Because the cart lives in our own database rather than a plugin's, we get better data &mdash; exact contents, exact staleness, our own trigger rules. A scheduled job and an email template, not a platform |
+
+**The constraint all three share:** recovery needs an email address. Anyone who
+fills a cart and leaves before entering contact details is invisible to every
+system. WooCommerce plugins capture it as the customer types at checkout;
+Shopify captures at the contact step. Nobody recovers a truly anonymous cart.
+
+### On prescriptions, since it will come up
+
+Shopify prohibits prescription fulfilment. That looks like a dealbreaker for a
+pharmacy and mostly is not: **Rx does not belong in a retail cart under any of
+these options.** Dispensing runs through a pharmacy management system, and what
+sits on a website is a refill or transfer request that hands off to it.
+
+WooCommerce imposes no such restriction &mdash; it is self-hosted software with no
+acceptable-use policy &mdash; but the gates simply move to the payment processor
+(pharmaceuticals are restricted by Stripe, PayPal and Square alike), state-by-
+state nonresident pharmacy licensure, DEA registration for controlled substances,
+and HIPAA obligations once prescription data is in scope.
+
+**Where it would genuinely matter:** if we wanted refill requests and OTC
+purchases inside one logged-in account experience. That is a real product idea,
+and the one scenario where Shopify's policy is a hard constraint. If that is on
+anyone's roadmap, say so on Tuesday &mdash; it changes the answer. Specifics here
+should be confirmed with compliance rather than taken from this document.
+
 ### The migration question
 
 Either path has to answer it: **existing WooCommerce customers and order
@@ -299,10 +360,11 @@ Not traffic for its own sake:
 ## The decision
 
 1. **Approve the content-hub strategy** as a demand channel, not a redesign
-2. **Confirm wasabirub.com as the single store** &mdash; and accept that this means retiring WooCommerce as a selling system, with an owner and a migration
-3. **Confirm the domain split** — sportpharm.com (company) / wasabirub.com (product + hub),
+2. **Answer: how big is this store?** Three products on one site, or the company's commerce backbone. This decides Stripe vs Shopify more than any technical comparison does
+3. **Confirm wasabirub.com as the single store** &mdash; and accept that this means retiring WooCommerce as a selling system, with an owner and a migration
+4. **Confirm the domain split** — sportpharm.com (company) / wasabirub.com (product + hub),
    or the sportpharm.com/athlete-hub alternative if faster results matter more
-4. **Name an owner** for clinical review and publishing cadence
+5. **Name an owner** for clinical review and publishing cadence
 
 **Timing note:** the domain decision should be made *before* the article cluster
 publishes. Content that ranks at one address and later moves loses much of its
