@@ -419,8 +419,8 @@ footer{background:#11181f;padding:40px 0;text-align:center}
 .t-arrows button:focus-visible{outline:2px solid #d6202a;outline-offset:3px}
 .t-dots{display:flex;gap:7px;margin-top:18px}
 
-.t-stage{position:relative;border-left:2px solid #d6202a;padding:4px 0 4px 40px}
-.t-mark{position:absolute;left:24px;top:-26px;font-family:Georgia,serif;font-size:96px;line-height:1;color:rgba(255,255,255,.07);pointer-events:none}
+.t-stage{position:relative;border-left:2px solid #d6202a;padding:60px 0 4px 40px}
+.t-mark{position:absolute;left:38px;top:2px;font-family:Georgia,serif;font-size:92px;line-height:.62;color:#ec636b;opacity:.9;pointer-events:none}
 .t-car{display:grid;align-items:start;transition:height .38s cubic-bezier(.4,.01,.2,1)}
 .t-slide{grid-area:1/1;margin:0;opacity:0;visibility:hidden;transition:opacity .45s ease}
 .t-slide.on{opacity:1;visibility:visible}
@@ -437,12 +437,28 @@ footer{background:#11181f;padding:40px 0;text-align:center}
   .t-lede{max-width:60ch}
   .t-nav{margin-top:24px}
   .t-dots{margin-top:18px}
-  .t-stage{padding-left:26px}
-  .t-mark{left:12px;top:-22px;font-size:74px}
+  .t-stage{padding:58px 0 4px 24px}
+  .t-mark{left:23px;top:0;font-size:72px}
   .t-slide blockquote{font-size:18.5px}}
 @media(max-width:560px){.t-attr{flex-wrap:wrap;gap:12px}}
 .h-sec.dark.deepest{background:#0e161e;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:66px 0}
-.t-stars{color:#ea4b53;font-size:13px;letter-spacing:6px;margin:0 0 16px;line-height:1}
+.t-stars{position:relative;z-index:1;color:#ea4b53;font-size:13px;letter-spacing:6px;margin:0 0 16px;line-height:1}
+
+.h-rub-img{position:relative}
+.h-rub-img img{width:100%;border-radius:12px;display:block}
+.h-rub-img img[data-rubimg]{aspect-ratio:1500/1047;object-fit:cover;display:none}
+.h-rub-img img[data-rubimg].on{display:block;animation:hpan .32s ease both}
+.h-tabs{display:inline-flex;gap:4px;padding:4px;margin:0 0 24px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:999px}
+.h-tabs button{appearance:none;border:0;background:transparent;cursor:pointer;padding:9px 26px;border-radius:999px;
+  font-family:'Inter',system-ui,sans-serif;font-size:12.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#aab7c2;transition:.18s ease}
+.h-tabs button:hover{color:#fff}
+.h-tabs button.on{background:#d6202a;color:#fff}
+.h-tabs button:focus-visible{outline:2px solid #ec636b;outline-offset:3px}
+.h-pan{display:none}
+.h-pan.on{display:block;animation:hpan .32s ease both}
+@keyframes hpan{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.h-pan-lede{margin:0 0 20px;font-size:16px;line-height:1.62;color:#c9d1d9;max-width:52ch}
+.h-rxnote{margin:0 0 22px;font-size:13px;line-height:1.55;color:#9aa5b1;padding-left:14px;border-left:2px solid rgba(255,255,255,.18);max-width:52ch}
 </style></head><body><header>
   <div class="wrap nav">
     <a class="logo" href="sports-medicine.html"><img src="assets/wordmark-dark.png" alt="SportPharm"><span class="logo-tag">Behind every athlete you care for.</span></a>
@@ -549,23 +565,51 @@ footer{background:#11181f;padding:40px 0;text-align:center}
   </div>
 </section>
 
-<section class="h-sec dark">
+<section class="h-sec dark" id="stock">
   <div class="h-wrap">
     <div class="h-rub">
-      <div class="h-rub-img"><img src="assets/wasabi-band.jpg?v=2" alt="WasabiRub topical range" loading="lazy"></div>
+      <div class="h-rub-img">
+        <img src="assets/wasabi-band.jpg?v=2" alt="WasabiRub topical range" class="on" data-rubimg="otc" loading="lazy">
+        <img src="assets/ea-medication.jpg" alt="Athlete holding a prescription bottle" data-rubimg="rx" loading="lazy">
+      </div>
       <div>
         <p class="h-eyebrow">For the training room</p>
-        <h2 class="h-h2">Stock the topicals<br><em>your athletes already ask for.</em></h2>
-        <ul>
-          <li>OTC topical analgesics in single units or team bundles</li>
-          <li>TruShield certified, with documentation for compliance staff</li>
-          <li>Menthol, capsaicin and methyl salicylate formulations</li>
-          <li>Ordered alongside the rest of your SportPharm supply</li>
-        </ul>
-        <div class="h-skus"><span class="h-sku">WasabiRub</span><span class="h-sku">WasabiRub Super Hot</span><span class="h-sku">IcetraRub</span><span class="h-sku">Team bundles</span></div>
-        <div class="h-row">
-          <a class="h-btn solid" href="wasabirub.html">Explore the range &rarr;</a>
-          <a class="h-btn line" href="#" data-intake>Ask about team pricing</a>
+        <h2 class="h-h2">Stock the training room,<br><em>over-the-counter and prescription.</em></h2>
+
+        <div class="h-tabs" role="tablist" aria-label="Product type">
+          <button role="tab" id="tabOtc" aria-controls="panOtc" aria-selected="true" class="on" type="button">OTC</button>
+          <button role="tab" id="tabRx" aria-controls="panRx" aria-selected="false" type="button">Rx</button>
+        </div>
+
+        <div class="h-pan on" id="panOtc" role="tabpanel" aria-labelledby="tabOtc">
+          <p class="h-pan-lede">Topical analgesics your athletes already ask for &mdash; stocked by the unit or by the roster.</p>
+          <ul>
+            <li>Single units or team bundles, priced for a full roster</li>
+            <li>TruShield certified, with documentation for compliance staff</li>
+            <li>Menthol, capsaicin and methyl salicylate formulations</li>
+            <li>Ships alongside the rest of your SportPharm order</li>
+          </ul>
+          <div class="h-skus"><span class="h-sku">WasabiRub</span><span class="h-sku">WasabiRub Super Hot</span><span class="h-sku">IcetraRub</span><span class="h-sku">Team bundles</span></div>
+          <div class="h-row">
+            <a class="h-btn solid" href="wasabirub.html">Explore the range &rarr;</a>
+            <a class="h-btn line" href="#" data-intake>Ask about team pricing</a>
+          </div>
+        </div>
+
+        <div class="h-pan" id="panRx" role="tabpanel" aria-labelledby="tabRx" hidden>
+          <p class="h-pan-lede">Prescription fulfillment built around a training room rather than a retail counter.</p>
+          <ul>
+            <li>Compounded to your physician&rsquo;s specification &mdash; transdermal gels, creams, sublingual drops</li>
+            <li>Unit-dose repackaging and blister packs for roster-wide distribution</li>
+            <li>Allergen-free and dose-adjusted formulations for ingredient sensitivities</li>
+            <li>Shipped to your facility or direct to the athlete, home or away</li>
+          </ul>
+          <div class="h-skus"><span class="h-sku">Compounding</span><span class="h-sku">Unit-dose</span><span class="h-sku">Blister packs</span><span class="h-sku">Direct-to-athlete</span></div>
+          <p class="h-rxnote">Prescription items are dispensed through the pharmacy, not the online store. A valid prescription is required.</p>
+          <div class="h-row">
+            <a class="h-btn solid" href="#" data-intake>Talk to a pharmacist &rarr;</a>
+            <a class="h-btn line" href="#services" data-openservice="compounding">See compounding</a>
+          </div>
         </div>
       </div>
     </div>
@@ -769,4 +813,42 @@ footer{background:#11181f;padding:40px 0;text-align:center}
   });
 })();
 </script>
-<script>(function(){var f=document.getElementById("nlForm");if(!f)return;f.addEventListener("submit",function(e){e.preventDefault();if(!f.reportValidity())return;var v=document.getElementById("nlEmail").value;var b=f.querySelector("button");b.disabled=true;b.textContent="Sending\u2026";fetch("https://formsubmit.co/ajax/info@sportpharm.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({email:v,_subject:"SportPharm newsletter signup \u2014 Healthcare / AT",_template:"table",page:"Healthcare / AT \u00b7 Newsletter",persona:"Healthcare / AT"})}).then(function(r){return r.json();}).then(function(){f.innerHTML='<p class="h-ndone">\u2713 You\u2019re on the list. Thanks.</p>';document.getElementById("nlFine").textContent="";}).catch(function(){b.disabled=false;b.textContent="Sign up";document.getElementById("nlFine").textContent="That didn\u2019t go through. Email info@sportpharm.com and we\u2019ll add you.";});});})();</script></body></html>
+<script>(function(){var f=document.getElementById("nlForm");if(!f)return;f.addEventListener("submit",function(e){e.preventDefault();if(!f.reportValidity())return;var v=document.getElementById("nlEmail").value;var b=f.querySelector("button");b.disabled=true;b.textContent="Sending\u2026";fetch("https://formsubmit.co/ajax/info@sportpharm.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({email:v,_subject:"SportPharm newsletter signup \u2014 Healthcare / AT",_template:"table",page:"Healthcare / AT \u00b7 Newsletter",persona:"Healthcare / AT"})}).then(function(r){return r.json();}).then(function(){f.innerHTML='<p class="h-ndone">\u2713 You\u2019re on the list. Thanks.</p>';document.getElementById("nlFine").textContent="";}).catch(function(){b.disabled=false;b.textContent="Sign up";document.getElementById("nlFine").textContent="That didn\u2019t go through. Email info@sportpharm.com and we\u2019ll add you.";});});})();</script><script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.h-tabs [role="tab"]'));
+  if(!tabs.length) return;
+  var imgs=[].slice.call(document.querySelectorAll("[data-rubimg]"));
+  var key={tabOtc:"otc",tabRx:"rx"};
+  function select(btn){
+    tabs.forEach(function(t){
+      var on=t===btn;
+      t.classList.toggle("on",on); t.setAttribute("aria-selected",on?"true":"false");
+      var p=document.getElementById(t.getAttribute("aria-controls"));
+      p.classList.toggle("on",on); p.hidden=!on;
+    });
+    imgs.forEach(function(im){ im.classList.toggle("on", im.dataset.rubimg===key[btn.id]); });
+  }
+  // hold the taller panel's height so switching tabs doesn't jolt the page
+  function equalise(){
+    var pans=[].slice.call(document.querySelectorAll(".h-pan")), max=0, prev=[];
+    pans.forEach(function(p){ prev.push([p.hidden,p.className]); p.hidden=false; p.style.display="block"; });
+    pans.forEach(function(p){ max=Math.max(max,p.getBoundingClientRect().height); });
+    pans.forEach(function(p,k){ p.style.display=""; p.hidden=prev[k][0]; p.style.minHeight=Math.ceil(max)+"px"; });
+  }
+  equalise();
+  var rt; addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(function(){
+    [].slice.call(document.querySelectorAll(".h-pan")).forEach(function(p){p.style.minHeight="";});
+    equalise();},150);});
+  tabs.forEach(function(t){
+    t.addEventListener("click",function(){select(t);});
+    t.addEventListener("keydown",function(e){
+      var i=tabs.indexOf(t);
+      if(e.key==="ArrowRight"||e.key==="ArrowLeft"){
+        e.preventDefault();
+        var n=tabs[(i+(e.key==="ArrowRight"?1:tabs.length-1))%tabs.length];
+        n.focus(); select(n);
+      }
+    });
+  });
+})();
+</script></body></html>
