@@ -2,7 +2,10 @@
 
 _wasabirub.com — leadership brief_
 
-**See it live:** [WasabiRub — the product site](https://kennadyscott.github.io/sportpharm-site/wasabirub.html) · [The Athlete Hub](https://kennadyscott.github.io/sportpharm-site/index.html)
+**See it live** — both live on the same domain, wasabirub.com. The product pages and the hub are one site, not two:
+
+- [WasabiRub — the product site](https://kennadyscott.github.io/sportpharm-site/wasabirub.html)
+- [The Athlete Hub](https://kennadyscott.github.io/sportpharm-site/index.html)
 
 > Visual version: https://claude.ai/code/artifact/b3b4a9a5-96ff-4466-ad99-faf67546840c
 
@@ -24,7 +27,7 @@ wasabirub.com — A Product Site on the SportPharm Platform
  The Athlete HubFour pathways, tools and articles→
  
 
- Both are working previews at a temporary address while wasabirub.com is being set up — best viewed on a desktop browser.
+ Both live on the same domain — wasabirub.com. The product pages and the hub are one site, not two, which is what lets everything the content earns carry through to the product pages beside it. These are working previews at a temporary address while the domain is set up, and are best viewed on a desktop browser.
 
  
 
