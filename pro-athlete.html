@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Professional Athlete Hub | SportPharm</title><meta name="description" content="Medication guidance, clean-sport support and athlete-focused pharmacy care for elite competition. Medication and supplement review, travel coordination and concierge pharmacy."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Professional Athlete Hub | SportPharm</title><meta name="description" content="Medication guidance, clean-sport support and athlete-focused pharmacy care built for the demands of elite competition."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
     
     :root{--red:#d6202a;--navy:#15202b;--deep:#101820;--blue:#337fa7;--ink:#15202b;--muted:#5f6a72;--soft:#f4f5f6;--line:#e0e3e6;--red-ink:#a3161e}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:Arial,Helvetica,sans-serif}img{display:block;width:100%}a{color:inherit;text-decoration:none}button{font:inherit}
@@ -197,6 +197,55 @@
   .pa-router,.pa-svc,.pa-res,.pa-team,.pa-season,.pa-steps{grid-template-columns:1fr}
   .pa-wasabi{flex-direction:column;align-items:flex-start}
 }
+
+/* --- adopted from the mockup, in our palette --- */
+.pa-trust{display:flex;gap:26px;flex-wrap:wrap;margin-top:30px;padding-top:22px;
+  border-top:1px solid rgba(255,255,255,.14)}
+.pa-trust span{font-size:12.5px;color:#c7ccd0;display:flex;align-items:center;gap:8px}
+.pa-trust span:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--red)}
+.pa-opt .ic{width:38px;height:38px;border-radius:9px;background:var(--soft);color:var(--red-ink);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;margin-bottom:4px}
+.pa-opt .go{color:var(--red-ink);font-size:11.5px;font-weight:800;letter-spacing:.05em;
+  text-transform:uppercase;margin-top:auto;padding-top:12px}
+.pa-card .num{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-size:26px;line-height:1;
+  color:var(--line);margin-bottom:12px;letter-spacing:.03em}
+.pa-chips{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 26px}
+.pa-chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:20px;
+  padding:9px 15px;font-size:12.5px;color:#e6e9ec}
+.pa-sec:not(.navy) .pa-chip{background:#fff;border-color:var(--line);color:var(--ink)}
+.pa-relief{background:#fff;border:1px solid var(--line);border-radius:10px;padding:26px 28px}
+.pa-relief h3{margin:0 0 6px;font-size:18px;color:var(--ink)}
+.pa-relief .lbl{font-size:10.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--red-ink);margin:0 0 8px}
+/* intake */
+.pa-modal{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;
+  padding:20px;background:rgba(16,24,32,.72)}
+.pa-modal.open{display:flex}
+.pa-dialog{position:relative;width:100%;max-width:600px;max-height:calc(100vh - 40px);overflow:auto;
+  background:#fff;border-radius:12px;padding:34px 36px 28px}
+.pa-x{position:absolute;top:12px;right:16px;border:0;background:none;font-size:26px;line-height:1;
+  color:var(--muted);cursor:pointer}
+.pa-x:hover{color:var(--red)}
+.pa-dialog h2{font-size:26px;margin:0 0 6px;color:var(--ink);line-height:1.1}
+.pa-dialog .dsub{margin:0 0 22px;color:var(--muted);font-size:14px}
+.pa-f{margin-bottom:16px}
+.pa-f label{display:block;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink);margin-bottom:7px}
+.pa-f input,.pa-f select,.pa-f textarea{width:100%;padding:13px 14px;border:1px solid var(--line);
+  border-radius:8px;font:inherit;font-size:14.5px;color:var(--ink);background:#fff}
+.pa-f textarea{min-height:104px;resize:vertical}
+.pa-f input:focus,.pa-f select:focus,.pa-f textarea:focus{outline:0;border-color:var(--red)}
+.pa-f .hint{font-size:12px;color:var(--muted);margin:7px 0 0;line-height:1.5}
+.pa-notice{background:var(--soft);border-left:3px solid var(--red-ink);border-radius:6px;
+  padding:14px 16px;font-size:12.5px;color:var(--muted);line-height:1.6;margin:0 0 18px}
+.pa-submit{width:100%;padding:15px;border:0;border-radius:8px;background:var(--red);color:#fff;
+  font:inherit;font-size:12.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}
+.pa-submit:hover{filter:brightness(.93)}
+.pa-done{text-align:center;padding:12px 0}
+.pa-done .tick{width:62px;height:62px;margin:0 auto 18px;border-radius:50%;background:#e3efe9;
+  color:#167545;display:flex;align-items:center;justify-content:center;font-size:30px}
+.pa-done h2{margin-bottom:10px}
+@media(max-width:640px){.pa-dialog{padding:28px 20px 22px}}
 </style></head><body><header class="header2">
     <div class="h2wrap">
       <a class="logo2" href="index.html"><img src="assets/wordmark-dark.png" alt="SportPharm"><span class="tag2">Stay ready for whatever moves you.</span></a>
@@ -217,13 +266,14 @@
   </header><main><section class="pa-hero">
   <div class="pa-hero-grid">
     <div class="pa-hero-copy">
-      <p class="pa-eyebrow">Professional Athlete Hub</p>
-      <h1>Performance without compromise.</h1>
+      <p class="pa-eyebrow">Professional athlete services</p>
+      <h1>Performance<br>without compromise.</h1>
       <p class="lede">Medication guidance, clean-sport support and athlete-focused pharmacy care built for the demands of elite competition.</p>
       <div class="pa-cta-row">
-        <a class="pa-btn solid" href="#request">Request Athlete Support</a>
-        <a class="pa-btn line" href="#services">Explore Athlete Services</a>
+        <a class="pa-btn solid" href="#intake" data-intake>Request athlete support &rarr;</a>
+        <a class="pa-btn line" href="#services">Explore services</a>
       </div>
+      <div class="pa-trust"><span>Discreet support</span><span>Competition-aware</span><span>Built around your team</span></div>
     </div>
     <div class="pa-hero-img"><img src="assets/runner.jpg" alt="Sprinter driving out of the blocks on a track"></div>
   </div>
@@ -231,37 +281,36 @@
 
 <section class="pa-sec" id="router">
   <div class="wrap">
-    <p class="pa-eyebrow">Start here</p>
-    <h2 class="pa-h2">What do you need help with?</h2>
-    <p class="pa-sub">Pick the closest match. Each one explains what happens next.</p>
-    <div class="pa-router"><button class="pa-opt" type="button" data-r="review" aria-expanded="false"><b>I need a medication reviewed</b><span>Prescription or over-the-counter — reviewed in the context of competition, training load and everything else you take.</span><i>&rarr;</i></button><button class="pa-opt" type="button" data-r="supplement" aria-expanded="false"><b>I need to check a supplement</b><span>Ingredients, third-party testing, label claims and clean-sport exposure risk.</span><i>&rarr;</i></button><button class="pa-opt" type="button" data-r="travel" aria-expanded="false"><b>I&rsquo;m preparing for travel</b><span>Refills, documentation, time zones and destination-specific considerations.</span><i>&rarr;</i></button><button class="pa-opt" type="button" data-r="pain" aria-expanded="false"><b>I&rsquo;m managing pain or an injury</b><span>Pain-relief options, medication timing and when to bring it to your care team.</span><i>&rarr;</i></button><button class="pa-opt" type="button" data-r="rx" aria-expanded="false"><b>I need prescription coordination</b><span>Working alongside your physician, trainer and the rest of your care team.</span><i>&rarr;</i></button><button class="pa-opt" type="button" data-r="urgent" aria-expanded="false"><b>I have an urgent competition question</b><span>Time-sensitive questions close to competition.</span><i>&rarr;</i></button></div>
-    <div class="pa-panel" id="paPanel" hidden></div>
+    <p class="pa-eyebrow">Start with what is at stake</p>
+    <h2 class="pa-h2">What can we help you protect?</h2>
+    <p class="pa-sub">Choose the situation that is closest to what you need today. You do not need to know which service to ask for.</p>
+    <div class="pa-router"><a class="pa-opt" href="medication-supplement-review.html"><span class="ic">Rx</span><b>Review a medication</b><span>Understand how a prescription or OTC option may fit your performance and competition needs.</span><span class="go">Start a review &rarr;</span></a><a class="pa-opt" href="clean-sport.html"><span class="ic">+</span><b>Check a supplement</b><span>Look beyond the front label at ingredients, testing and avoidable exposure risk.</span><span class="go">Check a product &rarr;</span></a><a class="pa-opt" href="travel-competition.html"><span class="ic">&#9992;</span><b>Prepare for travel</b><span>Plan refills, documentation, timing and destination-specific medication needs.</span><span class="go">Build a travel plan &rarr;</span></a><a class="pa-opt" href="#recovery"><span class="ic">&#8635;</span><b>Manage pain or injury</b><span>Review relief options as one part of a coordinated recovery and return plan.</span><span class="go">Explore support &rarr;</span></a><a class="pa-opt" href="#intake" data-intake><span class="ic">&#9744;</span><b>Coordinate prescriptions</b><span>Keep medication access aligned with a demanding training and competition schedule.</span><span class="go">Coordinate care &rarr;</span></a><a class="pa-opt" href="#intake" data-intake><span class="ic">!</span><b>Ask a competition question</b><span>Get responsive pharmacy guidance when the answer cannot wait for the offseason.</span><span class="go">Contact SportPharm &rarr;</span></a></div>
   </div>
 </section>
 
 <section class="pa-sec soft">
   <div class="wrap">
-    <p class="pa-eyebrow">Why a pharmacist belongs on your team</p>
-    <h2 class="pa-h2">The same product can be two different things.</h2>
-    <p class="pa-sub">Most eligibility and performance problems are not caused by obvious mistakes. They come from situations where something is genuinely fine in one context and a problem in another.</p>
-    <div class="pa-stakes"><div class="pa-stake"><em>Medically appropriate</em><b>but problematic for competition</b></div><div class="pa-stake"><em>Available over the counter</em><b>but still worth reviewing</b></div><div class="pa-stake"><em>Legal where you live</em><b>but difficult to travel with</b></div><div class="pa-stake"><em>Effective for symptom relief</em><b>but poorly timed for training</b></div><div class="pa-stake"><em>Safe on its own</em><b>but concerning combined with something else</b></div></div>
+    <p class="pa-eyebrow">Why sports pharmacy matters</p>
+    <h2 class="pa-h2">The pharmacy layer your team needs.</h2>
+    <p class="pa-sub">Elite athletes already have experts around training, treatment and nutrition. SportPharm strengthens the part of the performance system that is too often handled in isolation: medications, supplements and pharmacy coordination.</p>
+    <div class="pa-stakes"><div class="pa-stake"><em>Appropriate medically can still require competition review.</em><b>Treatment decisions and eligibility questions are not always the same question.</b></div><div class="pa-stake"><em>Over the counter does not mean irrelevant to performance.</em><b>Timing, combinations and individual context still matter.</b></div><div class="pa-stake"><em>One change can affect the entire routine.</em><b>Medications and supplements should be reviewed together &mdash; not product by product.</b></div></div>
   </div>
 </section>
 
 <section class="pa-sec" id="services">
   <div class="wrap">
     <p class="pa-eyebrow">Athlete services</p>
-    <h2 class="pa-h2">Pharmacy support built around competition.</h2>
-    <p class="pa-sub">Five services, available individually or as ongoing support through a season.</p>
-    <div class="pa-svc"><div class="pa-card"><h3>Medication Review</h3><p>Review prescriptions and over-the-counter medications in the context of performance, recovery and competition.</p><a href="medication-supplement-review.html">Learn more &rarr;</a></div><div class="pa-card"><h3>Supplement Review</h3><p>Evaluate ingredients, third-party testing, product claims and potential clean-sport concerns.</p><a href="medication-supplement-review.html">Learn more &rarr;</a></div><div class="pa-card"><h3>Clean-Sport Safety</h3><p>Understand prohibited-substance rules, documentation considerations and avoidable exposure risks.</p><a href="clean-sport.html">Learn more &rarr;</a></div><div class="pa-card"><h3>Travel and Competition</h3><p>Coordinate prescriptions, documentation, refills, time-zone planning and destination-specific considerations.</p><a href="travel-competition.html">Learn more &rarr;</a></div><div class="pa-card"><h3>Concierge Pharmacy</h3><p>Discreet, responsive medication coordination around your schedule and your care team.</p><a href="#request">Learn more &rarr;</a></div></div>
+    <h2 class="pa-h2">Support built around elite competition.</h2>
+    <p class="pa-sub">Focused pharmacy services that work alongside your existing performance and medical team.</p>
+    <div class="pa-svc"><div class="pa-card"><span class="num">01</span><h3>Medication review</h3><p>Prescriptions and OTC products reviewed in the context of performance, recovery and competition.</p><a href="medication-supplement-review.html">Explore service &rarr;</a></div><div class="pa-card"><span class="num">02</span><h3>Supplement review</h3><p>Ingredient, testing and risk review that goes beyond marketing language.</p><a href="medication-supplement-review.html">Explore service &rarr;</a></div><div class="pa-card"><span class="num">03</span><h3>Clean-sport safety</h3><p>Education, documentation and current-resource support for competition questions.</p><a href="clean-sport.html">Explore service &rarr;</a></div><div class="pa-card"><span class="num">04</span><h3>Travel &amp; competition</h3><p>Refills, timing, documentation and destination planning before departure.</p><a href="travel-competition.html">Explore service &rarr;</a></div><div class="pa-card"><span class="num">05</span><h3>Concierge pharmacy</h3><p>Responsive coordination designed around an athlete&rsquo;s schedule and care team.</p><a href="#intake" data-intake>Explore service &rarr;</a></div></div>
   </div>
 </section>
 
 <section class="pa-sec soft">
   <div class="wrap">
     <p class="pa-eyebrow">Support across the season</p>
-    <h2 class="pa-h2">Different phases ask different questions.</h2>
-    <div class="pa-season"><div class="pa-phase"><b>Preseason</b><span>Baseline medication and supplement review</span></div><div class="pa-phase"><b>In season</b><span>Ongoing pharmacy coordination</span></div><div class="pa-phase"><b>Travel</b><span>Documentation, refills and schedule planning</span></div><div class="pa-phase"><b>Injury</b><span>Pain-management and medication review</span></div><div class="pa-phase"><b>Return</b><span>Support as treatment and training demands change</span></div><div class="pa-phase"><b>Offseason</b><span>Reassessment and preparation for the next cycle</span></div></div>
+    <h2 class="pa-h2">Performance needs change. Your pharmacy support should, too.</h2>
+    <div class="pa-season"><div class="pa-phase"><b>01 &middot; Preseason</b><span>Baseline medication and supplement review.</span></div><div class="pa-phase"><b>02 &middot; In season</b><span>Ongoing access and medication coordination.</span></div><div class="pa-phase"><b>03 &middot; Travel</b><span>Documentation, refills and schedule planning.</span></div><div class="pa-phase"><b>04 &middot; Injury</b><span>Pain-management and treatment review.</span></div><div class="pa-phase"><b>05 &middot; Return</b><span>Support as training demands change.</span></div><div class="pa-phase"><b>06 &middot; Offseason</b><span>Reassess and prepare for what is next.</span></div></div>
   </div>
 </section>
 
@@ -269,16 +318,11 @@
   <div class="wrap">
     <div class="pa-clean">
       <div>
-        <p class="pa-eyebrow">Clean sport</p>
-        <h2 class="pa-h2">Don&rsquo;t leave eligibility to a label.</h2>
-        <ul>
-          <li>&ldquo;Natural&rdquo; does not automatically mean low-risk</li>
-          <li>Hidden ingredients and cross-contamination are real and documented</li>
-          <li>Rules can depend on your sport, your governing body and the timing</li>
-          <li>Current requirements change &mdash; last season&rsquo;s answer may not hold</li>
-          <li>What you take should be documented, not remembered</li>
-        </ul>
-        <a class="pa-btn solid" href="clean-sport.html">Explore Clean-Sport Support</a>
+        <p class="pa-eyebrow">Clean-sport support</p>
+        <h2 class="pa-h2">Do not leave eligibility to a label.</h2>
+        <p class="pa-sub">&ldquo;Natural,&rdquo; &ldquo;performance&rdquo; and &ldquo;athlete approved&rdquo; are marketing language &mdash; not a complete risk review. SportPharm helps athletes evaluate what they take using current, credible resources.</p>
+        <div class="pa-chips"><span class="pa-chip">Ingredient review</span><span class="pa-chip">Third-party testing</span><span class="pa-chip">Documentation support</span><span class="pa-chip">Current rule resources</span><span class="pa-chip">Combination review</span><span class="pa-chip">Care-team coordination</span></div>
+        <a class="pa-btn solid" href="clean-sport.html">Explore clean-sport support &rarr;</a>
         <p class="pa-disclaim">SportPharm does not certify products as universally competition-safe, and no pharmacy can. What we do is help you evaluate the risk in a specific product, for your sport and governing body, and document the decision you made.</p>
       </div>
       <div class="pa-clean-img"><img src="assets/spx-cleansport.jpg" alt="Reviewing supplement labels and documentation" loading="lazy"></div>
@@ -288,9 +332,9 @@
 
 <section class="pa-sec">
   <div class="wrap">
-    <p class="pa-eyebrow">How it works</p>
-    <h2 class="pa-h2">Four steps, no guesswork.</h2>
-    <div class="pa-steps"><div class="pa-step on"><span class="n">Step 1</span><b>Review</b><p>Share medications, supplements, goals and competition considerations.</p></div><div class="pa-step"><span class="n">Step 2</span><b>Verify</b><p>We evaluate ingredients, interactions, timing and applicable resources.</p></div><div class="pa-step"><span class="n">Step 3</span><b>Coordinate</b><p>Where appropriate, we work alongside your physician, trainer or care team.</p></div><div class="pa-step"><span class="n">Step 4</span><b>Support</b><p>You receive clear next steps and ongoing pharmacy assistance.</p></div></div>
+    <p class="pa-eyebrow">How athlete support works</p>
+    <h2 class="pa-h2">Clear answers. Coordinated next steps.</h2>
+    <div class="pa-steps"><div class="pa-step on"><span class="n">01</span><b>Review</b><p>Share medications, supplements, goals and relevant competition considerations.</p></div><div class="pa-step"><span class="n">02</span><b>Verify</b><p>We evaluate ingredients, interactions, timing and appropriate current resources.</p></div><div class="pa-step"><span class="n">03</span><b>Coordinate</b><p>When needed, SportPharm works alongside your physician, trainer or performance team.</p></div><div class="pa-step"><span class="n">04</span><b>Support</b><p>Receive clear next steps and responsive pharmacy support as your needs change.</p></div></div>
   </div>
 </section>
 
@@ -298,21 +342,20 @@
   <div class="wrap">
     <p class="pa-eyebrow">Recovery &amp; return</p>
     <h2 class="pa-h2">Pain relief is one part of the plan.</h2>
+    <p class="pa-sub">Relieving a symptom is not the same as resolving what caused it. SportPharm helps athletes compare options while keeping recovery, training demands and care-team guidance in view.</p>
     <div class="pa-rec">
       <div>
-        <ul>
-          <li>Prescription and over-the-counter pain-relief considerations</li>
-          <li>Topical versus oral options, and when each makes sense</li>
-          <li>Symptom relief is not the same as recovery</li>
-          <li>Medication timing around training and competition</li>
-          <li>When pain is information your care team needs</li>
-        </ul>
-        <div class="pa-wasabi">
+        <div class="pa-relief">
+          <p class="lbl">Review the full picture</p>
+          <h3>Relief without losing sight of return.</h3>
+          <div class="pa-chips" style="margin-bottom:0"><span class="pa-chip">Prescription options</span><span class="pa-chip">OTC medications</span><span class="pa-chip">Topical relief</span><span class="pa-chip">Medication timing</span><span class="pa-chip">Interactions</span><span class="pa-chip">When to escalate care</span></div>
+        </div>
+        <div class="pa-wasabi" style="margin-top:22px">
           <img src="assets/product-wasabi.jpg?v=3" alt="WasabiRub">
           <div><b>WasabiRub</b><span>One topical option among several &mdash; not a recommendation on its own.</span></div>
           <a href="wasabirub.html">View &rarr;</a>
         </div>
-        <a class="pa-btn dark" href="pain-relief-options.html">Explore Athlete Pain-Relief Options</a>
+        <a class="pa-btn dark" href="pain-relief-options.html">Explore athlete pain-relief options &rarr;</a>
       </div>
       <div class="pa-rec-img"><img src="assets/start-return.jpg" alt="Athlete in recovery" loading="lazy"></div>
     </div>
@@ -321,35 +364,34 @@
 
 <section class="pa-sec">
   <div class="wrap">
-    <p class="pa-eyebrow">Trusted by the athlete&rsquo;s team</p>
-    <h2 class="pa-h2">We strengthen the pharmacy layer around your team.</h2>
-    <p class="pa-sub">You already have people looking after you. We work alongside them.</p>
-    <div class="pa-team"><div class="pa-role">Physicians</div><div class="pa-role">Athletic trainers</div><div class="pa-role">Physical therapists</div><div class="pa-role">Strength &amp; conditioning</div><div class="pa-role">Dietitians</div><div class="pa-role">Agents &amp; athlete managers</div></div>
+    <p class="pa-eyebrow">Built to collaborate</p>
+    <h2 class="pa-h2">We do not replace your team. We strengthen it.</h2>
+    <p class="pa-sub">SportPharm works within the athlete-care ecosystem, providing the pharmacy expertise that connects treatment decisions, medication access, performance demands and competition considerations.</p>
+    <div class="pa-team"><div class="pa-role">Physicians</div><div class="pa-role">Athletic trainers</div><div class="pa-role">Physical therapists</div><div class="pa-role">Strength staff</div><div class="pa-role">Dietitians</div><div class="pa-role">Agents &amp; managers</div></div>
     <div class="pa-team-note">
-      <p>We do not replace your team. We strengthen the pharmacy layer around it.</p>
+      <p>Coordinate with SportPharm.</p>
       <span>If you work with athletes professionally &mdash; as a trainer, physician or team &mdash; SportPharm has a dedicated healthcare hub covering compounding, repackaging, inventory and team supply.</span>
-      <a class="pa-btn line" href="sports-medicine.html">For Healthcare Professionals &amp; ATs</a>
+      <a class="pa-btn line" href="sports-medicine.html">For healthcare professionals &amp; ATs</a>
     </div>
   </div>
 </section>
 
 <section class="pa-sec soft" id="resources">
   <div class="wrap">
-    <p class="pa-eyebrow">Featured resources</p>
-    <h2 class="pa-h2">Start here.</h2>
-    <div class="pa-res"><a class="pa-art" href="coming-soon.html?f=Athlete+Medication+Review"><span class="ph"><img src="assets/blog-nsaids.jpg" alt="" loading="lazy"></span><span class="bd"><small>Medication Review</small><h3>What Professional Athletes Should Include in a Medication Review</h3><span>Read Article &rarr;</span></span></a><a class="pa-art" href="coming-soon.html?f=Supplement+Certification+Risk"><span class="ph"><img src="assets/spx-cleansport.jpg" alt="" loading="lazy"></span><span class="bd"><small>Clean Sport</small><h3>Supplements, Certifications and Hidden Competition Risk</h3><span>Read Article &rarr;</span></span></a><a class="pa-art" href="coming-soon.html?f=Travel+Medication+Plan"><span class="ph"><img src="assets/blog-return.jpg" alt="" loading="lazy"></span><span class="bd"><small>Travel</small><h3>How to Build a Competition-Ready Travel Medication Plan</h3><span>Read Article &rarr;</span></span></a></div>
+    <p class="pa-eyebrow">Athlete resources</p>
+    <h2 class="pa-h2">Know more before the next decision.</h2>
+    <div class="pa-res"><a class="pa-art" href="#intake" data-intake><span class="ph"><img src="assets/blog-nsaids.jpg" alt="" loading="lazy"></span><span class="bd"><small>Medication review</small><h3>What professional athletes should include in a medication review</h3><span>Ask about this topic &rarr;</span></span></a><a class="pa-art" href="#intake" data-intake><span class="ph"><img src="assets/spx-cleansport.jpg" alt="" loading="lazy"></span><span class="bd"><small>Clean sport</small><h3>Supplements, certifications and hidden competition risk</h3><span>Ask about this topic &rarr;</span></span></a><a class="pa-art" href="#intake" data-intake><span class="ph"><img src="assets/blog-return.jpg" alt="" loading="lazy"></span><span class="bd"><small>Travel</small><h3>How to build a competition-ready travel medication plan</h3><span>Ask about this topic &rarr;</span></span></a></div>
   </div>
 </section>
 
-<section class="pa-final" id="request">
+<section class="pa-final" id="intake">
   <div class="wrap">
-    <p class="pa-eyebrow">Request athlete support</p>
+    <p class="pa-eyebrow">Private, athlete-focused support</p>
     <h2>Your performance is personal. Your pharmacy support should be too.</h2>
-    <p>Tell us what you need reviewed, coordinated or checked. A pharmacist will follow up directly.</p>
+    <p>Tell us what you need. SportPharm will help identify the right starting point for you or your representative.</p>
     <div class="pa-cta-row">
-      <a class="pa-btn solid" href="#" data-open-contact>Request Athlete Support</a>
-      <a class="pa-btn line" href="contact.html">Speak with SportPharm</a>
-      <a class="pa-btn line" href="#" data-open-contact>Have Your Representative Contact Us</a>
+      <a class="pa-btn solid" href="#" data-intake>Request athlete support &rarr;</a>
+      <a class="pa-btn line" href="#" data-intake>Have my representative connect</a>
     </div>
     <p class="pa-conf">Enquiries are handled discreetly. We coordinate with your physician, trainer or representative only where you ask us to, and we do not share athlete information with anyone outside that circle without your say-so.</p>
   </div>
@@ -358,28 +400,52 @@
     <div><h3>Explore</h3><a href="#services">Athlete services</a><a href="#clean">Clean sport</a><a href="#process">How it works</a></div>
     <div><h3>Support</h3><a href="#resources">Resources</a><a href="#" data-modal="pharmacist">Contact us</a><a href="#team">For professionals</a></div>
     <div><h3>Contact</h3><p>East Division (Florida)<br>West Division (California)<br><br>(323) 426-3797<br>info@sportpharm.com</p></div>
-  </footer><script>
-/* Pro Athlete Hub router — expands an explanation in place, no page change */
+  </footer><div class="pa-modal" id="paIntake" role="dialog" aria-modal="true" aria-labelledby="paIntakeTitle">
+  <div class="pa-dialog">
+    <button class="pa-x" type="button" data-close aria-label="Close">&times;</button>
+    <div id="paIntakeForm">
+      <p class="pa-eyebrow" style="color:var(--red-ink)">Private athlete support</p>
+      <h2 id="paIntakeTitle">Tell us what you need.</h2>
+      <p class="dsub">A pharmacist will help identify the right starting point for you or your representative.</p>
+      <form id="paForm" novalidate>
+        <div class="pa-f"><label for="pa_name">Name</label><input id="pa_name" name="name" required></div>
+        <div class="pa-f"><label for="pa_email">Email</label><input id="pa_email" name="email" type="email" required></div>
+        <div class="pa-f"><label for="pa_role">I am contacting SportPharm as</label>
+          <select id="pa_role" name="role"><option>An athlete</option><option>An agent or representative</option><option>A parent or guardian</option><option>A member of the athlete&rsquo;s care team</option></select></div>
+        <div class="pa-f"><label for="pa_topic">What do you need help with?</label>
+          <select id="pa_topic" name="topic"><option>Medication review</option><option>Supplement review</option><option>Clean-sport support</option><option>Travel and competition</option><option>Pain, injury and recovery</option><option>Prescription coordination</option><option>Care-team coordination</option><option>Competition question</option><option>Not sure yet</option></select></div>
+        <div class="pa-f"><label for="pa_details">What would be helpful for us to know?</label>
+          <textarea id="pa_details" name="details" placeholder="Please avoid including sensitive medical information in this initial request."></textarea>
+          <p class="hint">Share enough for us to route you to the right pharmacist. Detailed medical information is better discussed directly.</p></div>
+        <p class="pa-notice"><b>This form does not transmit information yet.</b> Athlete medication enquiries should route through SportPharm&rsquo;s approved secure intake &mdash; not a general web form &mdash; before this goes live.</p>
+        <button class="pa-submit" type="submit">Send support request &rarr;</button>
+      </form>
+    </div>
+    <div id="paIntakeDone" class="pa-done" hidden>
+      <div class="tick">&#10003;</div>
+      <h2>Request prepared.</h2>
+      <p class="dsub">In the production site this confirmation appears once the secure form has been submitted successfully.</p>
+      <button class="pa-btn dark" type="button" data-close>Close</button>
+    </div>
+  </div>
+</div><script>
 (function(){
-  var PANELS={"review": {"t": "I need a medication reviewed", "body": "A pharmacist reviews what you are taking against your competition schedule, your training block and the rest of your regimen. The output is plain: what is worth flagging, what to ask your physician, and what to document.", "href": "medication-supplement-review.html", "cta": "Medication &amp; Supplement Review"}, "supplement": {"t": "I need to check a supplement", "body": "Supplements are the most common source of avoidable eligibility problems. We look at the ingredient list, whether the product carries credible third-party certification, and where undisclosed or cross-contaminated ingredients are a realistic risk. <b>We do not certify products as competition-safe</b> \u2014 we help you evaluate and document the risk you are taking on.", "href": "clean-sport.html", "cta": "Clean-Sport Support"}, "travel": {"t": "I&rsquo;m preparing for travel", "body": "Crossing borders with medication is where plans break. We help coordinate refills ahead of departure, assemble the documentation you may be asked for, and plan dosing around time-zone shifts and competition timing.", "href": "travel-competition.html", "cta": "Travel &amp; Competition"}, "pain": {"t": "I&rsquo;m managing pain or an injury", "body": "Symptom relief and recovery are not the same thing. We look at topical versus oral options, how timing interacts with training, and \u2014 importantly \u2014 where pain is information your care team needs rather than something to manage around.", "href": "#recovery", "cta": "Recovery &amp; Return"}, "rx": {"t": "I need prescription coordination", "body": "Where appropriate, we coordinate directly with your physician and training staff so prescriptions, timing and documentation line up. We do not replace anyone on your team \u2014 we handle the pharmacy layer around them.", "href": "#request", "cta": "Request Athlete Support"}, "urgent": {"t": "I have an urgent competition question", "body": "If something has come up close to a competition, say so when you get in touch and we will treat it accordingly. <b>For a medical emergency, contact emergency services rather than waiting for a pharmacy response.</b>", "href": "#request", "cta": "Request Athlete Support"}};
-  var wrap=document.getElementById("paPanel");
-  var opts=[].slice.call(document.querySelectorAll(".pa-opt"));
-  function close(){ wrap.hidden=true; opts.forEach(function(o){o.setAttribute("aria-expanded","false");}); }
-  function open(k,btn){
-    var d=PANELS[k]; if(!d) return;
-    wrap.innerHTML='<button class="pa-panel-close" type="button" aria-label="Close">&times;</button>'+
-      '<h3>'+d.t+'</h3><p>'+d.body+'</p><a class="pa-btn dark" href="'+d.href+'">'+d.cta+'</a>';
-    opts.forEach(function(o){o.setAttribute("aria-expanded", o===btn?"true":"false");});
-    wrap.hidden=false;
-    wrap.querySelector(".pa-panel-close").addEventListener("click",close);
-    wrap.scrollIntoView({behavior:"smooth",block:"nearest"});
-  }
-  opts.forEach(function(o){
-    o.addEventListener("click",function(){
-      if(o.getAttribute("aria-expanded")==="true"){ close(); return; }
-      open(o.dataset.r,o);
-    });
+  var m=document.getElementById("paIntake"),f=document.getElementById("paIntakeForm"),
+      d=document.getElementById("paIntakeDone"),form=document.getElementById("paForm");
+  function open(e){ if(e)e.preventDefault(); f.hidden=false; d.hidden=true; m.classList.add("open");
+    document.body.style.overflow="hidden"; setTimeout(function(){document.getElementById("pa_name").focus();},40); }
+  function close(){ m.classList.remove("open"); document.body.style.overflow=""; }
+  document.addEventListener("click",function(e){
+    var t=e.target.closest&&e.target.closest("[data-intake]"); if(t) open(e);
+    if(e.target.closest&&e.target.closest("[data-close]")) close();
   });
-  document.addEventListener("keydown",function(e){ if(e.key==="Escape" && !wrap.hidden) close(); });
+  m.addEventListener("click",function(e){ if(e.target===m) close(); });
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape"&&m.classList.contains("open")) close(); });
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    if(!form.reportValidity()) return;
+    /* deliberately not transmitted — athlete medication enquiries need a secure intake route */
+    f.hidden=true; d.hidden=false; m.querySelector(".pa-dialog").scrollTop=0;
+  });
 })();
 </script></body></html>
