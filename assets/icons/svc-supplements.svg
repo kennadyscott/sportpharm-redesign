@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title id="title">Supplements bottle</title>
+  <g fill="#d6202a">
+    <rect x="50" y="27" width="156" height="32" rx="8"/>
+    <path d="M63 70h130v151a11 11 0 0 1-11 11H74a11 11 0 0 1-11-11V70Z"/>
+  </g>
+  <path fill="#fff" d="M114 112h28v26h26v28h-26v26h-28v-26H88v-28h26z"/>
+</svg>

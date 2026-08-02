@@ -15,3 +15,14 @@ audience split:
 
 **To commission or license:** pro team sideline/training-room imagery (NBA/NFL/NHL
 register), and alpine skiing for the Pro hub.
+
+## 🎨 Service icons — 6 of 8 supplied 2026-08-02
+
+Imported and retinted from `#F51D28` to our `#d6202a`: Compounding, Drug Repackaging,
+Concierge Pharmacy, Supplements, Retail Pharmacy, Customized Services.
+
+- [ ] **Blister Packaging** icon &mdash; still a glyph placeholder (`.ic.glyph`)
+- [ ] **Inventory Management** icon &mdash; still a glyph placeholder
+
+Note: the supplied `download.svg` is actually the Supplements bottle &mdash; its internal
+`<title>` says so. Saved as `svc-supplements.svg`.

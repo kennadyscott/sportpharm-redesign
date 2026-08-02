@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title id="title">Customized services question mark</title>
+  <circle cx="128" cy="128" r="104" fill="#d6202a"/>
+  <path fill="#fff" d="M128 61c32 0 54 18 54 46 0 24-13 35-31 46-10 6-13 12-13 22v4h-27v-7c0-21 8-31 25-42 12-8 18-13 18-23 0-12-9-20-26-20-16 0-27 8-36 21L72 91c13-20 31-30 56-30Zm-2 132c11 0 20 9 20 20s-9 20-20 20-20-9-20-20 9-20 20-20Z"/>
+</svg>

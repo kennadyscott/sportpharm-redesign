@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title id="title">Retail pharmacy building</title>
+  <g fill="#d6202a">
+    <path d="m24 104 96-82a12 12 0 0 1 16 0l96 82a10 10 0 0 1 1 14l-10 12-95-81-95 81-10-12a10 10 0 0 1 1-14Z"/>
+    <path d="M47 125 128 56l81 69v94a11 11 0 0 1-11 11H58a11 11 0 0 1-11-11v-94Z"/>
+  </g>
+  <path fill="#fff" d="M114 117h28v28h28v28h-28v28h-28v-28H86v-28h28z"/>
+</svg>

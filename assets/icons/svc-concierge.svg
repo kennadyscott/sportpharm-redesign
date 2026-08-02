@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title id="title">Concierge pharmacy stethoscope</title>
+  <g fill="none" stroke="#d6202a" stroke-width="18" stroke-linecap="square" stroke-linejoin="round">
+    <path d="M55 31v48c0 34 22 56 53 56s53-22 53-56V31"/>
+    <path d="M108 135v25c0 32 20 54 49 54 26 0 44-18 44-43"/>
+  </g>
+  <path fill="#d6202a" d="M43 24h30v20H43zm103 0h30v20h-30z"/>
+  <circle cx="202" cy="158" r="27" fill="#d6202a"/>
+</svg>

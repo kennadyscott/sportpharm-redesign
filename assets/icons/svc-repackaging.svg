@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title id="title">Drug repackaging capsules</title>
+  <g fill="none" stroke="#d6202a" stroke-width="26" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M63 49v91a30 30 0 0 0 60 0V49a30 30 0 0 0-60 0Z"/>
+    <path d="m125 70 60 76a30 30 0 1 0 47-37l-60-76a30 30 0 0 0-47 37Z"/>
+  </g>
+  <path fill="#d6202a" d="M50 102h86v38a43 43 0 0 1-86 0v-38Zm103-1 55-43 30 38-55 43-30-38Z"/>
+</svg>
