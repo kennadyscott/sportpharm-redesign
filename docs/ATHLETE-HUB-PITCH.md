@@ -77,7 +77,7 @@ wasabirub.com — A Product Site on the SportPharm Platform
 
  The mistake was conflating WordPress with what most people actually encounter as WordPress: page builders like Elementor and Divi, and off-the-shelf themes. Those are limiting, and they are exactly where "dated" comes from. A custom theme is a different thing entirely — it renders our own markup verbatim, and none of those tools are involved.
 
- What changed my assessment: auditing all 63 pages we have built — no server-side code, no build step, no API layer — and working through how WooCommerce template overrides actually function. The correction makes the recommendation stronger, not weaker. We can have the design we want and stay on the platform this company already knows and can staff. I had been treating those as a trade-off. They are not.
+ What changed my assessment: auditing all 75 pages we have built — no server-side code, no build step, no API layer — and working through how WooCommerce template overrides actually function. The correction makes the recommendation stronger, not weaker. We can have the design we want and stay on the platform this company already knows and can staff. I had been treating those as a trade-off. They are not.
 
  
 
@@ -177,6 +177,64 @@ wasabirub.com — A Product Site on the SportPharm Platform
 
  
  
+
+## Two sites, one system
+
+They are not two versions of the same site. They sell different things to different people, and the split is what lets each one rank for what it is actually about.
+
+**sportpharm.com — the pharmacy.** The company, the credentials, the services. Athletic trainers, team physicians, athletic directors and program staff. What it sells is a *relationship*: compounding to a specification, unit-dose supply, inventory that doesn't expire, a pharmacist who answers. Years of earned trust and an established search footprint.
+
+**wasabirub.com — the product.** The topical range and the content that drives demand for it. Athletes and everyday movers. What it sells is a *product*, in a cart, at a price. A brand-new domain with no authority, which is exactly why the hub sits on it.
+
+**How they connect**
+
+- **One design system, two child themes.** A visitor moving between them should recognise the same company — same typography, same red, same components — without either site pretending to be the other.
+- **The traffic flows one way on purpose.** The hub earns attention by answering questions people actually search, and points to the product beside it on the same domain. sportpharm.com links out to wasabirub.com for the range; wasabirub.com points back for prescription work, compounding and anything requiring a pharmacist.
+- **The commerce lives on wasabirub.com.** That is the cart, the checkout, the products. sportpharm.com stays a services and credibility site with enquiry forms, not a store — which is what it already is, and what it should remain.
+
+## What is actually built
+
+Not a mockup. Seventy-five working pages.
+
+| | |
+|---|---|
+| **75 pages** | Built, live and navigable end to end |
+| **3 audiences** | Everyday athlete, professional athlete, healthcare & AT |
+| **6 service pages** | Every pharmacy service with its own indexable page |
+| **10 articles** | The demand engine, already written |
+
+**Why the page count is the SEO argument.** Search engines rank pages, not companies. Every question that gets its own page is a separate chance to appear when someone searches it. The current site answers "what is compounding" and "are compounded medications allowed under anti-doping rules" in an accordion that collapses on load — one URL, competing with itself.
+
+- **Every service is its own page.** Six entry points where the mockup had a single services list.
+- **32 questions marked up as structured data.** FAQPage schema is what lets a question and its answer appear directly in search results rather than only as a blue link. That markup does not exist on the current site.
+- **Every service page links to every other.** A crawler arriving on any one can reach the whole set.
+- **Nothing important is JavaScript-only.** Links a crawler needs are real `<a href>` in the markup. This is a real failure mode — we introduced it ourselves mid-build and caught it: the compounding page existed and was reachable by a human, but no search engine could have found it.
+
+## A mirror of the current site, without the errors
+
+This is not a reinvention of what SportPharm says about itself. The services are the same services. The FAQ answers are the live site's answers, taken from the page source and compared word for word, not paraphrased.
+
+**What did not carry over** — errors found while transcribing:
+
+- **"USP // compliance"** — on the compounding page, in a sentence about quality standards. The chapter numbers were written as `<795>/<797>` without escaping, so the browser swallowed them as HTML tags. A quality claim on a compounding pharmacy's page, rendering as a typo. Fixed.
+- **Concierge shows repackaging's benefits** — the "Key Benefits" block on the concierge page is the drug repackaging list, pasted in by mistake. Rewritten from SportPharm's own concierge copy.
+- **Testimonials with no attribution** — four service pages carry a five-star quote above a placeholder image and the words "Placeholder / Athlete."
+- **"SportPharmTM"** — the trademark is superscript text, reading as literal letters mid-sentence. Replaced with the ™ character.
+- **Buried distinctions** — "Unlike compounding, we're not altering the medication" sits mid-paragraph on the repackaging page. Given its own callout.
+
+## Custom built, not template built
+
+**The current site is a page builder.** Its markup is machine-generated — wrapper divs nested six deep, layout decisions stored as configuration strings, styling that cannot be changed without fighting the tool that wrote it. That is where "dated" comes from. It is not a taste problem; it is a structural one.
+
+**What we built instead** is a component library — a services rail with an expanding drawer, an accordion, tabbed panels, a numbered process component, product cards, a testimonial stage. Each defined once and reused, so a change lands everywhere at once.
+
+**The brand adjustments**
+
+- **Palette.** Off the old navy onto a near-black ground, with a single red accent and a darker red reserved for text on light backgrounds. Adjacent dark sections use different values so they read as separate.
+- **Typography.** A condensed display face at maximum weight for headlines, caps and tight, against a neutral body face. Headlines use a two-tone treatment — first clause in ink or white, the turn in red.
+- **Hierarchy.** Full-bleed heroes with the headline set against the photograph, primary action above the fold on a laptop. Sections alternate light, white and near-black.
+- **Accessibility, measured.** Every colour pair checked in the browser against its actual composited background. WCAG AA throughout. Several combinations that looked fine failed and were adjusted.
+- **Three audiences, one identity.** A persona switcher moves between everyday athlete, professional athlete, and healthcare & AT. The current site asks one voice to speak to a weekend runner and a Division I head trainer at once.
 
 ## Who runs this afterwards
 
