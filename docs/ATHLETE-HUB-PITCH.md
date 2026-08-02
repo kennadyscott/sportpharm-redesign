@@ -1,4 +1,4 @@
-# wasabirub.com — leadership brief
+# SportPharm + wasabirub.com — leadership brief
 
 > Visual version: https://claude.ai/code/artifact/b3b4a9a5-96ff-4466-ad99-faf67546840c
 
@@ -9,7 +9,7 @@ The Athlete Hub — A Demand Engine for WasabiRub
 
  wasabirub.comneeds a reason to rank.
 
- A new domain starts with no search authority. The Athlete Hub is how the product site earns it — educational content that answers what athletes actually search, on the same domain that sells them the answer.
+ A new domain starts with no search authority. The Athlete Hub is how the product site earns it — educational content that answers what athletes actually search, on the same domain that sells them the answer. Both sites move to one design system, and both stay on WordPress.
 
  Three decisions: approve the hub as the demand engine for wasabirub.com, confirm the platform it runs on, and name who operates it.
 
@@ -85,47 +85,76 @@ The Athlete Hub — A Demand Engine for WasabiRub
  
  
 
-## sportpharm.com does not change
+## The platform stays. The design changes.
 
- The first concern, answered directly: this is a new site on a familiar platform, not a migration of the one that works.
+ Both sites move to the new design system. Neither moves to a new platform.
+
+ The plan is two WordPress sites sharing one design language: sportpharm.com rebuilt for the company and the pharmacy, and wasabirub.com as the product site with the hub beside it. One parent theme, two child themes — a shared foundation with the divergence each site needs.
 
  
- 0
-changes to sportpharm.com
-
  0
 new platforms to learn
 
- 63
-pages already built and working
+ 0
+content or orders migrated
 
  0
-lines of server-side code in them
+URLs changed
+
+ 1
+thing that actually changes — the theme
 
  
 
  
- What we are actually proposing
+ Three things stay, one thing changes
 
- sportpharm.com stays exactly as it is — the company and pharmacy site, on the WordPress the team knows and likes. Nothing is migrated, rebuilt or switched off.
+ The platform stays. Same WordPress, same admin screens, same publishing workflow, same skills. Nobody retrains.
 
- wasabirub.com is a new site on the same platform. Another WordPress install, running WooCommerce, holding the product pages and the hub together. Not a new technology to learn — the same admin screens, the same publishing workflow, the same skills the team already has.
+ The content stays. Pages, posts, products, orders, customers and reviews live in the database, independent of the theme. Changing themes does not touch data. A redesign in WordPress is far less risky than a platform migration precisely because nothing moves.
 
- The hub itself needs almost nothing. We audited all 63 pages: no server-side code, no build step, no API layer. The interactive tools are client-side JavaScript that runs identically inside a WordPress template. Articles become posts and pick up the draft → review → publish workflow that already exists.
+ The URLs stay. sportpharm.com has years of earned search authority. Keep the existing addresses and a redesign costs nothing in rankings — which answers the obvious worry directly: rebuilding the site does not mean starting over in search.
 
- 
-
- 
- And no page builder is involved
-
- A custom theme template renders our own markup verbatim — same CSS, same typography, same brand red. Elementor, Divi and off-the-shelf themes are where "dated and tacky" comes from, and none of them are required or used. The approved design ships as designed.
+ Only the theme changes. A WordPress theme is the design — our HTML and CSS in template files. This is ordinary, well-trodden work, not a workaround.
 
  
 
  
- The one real hazard
+ The product pages are entirely ours — this is the important one
 
- Drift. A plugin installed later that injects its own CSS can degrade a carefully built design. A governance rule, not a technical limit — but it needs a named owner.
+ The current product template is the weakest part of the existing site, and we are not trapped in it. WooCommerce gives three levels of control, and we would use the third:
+
+ 
+ 
+- Template override — copy a WooCommerce template into our theme and it takes precedence. The file is ours to edit.
+
+ 
+- Unhook the defaults — title, price, rating, excerpt, add-to-cart, meta, tabs and related products are each attached at a hook. Any or all can be removed.
+
+ 
+- Write the template from scratch — our own markup, pulling values off the product object. WooCommerce supplies data and cart mechanics; the presentation is entirely ours.
+
+ 
+
+ The product pages already built — gallery, price, quantity stepper, option picker, active-ingredient explanations, tabs, reviews, related products — port essentially whole. Only the add-to-cart form itself must come from WooCommerce. The richer fields become custom fields rendered by our own markup.
+
+ The honest constraint: the add-to-cart form and checkout carry functional requirements — security tokens, expected field names, AJAX handlers. We restyle them completely but do not rewrite the mechanics. Our design on top, proven plumbing underneath.
+
+ 
+
+ 
+ Two decisions to make at the start, not later
+
+ 1. Classic checkout, not block checkout. WooCommerce now ships two. The newer block-based checkout is significantly harder to customise deeply; the classic templates are fully overridable. If checkout is to match the design as thoroughly as the product pages, this must be specified at build time — retrofitting it later is painful.
+
+ 2. A plugin audit before scoping. Existing plugins may inject their own markup and CSS that fights a new design, and one installed later can undo it. Both a scoping input and an ongoing governance rule that needs a named owner.
+
+ 
+
+ 
+ Where the work actually is
+
+ Being straight about scope, because this is materially bigger than a content hub. Seven top-level sections, eight services (three of which our current mockups do not yet cover — Blister Packaging, Inventory Management, Customized Services), nine products on a rich template, plus News and the store. WooCommerce's cart and checkout templates are the fiddliest part and where redesigns typically run long. The 63 hub pages are the easy half.
 
  
 
@@ -307,6 +336,7 @@ Bulk edit, CSV import, variants, multi-location inventory, staff permissions, re
 - Plugin governance. One named person deciding what gets installed on wasabirub.com, so the design does not drift.
 
  
+
  
 
  
@@ -319,13 +349,17 @@ Bulk edit, CSV import, variants, multi-location inventory, staff permissions, re
  The concernThe honest answer
 
  
- "We would be switching platforms" | We would not. sportpharm.com does not change, and wasabirub.com runs on the same WordPress the team already uses. It is a second install, not a new technology.
+ "We would be switching platforms" | We would not. Both sites stay on WordPress — same admin, same workflow, same skills. The design changes; the platform, the content and the URLs do not.
 
  "Who runs it when the contractor leaves?" | An employee, on WordPress — the most widely known publishing interface there is. If they move on, a replacement is easy and cheap to hire. That requirement is exactly why a bespoke custom build is not proposed.
 
  "A new domain will never rank" | It will not on its own — which is the point of the hub. Content is how a new domain earns authority. Expect 6–12 months, and note it compounds and keeps working after the spend stops, which advertising does not.
 
  "Why not just put it on sportpharm.com?" | It would rank sooner on the older domain. But the traffic would land on SportPharm and the equity would build there — not on the product site we are trying to establish. If wasabirub.com is where we sell, it is where the content has to live.
+
+ "A redesign will hurt our search rankings" | Not if the URLs stay the same, and they would. Search authority attaches to addresses, not to themes — sportpharm.com keeps everything it has earned.
+
+ "We will be stuck with WooCommerce product pages" | No. A custom template replaces them entirely; WooCommerce supplies only the data and the cart mechanics. The product pages already designed port essentially whole.
 
  "Health content is a liability" | Addressed by clinical review, named reviewers and explicit non-diagnostic language already built into every tool and page. The review gate still needs applying to the ten articles now live.
 
@@ -365,7 +399,7 @@ Bulk edit, CSV import, variants, multi-location inventory, staff permissions, re
 
  1Approve the hub as the demand engine for wasabirub.comEducational content that earns the search traffic a new domain cannot get on its own — on the same site that sells the product.
 
- 2Build it on WordPress + WooCommerceThe platform we already run and can already staff. sportpharm.com is untouched.
+ 2Build both sites on WordPress + WooCommerce, one design systemThe platform we already run and can already staff. New theme, same admin — content, orders and URLs all stay put.
 
  3Name who runs itPublishing cadence, clinical review, plugin governance. The decision that determines whether this still works in a year.
 

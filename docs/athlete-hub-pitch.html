@@ -203,7 +203,7 @@
   <div class="wrap">
     <p class="eyebrow">Prepared for leadership &middot; Decision requested</p>
     <h1 class="disp">wasabirub.com<br>needs a <span>reason to rank.</span></h1>
-    <p class="lede">A new domain starts with no search authority. The Athlete Hub is how the product site earns it &mdash; educational content that answers what athletes actually search, on the same domain that sells them the answer.</p>
+    <p class="lede">A new domain starts with no search authority. The Athlete Hub is how the product site earns it &mdash; educational content that answers what athletes actually search, on the same domain that sells them the answer. Both sites move to one design system, and both stay on WordPress.</p>
     <div class="ask"><b>Three decisions:</b> approve the hub as the demand engine for wasabirub.com, confirm the platform it runs on, and name who operates it.</div>
   </div>
 </header>
@@ -253,31 +253,47 @@
 
 <section>
   <div class="wrap">
-    <h2 class="disp">sportpharm.com does not change</h2>
-    <p class="sub">The first concern, answered directly: this is a new site on a familiar platform, not a migration of the one that works.</p>
+    <h2 class="disp">The platform stays. The design changes.</h2>
+    <p class="sub">Both sites move to the new design system. Neither moves to a new platform.</p>
+
+    <p>The plan is two WordPress sites sharing one design language: <b>sportpharm.com</b> rebuilt for the company and the pharmacy, and <b>wasabirub.com</b> as the product site with the hub beside it. One parent theme, two child themes &mdash; a shared foundation with the divergence each site needs.</p>
 
     <div class="facts">
-      <div><div class="n">0</div><div class="k">changes to sportpharm.com</div></div>
       <div><div class="n">0</div><div class="k">new platforms to learn</div></div>
-      <div><div class="n">63</div><div class="k">pages already built and working</div></div>
-      <div><div class="n">0</div><div class="k">lines of server-side code in them</div></div>
+      <div><div class="n">0</div><div class="k">content or orders migrated</div></div>
+      <div><div class="n">0</div><div class="k">URLs changed</div></div>
+      <div><div class="n">1</div><div class="k">thing that actually changes &mdash; the theme</div></div>
     </div>
 
     <div class="lead-in">
-      <p class="hl">What we are actually proposing</p>
-      <p class="note"><b>sportpharm.com stays exactly as it is</b> &mdash; the company and pharmacy site, on the WordPress the team knows and likes. Nothing is migrated, rebuilt or switched off.</p>
-      <p class="note"><b>wasabirub.com is a new site on the same platform.</b> Another WordPress install, running WooCommerce, holding the product pages and the hub together. Not a new technology to learn &mdash; the same admin screens, the same publishing workflow, the same skills the team already has.</p>
-      <p class="note" style="margin:0"><b>The hub itself needs almost nothing.</b> We audited all 63 pages: no server-side code, no build step, no API layer. The interactive tools are client-side JavaScript that runs identically inside a WordPress template. Articles become posts and pick up the draft &rarr; review &rarr; publish workflow that already exists.</p>
+      <p class="hl">Three things stay, one thing changes</p>
+      <p class="note"><b>The platform stays.</b> Same WordPress, same admin screens, same publishing workflow, same skills. Nobody retrains.</p>
+      <p class="note"><b>The content stays.</b> Pages, posts, products, orders, customers and reviews live in the database, independent of the theme. <b>Changing themes does not touch data.</b> A redesign in WordPress is far less risky than a platform migration precisely because nothing moves.</p>
+      <p class="note"><b>The URLs stay.</b> sportpharm.com has years of earned search authority. Keep the existing addresses and a redesign costs nothing in rankings &mdash; which answers the obvious worry directly: rebuilding the site does not mean starting over in search.</p>
+      <p class="note" style="margin:0"><b>Only the theme changes.</b> A WordPress theme <i>is</i> the design &mdash; our HTML and CSS in template files. This is ordinary, well-trodden work, not a workaround.</p>
     </div>
 
     <div class="proof" style="border-left:4px solid var(--good)">
-      <p class="hl">And no page builder is involved</p>
-      <p class="note" style="margin:0">A custom theme template renders our own markup verbatim &mdash; same CSS, same typography, same brand red. <b>Elementor, Divi and off-the-shelf themes are where &ldquo;dated and tacky&rdquo; comes from, and none of them are required or used.</b> The approved design ships as designed.</p>
+      <p class="hl">The product pages are entirely ours &mdash; this is the important one</p>
+      <p class="note">The current product template is the weakest part of the existing site, and <b>we are not trapped in it.</b> WooCommerce gives three levels of control, and we would use the third:</p>
+      <ol>
+        <li><b>Template override</b> &mdash; copy a WooCommerce template into our theme and it takes precedence. The file is ours to edit.</li>
+        <li><b>Unhook the defaults</b> &mdash; title, price, rating, excerpt, add-to-cart, meta, tabs and related products are each attached at a hook. Any or all can be removed.</li>
+        <li><b>Write the template from scratch</b> &mdash; our own markup, pulling values off the product object. <b>WooCommerce supplies data and cart mechanics; the presentation is entirely ours.</b></li>
+      </ol>
+      <p class="note">The product pages already built &mdash; gallery, price, quantity stepper, option picker, active-ingredient explanations, tabs, reviews, related products &mdash; port essentially whole. Only the add-to-cart form itself must come from WooCommerce. The richer fields become custom fields rendered by our own markup.</p>
+      <p class="note" style="margin:0"><b>The honest constraint:</b> the add-to-cart form and checkout carry functional requirements &mdash; security tokens, expected field names, AJAX handlers. We restyle them completely but do not rewrite the mechanics. Our design on top, proven plumbing underneath.</p>
     </div>
 
     <div class="trap">
-      <p class="hl">The one real hazard</p>
-      <p class="note" style="margin:0"><b>Drift.</b> A plugin installed later that injects its own CSS can degrade a carefully built design. A governance rule, not a technical limit &mdash; but it needs a named owner.</p>
+      <p class="hl">Two decisions to make at the start, not later</p>
+      <p class="note"><b>1. Classic checkout, not block checkout.</b> WooCommerce now ships two. The newer block-based checkout is significantly harder to customise deeply; the classic templates are fully overridable. If checkout is to match the design as thoroughly as the product pages, <b>this must be specified at build time</b> &mdash; retrofitting it later is painful.</p>
+      <p class="note" style="margin:0"><b>2. A plugin audit before scoping.</b> Existing plugins may inject their own markup and CSS that fights a new design, and one installed later can undo it. Both a scoping input and an ongoing governance rule that needs a named owner.</p>
+    </div>
+
+    <div class="honest">
+      <p class="hl">Where the work actually is</p>
+      <p class="note" style="margin:0">Being straight about scope, because this is materially bigger than a content hub. <b>Seven top-level sections, eight services</b> (three of which our current mockups do not yet cover &mdash; Blister Packaging, Inventory Management, Customized Services), <b>nine products</b> on a rich template, plus News and the store. <b>WooCommerce's cart and checkout templates are the fiddliest part</b> and where redesigns typically run long. The 63 hub pages are the easy half.</p>
     </div>
   </div>
 </section>
@@ -401,10 +417,12 @@
       <table>
         <thead><tr><th>The concern</th><th>The honest answer</th></tr></thead>
         <tbody>
-          <tr><td>"We would be switching platforms"</td><td><b>We would not.</b> sportpharm.com does not change, and wasabirub.com runs on the same WordPress the team already uses. It is a second install, not a new technology.</td></tr>
+          <tr><td>"We would be switching platforms"</td><td><b>We would not.</b> Both sites stay on WordPress &mdash; same admin, same workflow, same skills. The design changes; the platform, the content and the URLs do not.</td></tr>
           <tr><td>"Who runs it when the contractor leaves?"</td><td>An employee, on WordPress &mdash; the most widely known publishing interface there is. If they move on, a replacement is easy and cheap to hire. That requirement is exactly why a bespoke custom build is not proposed.</td></tr>
           <tr><td>"A new domain will never rank"</td><td>It will not on its own &mdash; which is the point of the hub. Content is how a new domain earns authority. Expect 6&ndash;12 months, and note it compounds and keeps working after the spend stops, which advertising does not.</td></tr>
           <tr><td>"Why not just put it on sportpharm.com?"</td><td>It would rank sooner on the older domain. But the traffic would land on SportPharm and the equity would build there &mdash; not on the product site we are trying to establish. If wasabirub.com is where we sell, it is where the content has to live.</td></tr>
+          <tr><td>"A redesign will hurt our search rankings"</td><td>Not if the URLs stay the same, and they would. Search authority attaches to addresses, not to themes &mdash; sportpharm.com keeps everything it has earned.</td></tr>
+          <tr><td>"We will be stuck with WooCommerce product pages"</td><td><b>No.</b> A custom template replaces them entirely; WooCommerce supplies only the data and the cart mechanics. The product pages already designed port essentially whole.</td></tr>
           <tr><td>"Health content is a liability"</td><td>Addressed by clinical review, named reviewers and explicit non-diagnostic language already built into every tool and page. <b>The review gate still needs applying to the ten articles now live.</b></td></tr>
           <tr><td>"We'll publish ten articles and stop"</td><td>The most likely failure mode by some distance. Mitigated only by naming an owner and a cadence <em>before</em> launch.</td></tr>
         </tbody>
@@ -431,7 +449,7 @@
     <div class="decide">
       <h2 class="disp">The decision</h2>
       <div class="dstep"><span class="dnum">1</span><div><b>Approve the hub as the demand engine for wasabirub.com</b><span>Educational content that earns the search traffic a new domain cannot get on its own &mdash; on the same site that sells the product.</span></div></div>
-      <div class="dstep"><span class="dnum">2</span><div><b>Build it on WordPress + WooCommerce</b><span>The platform we already run and can already staff. sportpharm.com is untouched.</span></div></div>
+      <div class="dstep"><span class="dnum">2</span><div><b>Build both sites on WordPress + WooCommerce, one design system</b><span>The platform we already run and can already staff. New theme, same admin &mdash; content, orders and URLs all stay put.</span></div></div>
       <div class="dstep"><span class="dnum">3</span><div><b>Name who runs it</b><span>Publishing cadence, clinical review, plugin governance. The decision that determines whether this still works in a year.</span></div></div>
       <p class="timing"><b>On timing:</b> the search clock has not started. A new domain earns authority slowly, and every month without published, reviewed content is a month the competition keeps the answer. Ten articles are written and live &mdash; they need clinical sign-off, not more drafting.</p>
     </div>
