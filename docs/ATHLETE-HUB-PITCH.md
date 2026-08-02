@@ -127,6 +127,50 @@ wasabirub.com"). It just needs saying out loud on Tuesday, because it means
 **retiring WooCommerce as a selling system**, and that is a decision with an owner
 and a migration attached, not a toggle.
 
+### If there is one store, which stack runs it?
+
+Settling on a single store forces a second decision. There are two honest
+answers and one trap.
+
+| | **One custom stack** (recommended) | **One WordPress** |
+|---|---|---|
+| Hub | Next.js + Payload, as planned | Rebuilt as WordPress pages |
+| Commerce | Stripe Checkout | WooCommerce |
+| We gain | The interactive tools, the review-workflow CMS, one codebase | Tax tables, shipping zones, refunds, inventory and an order UI we already know &mdash; free |
+| We give up | Rebuilding tax, shipping and order admin | The interactive tools and the custom build |
+
+**The trap is "integrate WooCommerce into the new site."** That means running
+WordPress headless &mdash; alive purely as a commerce backend, talking to the hub over
+the Store API with cart-token session handling that is notoriously fiddly. We
+would maintain **both** stacks plus the glue between them, and payments would
+still settle on Stripe underneath. It is the most work for the least benefit.
+
+**Recommendation: the custom stack.** The hub's value *is* the interactive tools
+and the employee review workflow &mdash; the two things WordPress fights hardest. That
+was the reasoning behind the original platform decision, and it has not changed.
+
+**And we have already built this once.** Tiny Clothing Swap runs the exact
+pattern:
+
+- The **cart lives in the app**, not in Stripe &mdash; guest carts hold item IDs in
+  local storage, signed-in carts come from the database
+- At checkout a server function **builds the Stripe line items**, recomputing
+  every price server-side so a tampered cart cannot underpay, and adds shipping
+  as its own line
+- Stripe sees a **finished basket once**, at the moment of payment
+- A webhook writes the order and its line items back to our database
+
+WasabiRub is the simpler case: three products, one seller, no marketplace payouts
+and no per-seller shipping split. This is a known quantity, not a research
+project.
+
+### The migration question
+
+Either path has to answer it: **existing WooCommerce customers and order
+history.** Migrate them, or make a clean break and keep WooCommerce read-only for
+historical lookups. Cheap to decide now, expensive to decide after the new store
+takes its first order.
+
 ### One technical caution
 
 *Stripe payment links* and *a cart* are not the same thing. Payment Links check
