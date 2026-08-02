@@ -173,6 +173,22 @@
 .ops .y{color:var(--good);font-weight:700}
 .ops .n2{color:var(--warn);font-weight:700}
 @media(max-width:900px){.scen{grid-template-columns:1fr}}
+
+.phase{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+.ph{background:var(--white);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.ph-h{padding:18px 22px;border-bottom:1px solid var(--line)}
+.ph.one .ph-h{background:var(--good);color:var(--on-accent)}
+.ph.two .ph-h{background:var(--paper)}
+.ph-h .lbl{font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;display:block;margin-bottom:5px;opacity:.85}
+.ph-h b{font-size:18px;display:block;line-height:1.25}
+.ph.two .ph-h b{color:var(--ink)}
+.ph-b{padding:18px 22px}
+.ph-b ul{margin:0 0 14px;padding-left:18px;font-size:13.5px;line-height:1.6}
+.ph-b li{margin-bottom:5px}
+.ph-b .state{font-size:12.5px;padding-top:12px;border-top:1px solid var(--line);margin:0;color:var(--muted)}
+.ph.one .ph-b .state b{color:var(--good)}
+.ph.two .ph-b .state b{color:var(--ink)}
+@media(max-width:760px){.phase{grid-template-columns:1fr}}
 </style>
 <style>
 .lead-in{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--good);
@@ -280,10 +296,35 @@
       <p class="note" style="margin:0"><b>2. A plugin audit before scoping.</b> Existing plugins may inject their own markup and CSS that fights a new design, and one installed later can undo it. Both a scoping input and an ongoing governance rule that needs a named owner.</p>
     </div>
 
-    <div class="honest">
-      <p class="hl">Where the work actually is</p>
-      <p class="note" style="margin:0">Being straight about scope, because this is materially bigger than a content hub. <b>Seven top-level sections, eight services</b> (three of which our current mockups do not yet cover &mdash; Blister Packaging, Inventory Management, Customized Services), <b>nine products</b> on a rich template, plus News and the store. <b>WooCommerce's cart and checkout templates are the fiddliest part</b> and where redesigns typically run long. The 63 hub pages are the easy half.</p>
+    <h3 style="margin-top:34px">Two phases, not one project</h3>
+    <p class="note">This is easy to hear as one enormous rebuild. It is not &mdash; it is a phase that is mostly finished and a phase that has not started.</p>
+
+    <div class="phase">
+      <div class="ph one">
+        <div class="ph-h"><span class="lbl">Phase I</span><b>wasabirub.com + the Athlete Hub</b></div>
+        <div class="ph-b">
+          <ul>
+            <li><b>25 pages already designed and working</b> &mdash; the hub, the pathways, the product pages</li>
+            <li><b>10 articles</b> written and live</li>
+            <li><b>3 interactive tools</b> built and functioning</li>
+          </ul>
+          <p class="state"><b>What remains:</b> port into a WordPress theme, wire WooCommerce for three products, and get the articles through clinical review. <b>The design work is essentially done.</b></p>
+        </div>
+      </div>
+      <div class="ph two">
+        <div class="ph-h"><span class="lbl">Phase II</span><b>sportpharm.com redesign</b></div>
+        <div class="ph-b">
+          <ul>
+            <li>7 top-level sections</li>
+            <li>8 services &mdash; 3 with no mockup yet (Blister Packaging, Inventory Management, Customized Services)</li>
+            <li>News, plus the store templates</li>
+          </ul>
+          <p class="state"><b>Status:</b> two pages designed so far. This is the larger piece &mdash; and it does not block Phase I, because the shared theme is built once and applied twice.</p>
+        </div>
+      </div>
     </div>
+
+    <p class="note" style="margin-top:18px"><b>The honest note on effort:</b> WooCommerce's cart and checkout templates are the fiddliest part of either phase and where redesigns typically run long. Everything else is well-trodden work.</p>
   </div>
 </section>
 

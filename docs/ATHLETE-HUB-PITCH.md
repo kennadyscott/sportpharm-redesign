@@ -137,11 +137,59 @@ wasabirub.com — A Product Site on the SportPharm Platform
  
 
  
- Where the work actually is
 
- Being straight about scope, because this is materially bigger than a content hub. Seven top-level sections, eight services (three of which our current mockups do not yet cover — Blister Packaging, Inventory Management, Customized Services), nine products on a rich template, plus News and the store. WooCommerce's cart and checkout templates are the fiddliest part and where redesigns typically run long. The 63 hub pages are the easy half.
+### Two phases, not one project
+
+ This is easy to hear as one enormous rebuild. It is not — it is a phase that is mostly finished and a phase that has not started.
 
  
+ 
+ Phase Iwasabirub.com + the Athlete Hub
+
+ 
+ 
+ 
+- 25 pages already designed and working — the hub, the pathways, the product pages
+
+ 
+- 10 articles written and live
+
+ 
+- 3 interactive tools built and functioning
+
+ 
+
+ What remains: port into a WordPress theme, wire WooCommerce for three products, and get the articles through clinical review. The design work is essentially done.
+
+ 
+
+ 
+
+ 
+ Phase IIsportpharm.com redesign
+
+ 
+ 
+ 
+- 7 top-level sections
+
+ 
+- 8 services — 3 with no mockup yet (Blister Packaging, Inventory Management, Customized Services)
+
+ 
+- News, plus the store templates
+
+ 
+
+ Status: two pages designed so far. This is the larger piece — and it does not block Phase I, because the shared theme is built once and applied twice.
+
+ 
+
+ 
+
+ 
+
+ The honest note on effort: WooCommerce's cart and checkout templates are the fiddliest part of either phase and where redesigns typically run long. Everything else is well-trodden work.
 
  
 
