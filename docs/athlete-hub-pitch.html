@@ -229,48 +229,33 @@
 
 <section>
   <div class="wrap">
-    <h2 class="disp">The commerce problem this creates</h2>
-    <p class="sub">Not on the table so far &mdash; and the one that costs money directly.</p>
+    <h2 class="disp">The commerce question to settle first</h2>
+    <p class="sub">Smaller than it first looks &mdash; but it needs a deliberate answer, not an assumption.</p>
 
-    <p>SportPharm runs on <b>WordPress with WooCommerce</b>. That is where the real cart lives, where checkout happens, and where orders, tax and shipping are configured. <b>The Athlete Hub is a separate static site with no backend and no cart of any kind.</b></p>
+    <p>SportPharm runs on <b>WordPress with WooCommerce</b>. That is where the real cart lives and where checkout happens. <b>The Athlete Hub is a separate static site with no cart of its own.</b></p>
 
-    <div class="stat">
-      <div><div class="n">56</div><div class="k">places the hub links out to the store</div></div>
-      <div><div class="n">0</div><div class="k">working carts on the hub</div></div>
-      <div><div class="n">3</div><div class="k">Add&nbsp;to&nbsp;Cart buttons that only show a toast</div></div>
-    </div>
-
-    <p style="margin-top:22px">Splitting the domains turns a system boundary into a domain boundary &mdash; at exactly the moment the hub exists to create.</p>
-
-    <div class="flow">
-      <div class="step"><b>Step 1</b><p>Reads the article on wasabirub.com</p></div>
-      <div class="step"><b>Step 2</b><p>Clicks <i>Add to Cart</i> &mdash; sees a confirmation that means nothing</p></div>
-      <div class="step"><b>Step 3</b><p>Crosses to sportpharm.com to check out</p></div>
-      <div class="step brk"><b>Step 4 &mdash; breaks</b><p>Arrives with an empty cart and starts over</p></div>
-    </div>
-    <p class="note">Most people do not start over. We would spend 6&ndash;12 months earning the traffic and then drop it at the checkout step. A cross-domain split also means no shared session, consent asked twice, and purchase attribution broken by default &mdash; so the hub cannot prove it drove the sale it drove.</p>
-
-    <div class="split3">
-      <div class="opt a"><span class="tag">Option A</span><h3>Hub never holds a cart</h3>
-        <p>Remove the cart affordance entirely. Every product link goes straight to the WooCommerce product page.</p>
-        <p class="gain"><b>Gain:</b> cheap, honest, no dead ends. Shippable now.</p>
-        <p class="cost"><b>Cost:</b> one extra click; the hub never owns the transaction.</p></div>
-      <div class="opt b"><span class="tag">Option B</span><h3>Hub inside WordPress</h3>
-        <p>Rebuild the hub as pages on the existing install &mdash; one system, one cart.</p>
-        <p class="gain"><b>Gain:</b> the problem disappears rather than being managed.</p>
-        <p class="cost"><b>Cost:</b> rebuild cost; loses the current static build and its speed.</p></div>
-      <div class="opt b"><span class="tag">Option C</span><h3>Headless</h3>
-        <p>Hub stays static and talks to the WooCommerce Store API for a real cart.</p>
-        <p class="gain"><b>Gain:</b> the hub owns the full journey through to purchase.</p>
-        <p class="cost"><b>Cost:</b> real engineering and ongoing maintenance. Most expensive.</p></div>
-    </div>
-
-    <div class="rec"><p><b>Recommendation: A now, and revisit C only if the hub proves it converts.</b> What we must not do is launch the current state, where the button tells the customer something untrue.</p></div>
+    <p>That is not automatically a problem &mdash; and the hub already shows why. When the WasabiRub page sends someone to buy the duo bundle, it links <b>straight to that product's WooCommerce page</b>. No cart is carried across, so no cart can be lost. Deep-linking products is the pattern that works, and it works on any domain.</p>
 
     <div class="honest">
-      <p class="hl">This changes the domain decision</p>
-      <p class="note" style="margin:0">The previous section framed the domain choice as an SEO trade. The cart adds a second axis, and it points the same way: <b>sportpharm.com/athlete-hub keeps the hub on the same origin as the store</b> &mdash; same WooCommerce session, one cart, one consent banner, attribution intact. wasabirub.com still has the stronger brand argument, but it now carries a build cost the other option does not. That cost should be named before we choose, not discovered afterwards.</p>
+      <p class="hl">The narrow, real problem</p>
+      <p class="note" style="margin:0"><b>products.html</b> has <i>Add to Cart</i> buttons that only increment a badge and show a toast &mdash; nothing is stored and there is no checkout. The hub's <b>Explore Topicals</b> CTA now points at that page, so a visitor can add all three topicals and reach a dead end. That dead end is inside our own static site, not at the WordPress boundary. <b>Fix:</b> remove the cart affordance and deep-link each product, exactly as the WasabiRub page already does.</p>
     </div>
+
+    <h3 style="margin-top:30px">What the domain choice does to this</h3>
+    <p>Carts live in cookies, and cookies are bound to a registrable domain. That is a browser rule, not a platform limitation &mdash; <b>putting everything on one platform does not by itself let a cart follow a customer to a different domain.</b></p>
+
+    <div class="split3">
+      <div class="opt b"><span class="tag">Subdomain</span><h3>hub.sportpharm.com</h3>
+        <p class="gain"><b>Carries across:</b> yes, transparently. A cookie scoped to <i>.sportpharm.com</i> is shared.</p></div>
+      <div class="opt b"><span class="tag">Subdirectory</span><h3>sportpharm.com/athlete-hub</h3>
+        <p class="gain"><b>Carries across:</b> yes. Same origin &mdash; nothing to solve.</p></div>
+      <div class="opt a"><span class="tag">Separate domain</span><h3>wasabirub.com</h3>
+        <p class="cost" style="border:0;padding:0;margin:0"><b>Carries across:</b> only if we build it. A cart token must be passed in the link and rebuilt on arrival.</p></div>
+    </div>
+
+    <p class="note" style="margin-top:18px">The separate-domain option is buildable on one platform, but it is a real work item and it is fragile: it works only when someone follows a link, so anyone who types the domain or returns later arrives empty-handed. Approaches leaning on third-party cookies should be discounted &mdash; browsers are closing that door.</p>
+
+    <div class="rec"><p><b>The way to avoid the question entirely is to keep deep-linking products and never hold a cart on two properties.</b> That works on every option above, including wasabirub.com &mdash; and it is what we already do. So this does not override the domain decision; it adds one line to it: if we choose wasabirub.com, we accept that a shared cart is a build item we are choosing not to need.</p></div>
   </div>
 </section>
 

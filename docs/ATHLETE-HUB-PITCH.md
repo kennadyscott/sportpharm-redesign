@@ -85,67 +85,51 @@ answer.
 
 ---
 
-## 4. The commerce problem this decision creates
+## 4. The commerce question to settle first
 
-**This is the risk that has not been on the table, and it is the one that costs
-money directly.**
+SportPharm runs on **WordPress with WooCommerce**. That is where the real cart
+lives and where checkout happens. **The Athlete Hub is a separate static site
+with no cart of its own.**
 
-SportPharm today is a WordPress site with WooCommerce. That is where the real
-cart lives, where checkout happens, and where orders, tax and shipping are
-configured. **The Athlete Hub is a separate static site with no backend and no
-cart of any kind.**
+That is not automatically a problem &mdash; and the hub already shows why. When
+`wasabirub.html` sends someone to buy the duo bundle, it links **straight to that
+product's WooCommerce page**. No cart is carried across, so no cart can be lost.
+Deep-linking products is the pattern that works, and it works on any domain.
 
-Right now the hub "sells" by linking out to the store — it does that in **56
-places**. And every *Add to Cart* button on the hub is a simulation: it
-increments a badge and shows an "Added to cart" toast, and nothing is ever added
-to anything. Reload the page and it is gone. There is no cart on the hub and no
-way to check out from it.
+**The narrow, real problem:** `products.html` has *Add to Cart* buttons that only
+increment a badge and show a toast. Nothing is stored, and there is no checkout.
+The hub's **Explore Topicals** CTA now points at that page. So a visitor can add
+all three topicals and reach a dead end &mdash; and the dead end is inside our own
+static site, not at the WordPress boundary.
 
-**Splitting the domains turns a system boundary into a domain boundary, at the
-exact moment the hub is designed to create.**
+**Fix:** remove the cart affordance from `products.html` and deep-link each
+product to WooCommerce, exactly as `wasabirub.html` already does. Small, and it
+should happen before the hub earns traffic.
 
-The sequence we are trying to build is: someone reads an article about their
-pain, decides a topical is worth trying, and buys. Across two properties that
-becomes:
+### What the domain choice does to this
 
-1. Reads the article on **wasabirub.com**
-2. Clicks *Add to Cart* — sees a confirmation that means nothing
-3. Crosses to **sportpharm.com** to check out
-4. Arrives with an empty cart and starts over
+Carts live in cookies, and cookies are bound to a registrable domain. That is a
+browser rule, not a platform limitation &mdash; **putting everything on one
+platform does not by itself let a cart follow a customer to a different domain.**
 
-Most people do not start over. We would be spending 6–12 months earning the
-traffic and then dropping it at the checkout step.
+| Arrangement | Does a cart carry across? |
+|---|---|
+| `hub.sportpharm.com` (subdomain) | **Yes, transparently** &mdash; a cookie scoped to `.sportpharm.com` is shared |
+| `sportpharm.com/athlete-hub` (subdirectory) | **Yes** &mdash; same origin, nothing to solve |
+| `wasabirub.com` (separate domain) | **Only if we build it** &mdash; a cart token has to be passed in the crossing link and rebuilt on arrival |
 
-A cross-domain split also means no shared login session, cookie consent asked
-twice, and purchase attribution broken by default — so the hub cannot even prove
-it drove the sale it drove.
+The separate-domain option is buildable on one platform, but it is a real work
+item, and it is fragile: it works only when someone follows a link, so anyone who
+types the domain or returns later arrives empty-handed. Approaches that lean on
+third-party cookies should be discounted &mdash; browsers are closing that door.
 
-### The three ways out
+**The way to avoid the question entirely is to keep deep-linking products and
+never hold a cart on two properties.** That works on every option above, including
+`wasabirub.com`, and it is what we already do.
 
-| Option | What it means | Cost |
-|---|---|---|
-| **A. Hub never holds a cart** | Remove the cart affordance entirely; every product link goes straight to the WooCommerce product page | Cheap, honest, no dead ends. One extra click, and the hub never owns the transaction |
-| **B. Hub lives inside WordPress** | Rebuild the hub as pages on the existing install — one system, one cart | Rebuild cost; loses the current static build and its speed |
-| **C. Headless** | Hub stays static and talks to the WooCommerce Store API for a real cart | Real engineering, ongoing maintenance, most expensive |
-
-**Recommendation: A now, and revisit C only if the hub proves it converts.** What
-we must not do is launch the current state, where the button tells the customer
-something untrue.
-
-### This changes the domain decision
-
-Section 3 framed the domain choice as an SEO trade — new domain versus inherited
-authority. The cart problem adds a second axis, and it points the same way:
-
-**`sportpharm.com/athlete-hub` keeps the hub on the same origin as the store.**
-Same domain, same WooCommerce session, one cart, one consent banner, attribution
-intact. The commerce problem disappears rather than being managed.
-
-`wasabirub.com` still has the stronger brand argument for a product-led hub. But
-it now carries a build cost that `sportpharm.com/athlete-hub` does not — and that
-cost should be named before we choose, not discovered afterwards.
-
----
+So this does not override the domain decision &mdash; it adds one line to it: if we
+choose `wasabirub.com`, we accept that a shared cart is a build item we are
+choosing not to need.
 
 ## 5. What this requires (be honest about it)
 
@@ -173,7 +157,7 @@ review.
 | "This is a big change to a site that works" | The current site isn't failing — it just isn't acquiring anyone. This adds a channel; it doesn't remove the existing one. |
 | "SEO takes too long" | True. This is a 6–12 month investment, not a campaign. It compounds; ads stop the day you stop paying. |
 | "Health content is a liability" | Handled by clinical review, named reviewers and explicit non-diagnostic language — all already built into the content and the tools. |
-| "The domains can be joined up later" | The cart break is not cosmetic — it is a lost sale at the moment of intent. Cheapest to solve before the hub earns traffic, not after. |
+| "The domains can be joined up later" | A shared cart cannot cross domains without being built. Avoidable by deep-linking products — but it has to be a deliberate choice, not an assumption. |
 | "We'll write six articles and stop" | The most likely failure mode. Requires a named owner and a cadence before launch, not after. |
 
 ---
@@ -193,7 +177,7 @@ Not traffic for its own sake:
 ## The decision
 
 1. **Approve the content-hub strategy** as a demand channel, not a redesign
-2. **Decide how commerce works across the split** &mdash; option A, B or C above. This is now a precondition of the domain choice, not a follow-up to it
+2. **Confirm the commerce pattern** &mdash; deep-link products from the hub and hold no cart on a second property. Fix the dead-end buttons on `products.html` before launch
 3. **Confirm the domain split** — sportpharm.com (company) / wasabirub.com (product + hub),
    or the sportpharm.com/athlete-hub alternative if faster results matter more
 4. **Name an owner** for clinical review and publishing cadence
