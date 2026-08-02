@@ -1,12 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="SportPharm professional athlete services mockup">
-  <title>SportPharm | Professional Athlete Services</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Professional Athlete Hub | SportPharm</title><meta name="description" content="Medication guidance, clean-sport support and athlete-focused pharmacy care for elite competition. Medication and supplement review, travel coordination and concierge pharmacy."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
     
     :root{--red:#f51f2a;--navy:#0b1f3a;--deep:#071426;--blue:#1552ad;--ink:#101b2d;--muted:#617087;--soft:#f3f6f9;--line:#dde4ec}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:Arial,Helvetica,sans-serif}img{display:block;width:100%}a{color:inherit;text-decoration:none}button{font:inherit}
@@ -58,29 +50,179 @@
     .mobilemenu2 a{font-weight:600;font-size:14px;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--line)}
     .mm2-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);padding:12px 0 2px}
     @media(max-width:1120px){.mainnav2,.caps2{display:none}.header2 .menu{display:block;margin-left:auto}}
-  </style>
-</head>
-<body>
-  <header class="header2">
+  
+
+.wrap{width:min(1180px,100% - 8vw);margin-inline:auto}
+.pa-hero-copy{padding-left:max(4vw,calc((100vw - 1180px)/2));padding-right:48px;
+  padding-top:76px;padding-bottom:76px}
+@media(max-width:1000px){.pa-hero-copy{padding-left:4vw;padding-right:4vw}}
+
+.header2 .mainnav2{gap:20px}
+.header2 .mainnav2 .nl{font-size:13.5px;white-space:nowrap}
+.header2 .btn-req{padding:10px 15px;font-size:11.5px}
+.header2 .caps2{gap:8px}
+@media(max-width:1320px){
+  .header2 .mainnav2{gap:14px}
+  .header2 .mainnav2 .nl{font-size:12.5px}
+  .header2 .pt-opt{font-size:11px;padding:7px 10px}
+}
+/* ---------- Professional Athlete Hub ---------- */
+.btn-req{background:var(--red);color:#fff;padding:11px 18px;border-radius:6px;font-size:12px;
+  font-weight:800;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;white-space:nowrap;
+  transition:.18s}
+.btn-req:hover{filter:brightness(.92)}
+.pa-hero{position:relative;background:var(--deep);color:#fff;overflow:hidden}
+.pa-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch;min-height:520px}
+.pa-hero-copy{padding:76px 0 76px 0;display:flex;flex-direction:column;justify-content:center;max-width:600px}
+.pa-hero h1{font-size:clamp(38px,5vw,66px);line-height:.98;margin:14px 0 20px;color:#fff}
+.pa-hero p.lede{font-size:18px;line-height:1.6;color:#c3d2e6;margin:0 0 30px;max-width:520px}
+.pa-hero-img{position:relative}
+.pa-hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:72% center}
+.pa-hero-img:after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,var(--deep) 0%,rgba(7,20,38,.55) 30%,rgba(7,20,38,0) 70%)}
+.pa-cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.pa-btn{display:inline-flex;align-items:center;gap:9px;padding:15px 24px;border-radius:7px;font-size:12.5px;
+  font-weight:800;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;border:1px solid transparent;
+  transition:.18s;cursor:pointer;font-family:inherit}
+.pa-btn.solid{background:var(--red);color:#fff}
+.pa-btn.solid:hover{filter:brightness(.92)}
+.pa-btn.line{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.pa-btn.line:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.pa-btn.dark{background:var(--navy);color:#fff}
+.pa-btn.dark:hover{filter:brightness(1.15)}
+
+.pa-sec{padding:74px 0}
+.pa-sec.soft{background:var(--soft)}
+.pa-sec.navy{background:var(--navy);color:#fff}
+.pa-eyebrow{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin:0 0 12px}
+.pa-sec.navy .pa-eyebrow{color:#7fb0f5}
+.pa-h2{font-size:clamp(27px,3.5vw,42px);line-height:1.04;margin:0 0 14px;letter-spacing:-.01em}
+.pa-sub{color:var(--muted);font-size:16px;line-height:1.65;max-width:660px;margin:0 0 34px}
+.pa-sec.navy .pa-sub{color:#b9cde6}
+
+/* router */
+.pa-router{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pa-opt{text-align:left;background:#fff;border:1px solid var(--line);border-radius:9px;padding:22px 22px;
+  cursor:pointer;font:inherit;transition:.18s;display:flex;flex-direction:column;gap:8px}
+.pa-opt:hover{border-color:var(--red);transform:translateY(-2px);box-shadow:0 10px 26px rgba(16,27,45,.09)}
+.pa-opt[aria-expanded="true"]{border-color:var(--red);background:#fff}
+.pa-opt b{font-size:16px;color:var(--ink);line-height:1.3}
+.pa-opt span{font-size:13.5px;color:var(--muted);line-height:1.55}
+.pa-opt i{font-style:normal;color:var(--red);font-weight:800;font-size:15px;margin-top:2px}
+.pa-panel{margin-top:16px;background:#fff;border:1px solid var(--red);border-radius:9px;padding:28px 30px}
+.pa-panel[hidden]{display:none}
+.pa-panel h3{margin:0 0 10px;font-size:21px;color:var(--ink)}
+.pa-panel p{margin:0 0 14px;color:var(--muted);line-height:1.7;font-size:15px;max-width:70ch}
+.pa-panel .pa-btn{margin-top:4px}
+.pa-panel-close{float:right;border:0;background:none;font-size:24px;line-height:1;color:var(--muted);cursor:pointer;padding:0 0 0 12px}
+.pa-panel-close:hover{color:var(--red)}
+
+/* stakes */
+.pa-stakes{display:grid;gap:0;border-top:1px solid var(--line)}
+.pa-stake{display:grid;grid-template-columns:auto 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.pa-stake b{font-size:15.5px;color:var(--ink);line-height:1.5}
+.pa-stake em{font-style:normal;color:#b81018;font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+
+/* service cards */
+.pa-svc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pa-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:28px 26px;
+  display:flex;flex-direction:column;transition:.18s}
+.pa-card:hover{border-color:var(--red);box-shadow:0 12px 30px rgba(16,27,45,.08)}
+.pa-card h3{margin:0 0 10px;font-size:19px;color:var(--ink);line-height:1.25}
+.pa-card p{margin:0 0 18px;color:var(--muted);font-size:14.5px;line-height:1.65;flex:1}
+.pa-card a{color:var(--red);font-size:12px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;text-decoration:none}
+.pa-card a:hover{text-decoration:underline}
+
+/* season */
+.pa-season{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;counter-reset:s}
+.pa-phase{background:#fff;border:1px solid var(--line);border-radius:9px;padding:20px 18px;border-top:3px solid var(--red)}
+.pa-phase b{display:block;font-size:11px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.pa-phase span{font-size:13.5px;color:var(--muted);line-height:1.55;display:block}
+
+/* clean sport */
+.pa-clean{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center}
+.pa-clean ul{margin:0 0 26px;padding-left:0;list-style:none}
+.pa-clean li{position:relative;padding-left:26px;margin-bottom:13px;color:#c3d2e6;font-size:15px;line-height:1.6}
+.pa-clean li:before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;border-radius:50%;
+  border:2px solid var(--red)}
+.pa-clean-img img{width:100%;border-radius:10px;display:block}
+.pa-disclaim{font-size:13px;color:#8fa8c8;line-height:1.6;border-left:2px solid rgba(255,255,255,.2);
+  padding-left:14px;margin:22px 0 0;max-width:60ch}
+
+/* how it works */
+.pa-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.pa-step{position:relative;padding-top:22px;border-top:2px solid var(--line)}
+.pa-step.on{border-top-color:var(--red)}
+.pa-step .n{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:9px}
+.pa-step b{display:block;font-size:19px;color:var(--ink);margin-bottom:8px}
+.pa-step p{margin:0;font-size:14px;color:var(--muted);line-height:1.6}
+
+/* recovery */
+.pa-rec{display:grid;grid-template-columns:1.1fr .9fr;gap:46px;align-items:center}
+.pa-rec ul{margin:0 0 24px;padding-left:20px;color:var(--muted);line-height:1.75;font-size:15px}
+.pa-rec li{margin-bottom:8px}
+.pa-rec-img img{width:100%;border-radius:10px;display:block}
+.pa-wasabi{display:flex;align-items:center;gap:18px;background:#fff;border:1px solid var(--line);
+  border-left:4px solid var(--red);border-radius:9px;padding:20px 22px;margin:0 0 24px}
+.pa-wasabi img{width:74px;height:74px;object-fit:contain;flex:0 0 74px}
+.pa-wasabi div{flex:1}
+.pa-wasabi b{display:block;font-size:16px;color:var(--ink);margin-bottom:4px}
+.pa-wasabi span{font-size:13.5px;color:var(--muted);line-height:1.55;display:block}
+.pa-wasabi a{color:var(--red);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;text-decoration:none;white-space:nowrap}
+
+/* team */
+.pa-team{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:26px}
+.pa-role{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px 18px;font-size:15px;
+  font-weight:600;color:var(--ink)}
+.pa-team-note{background:var(--navy);color:#fff;border-radius:10px;padding:28px 32px}
+.pa-team-note p{margin:0 0 16px;font-size:19px;line-height:1.5;color:#fff;font-weight:600}
+.pa-team-note span{color:#b9cde6;font-size:14.5px;line-height:1.65;display:block;margin-bottom:18px}
+
+/* resources */
+.pa-res{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pa-art{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;
+  display:flex;flex-direction:column;text-decoration:none;transition:.18s}
+.pa-art:hover{border-color:var(--red);transform:translateY(-2px);box-shadow:0 12px 30px rgba(16,27,45,.08)}
+.pa-art .ph{height:150px;background:var(--soft);overflow:hidden}
+.pa-art .ph img{width:100%;height:100%;object-fit:cover}
+.pa-art .bd{padding:20px 22px;flex:1;display:flex;flex-direction:column}
+.pa-art small{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.pa-art h3{margin:0 0 14px;font-size:16.5px;color:var(--ink);line-height:1.35;flex:1}
+.pa-art span{font-size:11.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--navy)}
+
+/* final cta */
+.pa-final{background:var(--deep);color:#fff;padding:84px 0}
+.pa-final h2{font-size:clamp(28px,3.6vw,44px);line-height:1.06;margin:0 0 16px;color:#fff;max-width:20ch}
+.pa-final p{color:#b9cde6;font-size:16.5px;line-height:1.65;max-width:56ch;margin:0 0 30px}
+.pa-final .pa-conf{font-size:13px;color:#8fa8c8;line-height:1.65;margin:26px 0 0;max-width:62ch;
+  border-top:1px solid rgba(255,255,255,.14);padding-top:20px}
+
+@media(max-width:1000px){
+  .pa-router,.pa-svc,.pa-res,.pa-team{grid-template-columns:repeat(2,1fr)}
+  .pa-season{grid-template-columns:repeat(3,1fr)}
+  .pa-steps{grid-template-columns:repeat(2,1fr)}
+  .pa-clean,.pa-rec{grid-template-columns:1fr;gap:30px}
+  .pa-hero-grid{grid-template-columns:1fr;min-height:0}
+  .pa-hero-img{height:300px}
+  .pa-hero-img:after{background:linear-gradient(180deg,rgba(7,20,38,.75) 0%,rgba(7,20,38,.15) 60%)}
+  .pa-hero-copy{padding:52px 0 44px}
+}
+@media(max-width:640px){
+  .pa-router,.pa-svc,.pa-res,.pa-team,.pa-season,.pa-steps{grid-template-columns:1fr}
+  .pa-wasabi{flex-direction:column;align-items:flex-start}
+}
+</style></head><body><header class="header2">
     <div class="h2wrap">
-      <a class="logo2" href="index.html"><img src="assets/wordmark-dark.png" alt="SportPharm"><span class="tag2">Stay ready for whatever moves you.</span></a>
+      <a class="logo2" href="index.html"><img src="assets/wordmark-dark.png" alt="SportPharm"><span class="tag2">Professional Athlete Hub</span></a>
       <nav class="mainnav2">
-        <div class="ni">
-          <button class="nl">Services <svg class="crt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
-          <div class="dd"><a href="sports-medicine.html#compounding">Specialized Compounding</a><a href="sports-medicine.html#repackaging">Drug Repackaging</a><a href="sports-medicine.html#blister">Blister Packaging</a><a href="sports-medicine.html#inventory">Inventory Management</a><a href="sports-medicine.html#retail">Retail Pharmacy Services</a><a href="sports-medicine.html#concierge">Concierge Sports Pharmacy</a><a href="sports-medicine.html#supplements">Supplement Support</a><a href="sports-medicine.html#customized">Customized Services</a></div>
-        </div>
-        <div class="ni">
-          <button class="nl">Products <svg class="crt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
-          <div class="dd"><a href="wasabirub.html">WasabiRub</a><a href="coming-soon.html?f=The+Professional+Catalog">Professional Catalog</a><a href="coming-soon.html?f=Professional+Supplements">Supplements</a><a href="coming-soon.html?f=Compounded+Medications">Compounded Medications</a></div>
-        </div>
-        <div class="ni">
-          <button class="nl">Resources <svg class="crt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
-          <div class="dd"><a href="articles.html">Blog &amp; Articles</a><a href="coming-soon.html?f=Education+%26+CEUs">Education &amp; CEUs</a><a href="coming-soon.html?f=Professional+Protocols">Protocols</a></div>
-        </div>
-        <a class="nl" href="contact.html">Contact</a>
-      </nav>
+      <a class="nl" href="#services">Services</a>
+      <a class="nl" href="clean-sport.html">Clean Sport</a>
+      <a class="nl" href="travel-competition.html">Travel</a>
+      <a class="nl" href="#recovery">Recovery</a>
+      <a class="nl" href="#resources">Resources</a>
+      <a class="btn-req" href="#request">Request Support</a>
+    </nav>
       <div class="caps2">
-        <a class="cap2 capred" href="wasabirub.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="9" width="18" height="7" rx="3.5" transform="rotate(-45 12 12)"/><path d="M8.5 8.5l7 7"/></svg> WasabiRub</a>
         <div class="ptoggle" role="group" aria-label="Choose your experience"><a class="pt-opt" href="index.html">Everyday Athlete</a><a class="pt-opt on" href="pro-athlete.html">Pro Athlete</a><a class="pt-opt" href="sports-medicine.html">Healthcare / AT</a></div>
       </div>
       <button class="menu" aria-label="Toggle navigation" aria-expanded="false"><i></i><i></i><i></i></button>
@@ -93,118 +235,172 @@
       <a href="articles.html">Resources</a>
       <a href="contact.html">Contact</a>
     </nav>
-  </header>
-
-  <main>
-    <section class="hero" id="top">
-      <img src="assets/runner.jpg" alt="">
-      <div class="scrim"></div>
-      <div class="hero-copy">
-        <p class="eyebrow">Professional athlete services</p>
-        <h1>Engineered<br>for the elite<span>.</span></h1>
-        <p class="lead">Medication guidance, clean-sport support and athlete-focused pharmacy care built for the demands of elite competition.</p>
-        <div class="button-row"><button class="btn red" data-modal="pharmacist">Talk to a Sports Pharmacist</button><button class="btn ghost" data-modal="medication">Check a Medication</button></div>
-        <p class="trust">✓ &nbsp; Discreet. Athlete-focused. Competition ready.</p>
+  </header><main><section class="pa-hero">
+  <div class="pa-hero-grid">
+    <div class="pa-hero-copy">
+      <p class="pa-eyebrow">Professional Athlete Hub</p>
+      <h1>Performance without compromise.</h1>
+      <p class="lede">Medication guidance, clean-sport support and athlete-focused pharmacy care built for the demands of elite competition.</p>
+      <div class="pa-cta-row">
+        <a class="pa-btn solid" href="#request">Request Athlete Support</a>
+        <a class="pa-btn line" href="#services">Explore Athlete Services</a>
       </div>
-    </section>
+    </div>
+    <div class="pa-hero-img"><img src="assets/runner.jpg" alt="Sprinter driving out of the blocks on a track"></div>
+  </div>
+</section>
 
-    <section class="quick">
-      <h2>What do you need?</h2>
-      <div class="quick-grid">
-        <button data-modal="medication"><span class="round r">Rx</span>Review a medication</button>
-        <a href="#clean"><span class="round b">✓</span>Check clean-sport status</a>
-        <a href="#process"><span class="round r">✈</span>Plan for travel</a>
-        <button data-modal="pharmacist"><span class="round b">+</span>Coordinate athlete care</button>
+<section class="pa-sec" id="router">
+  <div class="wrap">
+    <p class="pa-eyebrow">Start here</p>
+    <h2 class="pa-h2">What do you need help with?</h2>
+    <p class="pa-sub">Pick the closest match. Each one explains what happens next.</p>
+    <div class="pa-router"><button class="pa-opt" type="button" data-r="review" aria-expanded="false"><b>I need a medication reviewed</b><span>Prescription or over-the-counter — reviewed in the context of competition, training load and everything else you take.</span><i>&rarr;</i></button><button class="pa-opt" type="button" data-r="supplement" aria-expanded="false"><b>I need to check a supplement</b><span>Ingredients, third-party testing, label claims and clean-sport exposure risk.</span><i>&rarr;</i></button><button class="pa-opt" type="button" data-r="travel" aria-expanded="false"><b>I&rsquo;m preparing for travel</b><span>Refills, documentation, time zones and destination-specific considerations.</span><i>&rarr;</i></button><button class="pa-opt" type="button" data-r="pain" aria-expanded="false"><b>I&rsquo;m managing pain or an injury</b><span>Pain-relief options, medication timing and when to bring it to your care team.</span><i>&rarr;</i></button><button class="pa-opt" type="button" data-r="rx" aria-expanded="false"><b>I need prescription coordination</b><span>Working alongside your physician, trainer and the rest of your care team.</span><i>&rarr;</i></button><button class="pa-opt" type="button" data-r="urgent" aria-expanded="false"><b>I have an urgent competition question</b><span>Time-sensitive questions close to competition.</span><i>&rarr;</i></button></div>
+    <div class="pa-panel" id="paPanel" hidden></div>
+  </div>
+</section>
+
+<section class="pa-sec soft">
+  <div class="wrap">
+    <p class="pa-eyebrow">Why a pharmacist belongs on your team</p>
+    <h2 class="pa-h2">The same product can be two different things.</h2>
+    <p class="pa-sub">Most eligibility and performance problems are not caused by obvious mistakes. They come from situations where something is genuinely fine in one context and a problem in another.</p>
+    <div class="pa-stakes"><div class="pa-stake"><em>Medically appropriate</em><b>but problematic for competition</b></div><div class="pa-stake"><em>Available over the counter</em><b>but still worth reviewing</b></div><div class="pa-stake"><em>Legal where you live</em><b>but difficult to travel with</b></div><div class="pa-stake"><em>Effective for symptom relief</em><b>but poorly timed for training</b></div><div class="pa-stake"><em>Safe on its own</em><b>but concerning combined with something else</b></div></div>
+  </div>
+</section>
+
+<section class="pa-sec" id="services">
+  <div class="wrap">
+    <p class="pa-eyebrow">Athlete services</p>
+    <h2 class="pa-h2">Pharmacy support built around competition.</h2>
+    <p class="pa-sub">Five services, available individually or as ongoing support through a season.</p>
+    <div class="pa-svc"><div class="pa-card"><h3>Medication Review</h3><p>Review prescriptions and over-the-counter medications in the context of performance, recovery and competition.</p><a href="medication-supplement-review.html">Learn more &rarr;</a></div><div class="pa-card"><h3>Supplement Review</h3><p>Evaluate ingredients, third-party testing, product claims and potential clean-sport concerns.</p><a href="medication-supplement-review.html">Learn more &rarr;</a></div><div class="pa-card"><h3>Clean-Sport Safety</h3><p>Understand prohibited-substance rules, documentation considerations and avoidable exposure risks.</p><a href="clean-sport.html">Learn more &rarr;</a></div><div class="pa-card"><h3>Travel and Competition</h3><p>Coordinate prescriptions, documentation, refills, time-zone planning and destination-specific considerations.</p><a href="travel-competition.html">Learn more &rarr;</a></div><div class="pa-card"><h3>Concierge Pharmacy</h3><p>Discreet, responsive medication coordination around your schedule and your care team.</p><a href="#request">Learn more &rarr;</a></div></div>
+  </div>
+</section>
+
+<section class="pa-sec soft">
+  <div class="wrap">
+    <p class="pa-eyebrow">Support across the season</p>
+    <h2 class="pa-h2">Different phases ask different questions.</h2>
+    <div class="pa-season"><div class="pa-phase"><b>Preseason</b><span>Baseline medication and supplement review</span></div><div class="pa-phase"><b>In season</b><span>Ongoing pharmacy coordination</span></div><div class="pa-phase"><b>Travel</b><span>Documentation, refills and schedule planning</span></div><div class="pa-phase"><b>Injury</b><span>Pain-management and medication review</span></div><div class="pa-phase"><b>Return</b><span>Support as treatment and training demands change</span></div><div class="pa-phase"><b>Offseason</b><span>Reassessment and preparation for the next cycle</span></div></div>
+  </div>
+</section>
+
+<section class="pa-sec navy" id="clean">
+  <div class="wrap">
+    <div class="pa-clean">
+      <div>
+        <p class="pa-eyebrow">Clean sport</p>
+        <h2 class="pa-h2">Don&rsquo;t leave eligibility to a label.</h2>
+        <ul>
+          <li>&ldquo;Natural&rdquo; does not automatically mean low-risk</li>
+          <li>Hidden ingredients and cross-contamination are real and documented</li>
+          <li>Rules can depend on your sport, your governing body and the timing</li>
+          <li>Current requirements change &mdash; last season&rsquo;s answer may not hold</li>
+          <li>What you take should be documented, not remembered</li>
+        </ul>
+        <a class="pa-btn solid" href="clean-sport.html">Explore Clean-Sport Support</a>
+        <p class="pa-disclaim">SportPharm does not certify products as universally competition-safe, and no pharmacy can. What we do is help you evaluate the risk in a specific product, for your sport and governing body, and document the decision you made.</p>
       </div>
-    </section>
+      <div class="pa-clean-img"><img src="assets/spx-cleansport.jpg" alt="Reviewing supplement labels and documentation" loading="lazy"></div>
+    </div>
+  </div>
+</section>
 
-    <section id="team">
-      <div class="split">
-        <div class="copy"><p class="eyebrow" style="color:var(--blue)">Sports pharmacy</p><h2>Your performance team needs a pharmacist<span>.</span></h2><p>One overlooked ingredient, interaction or timing decision can affect health, recovery, eligibility and performance.</p><p>SportPharm adds medication expertise to the team already supporting your training—without adding another disconnected provider.</p><button class="btn outline" data-modal="pharmacist">See how sports pharmacy fits →</button></div>
-        <div class="feature-image"><img src="assets/start-return.jpg" alt="A sports pharmacist meeting with an athlete and trainer"><div class="note"><strong>One connected plan</strong><span>Athlete · Pharmacist · Care team</span></div></div>
+<section class="pa-sec">
+  <div class="wrap">
+    <p class="pa-eyebrow">How it works</p>
+    <h2 class="pa-h2">Four steps, no guesswork.</h2>
+    <div class="pa-steps"><div class="pa-step on"><span class="n">Step 1</span><b>Review</b><p>Share medications, supplements, goals and competition considerations.</p></div><div class="pa-step"><span class="n">Step 2</span><b>Verify</b><p>We evaluate ingredients, interactions, timing and applicable resources.</p></div><div class="pa-step"><span class="n">Step 3</span><b>Coordinate</b><p>Where appropriate, we work alongside your physician, trainer or care team.</p></div><div class="pa-step"><span class="n">Step 4</span><b>Support</b><p>You receive clear next steps and ongoing pharmacy assistance.</p></div></div>
+  </div>
+</section>
+
+<section class="pa-sec soft" id="recovery">
+  <div class="wrap">
+    <p class="pa-eyebrow">Recovery &amp; return</p>
+    <h2 class="pa-h2">Pain relief is one part of the plan.</h2>
+    <div class="pa-rec">
+      <div>
+        <ul>
+          <li>Prescription and over-the-counter pain-relief considerations</li>
+          <li>Topical versus oral options, and when each makes sense</li>
+          <li>Symptom relief is not the same as recovery</li>
+          <li>Medication timing around training and competition</li>
+          <li>When pain is information your care team needs</li>
+        </ul>
+        <div class="pa-wasabi">
+          <img src="assets/product-wasabi.jpg?v=3" alt="WasabiRub">
+          <div><b>WasabiRub</b><span>One topical option among several &mdash; not a recommendation on its own.</span></div>
+          <a href="wasabirub.html">View &rarr;</a>
+        </div>
+        <a class="pa-btn dark" href="pain-relief-options.html">Explore Athlete Pain-Relief Options</a>
       </div>
-    </section>
+      <div class="pa-rec-img"><img src="assets/start-return.jpg" alt="Athlete in recovery" loading="lazy"></div>
+    </div>
+  </div>
+</section>
 
-    <section class="services" id="services">
-      <div class="heading"><p class="eyebrow" style="color:var(--blue)">Athlete services</p><h2>Built for high-stakes decisions<span>.</span></h2><p>Focused support for the details that can change a season.</p></div>
-      <div class="grid4">
-        <article class="card"><div class="icon r">Rx</div><span class="num">01</span><h3>Medication Review</h3><p>Personalized reviews to identify risks, interactions and timing considerations.</p><a href="#process">Explore →</a></article>
-        <article class="card"><div class="icon b">✓</div><span class="num">02</span><h3>Clean Sport Safety</h3><p>Verify ingredients and products against current clean-sport standards you can trust.</p><a href="#clean">Explore →</a></article>
-        <article class="card"><div class="icon r">✈</div><span class="num">03</span><h3>Travel &amp; Competition</h3><p>Smart planning for time zones, supply access, documentation and medication regulations.</p><a href="#process">Explore →</a></article>
-        <article class="card"><div class="icon b">+</div><span class="num">04</span><h3>Concierge Pharmacy</h3><p>Discreet refills, targeted sourcing and delivery—built around your schedule.</p><a href="#process">Explore →</a></article>
-      </div>
-    </section>
+<section class="pa-sec">
+  <div class="wrap">
+    <p class="pa-eyebrow">Trusted by the athlete&rsquo;s team</p>
+    <h2 class="pa-h2">We strengthen the pharmacy layer around your team.</h2>
+    <p class="pa-sub">You already have people looking after you. We work alongside them.</p>
+    <div class="pa-team"><div class="pa-role">Physicians</div><div class="pa-role">Athletic trainers</div><div class="pa-role">Physical therapists</div><div class="pa-role">Strength &amp; conditioning</div><div class="pa-role">Dietitians</div><div class="pa-role">Agents &amp; athlete managers</div></div>
+    <div class="pa-team-note">
+      <p>We do not replace your team. We strengthen the pharmacy layer around it.</p>
+      <span>If you work with athletes professionally &mdash; as a trainer, physician or team &mdash; SportPharm has a dedicated healthcare hub covering compounding, repackaging, inventory and team supply.</span>
+      <a class="pa-btn line" href="sports-medicine.html">For Healthcare Professionals &amp; ATs</a>
+    </div>
+  </div>
+</section>
 
-    <section class="clean" id="clean">
-      <div class="clean-copy"><p class="eyebrow">Clean sport</p><h2>One ingredient can change everything<span>.</span></h2><p>Know what you’re taking before it reaches your system.</p><ul><li><b>✓</b> Ingredient and label review</li><li><b>✓</b> Medication and supplement screening</li><li><b>✓</b> Risk questions answered by a pharmacist</li></ul><button class="btn red" data-modal="medication">Explore Clean Sport Support</button></div>
-      <div class="clean-image"><img src="assets/wasabi-band.jpg?v=2" alt="Athlete reviewing a product before packing"><div class="verified"><span class="round b">✓</span><div><b>Product checked</b><span>Know before you use it.</span></div></div></div>
-    </section>
+<section class="pa-sec soft" id="resources">
+  <div class="wrap">
+    <p class="pa-eyebrow">Featured resources</p>
+    <h2 class="pa-h2">Start here.</h2>
+    <div class="pa-res"><a class="pa-art" href="coming-soon.html?f=Athlete+Medication+Review"><span class="ph"><img src="assets/blog-nsaids.jpg" alt="" loading="lazy"></span><span class="bd"><small>Medication Review</small><h3>What Professional Athletes Should Include in a Medication Review</h3><span>Read Article &rarr;</span></span></a><a class="pa-art" href="coming-soon.html?f=Supplement+Certification+Risk"><span class="ph"><img src="assets/spx-cleansport.jpg" alt="" loading="lazy"></span><span class="bd"><small>Clean Sport</small><h3>Supplements, Certifications and Hidden Competition Risk</h3><span>Read Article &rarr;</span></span></a><a class="pa-art" href="coming-soon.html?f=Travel+Medication+Plan"><span class="ph"><img src="assets/blog-return.jpg" alt="" loading="lazy"></span><span class="bd"><small>Travel</small><h3>How to Build a Competition-Ready Travel Medication Plan</h3><span>Read Article &rarr;</span></span></a></div>
+  </div>
+</section>
 
-    <section id="process">
-      <div class="heading"><p class="eyebrow" style="color:var(--blue)">How it works</p><h2>Support that moves with you<span>.</span></h2><p>From preseason reviews to travel and return-to-play, SportPharm stays connected to the people supporting your performance.</p></div>
-      <div class="process-grid">
-        <article class="step"><b>1</b><h3>Review</h3><p>Share your medications, supplements and health profile.</p></article>
-        <article class="step"><b>2</b><h3>Verify</h3><p>We check for interactions, clean-sport risks and timing.</p></article>
-        <article class="step"><b>3</b><h3>Coordinate</h3><p>We communicate with your team and align the plan.</p></article>
-        <article class="step"><b>4</b><h3>Deliver</h3><p>You get what you need, when and where you need it.</p></article>
-      </div>
-    </section>
-
-    <section class="product">
-      <div class="product-visual"><img src="assets/product-wasabi.jpg?v=3" alt="WasabiRub topical pain relief product"></div>
-      <div class="product-copy"><p class="eyebrow" style="color:var(--blue)">Athlete recovery</p><h2>Relief that keeps up<span>.</span></h2><p>Meet KetoRub, topical pain relief from SportPharm. A focused option for sore muscles, aches and the demands of training and travel.</p><a class="btn red" href="https://sportpharm.com" target="_blank" rel="noopener">Explore KetoRub</a></div>
-    </section>
-
-    <section id="resources">
-      <div class="heading"><p class="eyebrow" style="color:var(--blue)">Athlete resources</p><h2>Know more. Compete smarter<span>.</span></h2><p>Clear guidance for decisions beyond the pharmacy counter.</p></div>
-      <div class="resource-grid">
-        <article class="article"><img src="assets/blog-nsaids.jpg" alt=""><div><small>Medication</small><h3>What Athletes Need to Know About Medication Reviews</h3><a href="#resources">Read article →</a></div></article>
-        <article class="article"><img src="assets/blog-recovery.jpg" alt=""><div><small>Clean sport</small><h3>Supplements, Labels and Hidden Risk</h3><a href="#resources">Read article →</a></div></article>
-        <article class="article"><img src="assets/blog-return.jpg" alt=""><div><small>Competition</small><h3>Building a Competition-Ready Travel Plan</h3><a href="#resources">Read article →</a></div></article>
-      </div>
-    </section>
-
-    <div class="cta"><h2>Every detail matters. We’re on it<span>.</span></h2><button class="btn red" data-modal="pharmacist">Talk to SportPharm</button></div>
-  </main>
-
-  <footer class="footer">
+<section class="pa-final" id="request">
+  <div class="wrap">
+    <p class="pa-eyebrow">Request athlete support</p>
+    <h2>Your performance is personal. Your pharmacy support should be too.</h2>
+    <p>Tell us what you need reviewed, coordinated or checked. A pharmacist will follow up directly.</p>
+    <div class="pa-cta-row">
+      <a class="pa-btn solid" href="#" data-open-contact>Request Athlete Support</a>
+      <a class="pa-btn line" href="contact.html">Speak with SportPharm</a>
+      <a class="pa-btn line" href="#" data-open-contact>Have Your Representative Contact Us</a>
+    </div>
+    <p class="pa-conf">Enquiries are handled discreetly. We coordinate with your physician, trainer or representative only where you ask us to, and we do not share athlete information with anyone outside that circle without your say-so.</p>
+  </div>
+</section></main><footer class="footer">
     <div><img class="logo" src="assets/wordmark-white.png" alt="SportPharm"><p>Athlete-focused medication guidance, clean-sport support and sports pharmacy care.</p></div>
     <div><h3>Explore</h3><a href="#services">Athlete services</a><a href="#clean">Clean sport</a><a href="#process">How it works</a></div>
     <div><h3>Support</h3><a href="#resources">Resources</a><a href="#" data-modal="pharmacist">Contact us</a><a href="#team">For professionals</a></div>
     <div><h3>Contact</h3><p>East Division (Florida)<br>West Division (California)<br><br>(323) 426-3797<br>info@sportpharm.com</p></div>
-  </footer>
-
-  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="dialog">
-      <button class="close" aria-label="Close">×</button>
-      <h2 id="modal-title">Talk to a Sports Pharmacist</h2>
-      <p id="modal-copy">Tell us what you need. This working mockup demonstrates the intake experience; it does not transmit data.</p>
-      <form id="demo-form">
-        <div class="fields">
-          <div class="field"><label for="name">Name</label><input id="name" required></div>
-          <div class="field"><label for="email">Email</label><input id="email" type="email" required></div>
-          <div class="field"><label for="role">I am a</label><select id="role"><option>Professional athlete</option><option>Agent or manager</option><option>Trainer or clinician</option></select></div>
-          <div class="field"><label for="contact">Preferred contact</label><select id="contact"><option>Email</option><option>Phone</option></select></div>
-          <div class="field full"><label for="details">How can we help?</label><textarea id="details"></textarea></div>
-        </div>
-        <button class="btn red" type="submit" style="margin-top:18px">Send request</button>
-        <div class="success" id="success">Thanks—your demo request is complete. No information was transmitted.</div>
-      </form>
-    </div>
-  </div>
-
-  <script>
-    const modal=document.getElementById("modal"), title=document.getElementById("modal-title"), copy=document.getElementById("modal-copy"), success=document.getElementById("success");
-    function openModal(kind){success.classList.remove("show");title.textContent=kind==="medication"?"Check a Medication":"Talk to a Sports Pharmacist";copy.textContent=kind==="medication"?"Share the medication or product you want reviewed. This mockup demonstrates the intake experience; it does not transmit data.":"Tell us what you need. This working mockup demonstrates the intake experience; it does not transmit data.";modal.classList.add("open");document.body.style.overflow="hidden";setTimeout(()=>document.getElementById("name").focus(),50)}
-    function closeModal(){modal.classList.remove("open");document.body.style.overflow=""}
-    document.querySelectorAll("[data-modal]").forEach(el=>el.addEventListener("click",e=>{e.preventDefault();openModal(el.dataset.modal)}));
-    document.querySelector(".close").addEventListener("click",closeModal);
-    modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});
-    document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
-    document.getElementById("demo-form").addEventListener("submit",e=>{e.preventDefault();success.classList.add("show")});
-    const menu=document.querySelector(".menu"),nav=document.getElementById("mobilemenu2");
-    menu.addEventListener("click",()=>{const open=nav.classList.toggle("open");menu.setAttribute("aria-expanded",String(open))});
-    nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");menu.setAttribute("aria-expanded","false")}));
-  </script>
-</body>
-</html>
+  </footer><script>
+/* Pro Athlete Hub router — expands an explanation in place, no page change */
+(function(){
+  var PANELS={"review": {"t": "I need a medication reviewed", "body": "A pharmacist reviews what you are taking against your competition schedule, your training block and the rest of your regimen. The output is plain: what is worth flagging, what to ask your physician, and what to document.", "href": "medication-supplement-review.html", "cta": "Medication &amp; Supplement Review"}, "supplement": {"t": "I need to check a supplement", "body": "Supplements are the most common source of avoidable eligibility problems. We look at the ingredient list, whether the product carries credible third-party certification, and where undisclosed or cross-contaminated ingredients are a realistic risk. <b>We do not certify products as competition-safe</b> \u2014 we help you evaluate and document the risk you are taking on.", "href": "clean-sport.html", "cta": "Clean-Sport Support"}, "travel": {"t": "I&rsquo;m preparing for travel", "body": "Crossing borders with medication is where plans break. We help coordinate refills ahead of departure, assemble the documentation you may be asked for, and plan dosing around time-zone shifts and competition timing.", "href": "travel-competition.html", "cta": "Travel &amp; Competition"}, "pain": {"t": "I&rsquo;m managing pain or an injury", "body": "Symptom relief and recovery are not the same thing. We look at topical versus oral options, how timing interacts with training, and \u2014 importantly \u2014 where pain is information your care team needs rather than something to manage around.", "href": "#recovery", "cta": "Recovery &amp; Return"}, "rx": {"t": "I need prescription coordination", "body": "Where appropriate, we coordinate directly with your physician and training staff so prescriptions, timing and documentation line up. We do not replace anyone on your team \u2014 we handle the pharmacy layer around them.", "href": "#request", "cta": "Request Athlete Support"}, "urgent": {"t": "I have an urgent competition question", "body": "If something has come up close to a competition, say so when you get in touch and we will treat it accordingly. <b>For a medical emergency, contact emergency services rather than waiting for a pharmacy response.</b>", "href": "#request", "cta": "Request Athlete Support"}};
+  var wrap=document.getElementById("paPanel");
+  var opts=[].slice.call(document.querySelectorAll(".pa-opt"));
+  function close(){ wrap.hidden=true; opts.forEach(function(o){o.setAttribute("aria-expanded","false");}); }
+  function open(k,btn){
+    var d=PANELS[k]; if(!d) return;
+    wrap.innerHTML='<button class="pa-panel-close" type="button" aria-label="Close">&times;</button>'+
+      '<h3>'+d.t+'</h3><p>'+d.body+'</p><a class="pa-btn dark" href="'+d.href+'">'+d.cta+'</a>';
+    opts.forEach(function(o){o.setAttribute("aria-expanded", o===btn?"true":"false");});
+    wrap.hidden=false;
+    wrap.querySelector(".pa-panel-close").addEventListener("click",close);
+    wrap.scrollIntoView({behavior:"smooth",block:"nearest"});
+  }
+  opts.forEach(function(o){
+    o.addEventListener("click",function(){
+      if(o.getAttribute("aria-expanded")==="true"){ close(); return; }
+      open(o.dataset.r,o);
+    });
+  });
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape" && !wrap.hidden) close(); });
+})();
+</script></body></html>
