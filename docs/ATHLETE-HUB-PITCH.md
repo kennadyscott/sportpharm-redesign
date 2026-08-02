@@ -318,9 +318,15 @@ Every *Add to Cart* button currently on the site shows a toast and does nothing.
 
 ## 5. The recommendation
 
-**One Shopify store as the commerce backend. The hub stays in Next.js + Payload,
-rendering products and cart against the Storefront API. Checkout lives on
-wasabirub.com. sportpharm.com stops selling and links to it.**
+**If retail POS is in scope: one Shopify store as the commerce backend, with the
+hub keeping its own frontend and rendering products and cart against the
+Storefront API. Checkout on wasabirub.com; sportpharm.com stops selling and links
+to it.**
+
+**If POS is not in scope: keep WordPress and WooCommerce, and move the hub onto
+it.** One system, no migration, and the editorial workflow comes free. See
+section 6 &mdash; this option is stronger than it first appears, and the choice
+genuinely turns on the POS answer.
 
 Content, articles and the interactive tools never touch Shopify. It handles
 catalogue, cart, checkout, tax, shipping, inventory, refunds and abandoned cart.
@@ -333,11 +339,10 @@ API is a product built for exactly this, where WooCommerce's is a bolt-on.
 customers and orders is worth more than anything on the web side, and a custom
 build has no answer to it at all.
 
-**2. We are already asking whether the main site moves onto this.** That reframes
-everything. If sportpharm.com migrates to a bespoke Stripe build, the company's
-revenue runs on a system one person maintains. For a side project that is fine.
-For the company store it is a continuity risk &mdash; and Shopify is boring, hireable
-and operable by someone other than its builder.
+**2. Continuity.** A bespoke Stripe build would put the company's revenue on a
+system one person maintains. For a side project that is fine; for the company
+store it is a continuity risk. Note this argument counts *against the custom
+stack*, not against WordPress &mdash; WordPress is also widely hireable.
 
 **3. Abandoned cart should work, not be built.** Native on Shopify. On a custom
 stack it is a scheduled job we own forever.
@@ -365,53 +370,120 @@ what it should be &mdash; brand equity versus search authority. On that basis,
 
 ---
 
-## 6. "Why wouldn't we just stay on WooCommerce?"
+## 6. "Why wouldn't we just stay on WordPress?"
 
-The most reasonable question in the room, and it deserves a straight answer
-rather than a brush-off.
+The most reasonable question in the room, and the answer is more favourable to
+WordPress than a first pass suggests.
 
-### The case for staying is genuinely strong
+### First, a correction worth making out loud
 
-It works today. Orders flow, money arrives, the team knows it, nothing has to be
-migrated, no new subscription appears on a budget line, and nobody has to learn
-anything. **"It is not broken" is a real argument and it wins meetings for good
-reasons.**
+**WordPress can host everything we have built.** We audited all 63 pages: there is
+no server-side code, no build step, no API layer, and exactly one external call
+in the entire site &mdash; the contact form. The interactive tools are 236KB of
+client-side JavaScript that would run identically inside a WordPress page
+template.
 
-There is even a coherent best version of it: **WooCommerce remains the only
-store, and the hub deep-links products to it.** That solves the two-stores
-problem from the opposite direction and costs almost nothing. It should be on the
-table honestly.
+Three specific claims that do not survive checking:
 
-### Why we would still move
+- *"We would lose the interactive tools."* **False.** They are pure client-side
+  JavaScript. They port essentially unchanged.
+- *"We would lose the review workflow."* **False, and backwards.** Draft &rarr;
+  pending review &rarr; published, with Contributor/Author/Editor roles, is what
+  WordPress was built for. Building it ourselves is reimplementing what WordPress
+  gives free.
+- *"The hub is a Next.js application."* **Not yet.** It is 63 static HTML files.
+  Next.js is the plan, not the state &mdash; so moving it into WordPress is porting
+  templates, not rewriting an application.
 
-**Staying is not actually staying.** The hub is a Next.js application. Unless we
-rebuild it inside WordPress &mdash; losing the interactive tools and the review
-workflow, which are the reason the hub works &mdash; there are two systems either way.
-The status quo option is not "no change"; it is "change the hub instead."
+**Anyone in the room who knows WordPress would have caught those.** Better that we
+correct them ourselves.
 
-**WooCommerce has no credible POS story.** For a pharmacy with a counter, this is
-the gap that does not close with a plugin.
+### The design does not change &mdash; and no page builder is involved
 
-**The feature leadership cares about most is a third-party plugin.** Abandoned
-cart is not in WooCommerce core. It is someone else's code that must be kept
-current, and it breaks quietly when it stops being maintained.
+Worth stating plainly, because it is the most common and most reasonable fear:
+**we would not rebuild the site out of WordPress components.**
 
-**Self-hosted WordPress taking card payments is an ongoing obligation.** Security
-patching, plugin compatibility and PCI scope sit with us. Every plugin is another
-supply-chain dependency on a site handling payments.
+A custom theme template is a file that outputs whatever HTML we give it. Our
+markup goes in and renders exactly as written &mdash; the same CSS, the same
+typography, the same brand red. **Elementor, Divi, WPBakery and off-the-shelf
+themes are where "dated and tacky" comes from, and none of them are required or
+involved.**
 
-**And it undercuts the brand argument.** In the deep-link version, buyers leave
-wasabirub.com to purchase on sportpharm.com &mdash; the exact hop the domain strategy
-exists to avoid.
+Where an editing interface does appear is articles, which is already how ours
+work: the template owns the layout, and the editor supplies title, category and
+body. Landing pages stay developer-only templates exactly as they are today, and
+custom fields can hold structured content that our own markup renders &mdash; with no
+visual builder anywhere.
 
-### The fair summary
+**The one real hazard** is drift: a plugin installed later that injects its own
+CSS or markup can degrade a carefully built design. That is a governance rule, not
+a technical limit &mdash; but it needs an owner.
 
-WooCommerce is not failing us. **The reason to move is not that it is bad; it is
-that it does not reach where we are going** &mdash; retail, one catalogue across two
-brands, and recovery flows that work without maintenance. If we are not going
-there, staying is defensible and cheap.
+For what it is worth, this cuts the same way on Shopify: Liquid templates also
+render our own HTML. **Under every option on the table, the design work survives
+intact.**
 
----
+### The real cost of the WordPress path
+
+Not capability &mdash; effort and workflow.
+
+- **1,314KB of inline CSS across 63 pages**, each carrying its own duplicated
+  copy. Porting means keeping it inline per template (works, stays messy) or
+  consolidating into a theme stylesheet (right, but a regression risk). Mechanical
+  work, and not small.
+- **Content and configuration live in a database, not in version control.** Our
+  current workflow is git-push-to-deploy. This is a genuine loss of rigour.
+- **Plugin maintenance and PCI surface.** A self-hosted site taking cards carries
+  ongoing security patching and compatibility risk, and every plugin is another
+  dependency.
+- **Developer velocity.** PHP and plugin glue rather than the JavaScript toolchain
+  the team works in day to day.
+
+### What this unlocks for Tuesday
+
+The most useful consequence is not technical. **It lets us separate two decisions
+that have been travelling together.**
+
+Framed as "move to a new platform," this asks leadership to approve a rebuild of
+the company's website and store at once. Framed accurately &mdash; **"add a content
+hub to the site we already run"** &mdash; it is an addition to a system they are
+already comfortable with. The store does not move. WooCommerce keeps its orders,
+its customers and its plugins, untouched.
+
+That means we can **ship the hub now and decide the commerce platform later, on
+its own merits**, rather than making the content strategy hostage to a
+platform migration.
+
+**What this does not avoid** is the design conversation. Putting a new visual
+system onto sportpharm.com is precisely the change people are nervous about, and
+porting into WordPress does not soften that &mdash; it only removes the *platform*
+argument from it. Those are two separate objections and they should be answered
+separately.
+
+### The three honest arrangements
+
+| | What it means | Best for |
+|---|---|---|
+| **A. Everything in WordPress** | WP hosts the hub, the articles and the tools; WooCommerce runs the store | One system, lowest cost, no migration, native editorial workflow |
+| **B. Everything in Shopify** | Shopify hosts pages and blog as well as the store | Not recommended &mdash; Shopify *can* do it, but it is a weak CMS for 60 pages of content |
+| **C. Hub separate, Shopify headless** | The hub keeps its own frontend; Shopify is commerce backend only | Best commerce and best content &mdash; at the cost of two systems |
+
+### What actually separates them
+
+WooCommerce is not failing us, and WordPress is not incapable. The reasons to
+move are narrower than they first appear, and they are all about **commerce, not
+content**:
+
+- **POS.** For a pharmacy with a counter, unifying in-store and online inventory,
+  customers and orders. WordPress has no credible answer here and this is the
+  single biggest factor.
+- **Abandoned cart as a maintained feature**, not a plugin someone must keep alive.
+- **Not self-hosting a payment surface.**
+- **Hireability** &mdash; more people can operate Shopify than a bespoke setup.
+
+**If POS and retail unification are not in scope, option A is genuinely the right
+answer** &mdash; cheapest, one system, and it keeps an editorial workflow we would
+otherwise rebuild. It should not be treated as the consolation prize.
 
 ## 7. What this requires (be honest about it)
 

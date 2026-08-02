@@ -417,14 +417,14 @@
 
     <div class="verdict">
       <p class="hl">Recommendation</p>
-      <p class="big">One Shopify store as the commerce backend. The hub stays in Next.js + Payload, rendering products and cart against the Storefront API. Checkout lives on wasabirub.com. sportpharm.com stops selling and links to it.</p>
+      <p class="big">If retail POS is in scope: one Shopify store as the commerce backend, the hub keeping its own frontend against the Storefront API, checkout on wasabirub.com, sportpharm.com stops selling and links to it.</p><p class="big" style="font-size:17px;color:#c2d3e8">If POS is not in scope: keep WordPress and WooCommerce and move the hub onto it. One system, no migration, editorial workflow free. The choice genuinely turns on the POS answer &mdash; see the next section.</p>
       <p>Content, articles and the interactive tools never touch Shopify. It handles catalogue, cart, checkout, tax, shipping, inventory, refunds and abandoned cart. This is not the headless-WooCommerce trap &mdash; Shopify's Storefront API is built for exactly this, where WooCommerce's is a bolt-on.</p>
     </div>
 
     <h3 style="margin-top:32px">What decided it</h3>
     <div class="why">
       <div><span class="n">1</span><div><b>We have a physical pharmacy</b><span>POS unifying in-store and online inventory, customers and orders is worth more than anything on the web side &mdash; and a custom build has no answer to it at all.</span></div></div>
-      <div><span class="n">2</span><div><b>We are already asking whether the main site moves onto this</b><span>If sportpharm.com migrates to a bespoke build, the company's revenue runs on a system one person maintains. For a side project that is fine. For the company store it is a continuity risk &mdash; and Shopify is boring, hireable and operable by someone other than its builder.</span></div></div>
+      <div><span class="n">2</span><div><b>Continuity</b><span>A bespoke Stripe build would put company revenue on a system one person maintains &mdash; a continuity risk for the company store. Note this counts <i>against the custom stack</i>, not against WordPress, which is also widely hireable.</span></div></div>
       <div><span class="n">3</span><div><b>Abandoned cart should work, not be built</b><span>Native on Shopify. On a custom stack it is a scheduled job we own forever.</span></div></div>
     </div>
 
@@ -444,31 +444,60 @@
 
 <section>
   <div class="wrap">
-    <h2 class="disp">&ldquo;Why wouldn't we just stay on WooCommerce?&rdquo;</h2>
-    <p class="sub">The most reasonable question in the room. It deserves a straight answer, not a brush-off.</p>
+    <h2 class="disp">&ldquo;Why wouldn't we just stay on WordPress?&rdquo;</h2>
+    <p class="sub">The most reasonable question in the room &mdash; and the answer is more favourable to WordPress than a first pass suggests.</p>
 
     <div class="fair">
-      <p class="hl">The case for staying is genuinely strong</p>
-      <p class="note">It works today. Orders flow, money arrives, the team knows it, nothing has to be migrated, no new subscription appears on a budget line, and nobody has to learn anything. <b>&ldquo;It is not broken&rdquo; is a real argument and it wins meetings for good reasons.</b></p>
-      <p class="note" style="margin:0">There is even a coherent best version of it: <b>WooCommerce remains the only store and the hub deep-links products to it.</b> That solves the two-stores problem from the opposite direction and costs almost nothing. It belongs on the table honestly.</p>
+      <p class="hl">A correction worth making out loud</p>
+      <p class="note"><b>WordPress can host everything we have built.</b> We audited all 63 pages: no server-side code, no build step, no API layer, and exactly one external call in the entire site &mdash; the contact form. The interactive tools are 236KB of client-side JavaScript that would run identically inside a WordPress page template.</p>
+      <p class="note" style="margin:0">Three claims that do not survive checking: <b>&ldquo;we would lose the interactive tools&rdquo;</b> &mdash; false, they are pure client-side JavaScript. <b>&ldquo;We would lose the review workflow&rdquo;</b> &mdash; false and backwards; draft &rarr; review &rarr; publish with roles is what WordPress was built for, and building it ourselves reimplements what it gives free. <b>&ldquo;The hub is a Next.js application&rdquo;</b> &mdash; not yet; it is 63 static HTML files, so moving it is porting templates, not rewriting an app. <b>Anyone in the room who knows WordPress would have caught those.</b></p>
     </div>
 
-    <h3 style="margin-top:30px">Why we would still move</h3>
+    <div class="proof" style="border-left:4px solid var(--good)">
+      <p class="hl">The design does not change &mdash; no page builder is involved</p>
+      <p class="note">The most common and most reasonable fear: <b>we would not rebuild the site out of WordPress components.</b> A custom theme template outputs whatever HTML we give it &mdash; our markup goes in and renders exactly as written, same CSS, same typography, same brand red. <b>Elementor, Divi, WPBakery and off-the-shelf themes are where &ldquo;dated and tacky&rdquo; comes from, and none are required or involved.</b></p>
+      <p class="note">Where an editing interface appears is articles, which is already how ours work: the template owns the layout, the editor supplies title, category and body. Landing pages stay developer-only templates. Custom fields hold structured content that our own markup renders &mdash; no visual builder anywhere.</p>
+      <p class="note" style="margin:0"><b>The one real hazard is drift</b> &mdash; a plugin installed later that injects its own CSS can degrade a carefully built design. A governance rule, not a technical limit, but it needs an owner. This cuts the same way on Shopify, where Liquid templates also render our own HTML: <b>under every option on the table, the design work survives intact.</b></p>
+    </div>
+
+    <h3 style="margin-top:32px">The real cost of the WordPress path</h3>
+    <p class="note">Not capability &mdash; effort and workflow.</p>
     <div class="tbl-wrap">
       <table>
         <tbody>
-          <tr><td>Staying is not actually staying</td><td>The hub is a Next.js application. Unless we rebuild it inside WordPress &mdash; losing the interactive tools and the review workflow, which are the reason it works &mdash; there are two systems either way. The status quo option is not &ldquo;no change&rdquo;; it is <b>&ldquo;change the hub instead.&rdquo;</b></td></tr>
-          <tr><td>No credible POS story</td><td>For a pharmacy with a counter, this is the gap that does not close with a plugin</td></tr>
-          <tr><td>The feature they care about most is a plugin</td><td>Abandoned cart is not in WooCommerce core. It is someone else's code that must be kept current, and it breaks quietly when it stops being maintained</td></tr>
-          <tr><td>Self-hosted WordPress taking cards is an obligation</td><td>Security patching, plugin compatibility and PCI scope sit with us. Every plugin is another supply-chain dependency on a site handling payments</td></tr>
-          <tr><td>It undercuts the brand argument</td><td>In the deep-link version, buyers leave wasabirub.com to purchase on sportpharm.com &mdash; the exact hop the domain strategy exists to avoid</td></tr>
+          <tr><td>1,314KB of inline CSS across 63 pages</td><td>Each page carries its own duplicated copy. Porting means keeping it inline per template (works, stays messy) or consolidating into a theme stylesheet (right, but a regression risk). Mechanical work, and not small</td></tr>
+          <tr><td>Content lives in a database, not git</td><td>Our current workflow is git-push-to-deploy. A genuine loss of rigour</td></tr>
+          <tr><td>Plugin maintenance and PCI surface</td><td>A self-hosted site taking cards carries ongoing patching and compatibility risk; every plugin is another dependency</td></tr>
+          <tr><td>Developer velocity</td><td>PHP and plugin glue rather than the JavaScript toolchain the team works in daily</td></tr>
         </tbody>
       </table>
     </div>
 
-    <div class="rec"><p><b>The fair summary:</b> WooCommerce is not failing us. The reason to move is not that it is bad &mdash; it is that <b>it does not reach where we are going:</b> retail, one catalogue across two brands, and recovery flows that work without maintenance. If we are not going there, staying is defensible and cheap.</p></div>
+    <div class="verdict" style="margin-top:26px">
+      <p class="hl">What this unlocks for Tuesday</p>
+      <p class="big" style="font-size:18px">It lets us separate two decisions that have been travelling together.</p>
+      <p style="margin-bottom:12px">Framed as &ldquo;move to a new platform,&rdquo; this asks leadership to approve a rebuild of the company's website <i>and</i> store at once. Framed accurately &mdash; <b style="color:#fff">&ldquo;add a content hub to the site we already run&rdquo;</b> &mdash; it is an addition to a system they are already comfortable with. The store does not move; WooCommerce keeps its orders, customers and plugins untouched.</p>
+      <p style="margin-bottom:12px">That means we can <b style="color:#fff">ship the hub now and decide the commerce platform later, on its own merits</b>, rather than making the content strategy hostage to a platform migration.</p>
+      <p><b style="color:#fff">What this does not avoid</b> is the design conversation. Putting a new visual system onto sportpharm.com is precisely the change people are nervous about, and porting into WordPress does not soften that &mdash; it only removes the <i>platform</i> argument from it. Two separate objections; they should be answered separately.</p>
+    </div>
+
+    <h3 style="margin-top:32px">The three honest arrangements</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th></th><th>What it means</th><th>Best for</th></tr></thead>
+        <tbody>
+          <tr><td>A. Everything in WordPress</td><td>WP hosts the hub, articles and tools; WooCommerce runs the store</td><td>One system, lowest cost, no migration, native editorial workflow</td></tr>
+          <tr><td>B. Everything in Shopify</td><td>Shopify hosts pages and blog as well as the store</td><td><b>Not recommended</b> &mdash; it <i>can</i>, but it is a weak CMS for 60 pages of content</td></tr>
+          <tr><td>C. Hub separate, Shopify headless</td><td>The hub keeps its own frontend; Shopify is commerce backend only</td><td>Best commerce and best content &mdash; at the cost of two systems</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rec"><p><b>What actually separates them.</b> WooCommerce is not failing us and WordPress is not incapable. The reasons to move are narrower than they first appear, and they are all about <b>commerce, not content</b>: POS for the pharmacy counter, abandoned cart as a maintained feature rather than a plugin, not self-hosting a payment surface, and hireability. <b>If POS and retail unification are not in scope, option A is genuinely the right answer</b> &mdash; cheapest, one system, and it keeps an editorial workflow we would otherwise rebuild. It is not the consolation prize.</p></div>
   </div>
 </section>
+
+
 
 <section>
   <div class="wrap">
