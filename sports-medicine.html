@@ -249,6 +249,52 @@ footer .ftag{font-family:'Roboto Slab',serif;font-weight:700;font-size:.62rem;co
 .logo{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-decoration:none}
 .logo img{width:150px;height:auto;display:block}
 .logo-tag{font-family:Georgia,serif;font-weight:400;font-size:10.5px;letter-spacing:.005em;color:#24303c;white-space:nowrap}
+
+/* ===== services as a compact expander ===== */
+.h-acc{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 16px;align-items:start}
+.h-item{border:1px solid #e0e3e6;border-radius:10px;background:#fff;overflow:hidden;transition:.16s}
+.h-item:hover{border-color:#d6202a}
+.h-item.open{border-color:#d6202a;box-shadow:0 10px 26px rgba(16,24,32,.08)}
+.h-head{width:100%;display:flex;align-items:center;gap:14px;padding:16px 18px;background:none;border:0;
+  font:inherit;text-align:left;cursor:pointer}
+.h-head .ic{width:34px;height:34px;border-radius:8px;background:#fdeeee;display:flex;align-items:center;
+  justify-content:center;flex:0 0 34px;margin:0}
+.h-head .ic img{width:19px;height:19px;display:block}
+.h-head .ic.glyph{color:#a3161e;font-size:16px}
+.h-head b{flex:1;font-size:15.5px;color:#24303c;font-weight:700;line-height:1.3}
+.h-head .cx{width:20px;height:20px;flex:0 0 20px;position:relative}
+.h-head .cx:before,.h-head .cx:after{content:"";position:absolute;background:#a3161e;border-radius:2px;
+  transition:transform .2s}
+.h-head .cx:before{left:3px;right:3px;top:9px;height:2px}
+.h-head .cx:after{top:3px;bottom:3px;left:9px;width:2px}
+.h-item.open .h-head .cx:after{transform:scaleY(0)}
+.h-body{padding:0 18px 18px 66px}
+.h-body[hidden]{display:none}
+.h-body p{margin:0 0 14px;font-size:14px;color:#656e77;line-height:1.65}
+.h-body a{font-size:11.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+  color:#a3161e;text-decoration:none}
+.h-body a:hover{text-decoration:underline}
+
+/* ===== testimonials ===== */
+.h-proof{max-width:900px;margin:0 auto;text-align:center;position:relative}
+.h-qm{font-family:Georgia,serif;font-size:64px;line-height:.4;color:#d6202a;margin-bottom:14px}
+.h-car{display:grid}
+.h-slide{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .5s ease;
+  display:flex;flex-direction:column;align-items:center}
+.h-slide.on{opacity:1;visibility:visible}
+.h-slide blockquote{margin:0;font-size:19px;line-height:1.62;color:#24303c;max-width:70ch}
+.h-sec.dark .h-slide blockquote{color:#fff}
+.h-stars{margin-top:16px;color:#d6202a;font-size:15px;letter-spacing:5px}
+.h-attr{margin-top:16px}
+.h-attr b{display:block;font-size:14.5px;color:#24303c}
+.h-sec.dark .h-attr b{color:#fff}
+.h-attr span{display:block;font-size:13px;color:#656e77;margin-top:3px}
+.h-sec.dark .h-attr span{color:#bec3c8}
+.h-dots{display:flex;gap:8px;justify-content:center;margin-top:26px}
+.h-dot{width:7px;height:7px;padding:0;border:0;border-radius:50%;background:#c9ced2;cursor:pointer;transition:.2s}
+.h-sec.dark .h-dot{background:rgba(255,255,255,.3)}
+.h-dot.on{background:#d6202a;width:22px;border-radius:4px}
+@media(max-width:820px){.h-acc{grid-template-columns:1fr}.h-body{padding-left:18px}}
 </style></head><body><header>
   <div class="wrap nav">
     <a class="logo" href="sports-medicine.html"><img src="assets/wordmark-dark.png" alt="SportPharm"><span class="logo-tag">Behind every athlete you care for.</span></a>
@@ -332,7 +378,19 @@ footer .ftag{font-family:'Roboto Slab',serif;font-weight:700;font-size:.62rem;co
   <div class="h-wrap">
     <p class="h-eyebrow on-light">Our services</p>
     <h2 class="h-h2">Personalized pharmacy services for<br><em>athletes and sports medicine teams.</em></h2>
-    <div class="h-svc"><div class="h-card" id="compounding"><span class="ic"><img src="assets/icons/svc-compounding.svg" alt="" width="24" height="24"></span><h3>Compounding</h3><p>Customized medications formulated to meet the unique needs of each patient &mdash; ideal for topical pain relief, dosage adjustments, and ingredient sensitivities.</p><a href="#contact">Learn more &rarr;</a></div><div class="h-card" id="repackaging"><span class="ic"><img src="assets/icons/svc-repackaging.svg" alt="" width="24" height="24"></span><h3>Drug Repackaging</h3><p>Efficiently repackage bulk medications into unit-dose or team-specific formats, ensuring accuracy, compliance, and ease of distribution for athletic and clinical use.</p><a href="#contact">Learn more &rarr;</a></div><div class="h-card" id="concierge"><span class="ic"><img src="assets/icons/svc-concierge.svg" alt="" width="24" height="24"></span><h3>Concierge Pharmacy</h3><p>Our pharmacists work one-on-one with athletes, offering services focused on optimizing performance and long-term athlete health.</p><a href="#contact">Learn more &rarr;</a></div><div class="h-card" id="supplements"><span class="ic"><img src="assets/icons/svc-supplements.svg" alt="" width="24" height="24"></span><h3>Supplements</h3><p>Pharmacist-guided supplement support for athletes, delivering evidence-based recommendations to optimize performance, recovery, and wellness.</p><a href="#contact">Learn more &rarr;</a></div><div class="h-card" id="retail"><span class="ic"><img src="assets/icons/svc-retail.svg" alt="" width="24" height="24"></span><h3>Retail Pharmacy</h3><p>Full-service pharmacy solutions offering both prescription and over-the-counter medications, with a focus on athlete wellness and proactive care.</p><a href="#contact">Learn more &rarr;</a></div><div class="h-card" id="customized"><span class="ic"><img src="assets/icons/svc-customized.svg" alt="" width="24" height="24"></span><h3>Customized Services</h3><p>Customized healthcare and pharmacy programs built for athletes, teams, and sports organizations, for specialized needs beyond traditional pharmacy services.</p><a href="#contact">Learn more &rarr;</a></div><div class="h-card" id="blister"><span class="ic glyph">&#9638;</span><h3>Blister Packaging</h3><p>Blister-pack formats that support organized distribution and compliance tracking across a roster or a clinic.</p><a href="#contact">Learn more &rarr;</a></div><div class="h-card" id="inventory"><span class="ic glyph">&#9707;</span><h3>Inventory Management</h3><p>Smart tracking, monitoring and replenishment so clinics stay stocked and waste stays low.</p><a href="#contact">Learn more &rarr;</a></div></div>
+    <div class="h-acc"><div class="h-item open" data-acc><button class="h-head" type="button" aria-expanded="true" aria-controls="b-compounding"><span class="ic"><img src="assets/icons/svc-compounding.svg" alt="" width="24" height="24"></span><b>Compounding</b><span class="cx"></span></button><div class="h-body" id="b-compounding"><p>Customized medications formulated to meet the unique needs of each patient &mdash; ideal for topical pain relief, dosage adjustments, and ingredient sensitivities.</p><a href="#contact">Learn more &rarr;</a></div></div><div class="h-item" data-acc><button class="h-head" type="button" aria-expanded="false" aria-controls="b-repackaging"><span class="ic"><img src="assets/icons/svc-repackaging.svg" alt="" width="24" height="24"></span><b>Drug Repackaging</b><span class="cx"></span></button><div class="h-body" id="b-repackaging" hidden><p>Efficiently repackage bulk medications into unit-dose or team-specific formats, ensuring accuracy, compliance, and ease of distribution for athletic and clinical use.</p><a href="#contact">Learn more &rarr;</a></div></div><div class="h-item" data-acc><button class="h-head" type="button" aria-expanded="false" aria-controls="b-concierge"><span class="ic"><img src="assets/icons/svc-concierge.svg" alt="" width="24" height="24"></span><b>Concierge Pharmacy</b><span class="cx"></span></button><div class="h-body" id="b-concierge" hidden><p>Our pharmacists work one-on-one with athletes, offering services focused on optimizing performance and long-term athlete health.</p><a href="#contact">Learn more &rarr;</a></div></div><div class="h-item" data-acc><button class="h-head" type="button" aria-expanded="false" aria-controls="b-supplements"><span class="ic"><img src="assets/icons/svc-supplements.svg" alt="" width="24" height="24"></span><b>Supplements</b><span class="cx"></span></button><div class="h-body" id="b-supplements" hidden><p>Pharmacist-guided supplement support for athletes, delivering evidence-based recommendations to optimize performance, recovery, and wellness.</p><a href="#contact">Learn more &rarr;</a></div></div><div class="h-item" data-acc><button class="h-head" type="button" aria-expanded="false" aria-controls="b-retail"><span class="ic"><img src="assets/icons/svc-retail.svg" alt="" width="24" height="24"></span><b>Retail Pharmacy</b><span class="cx"></span></button><div class="h-body" id="b-retail" hidden><p>Full-service pharmacy solutions offering both prescription and over-the-counter medications, with a focus on athlete wellness and proactive care.</p><a href="#contact">Learn more &rarr;</a></div></div><div class="h-item" data-acc><button class="h-head" type="button" aria-expanded="false" aria-controls="b-customized"><span class="ic"><img src="assets/icons/svc-customized.svg" alt="" width="24" height="24"></span><b>Customized Services</b><span class="cx"></span></button><div class="h-body" id="b-customized" hidden><p>Customized healthcare and pharmacy programs built for athletes, teams, and sports organizations, for specialized needs beyond traditional pharmacy services.</p><a href="#contact">Learn more &rarr;</a></div></div><div class="h-item" data-acc><button class="h-head" type="button" aria-expanded="false" aria-controls="b-blister"><span class="ic glyph">&#9638;</span><b>Blister Packaging</b><span class="cx"></span></button><div class="h-body" id="b-blister" hidden><p>Blister-pack formats that support organized distribution and compliance tracking across a roster or a clinic.</p><a href="#contact">Learn more &rarr;</a></div></div><div class="h-item" data-acc><button class="h-head" type="button" aria-expanded="false" aria-controls="b-inventory"><span class="ic glyph">&#9707;</span><b>Inventory Management</b><span class="cx"></span></button><div class="h-body" id="b-inventory" hidden><p>Smart tracking, monitoring and replenishment so clinics stay stocked and waste stays low.</p><a href="#contact">Learn more &rarr;</a></div></div></div>
+  </div>
+</section>
+
+<section class="h-sec dark" id="proof">
+  <div class="h-wrap">
+    <p class="h-eyebrow" style="text-align:center">From the sideline</p>
+    <h2 class="h-h2" style="text-align:center">Trusted by the people <em>who use it every day.</em></h2>
+    <div class="h-proof">
+      <div class="h-qm">&ldquo;</div>
+      <div class="h-car" id="hcar"><div class="h-slide on"><blockquote>“We’ve had good results with a variety of SportPharm’s topicals and compounded medications. WasabiRub helps manage muscle soreness and minor strains so our athletes can stay available and ready.”</blockquote><div class="h-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="h-attr"><b>Joel Lockhart</b><span>Assistant Athletic Trainer, St. Louis City Soccer Club</span></div></div><div class="h-slide"><blockquote>“With our match schedule and constant travel, we needed something fast, portable, and effective. WasabiRub helps manage muscle soreness and minor strains so our athletes can stay available and ready.”</blockquote><div class="h-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="h-attr"><b>Najeeb Emmanuel, MS, LAT, ATC, PES</b><span>Assistant Athletic Trainer, FIU Soccer</span></div></div><div class="h-slide"><blockquote>“WasabiRub is in our kit every day. It gives players fast, localized relief and helps them stay game-ready.”</blockquote><div class="h-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="h-attr"><b>Dr. Javier García, DAT, ATC, SMTC</b><span>Head Athletic Trainer, Seton Hall Basketball</span></div></div><div class="h-slide"><blockquote>“Our guys absolutely love using WasabiRub. The cooling and heating sensation lasts much longer than most products we’ve tried, and the feedback from our players has been outstanding. It helps take the edge off soreness and pain quickly while keeping our athletes feeling ready to perform. It has become a staple in our training room.”</blockquote><div class="h-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="h-attr"><b>Michael Feliciano, MS, ATC, PES</b><span>Minor League Athletic Training, Boston Red Sox</span></div></div><div class="h-slide"><blockquote>“The WasabiRub is constantly being used by several players right now. The feedback has been really positive from them all, and even helped a guy with neck and shoulder issues get through a few workdays. The biggest talking point has been the longevity of its use each time — no multiple applications on game days.”</blockquote><div class="h-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="h-attr"><b>Daniel Medd</b><span>Head Coach, South West Sydney Academy of Sport Inc.</span></div></div><div class="h-slide"><blockquote>“Fast, reliable service and competitive pricing. SportPharm makes it easy to get our athletes the medications they need without delays.”</blockquote><div class="h-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="h-attr"><b>James Tuffy, MHA, LAT, ATC</b><span>Assistant Athletic Director, St. Thomas University</span></div></div></div>
+      <div class="h-dots" id="hdots"></div>
+    </div>
   </div>
 </section>
 
@@ -396,4 +454,7 @@ footer .ftag{font-family:'Roboto Slab',serif;font-weight:700;font-size:.62rem;co
       <strong style="color:#aebccf;font-weight:600">Medical disclaimer:</strong> The content on this site is provided for general educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the guidance of a qualified healthcare provider for an official diagnosis and recovery plan.
     </p>
   </div>
-</footer></body></html>
+</footer><script>
+(function(){[].slice.call(document.querySelectorAll("[data-acc]")).forEach(function(it){var b=it.querySelector(".h-head"),body=it.querySelector(".h-body");b.addEventListener("click",function(){var open=it.classList.contains("open");it.classList.toggle("open",!open);b.setAttribute("aria-expanded",String(!open));body.hidden=open;});});})();
+(function(){var car=document.getElementById("hcar");if(!car)return;var sl=[].slice.call(car.querySelectorAll(".h-slide")),dw=document.getElementById("hdots"),i=0,t=null,DELAY=7000;sl.forEach(function(_,k){var d=document.createElement("button");d.className="h-dot"+(k===0?" on":"");d.type="button";d.setAttribute("aria-label","Testimonial "+(k+1));d.addEventListener("click",function(){go(k);reset();});dw.appendChild(d);});var dots=[].slice.call(dw.children);function go(n){sl[i].classList.remove("on");dots[i].classList.remove("on");i=(n+sl.length)%sl.length;sl[i].classList.add("on");dots[i].classList.add("on");}function reset(){clearInterval(t);t=setInterval(function(){go(i+1);},DELAY);}if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches)reset();car.addEventListener("mouseenter",function(){clearInterval(t);});car.addEventListener("mouseleave",reset);})();
+</script></body></html>
