@@ -459,6 +459,20 @@ footer{background:#11181f;padding:40px 0;text-align:center}
 @keyframes hpan{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .h-pan-lede{margin:0 0 20px;font-size:16px;line-height:1.62;color:#c9d1d9;max-width:52ch}
 .h-rxnote{margin:0 0 22px;font-size:13px;line-height:1.55;color:#9aa5b1;padding-left:14px;border-left:2px solid rgba(255,255,255,.18);max-width:52ch}
+
+.h-rxlab{margin:0 0 12px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#9aa5b1}
+.h-rx{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 24px}
+.h-rxc{position:relative;display:block;padding:16px 14px 15px;border-radius:10px;text-decoration:none;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);overflow:hidden;transition:.18s ease}
+.h-rxc:before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--rx)}
+.h-rxc:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.26);transform:translateY(-2px)}
+.h-rxc:focus-visible{outline:2px solid #ec636b;outline-offset:3px}
+.h-rxc b{display:block;margin-top:6px;font-size:14.5px;font-weight:700;color:#fff;line-height:1.25}
+.h-rxs{display:block;margin-top:2px;font-family:'Inter',system-ui,sans-serif;font-size:19px;font-weight:800;color:#fff;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.h-rxg{display:block;margin-top:6px;font-size:12.5px;line-height:1.45;color:#c2ccd6}
+.h-rxd{display:block;margin-top:6px;font-size:11px;font-weight:700;letter-spacing:.05em;color:#8f9ca8;font-variant-numeric:tabular-nums}
+@media(max-width:1000px){.h-rx{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.h-rx{grid-template-columns:1fr}}
 </style></head><body><header>
   <div class="wrap nav">
     <a class="logo" href="sports-medicine.html"><img src="assets/wordmark-dark.png" alt="SportPharm"><span class="logo-tag">Behind every athlete you care for.</span></a>
@@ -597,18 +611,26 @@ footer{background:#11181f;padding:40px 0;text-align:center}
         </div>
 
         <div class="h-pan" id="panRx" role="tabpanel" aria-labelledby="tabRx" hidden>
-          <p class="h-pan-lede">Prescription fulfillment built around a training room rather than a retail counter.</p>
+          <p class="h-pan-lede"><b>SportPharm is a compounding pharmacy.</b> We uphold high standards for compounding quality medications. Our compounding pharmacist will customize formulations to your individualized needs, all while working with your physician.</p>
+
+          <p class="h-rxlab">Prescription-strength topical line</p>
+          <div class="h-rx">
+            <a class="h-rxc" href="https://sportpharm.com/rx/" style="--rx:#1f5f8b"><b>KetoRub&trade;</b><span class="h-rxs">10%</span><span class="h-rxg">ketoprofen topical cream</span><span class="h-rxd">100 mg/g &middot; 30 g</span></a>
+            <a class="h-rxc" href="https://sportpharm.com/rx/" style="--rx:#7fa8b8"><b>LidoRub&trade;</b><span class="h-rxs">7.5%</span><span class="h-rxg">lidocaine topical cream</span><span class="h-rxd">75 mg/g &middot; 30 g</span></a>
+            <a class="h-rxc" href="https://sportpharm.com/rx/" style="--rx:#d6202a"><b>NeuroRub&trade;</b><span class="h-rxs">10%</span><span class="h-rxg">gabapentin topical cream</span><span class="h-rxd">100 mg/g &middot; 30 g</span></a>
+            <a class="h-rxc" href="https://sportpharm.com/rx/" style="--rx:#d98b62"><b>MisicaRub&trade;</b><span class="h-rxs">2%</span><span class="h-rxg">baclofen topical cream</span><span class="h-rxd">20 mg/g &middot; 30 g</span></a>
+          </div>
+
           <ul>
-            <li>Compounded to your physician&rsquo;s specification &mdash; transdermal gels, creams, sublingual drops</li>
+            <li>Custom formulations &mdash; transdermal gels, creams and sublingual drops</li>
             <li>Unit-dose repackaging and blister packs for roster-wide distribution</li>
-            <li>Allergen-free and dose-adjusted formulations for ingredient sensitivities</li>
+            <li>Allergen-free and dose-adjusted for ingredient sensitivities</li>
             <li>Shipped to your facility or direct to the athlete, home or away</li>
           </ul>
-          <div class="h-skus"><span class="h-sku">Compounding</span><span class="h-sku">Unit-dose</span><span class="h-sku">Blister packs</span><span class="h-sku">Direct-to-athlete</span></div>
-          <p class="h-rxnote">Prescription items are dispensed through the pharmacy, not the online store. A valid prescription is required.</p>
+          <p class="h-rxnote">Rx only. Prescription items are dispensed through the pharmacy, not the online store, and require a valid prescription.</p>
           <div class="h-row">
-            <a class="h-btn solid" href="#" data-intake>Talk to a pharmacist &rarr;</a>
-            <a class="h-btn line" href="#services" data-openservice="compounding">See compounding</a>
+            <a class="h-btn solid" href="#" data-intake>Request a prescription &rarr;</a>
+            <a class="h-btn line" href="https://sportpharm.com/rx/">See the full Rx line</a>
           </div>
         </div>
       </div>
@@ -720,6 +742,9 @@ footer{background:#11181f;padding:40px 0;text-align:center}
     <p><strong>Medical disclaimer:</strong> The content on this site is provided for general educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the guidance of a qualified healthcare provider for an official diagnosis and recovery plan.</p>
   </div>
 </footer><script>
+(function(){var D={"compounding": {"t": "Compounding", "d": "Customized medications formulated to meet the unique needs of each patient &mdash; ideal for topical pain relief, dosage adjustments, and ingredient sensitivities.", "h": "#contact", "l": "Learn more &rarr;"}, "repackaging": {"t": "Drug Repackaging", "d": "Efficiently repackage bulk medications into unit-dose or team-specific formats, ensuring accuracy, compliance, and ease of distribution for athletic and clinical use.", "h": "#contact", "l": "Learn more &rarr;"}, "concierge": {"t": "Concierge Pharmacy", "d": "Our pharmacists work one-on-one with athletes, offering services focused on optimizing performance and long-term athlete health.", "h": "#contact", "l": "Learn more &rarr;"}, "supplements": {"t": "Supplements", "d": "Pharmacist-guided supplement support for athletes, delivering evidence-based recommendations to optimize performance, recovery, and wellness.", "h": "#contact", "l": "Learn more &rarr;"}, "retail": {"t": "Retail Pharmacy", "d": "Full-service pharmacy solutions offering both prescription and over-the-counter medications, with a focus on athlete wellness and proactive care.", "h": "#contact", "l": "Learn more &rarr;"}, "customized": {"t": "Customized Services", "d": "Customized healthcare and pharmacy programs built for athletes, teams, and sports organizations, for specialized needs beyond traditional pharmacy services.", "h": "#contact", "l": "Learn more &rarr;"}, "blister": {"t": "Blister Packaging", "d": "Blister-pack formats that support organized distribution and compliance tracking across a roster or a clinic.", "h": "#contact", "l": "Learn more &rarr;"}, "inventory": {"t": "Inventory Management", "d": "Smart tracking, monitoring and replenishment so clinics stay stocked and waste stays low.", "h": "#contact", "l": "Learn more &rarr;"}},tr=document.getElementById("svcTrack"),panel=document.getElementById("svcPanel");var cards=[].slice.call(tr.children),prev=document.getElementById("svcPrev"),next=document.getElementById("svcNext"),page=0;function per(){var w=innerWidth;return w<=600?2:w<=860?3:w<=1100?4:5;}function pages(){return Math.max(1,Math.ceil(cards.length/per()));}function go(p){var n=pages();page=((p%n)+n)%n;var step=cards[0].getBoundingClientRect().width+12;tr.style.transform="translateX("+(-page*per()*step)+"px)";}function close(){panel.hidden=true;cards.forEach(function(c){c.setAttribute("aria-expanded","false");});}cards.forEach(function(c){c.addEventListener("click",function(){if(c.getAttribute("aria-expanded")==="true"){close();return;}var d=D[c.dataset.svc];cards.forEach(function(o){o.setAttribute("aria-expanded","false");});c.setAttribute("aria-expanded","true");panel.innerHTML='<div class="h-spanel-in"><button class="h-spanel-x" type="button" aria-label="Close">&times;</button>'+"<h3>"+d.t+"</h3><p>"+d.d+"</p>"+'<a href="'+d.h+'">'+d.l+"</a></div>";panel.hidden=false;panel.querySelector(".h-spanel-x").addEventListener("click",close);});});document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-openservice]");if(!a)return;var k=a.getAttribute("data-openservice"),c=cards.filter(function(x){return x.dataset.svc===k;})[0];if(!c)return;e.preventDefault();go(Math.floor(cards.indexOf(c)/per()));document.getElementById("services").scrollIntoView({behavior:"smooth",block:"start"});setTimeout(function(){if(c.getAttribute("aria-expanded")!=="true")c.click();},420);});prev.addEventListener("click",function(){go(page-1);});next.addEventListener("click",function(){go(page+1);});var t;addEventListener("resize",function(){clearTimeout(t);t=setTimeout(function(){go(0);},140);});go(0);})();
+</script>
+<script>
 (function(){
   var car=document.getElementById("hcar"); if(!car) return;
   var sl=[].slice.call(car.querySelectorAll(".t-slide")),
