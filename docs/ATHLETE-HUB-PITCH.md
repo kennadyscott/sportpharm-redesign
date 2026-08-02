@@ -1,15 +1,17 @@
-# SportPharm + wasabirub.com — leadership brief
+# Its own site. Our own platform.
+
+_wasabirub.com — leadership brief_
 
 > Visual version: https://claude.ai/code/artifact/b3b4a9a5-96ff-4466-ad99-faf67546840c
 
-The Athlete Hub — A Demand Engine for WasabiRub
+wasabirub.com — A Product Site on the SportPharm Platform
 
  
- Prepared for leadership · Decision requested
+ wasabirub.com · Prepared for leadership
 
- wasabirub.comneeds a reason to rank.
+ Its own site.Our own platform.
 
- A new domain starts with no search authority. The Athlete Hub is how the product site earns it — educational content that answers what athletes actually search, on the same domain that sells them the answer. Both sites move to one design system, and both stay on WordPress.
+ WasabiRub gets a site of its own — its own domain, its own audience, its own reason to rank. It is built on the platform SportPharm already runs, in a design system shared across both. A separate front door on a foundation we already own.
 
  Three decisions: approve the hub as the demand engine for wasabirub.com, confirm the platform it runs on, and name who operates it.
 
@@ -100,37 +102,7 @@ The Athlete Hub — A Demand Engine for WasabiRub
 
  
 
- 
-
  The plan is two WordPress sites sharing one design language: sportpharm.com rebuilt for the company and the pharmacy, and wasabirub.com as the product site with the hub beside it. One parent theme, two child themes — a shared foundation with the divergence each site needs.
-
- 
- 0
-new platforms to learn
-
- 0
-content or orders migrated
-
- 0
-URLs changed
-
- 1
-thing that actually changes — the theme
-
- 
-
- 
- Three things stay, one thing changes
-
- The platform stays. Same WordPress, same admin screens, same publishing workflow, same skills. Nobody retrains.
-
- The content stays. Pages, posts, products, orders, customers and reviews live in the database, independent of the theme. Changing themes does not touch data. A redesign in WordPress is far less risky than a platform migration precisely because nothing moves.
-
- The URLs stay. sportpharm.com has years of earned search authority. Keep the existing addresses and a redesign costs nothing in rankings — which answers the obvious worry directly: rebuilding the site does not mean starting over in search.
-
- Only the theme changes. A WordPress theme is the design — our HTML and CSS in template files. This is ordinary, well-trodden work, not a workaround.
-
- 
 
  
  The product pages are entirely ours — this is the important one
@@ -184,31 +156,33 @@ thing that actually changes — the theme
 
  
  
- The jobCustom buildWordPressShopify
+ The jobWordPress + our themeShopify + our front end
 
  
- Publish an article | Usable adminThe most widely known publishing screen there is | Basic blog, workable
+ Publish an articleThe most widely known publishing screen there is | Basic blog, workable
 
- Add or edit a product | Usable admin | WooCommerce product screenBest in class
+ Add or edit a product | WooCommerce product screenBest in class
 
- Create a coupon code | Stripe dashboard — fineBuilt-in Woo couponsBuilt-in discounts
+ Create a coupon codeBuilt-in Woo couponsBuilt-in discounts
 
- Refund an order | Stripe dashboard | Woo ordersBest
+ Refund an order | Woo ordersBest
 
- Get unstuckNo vendor support lineVast community; any freelancerVendor support + partners
+ Get unstuckVast community; any freelancerVendor support + partners
 
- Hire a replacementSpecialist, not a commodityEasyEasy
+ Hire a replacementEasy and cheapEasy
 
- 
- 
- 
-
- A custom build is not the answer here — and the reason matters. It is not that staff could not use it; the admin is genuinely fine and Stripe handles coupons and refunds natively. It is that every later request — "can we add gift cards?", "Stripe changed an API" — is a build rather than a setting, so it needs a permanent developer relationship rather than a handover. A WordPress freelancer is a commodity findable in a day. A Next.js + Payload + Stripe developer taking a small maintenance contract is not.
+ Cost to runHosting only | Subscription + transaction fees + apps
 
  
- Which is an argument for WordPress
+ 
+ 
 
- More people know the WordPress editor than any other publishing interface in the world. Articles, pages and coupons are all screens a marketing coordinator can be shown once. And if that person leaves, the replacement is easy to hire — which is the whole point.
+ Both options are custom — that is not the variable. We are not using anyone's stock templates: the design is ours either way, rendered from our own markup. What differs is what runs underneath it, and that is what decides who can operate the site once the build is finished. The question is not "custom or off-the-shelf." It is which admin an employee logs into on a Tuesday morning, and how easily we replace them if they leave.
+
+ 
+ Which points to WordPress
+
+ More people know the WordPress editor than any other publishing interface in the world — and this team already uses it every day on sportpharm.com. Articles, pages and coupons are screens a marketing coordinator can be shown once. If that person leaves, the replacement is easy and cheap to hire. Shopify wins on the store screens, and that advantage grows with the catalogue — but it is a second system to learn, on top of the one we would still be running.
 
  
 
@@ -422,4 +396,4 @@ Bulk edit, CSV import, variants, multi-location inventory, staff permissions, re
 
  
 
-SportPharm · Athlete Hub strategy · Prepared for leadership review
+SportPharm · wasabirub.com platform & design brief · Prepared for leadership review

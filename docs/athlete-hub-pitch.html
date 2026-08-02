@@ -1,4 +1,4 @@
-<title>The Athlete Hub — A Demand Engine for WasabiRub</title>
+<title>wasabirub.com — A Product Site on the SportPharm Platform</title>
 <style>
   :root{
     --navy:#0a203d; --navy-2:#071b35; --red:#E0312A; --ink:#12203a;
@@ -192,18 +192,15 @@
 .seq .now{background:var(--good);color:var(--on-accent)}
 .seq .later{background:var(--paper);color:var(--muted);border:1px solid var(--line)}
 .seq p{margin:0;font-size:14px;color:var(--muted);line-height:1.6}
-.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 0}
-.facts div{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:16px 18px}
-.facts .n{font-family:"Arial Narrow",Impact,sans-serif;font-size:28px;line-height:1;color:var(--red)}
-.facts .k{font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.45}
-@media(max-width:820px){.facts{grid-template-columns:repeat(2,1fr)}.seq > div{grid-template-columns:1fr;gap:8px}}
+
+@media(max-width:820px){.seq > div{grid-template-columns:1fr;gap:8px}}
 </style>
 
 <header>
   <div class="wrap">
-    <p class="eyebrow">Prepared for leadership &middot; Decision requested</p>
-    <h1 class="disp">wasabirub.com<br>needs a <span>reason to rank.</span></h1>
-    <p class="lede">A new domain starts with no search authority. The Athlete Hub is how the product site earns it &mdash; educational content that answers what athletes actually search, on the same domain that sells them the answer. Both sites move to one design system, and both stay on WordPress.</p>
+    <p class="eyebrow">wasabirub.com &middot; Prepared for leadership</p>
+    <h1 class="disp">Its own site.<br><span>Our own platform.</span></h1>
+    <p class="lede">WasabiRub gets a site of its own &mdash; its own domain, its own audience, its own reason to rank. It is built on the platform SportPharm already runs, in a design system shared across both. <b>A separate front door on a foundation we already own.</b></p>
     <div class="ask"><b>Three decisions:</b> approve the hub as the demand engine for wasabirub.com, confirm the platform it runs on, and name who operates it.</div>
   </div>
 </header>
@@ -263,24 +260,7 @@
       <p class="note" style="margin:0"><b>What changed my assessment:</b> auditing all 63 pages we have built &mdash; no server-side code, no build step, no API layer &mdash; and working through how WooCommerce template overrides actually function. <b>The correction makes the recommendation stronger, not weaker.</b> We can have the design we want <i>and</i> stay on the platform this company already knows and can staff. I had been treating those as a trade-off. They are not.</p>
     </div>
 
-    
-
     <p>The plan is two WordPress sites sharing one design language: <b>sportpharm.com</b> rebuilt for the company and the pharmacy, and <b>wasabirub.com</b> as the product site with the hub beside it. One parent theme, two child themes &mdash; a shared foundation with the divergence each site needs.</p>
-
-    <div class="facts">
-      <div><div class="n">0</div><div class="k">new platforms to learn</div></div>
-      <div><div class="n">0</div><div class="k">content or orders migrated</div></div>
-      <div><div class="n">0</div><div class="k">URLs changed</div></div>
-      <div><div class="n">1</div><div class="k">thing that actually changes &mdash; the theme</div></div>
-    </div>
-
-    <div class="lead-in">
-      <p class="hl">Three things stay, one thing changes</p>
-      <p class="note"><b>The platform stays.</b> Same WordPress, same admin screens, same publishing workflow, same skills. Nobody retrains.</p>
-      <p class="note"><b>The content stays.</b> Pages, posts, products, orders, customers and reviews live in the database, independent of the theme. <b>Changing themes does not touch data.</b> A redesign in WordPress is far less risky than a platform migration precisely because nothing moves.</p>
-      <p class="note"><b>The URLs stay.</b> sportpharm.com has years of earned search authority. Keep the existing addresses and a redesign costs nothing in rankings &mdash; which answers the obvious worry directly: rebuilding the site does not mean starting over in search.</p>
-      <p class="note" style="margin:0"><b>Only the theme changes.</b> A WordPress theme <i>is</i> the design &mdash; our HTML and CSS in template files. This is ordinary, well-trodden work, not a workaround.</p>
-    </div>
 
     <div class="proof" style="border-left:4px solid var(--good)">
       <p class="hl">The product pages are entirely ours &mdash; this is the important one</p>
@@ -316,23 +296,24 @@
 
     <div class="tbl-wrap">
       <table class="ops">
-        <thead><tr><th>The job</th><th>Custom build</th><th>WordPress</th><th>Shopify</th></tr></thead>
+        <thead><tr><th>The job</th><th>WordPress + our theme</th><th>Shopify + our front end</th></tr></thead>
         <tbody>
-          <tr><td>Publish an article</td><td>Usable admin</td><td class="y">The most widely known publishing screen there is</td><td>Basic blog, workable</td></tr>
-          <tr><td>Add or edit a product</td><td>Usable admin</td><td>WooCommerce product screen</td><td class="y">Best in class</td></tr>
-          <tr><td>Create a coupon code</td><td>Stripe dashboard &mdash; fine</td><td class="y">Built-in Woo coupons</td><td class="y">Built-in discounts</td></tr>
-          <tr><td>Refund an order</td><td>Stripe dashboard</td><td>Woo orders</td><td class="y">Best</td></tr>
-          <tr><td>Get unstuck</td><td class="n2">No vendor support line</td><td class="y">Vast community; any freelancer</td><td class="y">Vendor support + partners</td></tr>
-          <tr><td>Hire a replacement</td><td class="n2">Specialist, not a commodity</td><td class="y">Easy</td><td class="y">Easy</td></tr>
+          <tr><td>Publish an article</td><td class="y">The most widely known publishing screen there is</td><td>Basic blog, workable</td></tr>
+          <tr><td>Add or edit a product</td><td>WooCommerce product screen</td><td class="y">Best in class</td></tr>
+          <tr><td>Create a coupon code</td><td class="y">Built-in Woo coupons</td><td class="y">Built-in discounts</td></tr>
+          <tr><td>Refund an order</td><td>Woo orders</td><td class="y">Best</td></tr>
+          <tr><td>Get unstuck</td><td class="y">Vast community; any freelancer</td><td class="y">Vendor support + partners</td></tr>
+          <tr><td>Hire a replacement</td><td class="y">Easy and cheap</td><td class="y">Easy</td></tr>
+          <tr><td>Cost to run</td><td class="y">Hosting only</td><td>Subscription + transaction fees + apps</td></tr>
         </tbody>
       </table>
     </div>
 
-    <div class="rec"><p><b>A custom build is not the answer here &mdash; and the reason matters.</b> It is not that staff could not use it; the admin is genuinely fine and Stripe handles coupons and refunds natively. It is that every later request &mdash; "can we add gift cards?", "Stripe changed an API" &mdash; is <b>a build rather than a setting</b>, so it needs a permanent developer relationship rather than a handover. A WordPress freelancer is a commodity findable in a day. A Next.js + Payload + Stripe developer taking a small maintenance contract is not.</p></div>
+    <div class="rec"><p><b>Both options are custom &mdash; that is not the variable.</b> We are not using anyone's stock templates: the design is ours either way, rendered from our own markup. What differs is <b>what runs underneath it</b>, and that is what decides who can operate the site once the build is finished. The question is not "custom or off-the-shelf." It is <b>which admin an employee logs into on a Tuesday morning</b>, and how easily we replace them if they leave.</p></div>
 
     <div class="lead-in">
-      <p class="hl">Which is an argument for WordPress</p>
-      <p class="note" style="margin:0">More people know the WordPress editor than any other publishing interface in the world. Articles, pages and coupons are all screens a marketing coordinator can be shown once. And if that person leaves, the replacement is easy to hire &mdash; which is the whole point.</p>
+      <p class="hl">Which points to WordPress</p>
+      <p class="note" style="margin:0">More people know the WordPress editor than any other publishing interface in the world &mdash; and <b>this team already uses it every day on sportpharm.com.</b> Articles, pages and coupons are screens a marketing coordinator can be shown once. If that person leaves, the replacement is easy and cheap to hire. Shopify wins on the store screens, and that advantage grows with the catalogue &mdash; but it is a second system to learn, on top of the one we would still be running.</p>
     </div>
   </div>
 </section>
@@ -465,4 +446,4 @@
   </div>
 </section>
 
-<footer><div class="wrap">SportPharm &middot; Athlete Hub strategy &middot; Prepared for leadership review</div></footer>
+<footer><div class="wrap">SportPharm &middot; wasabirub.com platform &amp; design brief &middot; Prepared for leadership review</div></footer>
