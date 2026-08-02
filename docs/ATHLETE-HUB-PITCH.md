@@ -85,51 +85,62 @@ answer.
 
 ---
 
-## 4. The commerce question to settle first
+## 4. Two stores selling the same three products
 
-SportPharm runs on **WordPress with WooCommerce**. That is where the real cart
-lives and where checkout happens. **The Athlete Hub is a separate static site
-with no cart of its own.**
+The hub, the product pages and the cart all live on **wasabirub.com**. Nothing
+has to travel between domains, so there is no lost-cart problem inside the hub.
+That is settled.
 
-That is not automatically a problem &mdash; and the hub already shows why. When
-`wasabirub.html` sends someone to buy the duo bundle, it links **straight to that
-product's WooCommerce page**. No cart is carried across, so no cart can be lost.
-Deep-linking products is the pattern that works, and it works on any domain.
+The problem is on the other side of the split.
 
-**The narrow, real problem:** `products.html` has *Add to Cart* buttons that only
-increment a badge and show a toast. Nothing is stored, and there is no checkout.
-The hub's **Explore Topicals** CTA now points at that page. So a visitor can add
-all three topicals and reach a dead end &mdash; and the dead end is inside our own
-static site, not at the WordPress boundary.
+**sportpharm.com is WordPress running WooCommerce.** It sells WasabiRub,
+IcetraRub and Super Hot today. **wasabirub.com will sell the same three products
+through Payload + Stripe.** Same catalogue, two systems that do not know about
+each other.
 
-**Fix:** remove the cart affordance from `products.html` and deep-link each
-product to WooCommerce, exactly as `wasabirub.html` already does. Small, and it
-should happen before the hub earns traffic.
+| | sportpharm.com | wasabirub.com |
+|---|---|---|
+| Platform | WordPress + WooCommerce | Next.js + Payload |
+| Payments | WooCommerce checkout | Stripe |
+| Orders land in | WooCommerce | Payload |
+| Inventory counted in | WooCommerce | Payload |
+| Promo codes | WooCommerce coupons | Stripe Promotion Codes |
 
-### What the domain choice does to this
+This is the real version of the concern raised in the room: not a cart that
+empties in transit, but **two carts that never see each other.** A customer who
+starts on sportpharm.com and finishes on wasabirub.com has a half-filled basket
+on a site they have left. And operationally we would be reconciling two order
+streams, two stock counts and two discount systems for one product line.
 
-Carts live in cookies, and cookies are bound to a registrable domain. That is a
-browser rule, not a platform limitation &mdash; **putting everything on one
-platform does not by itself let a cart follow a customer to a different domain.**
+### The decision this forces
 
-| Arrangement | Does a cart carry across? |
-|---|---|
-| `hub.sportpharm.com` (subdomain) | **Yes, transparently** &mdash; a cookie scoped to `.sportpharm.com` is shared |
-| `sportpharm.com/athlete-hub` (subdirectory) | **Yes** &mdash; same origin, nothing to solve |
-| `wasabirub.com` (separate domain) | **Only if we build it** &mdash; a cart token has to be passed in the crossing link and rebuilt on arrival |
+**Where does a purchase happen?** There is really only one good answer.
 
-The separate-domain option is buildable on one platform, but it is a real work
-item, and it is fragile: it works only when someone follows a link, so anyone who
-types the domain or returns later arrives empty-handed. Approaches that lean on
-third-party cookies should be discounted &mdash; browsers are closing that door.
+**Recommendation: wasabirub.com becomes the only store.** sportpharm.com stops
+selling and becomes what it is best at &mdash; the company, the pharmacy, the
+brick-and-mortar presence &mdash; with a **Store** item in its menu that deep-links
+to wasabirub.com. One catalogue, one checkout, one order stream, one place a
+customer's history lives.
 
-**The way to avoid the question entirely is to keep deep-linking products and
-never hold a cart on two properties.** That works on every option above, including
-`wasabirub.com`, and it is what we already do.
+That is already the direction in the site notes ("add Store to menu →
+wasabirub.com"). It just needs saying out loud on Tuesday, because it means
+**retiring WooCommerce as a selling system**, and that is a decision with an owner
+and a migration attached, not a toggle.
 
-So this does not override the domain decision &mdash; it adds one line to it: if we
-choose `wasabirub.com`, we accept that a shared cart is a build item we are
-choosing not to need.
+### One technical caution
+
+*Stripe payment links* and *a cart* are not the same thing. Payment Links check
+out **one product at a time** and cannot do a multi-item basket, order-level promo
+codes, or free-shipping-over-$75 &mdash; all of which the prototype cart had.
+
+A real cart means **Stripe Checkout with line items** assembled by the Payload
+backend. That is well-trodden and the chosen stack supports it, but it is
+back-end work, not a link you paste onto a product page. Worth being precise
+about before it is scoped as the easy part.
+
+**Status today: none of it is wired.** There is no Stripe code on the live site
+and no working cart &mdash; the prototype went away with the WasabiRub layout revert.
+Every *Add to Cart* button currently on the site shows a toast and does nothing.
 
 ## 5. What this requires (be honest about it)
 
@@ -157,7 +168,7 @@ review.
 | "This is a big change to a site that works" | The current site isn't failing — it just isn't acquiring anyone. This adds a channel; it doesn't remove the existing one. |
 | "SEO takes too long" | True. This is a 6–12 month investment, not a campaign. It compounds; ads stop the day you stop paying. |
 | "Health content is a liability" | Handled by clinical review, named reviewers and explicit non-diagnostic language — all already built into the content and the tools. |
-| "The domains can be joined up later" | A shared cart cannot cross domains without being built. Avoidable by deep-linking products — but it has to be a deliberate choice, not an assumption. |
+| "Both sites can just keep selling" | Two systems means two order streams, two stock counts and two discount systems for one product line. The reconciliation cost is ongoing and lands on operations, not on the build. |
 | "We'll write six articles and stop" | The most likely failure mode. Requires a named owner and a cadence before launch, not after. |
 
 ---
@@ -177,7 +188,7 @@ Not traffic for its own sake:
 ## The decision
 
 1. **Approve the content-hub strategy** as a demand channel, not a redesign
-2. **Confirm the commerce pattern** &mdash; deep-link products from the hub and hold no cart on a second property. Fix the dead-end buttons on `products.html` before launch
+2. **Confirm wasabirub.com as the single store** &mdash; and accept that this means retiring WooCommerce as a selling system, with an owner and a migration
 3. **Confirm the domain split** — sportpharm.com (company) / wasabirub.com (product + hub),
    or the sportpharm.com/athlete-hub alternative if faster results matter more
 4. **Name an owner** for clinical review and publishing cadence

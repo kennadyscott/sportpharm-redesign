@@ -229,33 +229,39 @@
 
 <section>
   <div class="wrap">
-    <h2 class="disp">The commerce question to settle first</h2>
-    <p class="sub">Smaller than it first looks &mdash; but it needs a deliberate answer, not an assumption.</p>
+    <h2 class="disp">Two stores, same three products</h2>
+    <p class="sub">The hub, the products and the cart all live on wasabirub.com &mdash; so nothing is lost in transit. The problem is on the other side of the split.</p>
 
-    <p>SportPharm runs on <b>WordPress with WooCommerce</b>. That is where the real cart lives and where checkout happens. <b>The Athlete Hub is a separate static site with no cart of its own.</b></p>
+    <p><b>sportpharm.com is WordPress running WooCommerce.</b> It sells WasabiRub, IcetraRub and Super Hot today. <b>wasabirub.com will sell the same three products through Payload + Stripe.</b> Same catalogue, two systems that do not know about each other.</p>
 
-    <p>That is not automatically a problem &mdash; and the hub already shows why. When the WasabiRub page sends someone to buy the duo bundle, it links <b>straight to that product's WooCommerce page</b>. No cart is carried across, so no cart can be lost. Deep-linking products is the pattern that works, and it works on any domain.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th></th><th>sportpharm.com</th><th>wasabirub.com</th></tr></thead>
+        <tbody>
+          <tr><td>Platform</td><td>WordPress + WooCommerce</td><td>Next.js + Payload</td></tr>
+          <tr><td>Payments</td><td>WooCommerce checkout</td><td>Stripe</td></tr>
+          <tr><td>Orders land in</td><td>WooCommerce</td><td>Payload</td></tr>
+          <tr><td>Inventory counted in</td><td>WooCommerce</td><td>Payload</td></tr>
+          <tr><td>Promo codes</td><td>WooCommerce coupons</td><td>Stripe Promotion Codes</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="note">This is the real version of the concern raised in the room: not a cart that empties in transit, but <b>two carts that never see each other.</b> A customer who starts on sportpharm.com and finishes on wasabirub.com has a half-filled basket on a site they have left &mdash; and we would be reconciling two order streams, two stock counts and two discount systems for one product line.</p>
+
+    <div class="rec"><p><b>Recommendation: wasabirub.com becomes the only store.</b> sportpharm.com stops selling and becomes what it is best at &mdash; the company, the pharmacy, the brick-and-mortar presence &mdash; with a <b>Store</b> item in its menu that deep-links to wasabirub.com. One catalogue, one checkout, one order stream, one place a customer's history lives.</p></div>
+
+    <p class="note" style="margin-top:18px">That is already the direction in the site notes. It needs saying out loud on Tuesday, because it means <b>retiring WooCommerce as a selling system</b> &mdash; a decision with an owner and a migration attached, not a toggle.</p>
 
     <div class="honest">
-      <p class="hl">The narrow, real problem</p>
-      <p class="note" style="margin:0"><b>products.html</b> has <i>Add to Cart</i> buttons that only increment a badge and show a toast &mdash; nothing is stored and there is no checkout. The hub's <b>Explore Topicals</b> CTA now points at that page, so a visitor can add all three topicals and reach a dead end. That dead end is inside our own static site, not at the WordPress boundary. <b>Fix:</b> remove the cart affordance and deep-link each product, exactly as the WasabiRub page already does.</p>
+      <p class="hl">One technical caution</p>
+      <p class="note" style="margin:0"><b>Stripe payment links and a cart are not the same thing.</b> Payment Links check out one product at a time and cannot do a multi-item basket, order-level promo codes, or free-shipping-over-$75 &mdash; all of which the prototype cart had. A real cart means <b>Stripe Checkout with line items</b> assembled by the Payload backend. Well-trodden, and the chosen stack supports it &mdash; but back-end work, not a link pasted onto a product page. Worth being precise about before it is scoped as the easy part.</p>
     </div>
 
-    <h3 style="margin-top:30px">What the domain choice does to this</h3>
-    <p>Carts live in cookies, and cookies are bound to a registrable domain. That is a browser rule, not a platform limitation &mdash; <b>putting everything on one platform does not by itself let a cart follow a customer to a different domain.</b></p>
-
-    <div class="split3">
-      <div class="opt b"><span class="tag">Subdomain</span><h3>hub.sportpharm.com</h3>
-        <p class="gain"><b>Carries across:</b> yes, transparently. A cookie scoped to <i>.sportpharm.com</i> is shared.</p></div>
-      <div class="opt b"><span class="tag">Subdirectory</span><h3>sportpharm.com/athlete-hub</h3>
-        <p class="gain"><b>Carries across:</b> yes. Same origin &mdash; nothing to solve.</p></div>
-      <div class="opt a"><span class="tag">Separate domain</span><h3>wasabirub.com</h3>
-        <p class="cost" style="border:0;padding:0;margin:0"><b>Carries across:</b> only if we build it. A cart token must be passed in the link and rebuilt on arrival.</p></div>
+    <div class="honest" style="margin-top:14px">
+      <p class="hl">Status today</p>
+      <p class="note" style="margin:0"><b>None of it is wired.</b> There is no Stripe code on the live site and no working cart &mdash; the prototype went away with the WasabiRub layout revert. Every <i>Add to Cart</i> button currently on the site shows a toast and does nothing.</p>
     </div>
-
-    <p class="note" style="margin-top:18px">The separate-domain option is buildable on one platform, but it is a real work item and it is fragile: it works only when someone follows a link, so anyone who types the domain or returns later arrives empty-handed. Approaches leaning on third-party cookies should be discounted &mdash; browsers are closing that door.</p>
-
-    <div class="rec"><p><b>The way to avoid the question entirely is to keep deep-linking products and never hold a cart on two properties.</b> That works on every option above, including wasabirub.com &mdash; and it is what we already do. So this does not override the domain decision; it adds one line to it: if we choose wasabirub.com, we accept that a shared cart is a build item we are choosing not to need.</p></div>
   </div>
 </section>
 
@@ -307,7 +313,7 @@
     <div class="decide">
       <h2 class="disp">The decision</h2>
       <div class="dstep"><span class="dnum">1</span><div><b>Approve the strategy</b><span>As a demand channel, not a redesign.</span></div></div>
-      <div class="dstep"><span class="dnum">2</span><div><b>Confirm the domain</b><span>Option A (wasabirub.com) or Option B (sportpharm.com/athlete-hub) — see the trade above.</span></div></div>
+      <div class="dstep"><span class="dnum">2</span><div><b>Confirm the domain &mdash; and the single store</b><span>Option A (wasabirub.com) or Option B (sportpharm.com/athlete-hub). Either way, decide that only one property sells.</span></div></div>
       <div class="dstep"><span class="dnum">3</span><div><b>Name an owner</b><span>For clinical review and publishing cadence.</span></div></div>
       <p class="timing"><b>On timing:</b> the domain decision should be made before the article cluster publishes. Content that ranks at one address and later moves loses much of its earned value, and our current hosting cannot redirect properly. Deciding now is free. Deciding in six months is not.</p>
     </div>
