@@ -86,6 +86,15 @@ Remaining gaps: **Push Through cards** and **Articles** rows still lean white.
 - [ ] Mobile pass — deferred by design until the main site settled
 - [ ] Legal/medical review of disclaimer language on guided tool + injury content
 - [ ] Confirm product claims (OTC external analgesic language) are compliant
+- [ ] **Wire commerce on `products.html`** — the Add to Cart buttons currently only
+      increment a badge and show a toast; there is no persistence and no checkout.
+      The real store is `https://sportpharm.com/store/`. The hub now sends traffic
+      here via the **Explore Topicals** CTA on `push-through-or-stop.html`, so a
+      visitor can add all three topicals and reach a dead end. Deferred deliberately
+      — resolves when the store is properly connected.
+- [ ] **Align `products.html` chrome** — it still carries the older navigation
+      (Body Map, Ask Brandon, cart icon) with no persona toggle, so the hand-off
+      from the hub is visibly a different site.
 
 ---
 
