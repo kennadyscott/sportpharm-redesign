@@ -258,9 +258,26 @@
           <tr><td>Hub</td><td>Next.js + Payload, as planned</td><td>Rebuilt as WordPress pages</td></tr>
           <tr><td>Commerce</td><td>Stripe Checkout</td><td>WooCommerce</td></tr>
           <tr><td>We gain</td><td>The interactive tools, the review-workflow CMS, one codebase</td><td>Tax tables, shipping zones, refunds, inventory and an order UI we already know &mdash; free</td></tr>
-          <tr><td>We give up</td><td>Rebuilding tax, shipping and order admin</td><td>The interactive tools and the custom build</td></tr>
+          <tr><td>We give up</td><td>Less than it sounds &mdash; see below</td><td>The interactive tools and the custom build</td></tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="proof" style="border-left:4px solid var(--good)">
+      <p class="hl">What &ldquo;rebuilding commerce ops&rdquo; actually costs</p>
+      <p class="note">Less than the WordPress column implies. For a three-SKU catalogue most of it is configuration of managed services, not a build.</p>
+      <div class="tbl-wrap">
+        <table style="margin:6px 0 0">
+          <tbody>
+            <tr><td>Tax</td><td>Stripe Tax &mdash; one flag on the checkout session. Rate lookup, US economic-nexus monitoring and filing. A tax code per product; no tables to maintain</td></tr>
+            <tr><td>Shipping</td><td>Flat or tiered rates on the checkout session, or Shippo for live carrier rates and labels &mdash; <b>which we already run on another product</b></td></tr>
+            <tr><td>Refunds</td><td>Stripe Dashboard, no code</td></tr>
+            <tr><td>Inventory</td><td>Three SKUs. A quantity column and a decrement on order</td></tr>
+            <tr><td>Order admin</td><td>A Payload collection plus the Stripe Dashboard</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note" style="margin-top:14px">WooCommerce's inventory and shipping machinery earns its keep on a 500-SKU catalogue. We have three, going on four with LidoRub. <b>One item does deserve care:</b> OTC topicals are not uniformly taxable &mdash; some states exempt OTC drugs and others do not. That is precisely what Stripe's product tax codes exist for.</p>
     </div>
 
     <div class="trap">
@@ -281,6 +298,23 @@
       </ol>
       <p class="note" style="margin:0">WasabiRub is the simpler case: three products, one seller, no marketplace payouts and no per-seller shipping split. <b>A known quantity, not a research project.</b></p>
     </div>
+
+    <h3 style="margin-top:34px">Who runs the store day to day?</h3>
+    <p>The usual argument for buying a commerce platform is that non-technical staff need to manage it without a developer. Worth being precise, because we are closer to that than it first appears.</p>
+    <p><b>From Stripe directly</b>, a non-technical person can already create promotion codes with limits and expiry, issue full or partial refunds, and see every payment and customer. Real, and no-code.</p>
+    <p><b>What Stripe cannot be</b> is the product catalogue or the order desk. Stripe has payments, not orders &mdash; no fulfilment status, tracking number or shipped/delivered state. And a product in Stripe is a price, not a page: images, description, actives and dosage live in our CMS regardless.</p>
+    <div class="rec"><p><b>The dashboard is not something we would build &mdash; Payload is that dashboard.</b> Defining Products, Orders and Promotions as collections generates the admin UI, with roles so a marketing coordinator sees merchandising and not the company's finances. Same mechanism already carrying the article draft &rarr; review &rarr; publish workflow.</p></div>
+    <p class="note" style="margin-top:18px">So the honest gap between us and Shopify is not basic product, order and promo management. It is the long tail: abandoned-cart flows, discount-stacking rules, gift cards, multi-channel selling and built-in commerce analytics. Real features &mdash; but a different argument from &ldquo;our team could not operate it.&rdquo;</p>
+
+    <h3 style="margin-top:34px">If we chose Shopify later, is this work wasted?</h3>
+    <p>Almost none of it &mdash; and this is the cheapest moment to decide.</p>
+    <div class="split">
+      <div class="opt b"><span class="tag">Unaffected</span><h3>Effectively the whole build</h3>
+        <p>Every article, all four pathways, both interactive tools, the care guidance, the design system and the CMS review workflow. Content and UX &mdash; independent of who processes the payment.</p></div>
+      <div class="opt a"><span class="tag">Tied to the choice</span><h3>The checkout layer only</h3>
+        <p>Cart UI, the session-building function, and add-to-cart wiring on product pages. <b>Today none of it exists</b> &mdash; the prototype went away with the layout revert, and there is no payment code on the site.</p></div>
+    </div>
+    <p class="note" style="margin-top:18px">The cost of switching is near zero right now and grows once checkout is built and real customers and orders live in it. An argument for deciding deliberately on Tuesday, not for deferring. Worth noting too: <b>Shopify headless would not displace Payload for content</b> &mdash; commerce platform for commerce, headless CMS for content is a common pairing, so this is not an all-or-nothing fork.</p>
 
     <h3 style="margin-top:34px">The migration question</h3>
     <p class="note">Either path has to answer it: <b>existing WooCommerce customers and order history.</b> Migrate them, or make a clean break and keep WooCommerce read-only for historical lookups. Cheap to decide now, expensive to decide after the new store takes its first order.</p>

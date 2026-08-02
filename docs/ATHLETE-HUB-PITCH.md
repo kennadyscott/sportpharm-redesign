@@ -137,7 +137,26 @@ answers and one trap.
 | Hub | Next.js + Payload, as planned | Rebuilt as WordPress pages |
 | Commerce | Stripe Checkout | WooCommerce |
 | We gain | The interactive tools, the review-workflow CMS, one codebase | Tax tables, shipping zones, refunds, inventory and an order UI we already know &mdash; free |
-| We give up | Rebuilding tax, shipping and order admin | The interactive tools and the custom build |
+| We give up | Less than it sounds &mdash; see below | The interactive tools and the custom build |
+
+**What "rebuilding commerce ops" actually costs.** Less than the WordPress
+column implies. For a three-SKU catalogue most of it is configuration of managed
+services, not a build:
+
+| | What it takes |
+|---|---|
+| Tax | Stripe Tax &mdash; one flag on the checkout session. Rate lookup, US economic-nexus monitoring and filing. A tax code per product; no tables to maintain |
+| Shipping | Flat or tiered rates on the checkout session, or Shippo for live carrier rates and label purchase &mdash; **which we already run on another product** |
+| Refunds | Stripe Dashboard, no code |
+| Inventory | Three SKUs. A quantity column and a decrement on order |
+| Order admin | A Payload collection plus the Stripe Dashboard |
+
+WooCommerce's inventory and shipping machinery earns its keep on a 500-SKU
+catalogue. We have three, going on four with LidoRub.
+
+One item does deserve care: **OTC topicals are not uniformly taxable** &mdash; some
+states exempt OTC drugs and others do not. That is precisely what Stripe's
+product tax codes exist for, and a good reason not to hand-roll tax.
 
 **The trap is "integrate WooCommerce into the new site."** That means running
 WordPress headless &mdash; alive purely as a commerce backend, talking to the hub over
@@ -163,6 +182,54 @@ pattern:
 WasabiRub is the simpler case: three products, one seller, no marketplace payouts
 and no per-seller shipping split. This is a known quantity, not a research
 project.
+
+### Who runs the store day to day?
+
+The usual argument for buying a commerce platform is that non-technical staff
+need to manage it without a developer. Worth being precise, because we are
+closer to that than it first appears.
+
+**From Stripe directly**, a non-technical person can already create promotion
+codes with limits and expiry, issue full or partial refunds, and see every
+payment and customer. That is real, and it is no-code.
+
+**What Stripe cannot be** is the product catalogue or the order desk. Stripe has
+payments, not orders &mdash; no fulfilment status, tracking number or shipped/
+delivered state. And a product in Stripe is a price, not a page: images,
+description, actives and dosage all live in our CMS regardless.
+
+**The dashboard is not something we would build &mdash; Payload is that dashboard.**
+Defining Products, Orders and Promotions as collections generates the admin UI,
+with roles so a marketing coordinator sees merchandising and not the company's
+finances. That is the same mechanism already carrying the article
+draft &rarr; review &rarr; publish workflow.
+
+So the honest gap between us and Shopify is not basic product, order and promo
+management. It is the long tail: abandoned-cart flows, discount-stacking rules,
+gift cards, multi-channel selling and built-in commerce analytics. Real features
+&mdash; but a different argument from "our team could not operate it."
+
+### If we chose Shopify later, is this work wasted?
+
+Almost none of it, and this is the cheapest moment to decide.
+
+**Unaffected by the commerce choice:** every article, all four pathways, both
+interactive tools, the care guidance, the design system and the CMS review
+workflow. That is effectively the entire build, and it is content and UX &mdash;
+independent of who processes the payment.
+
+**The only thing tied to the choice is the checkout layer** &mdash; cart UI, the
+session-building function, and the add-to-cart wiring on product pages.
+**Today none of that exists.** The prototype cart went away with the WasabiRub
+layout revert, and there is no payment code on the site.
+
+The cost of switching is therefore near zero right now, and grows once the
+checkout is built and real customers and orders live in it. That is an argument
+for deciding this deliberately on Tuesday, not for deferring it.
+
+Worth noting too: Shopify headless would not displace Payload for content. Using
+a commerce platform for commerce and a headless CMS for content is a common and
+sensible pairing &mdash; so this is not an all-or-nothing fork.
 
 ### The migration question
 
