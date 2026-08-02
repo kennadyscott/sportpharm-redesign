@@ -189,6 +189,19 @@
 .ph.one .ph-b .state b{color:var(--good)}
 .ph.two .ph-b .state b{color:var(--ink)}
 @media(max-width:760px){.phase{grid-template-columns:1fr}}
+
+.seeit{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px;max-width:640px}
+.seeit a{display:flex;align-items:center;justify-content:space-between;gap:14px;text-decoration:none;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:6px;
+  padding:16px 18px;color:#fff;transition:.16s}
+.seeit a:hover{background:var(--red);border-color:var(--red);transform:translateY(-1px)}
+.seeit b{display:block;font-size:15px;font-weight:700;line-height:1.25}
+.seeit small{display:block;font-size:12px;color:#a9c0dc;margin-top:3px;font-weight:400}
+.seeit a:hover small{color:#ffd9d6}
+.seeit i{font-style:normal;color:var(--red);font-weight:800;font-size:17px}
+.seeit a:hover i{color:#fff}
+.prev-note{font-size:12px;color:#8fa8c8;margin:12px 0 0;max-width:640px;line-height:1.55}
+@media(max-width:640px){.seeit{grid-template-columns:1fr}}
 </style>
 <style>
 .lead-in{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--good);
@@ -218,6 +231,13 @@
     <h1 class="disp">Its own site.<br><span>Our own platform.</span></h1>
     <p class="lede">WasabiRub gets a site of its own &mdash; its own domain, its own audience, its own reason to rank. It is built on the platform SportPharm already runs, in a design system shared across both. <b>A separate front door on a foundation we already own.</b></p>
     <div class="ask"><b>Three decisions:</b> approve the hub as the demand engine for wasabirub.com, confirm the platform it runs on, and name who operates it.</div>
+    <div class="seeit">
+      <a href="https://kennadyscott.github.io/sportpharm-site/wasabirub.html" target="_blank" rel="noopener">
+        <span><b>WasabiRub &mdash; the product site</b><small>Feel It Work &mdash; the new design</small></span><i>&rarr;</i></a>
+      <a href="https://kennadyscott.github.io/sportpharm-site/index.html" target="_blank" rel="noopener">
+        <span><b>The Athlete Hub</b><small>Four pathways, tools and articles</small></span><i>&rarr;</i></a>
+    </div>
+    <p class="prev-note">Both are working previews at a temporary address while wasabirub.com is being set up &mdash; best viewed on a desktop browser.</p>
   </div>
 </header>
 
@@ -350,7 +370,7 @@
       </table>
     </div>
 
-    <div class="rec"><p><b>Both options are custom &mdash; that is not the variable.</b> We are not using anyone's stock templates: the design is ours either way, rendered from our own markup. What differs is <b>what runs underneath it</b>, and that is what decides who can operate the site once the build is finished. The question is not "custom or off-the-shelf." It is <b>which admin an employee logs into on a Tuesday morning</b>, and how easily we replace them if they leave.</p></div>
+    <div class="rec"><p><b>Both options are custom &mdash; that is not the variable.</b> We are not using anyone's stock templates: the design is ours either way, rendered from our own markup. What differs is <b>what runs underneath it</b>, and that is what decides who can operate the site once the build is finished. The question is not "custom or off-the-shelf." It is <b>which admin an employee logs into every morning</b>, and how easily we replace them if they leave.</p></div>
 
     <div class="lead-in">
       <p class="hl">Which points to WordPress</p>
@@ -393,7 +413,7 @@
 <section>
   <div class="wrap">
     <h2 class="disp">When WordPress stops being the right answer</h2>
-    <p class="sub">Not a decision for Tuesday &mdash; but leadership should see where the line is, so choosing WordPress now reads as informed rather than default.</p>
+    <p class="sub">Not a decision for now &mdash; but worth seeing where the line is, so choosing WordPress reads as informed rather than default.</p>
 
     <div class="scen">
       <div class="sc"><div class="sc-h"><span class="n">Where we are</span><b>3 products, online only</b></div><div class="sc-body">

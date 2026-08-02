@@ -2,6 +2,8 @@
 
 _wasabirub.com — leadership brief_
 
+**See it live:** [WasabiRub — the product site](https://kennadyscott.github.io/sportpharm-site/wasabirub.html) · [The Athlete Hub](https://kennadyscott.github.io/sportpharm-site/index.html)
+
 > Visual version: https://claude.ai/code/artifact/b3b4a9a5-96ff-4466-ad99-faf67546840c
 
 wasabirub.com — A Product Site on the SportPharm Platform
@@ -14,6 +16,15 @@ wasabirub.com — A Product Site on the SportPharm Platform
  WasabiRub gets a site of its own — its own domain, its own audience, its own reason to rank. It is built on the platform SportPharm already runs, in a design system shared across both. A separate front door on a foundation we already own.
 
  Three decisions: approve the hub as the demand engine for wasabirub.com, confirm the platform it runs on, and name who operates it.
+
+ 
+ 
+ WasabiRub — the product siteFeel It Work — the new design→
+ 
+ The Athlete HubFour pathways, tools and articles→
+ 
+
+ Both are working previews at a temporary address while wasabirub.com is being set up — best viewed on a desktop browser.
 
  
 
@@ -225,7 +236,7 @@ wasabirub.com — A Product Site on the SportPharm Platform
  
  
 
- Both options are custom — that is not the variable. We are not using anyone's stock templates: the design is ours either way, rendered from our own markup. What differs is what runs underneath it, and that is what decides who can operate the site once the build is finished. The question is not "custom or off-the-shelf." It is which admin an employee logs into on a Tuesday morning, and how easily we replace them if they leave.
+ Both options are custom — that is not the variable. We are not using anyone's stock templates: the design is ours either way, rendered from our own markup. What differs is what runs underneath it, and that is what decides who can operate the site once the build is finished. The question is not "custom or off-the-shelf." It is which admin an employee logs into every morning, and how easily we replace them if they leave.
 
  
  Which points to WordPress
@@ -289,7 +300,7 @@ wasabirub.com — A Product Site on the SportPharm Platform
 
 ## When WordPress stops being the right answer
 
- Not a decision for Tuesday — but leadership should see where the line is, so choosing WordPress now reads as informed rather than default.
+ Not a decision for now — but worth seeing where the line is, so choosing WordPress reads as informed rather than default.
 
  
  Where we are3 products, online only
