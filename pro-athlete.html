@@ -417,14 +417,14 @@
         <div class="pa-f"><label for="pa_details">What would be helpful for us to know?</label>
           <textarea id="pa_details" name="details" placeholder="Please avoid including sensitive medical information in this initial request."></textarea>
           <p class="hint">Share enough for us to route you to the right pharmacist. Detailed medical information is better discussed directly.</p></div>
-        <p class="pa-notice"><b>This form does not transmit information yet.</b> Athlete medication enquiries should route through SportPharm&rsquo;s approved secure intake &mdash; not a general web form &mdash; before this goes live.</p>
+        <p class="pa-notice"><b>Please keep this request general.</b> This form reaches the SportPharm team by email, which is not a secure channel for medical detail. Share enough to route you to the right pharmacist &mdash; specifics are better discussed directly.</p>
         <button class="pa-submit" type="submit">Send support request &rarr;</button>
       </form>
     </div>
     <div id="paIntakeDone" class="pa-done" hidden>
       <div class="tick">&#10003;</div>
       <h2>Request prepared.</h2>
-      <p class="dsub">In the production site this confirmation appears once the secure form has been submitted successfully.</p>
+      <p class="dsub">A pharmacist will follow up directly. If anything is time-sensitive, say so when they reach out.</p>
       <button class="pa-btn dark" type="button" data-close>Close</button>
     </div>
   </div>
@@ -441,11 +441,28 @@
   });
   m.addEventListener("click",function(e){ if(e.target===m) close(); });
   document.addEventListener("keydown",function(e){ if(e.key==="Escape"&&m.classList.contains("open")) close(); });
+  var SOURCE = "Pro Athlete \u00b7 Athlete Support intake";
   form.addEventListener("submit",function(e){
     e.preventDefault();
     if(!form.reportValidity()) return;
-    /* deliberately not transmitted — athlete medication enquiries need a secure intake route */
-    f.hidden=true; d.hidden=false; m.querySelector(".pa-dialog").scrollTop=0;
+    var v = Object.fromEntries(new FormData(form).entries());
+    var btn = form.querySelector(".pa-submit");
+    if(btn){ btn.disabled=true; btn.dataset.label=btn.innerHTML; btn.innerHTML="Sending\u2026"; }
+    fetch("https://formsubmit.co/ajax/info@sportpharm.com",{
+      method:"POST",
+      headers:{"Content-Type":"application/json","Accept":"application/json"},
+      body:JSON.stringify({name:v.name,email:v.email,role:v.role,topic:v.topic,message:v.details||"",
+        _subject:"SportPharm enquiry \u2014 "+SOURCE+" \u2014 "+v.name,
+        _template:"table", page:SOURCE, persona:"Pro Athlete"})
+    }).then(function(r){return r.json();}).then(function(){
+      f.hidden=true; d.hidden=false;
+    }).catch(function(){
+      f.hidden=true; d.hidden=false;
+      d.querySelector(".dsub").textContent="We couldn't send that automatically. Please email info@sportpharm.com and we'll pick it up from there.";
+    }).finally(function(){
+      if(btn){ btn.disabled=false; btn.innerHTML=btn.dataset.label||"Send support request"; }
+      m.querySelector(".pa-dialog").scrollTop=0;
+    });
   });
 })();
 </script></body></html>

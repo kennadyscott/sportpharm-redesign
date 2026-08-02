@@ -423,7 +423,7 @@ section{padding:70px 0}
        info@sportpharm.com. In the production Next.js + Payload build this POSTs
        to an API route that creates a Payload Lead and sends the notification. */
     (function(){
-      const SOURCE = "Recovery Made Simple page";
+      const SOURCE = "Everyday Athlete · Recovery Made Simple";
       const modal = document.getElementById("contactModal");
       const form = document.getElementById("contactForm");
       const wrap = document.getElementById("contactFormWrap");
@@ -452,7 +452,7 @@ section{padding:70px 0}
           method:"POST",
           headers:{"Content-Type":"application/json","Accept":"application/json"},
           body:JSON.stringify({name:name,email:email,phone:phone,message:message,
-            _subject:"SportPharm enquiry — "+SOURCE+" — "+name, _template:"table", page:SOURCE})
+            _subject:"SportPharm enquiry — "+SOURCE+" — "+name, _template:"table", page:SOURCE, persona:"Everyday Athlete"})
         }).then(function(r){return r.json();}).then(function(){
           document.getElementById("successMsg").textContent="Thanks, "+(name.split(" ")[0]||"there")+" — your message is on its way to our team. We'll be in touch shortly.";
           wrap.hidden=true; success.hidden=false; form.reset();

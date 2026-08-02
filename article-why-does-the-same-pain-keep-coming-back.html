@@ -504,7 +504,7 @@ footer{background:#11181f;color:#9da5ae;padding:52px 0 26px}
        info@sportpharm.com. In the production Next.js + Payload build this POSTs
        to an API route that creates a Payload Lead and sends the notification. */
     (function(){
-      const SOURCE = "Why Does the Same Pain Keep Coming Back?";
+      const SOURCE = "Everyday Athlete · Why Does the Same Pain Keep Coming Back?";
       const modal = document.getElementById("contactModal");
       const form = document.getElementById("contactForm");
       const wrap = document.getElementById("contactFormWrap");
@@ -533,7 +533,7 @@ footer{background:#11181f;color:#9da5ae;padding:52px 0 26px}
           method:"POST",
           headers:{"Content-Type":"application/json","Accept":"application/json"},
           body:JSON.stringify({name:name,email:email,phone:phone,message:message,
-            _subject:"SportPharm enquiry — "+SOURCE+" — "+name, _template:"table", page:SOURCE})
+            _subject:"SportPharm enquiry — "+SOURCE+" — "+name, _template:"table", page:SOURCE, persona:"Everyday Athlete"})
         }).then(function(r){return r.json();}).then(function(){
           document.getElementById("successMsg").textContent="Thanks, "+(name.split(" ")[0]||"there")+" — your message is on its way to our team. We'll be in touch shortly.";
           wrap.hidden=true; success.hidden=false; form.reset();
