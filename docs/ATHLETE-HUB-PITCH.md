@@ -1,629 +1,339 @@
-# The Athlete Hub — a demand engine for WasabiRub
+# The Athlete Hub — leadership brief
 
-**Prepared for leadership · Decision requested: approve the content-hub strategy
-and the domain split**
+> Visual version: https://claude.ai/code/artifact/b3b4a9a5-96ff-4466-ad99-faf67546840c
 
----
+The Athlete Hub — A Demand Engine for WasabiRub
 
-## The short version
+ 
+ Prepared for leadership · Decision requested
 
-SportPharm sells products to people who are hurting. Those people are already
-searching — "is this normal soreness," "should I work out when something hurts,"
-"topical vs oral pain relief" — **and finding someone else's answer.**
+ Add an athlete hubto the site we already run.
 
-The Athlete Hub captures that demand: educational content that answers the
-question honestly, earns the search traffic, builds trust, and puts WasabiRub in
-front of someone at the moment they are deciding what to do about pain.
+ A customer-acquisition channel that puts WasabiRub in front of people at the moment they are deciding what to do about pain — built on the platform SportPharm already uses, with the store untouched.
 
-**This is not a redesign. It is a customer-acquisition channel.** The design work
-is how the channel gets built.
+ Three decisions: approve the hub, confirm who runs it, and agree that the commerce and domain questions are answered separately — later.
 
----
+ 
 
-## 1. The problem with a product-first site
+ 
+ 
+ SportPharm sells to people who are hurting. Those people are already searching — and finding someone else's answer.
 
-Today's site describes what we sell. That works for someone who already knows
-SportPharm and already knows they want a topical rub.
+ The hub answers the question honestly, earns the search traffic, and builds the trust that makes a purchase reasonable. We are a pharmacy — answering medication and pain questions credibly is an asset we already own and do not use. A competitor can copy a design. They cannot copy a pharmacist.
 
-It does nothing for the far larger group who don't know us yet. They aren't
-searching for "WasabiRub." They're searching for their problem.
+ 
 
-| What people actually search | What a product page offers them |
-|---|---|
-| "sore two days after workout normal" | A product description |
-| "should I train with knee pain" | A product description |
-| "topical vs oral pain relief" | A product description |
+ 
+ 
+ What people actually searchWhat a product page offers them
 
-Every one of those searches is a person with pain, actively looking for guidance,
-who could reasonably end up buying a topical rub. **Today we are not in that
-conversation.**
+ 
+ "sore two days after workout normal" | A product description
 
----
+ "should I train with knee pain" | A product description
 
-## 2. What the Athlete Hub does
+ "is this normal soreness or an injury" | A product description
 
-It answers the question first and sells second.
+ 
+ 
+ 
 
-- **Educational pathways** — "Push Through or Stop?", "Recovery Made Simple",
-  "Sports Pharmacy, Explained", "Is This for Me?"
-- **Interactive tools** — a guided support finder and a recovery-plan builder
-  that give real, personalised output rather than a brochure
-- **An article library** built around the questions people actually type
-- **WasabiRub presented as one option** inside honest guidance — not the reason
-  the page exists
+ Every one of those is a person with pain, actively looking for guidance, who could reasonably end up buying a topical rub. Today we are not in that conversation.
 
-The credibility argument is the whole point: **we are a pharmacy.** Answering
-medication and pain questions well is the one thing we can do that a supplement
-brand or a general fitness site cannot. That is our unfair advantage, and right
-now we aren't using it.
+ 
 
----
+ 
+ Built and working today
 
-## 3. The domain decision
+ Not a concept deck. Open any of these in the meeting.
 
-**Recommendation: sportpharm.com stays the company site. The Athlete Hub and
-WasabiRub product pages live at wasabirub.com.**
+ 
+ Try it live
 
-Rationale: the hub exists to drive product demand, so keeping it on the product
-domain means the traffic it earns lands where the purchase happens.
+ Four educational pathways, two interactive tools, and a contact form that already delivers to info@sportpharm.com.
 
-**The honest cost of that choice, stated plainly:**
+ 
+ Athlete Hub homeThe four pathways
+→
+ Recovery plan builder5 questions, personalised output
+→
+ Push Through or Stop?Guided support finder
+→
+ Pain-Relief OptionsWhere WasabiRub sits
+→
+ Sports Pharmacy, ExplainedThe pharmacy advantage
+→
+ Is This for Me?Identity & orientation
+→
+ 
 
-`wasabirub.com` is a new domain with **no search authority**. `sportpharm.com`
-has years of history and earned trust. Health content is held to a higher
-standard by Google than almost any other category — and building that from zero,
-on a domain that sells the product, is the slowest starting position there is.
+ 
 
-**Expect 6–12 months to meaningful organic traffic, not weeks.** Anyone promising
-faster is guessing.
+ Also built: ten articles published, a guided support finder, a recovery-plan builder, and a contact form already delivering to info@sportpharm.com.
 
-**The alternative, if leadership wants results sooner:** host the hub at
-`sportpharm.com/athlete-hub`, where it inherits existing authority, and drive
-hard to wasabirub.com from every page. Faster ranking; traffic lands on
-SportPharm first. Both are defensible — this is a genuine trade, not a right
-answer.
+ 
 
----
+ 
+ This is an addition, not a replacement
 
-## 4. Two stores selling the same three products
+ The first concern, answered directly: nothing gets switched off, and nothing migrates.
 
-The hub, the product pages and the cart all live on **wasabirub.com**. Nothing
-has to travel between domains, so there is no lost-cart problem inside the hub.
-That is settled.
+ 
+ 63
+pages, all static HTML
 
-The problem is on the other side of the split.
+ 0
+lines of server-side code
 
-**sportpharm.com is WordPress running WooCommerce.** It sells WasabiRub,
-IcetraRub and Super Hot today. **wasabirub.com will sell the same three products
-through Payload + Stripe.** Same catalogue, two systems that do not know about
-each other.
+ 0
+changes to the store
 
-| | sportpharm.com | wasabirub.com |
-|---|---|---|
-| Platform | WordPress + WooCommerce | Next.js + Payload |
-| Payments | WooCommerce checkout | Stripe |
-| Orders land in | WooCommerce | Payload |
-| Inventory counted in | WooCommerce | Payload |
-| Promo codes | WooCommerce coupons | Stripe Promotion Codes |
-
-This is the real version of the concern raised in the room: not a cart that
-empties in transit, but **two carts that never see each other.** A customer who
-starts on sportpharm.com and finishes on wasabirub.com has a half-filled basket
-on a site they have left. And operationally we would be reconciling two order
-streams, two stock counts and two discount systems for one product line.
-
-### The decision this forces
-
-**Where does a purchase happen?** There is really only one good answer.
-
-**Recommendation: wasabirub.com becomes the only store.** sportpharm.com stops
-selling and becomes what it is best at &mdash; the company, the pharmacy, the
-brick-and-mortar presence &mdash; with a **Store** item in its menu that deep-links
-to wasabirub.com. One catalogue, one checkout, one order stream, one place a
-customer's history lives.
-
-That is already the direction in the site notes ("add Store to menu →
-wasabirub.com"). It just needs saying out loud on Tuesday, because it means
-**retiring WooCommerce as a selling system**, and that is a decision with an owner
-and a migration attached, not a toggle.
-
-### If there is one store, which stack runs it?
-
-Settling on a single store forces a second decision. There are two honest
-answers and one trap.
-
-| | **One custom stack** (recommended) | **One WordPress** |
-|---|---|---|
-| Hub | Next.js + Payload, as planned | Rebuilt as WordPress pages |
-| Commerce | Stripe Checkout | WooCommerce |
-| We gain | The interactive tools, the review-workflow CMS, one codebase | Tax tables, shipping zones, refunds, inventory and an order UI we already know &mdash; free |
-| We give up | Less than it sounds &mdash; see below | The interactive tools and the custom build |
-
-**What "rebuilding commerce ops" actually costs.** Less than the WordPress
-column implies. For a three-SKU catalogue most of it is configuration of managed
-services, not a build:
-
-| | What it takes |
-|---|---|
-| Tax | Stripe Tax &mdash; one flag on the checkout session. Rate lookup, US economic-nexus monitoring and filing. A tax code per product; no tables to maintain |
-| Shipping | Flat or tiered rates on the checkout session, or Shippo for live carrier rates and label purchase &mdash; **which we already run on another product** |
-| Refunds | Stripe Dashboard, no code |
-| Inventory | Three SKUs. A quantity column and a decrement on order |
-| Order admin | A Payload collection plus the Stripe Dashboard |
-
-WooCommerce's inventory and shipping machinery earns its keep on a 500-SKU
-catalogue. We have three, going on four with LidoRub.
-
-One item does deserve care: **OTC topicals are not uniformly taxable** &mdash; some
-states exempt OTC drugs and others do not. That is precisely what Stripe's
-product tax codes exist for, and a good reason not to hand-roll tax.
-
-**The trap is "integrate WooCommerce into the new site."** That means running
-WordPress headless &mdash; alive purely as a commerce backend, talking to the hub over
-the Store API with cart-token session handling that is notoriously fiddly. We
-would maintain **both** stacks plus the glue between them, and payments would
-still settle on Stripe underneath. It is the most work for the least benefit.
-
-**Recommendation: the custom stack.** The hub's value *is* the interactive tools
-and the employee review workflow &mdash; the two things WordPress fights hardest. That
-was the reasoning behind the original platform decision, and it has not changed.
-
-**And we have already built this once.** Tiny Clothing Swap runs the exact
-pattern:
-
-- The **cart lives in the app**, not in Stripe &mdash; guest carts hold item IDs in
-  local storage, signed-in carts come from the database
-- At checkout a server function **builds the Stripe line items**, recomputing
-  every price server-side so a tampered cart cannot underpay, and adds shipping
-  as its own line
-- Stripe sees a **finished basket once**, at the moment of payment
-- A webhook writes the order and its line items back to our database
-
-WasabiRub is the simpler case: three products, one seller, no marketplace payouts
-and no per-seller shipping split. This is a known quantity, not a research
-project.
-
-### Who runs the store day to day?
-
-The usual argument for buying a commerce platform is that non-technical staff
-need to manage it without a developer. Worth being precise, because we are
-closer to that than it first appears.
-
-**From Stripe directly**, a non-technical person can already create promotion
-codes with limits and expiry, issue full or partial refunds, and see every
-payment and customer. That is real, and it is no-code.
-
-**What Stripe cannot be** is the product catalogue or the order desk. Stripe has
-payments, not orders &mdash; no fulfilment status, tracking number or shipped/
-delivered state. And a product in Stripe is a price, not a page: images,
-description, actives and dosage all live in our CMS regardless.
-
-**The dashboard is not something we would build &mdash; Payload is that dashboard.**
-Defining Products, Orders and Promotions as collections generates the admin UI,
-with roles so a marketing coordinator sees merchandising and not the company's
-finances. That is the same mechanism already carrying the article
-draft &rarr; review &rarr; publish workflow.
-
-So the honest gap between us and Shopify is not basic product, order and promo
-management. It is the long tail: abandoned-cart flows, discount-stacking rules,
-gift cards, multi-channel selling and built-in commerce analytics. Real features
-&mdash; but a different argument from "our team could not operate it."
-
-### If we chose Shopify later, is this work wasted?
-
-Almost none of it, and this is the cheapest moment to decide.
-
-**Unaffected by the commerce choice:** every article, all four pathways, both
-interactive tools, the care guidance, the design system and the CMS review
-workflow. That is effectively the entire build, and it is content and UX &mdash;
-independent of who processes the payment.
-
-**The only thing tied to the choice is the checkout layer** &mdash; cart UI, the
-session-building function, and the add-to-cart wiring on product pages.
-**Today none of that exists.** The prototype cart went away with the WasabiRub
-layout revert, and there is no payment code on the site.
-
-The cost of switching is therefore near zero right now, and grows once the
-checkout is built and real customers and orders live in it. That is an argument
-for deciding this deliberately on Tuesday, not for deferring it.
-
-Worth noting too: Shopify headless would not displace Payload for content. Using
-a commerce platform for commerce and a headless CMS for content is a common and
-sensible pairing &mdash; so this is not an all-or-nothing fork.
-
-### The question that actually decides this: how big is this store?
-
-Everything above is scoped to what we sell today &mdash; three products, going on four.
-Change that premise and the answer changes with it.
-
-**If this stays hub-driven &mdash; a handful of products, one site:** Stripe, and do not
-buy a platform. The cart pattern is proven, the ops work is configuration, and
-Payload's admin covers merchandising.
-
-**If this becomes the company's commerce backbone &mdash; sportpharm.com moves onto it
-too, the catalogue grows, retail is in scope:** the case for **Shopify** is
-strong, and grows with each of those.
-
-| At scale, Shopify gives us | Why it matters here |
-|---|---|
-| **Two storefronts, one backend** | sportpharm.com and wasabirub.com as separate branded fronts on one catalogue, one inventory, one order desk &mdash; this dissolves the two-stores problem rather than managing it |
-| **POS** | We have a physical pharmacy. Unified in-store and online inventory, customers and orders is a bigger prize than anything on the web side, and the custom stack has no answer for it |
-| **Abandoned checkout, native** | Built in, no plugin to maintain &mdash; see below |
-| **Catalogue tooling at volume** | Variants, collections, bulk edit, CSV import, multi-location inventory |
-| **Ecosystem and hiring** | Subscriptions, reviews, loyalty as installs rather than builds &mdash; and it is far easier to hire someone who already knows Shopify than to onboard them to a bespoke admin |
-
-**What scales against it:** subscription tier, transaction fees if we do not use
-Shopify Payments, and app subscriptions &mdash; real money at volume. And we would
-still run Next.js for the hub's tools, so it is two systems either way. That is
-**not** the headless-WooCommerce trap, though: Shopify's Storefront API is a
-first-class headless product where WooCommerce's is a bolt-on.
-
-### Abandoned cart, specifically
-
-Leadership cares about this one, so it is worth being exact.
-
-| | How it works |
-|---|---|
-| **WooCommerce** | **Not a core feature.** It does not exist without a plugin (Tyche, FunnelKit, CartFlows) or an ESP integration. Worth establishing which plugin runs on sportpharm.com today and whether anyone maintains it &mdash; "we have abandoned cart" often means a plugin nobody has updated in two years |
-| **Shopify** | **Native.** Abandoned checkouts are a first-class object in admin with built-in recovery emails and configurable timing. Works on day one, nothing to maintain |
-| **Custom stack** | Genuinely buildable, and already in the plan (Payload + Stripe + Mailchimp). Because the cart lives in our own database rather than a plugin's, we get better data &mdash; exact contents, exact staleness, our own trigger rules. A scheduled job and an email template, not a platform |
-
-**The constraint all three share:** recovery needs an email address. Anyone who
-fills a cart and leaves before entering contact details is invisible to every
-system. WooCommerce plugins capture it as the customer types at checkout;
-Shopify captures at the contact step. Nobody recovers a truly anonymous cart.
-
-### On prescriptions, since it will come up
-
-Shopify prohibits prescription fulfilment. That looks like a dealbreaker for a
-pharmacy and mostly is not: **Rx does not belong in a retail cart under any of
-these options.** Dispensing runs through a pharmacy management system, and what
-sits on a website is a refill or transfer request that hands off to it.
-
-WooCommerce imposes no such restriction &mdash; it is self-hosted software with no
-acceptable-use policy &mdash; but the gates simply move to the payment processor
-(pharmaceuticals are restricted by Stripe, PayPal and Square alike), state-by-
-state nonresident pharmacy licensure, DEA registration for controlled substances,
-and HIPAA obligations once prescription data is in scope.
-
-**Where it would genuinely matter:** if we wanted refill requests and OTC
-purchases inside one logged-in account experience. That is a real product idea,
-and the one scenario where Shopify's policy is a hard constraint. If that is on
-anyone's roadmap, say so on Tuesday &mdash; it changes the answer. Specifics here
-should be confirmed with compliance rather than taken from this document.
-
-### The migration question
-
-Either path has to answer it: **existing WooCommerce customers and order
-history.** Migrate them, or make a clean break and keep WooCommerce read-only for
-historical lookups. Cheap to decide now, expensive to decide after the new store
-takes its first order.
-
-### One technical caution
-
-*Stripe payment links* and *a cart* are not the same thing. Payment Links check
-out **one product at a time** and cannot do a multi-item basket, order-level promo
-codes, or free-shipping-over-$75 &mdash; all of which the prototype cart had.
-
-A real cart means **Stripe Checkout with line items** assembled by the Payload
-backend. That is well-trodden and the chosen stack supports it, but it is
-back-end work, not a link you paste onto a product page. Worth being precise
-about before it is scoped as the easy part.
-
-**Status today: none of it is wired.** There is no Stripe code on the live site
-and no working cart &mdash; the prototype went away with the WasabiRub layout revert.
-Every *Add to Cart* button currently on the site shows a toast and does nothing.
-
----
-
-## 5. The recommendation
-
-**If retail POS is in scope: one Shopify store as the commerce backend, with the
-hub keeping its own frontend and rendering products and cart against the
-Storefront API. Checkout on wasabirub.com; sportpharm.com stops selling and links
-to it.**
-
-**If POS is not in scope: keep WordPress and WooCommerce, and move the hub onto
-it.** One system, no migration, and the editorial workflow comes free. See
-section 6 &mdash; this option is stronger than it first appears, and the choice
-genuinely turns on the POS answer.
-
-Content, articles and the interactive tools never touch Shopify. It handles
-catalogue, cart, checkout, tax, shipping, inventory, refunds and abandoned cart.
-This is not the headless-WooCommerce trap described above &mdash; Shopify's Storefront
-API is a product built for exactly this, where WooCommerce's is a bolt-on.
-
-### What decided it
-
-**1. We have a physical pharmacy.** POS unifying in-store and online inventory,
-customers and orders is worth more than anything on the web side, and a custom
-build has no answer to it at all.
-
-**2. Continuity.** A bespoke Stripe build would put the company's revenue on a
-system one person maintains. For a side project that is fine; for the company
-store it is a continuity risk. Note this argument counts *against the custom
-stack*, not against WordPress &mdash; WordPress is also widely hireable.
-
-**3. Abandoned cart should work, not be built.** Native on Shopify. On a custom
-stack it is a scheduled job we own forever.
-
-### The honest cost
-
-Subscription, transaction fees if we do not use Shopify Payments, and app
-subscriptions &mdash; real money that scales with success. Less control over checkout
-UX on standard plans. And a migration: product data, customer accounts, order
-history, product-URL SEO and retraining. **None of that is trivial and none of it
-should be waved away.**
-
-### When this recommendation reverses
-
-**If retail POS is not in scope, sportpharm.com is never moving, and we stay at
-three or four products &mdash; use Stripe.** Do not buy a platform for that. The
-recommendation follows from the store-size answer, not the other way round.
-
-### A useful side effect
-
-This **frees the domain decision.** The cart-crossing concern raised earlier
-disappears with one backend and one checkout, so the domain choice returns to
-what it should be &mdash; brand equity versus search authority. On that basis,
-**wasabirub.com**.
-
----
-
-## 6. "Why wouldn't we just stay on WordPress?"
-
-The most reasonable question in the room, and the answer is more favourable to
-WordPress than a first pass suggests.
-
-### First, a correction worth making out loud
-
-**WordPress can host everything we have built.** We audited all 63 pages: there is
-no server-side code, no build step, no API layer, and exactly one external call
-in the entire site &mdash; the contact form. The interactive tools are 236KB of
-client-side JavaScript that would run identically inside a WordPress page
-template.
-
-Three specific claims that do not survive checking:
-
-- *"We would lose the interactive tools."* **False.** They are pure client-side
-  JavaScript. They port essentially unchanged.
-- *"We would lose the review workflow."* **False, and backwards.** Draft &rarr;
-  pending review &rarr; published, with Contributor/Author/Editor roles, is what
-  WordPress was built for. Building it ourselves is reimplementing what WordPress
-  gives free.
-- *"The hub is a Next.js application."* **Not yet.** It is 63 static HTML files.
-  Next.js is the plan, not the state &mdash; so moving it into WordPress is porting
-  templates, not rewriting an application.
-
-**Anyone in the room who knows WordPress would have caught those.** Better that we
-correct them ourselves.
-
-### The design does not change &mdash; and no page builder is involved
-
-Worth stating plainly, because it is the most common and most reasonable fear:
-**we would not rebuild the site out of WordPress components.**
-
-A custom theme template is a file that outputs whatever HTML we give it. Our
-markup goes in and renders exactly as written &mdash; the same CSS, the same
-typography, the same brand red. **Elementor, Divi, WPBakery and off-the-shelf
-themes are where "dated and tacky" comes from, and none of them are required or
-involved.**
-
-Where an editing interface does appear is articles, which is already how ours
-work: the template owns the layout, and the editor supplies title, category and
-body. Landing pages stay developer-only templates exactly as they are today, and
-custom fields can hold structured content that our own markup renders &mdash; with no
-visual builder anywhere.
-
-**The one real hazard** is drift: a plugin installed later that injects its own
-CSS or markup can degrade a carefully built design. That is a governance rule, not
-a technical limit &mdash; but it needs an owner.
-
-For what it is worth, this cuts the same way on Shopify: Liquid templates also
-render our own HTML. **Under every option on the table, the design work survives
-intact.**
-
-### The real cost of the WordPress path
-
-Not capability &mdash; effort and workflow.
-
-- **1,314KB of inline CSS across 63 pages**, each carrying its own duplicated
-  copy. Porting means keeping it inline per template (works, stays messy) or
-  consolidating into a theme stylesheet (right, but a regression risk). Mechanical
-  work, and not small.
-- **Content and configuration live in a database, not in version control.** Our
-  current workflow is git-push-to-deploy. This is a genuine loss of rigour.
-- **Plugin maintenance and PCI surface.** A self-hosted site taking cards carries
-  ongoing security patching and compatibility risk, and every plugin is another
-  dependency.
-- **Developer velocity.** PHP and plugin glue rather than the JavaScript toolchain
-  the team works in day to day.
-
-### What this unlocks for Tuesday
-
-The most useful consequence is not technical. **It lets us separate two decisions
-that have been travelling together.**
-
-Framed as "move to a new platform," this asks leadership to approve a rebuild of
-the company's website and store at once. Framed accurately &mdash; **"add a content
-hub to the site we already run"** &mdash; it is an addition to a system they are
-already comfortable with. The store does not move. WooCommerce keeps its orders,
-its customers and its plugins, untouched.
-
-That means we can **ship the hub now and decide the commerce platform later, on
-its own merits**, rather than making the content strategy hostage to a
-platform migration.
-
-**What this does not avoid** is the design conversation. Putting a new visual
-system onto sportpharm.com is precisely the change people are nervous about, and
-porting into WordPress does not soften that &mdash; it only removes the *platform*
-argument from it. Those are two separate objections and they should be answered
-separately.
-
-### The three honest arrangements
-
-| | What it means | Best for |
-|---|---|---|
-| **A. Everything in WordPress** | WP hosts the hub, the articles and the tools; WooCommerce runs the store | One system, lowest cost, no migration, native editorial workflow |
-| **B. Everything in Shopify** | Shopify hosts pages and blog as well as the store | Not recommended &mdash; Shopify *can* do it, but it is a weak CMS for 60 pages of content |
-| **C. Hub separate, Shopify headless** | The hub keeps its own frontend; Shopify is commerce backend only | Best commerce and best content &mdash; at the cost of two systems |
-
-### What actually separates them
-
-WooCommerce is not failing us, and WordPress is not incapable. The reasons to
-move are narrower than they first appear, and they are all about **commerce, not
-content**:
-
-- **POS.** For a pharmacy with a counter, unifying in-store and online inventory,
-  customers and orders. WordPress has no credible answer here and this is the
-  single biggest factor.
-- **Abandoned cart as a maintained feature**, not a plugin someone must keep alive.
-- **Not self-hosting a payment surface.**
-- **Hireability** &mdash; more people can operate Shopify than a bespoke setup.
-
-**If POS and retail unification are not in scope, option A is genuinely the right
-answer** &mdash; cheapest, one system, and it keeps an editorial workflow we would
-otherwise rebuild. It should not be treated as the consolation prize.
-
----
-
-## 7. Choosing for the long view
-
-**The build is contracted. The running of it &mdash; store, articles, coupon codes,
-orders &mdash; has to sit with a SportPharm employee.**
-
-Whoever builds the hub is not operating it in a year. That is not a caveat, it is
-the requirement. A platform is only the right answer here if **someone on staff
-can run it without the person who built it** &mdash; and if that person leaves, a
-replacement can be hired. Extra build effort is affordable. Extra *operating*
-effort is not.
-
-### Where we are: 3 products, online only
-
-| | Verdict | |
-|---|---|---|
-| **Custom (Stripe)** | Ongoing dependency | Payload's admin is fine to *use* &mdash; the problem is *changing* it. Every later request is a build, so it needs a permanent developer relationship |
-| **WordPress** | **Best fit** | Already running. Nothing migrates, nothing new to learn. Articles and coupons are screens the team can already use |
-| **Shopify** | Premature | A subscription and a store migration for three products. Works, but solves problems we do not have yet |
-
-### Where we likely are: 3 products + the pharmacy counter
-
-| | Verdict | |
-|---|---|---|
-| **Custom (Stripe)** | Ongoing dependency | Same permanent-developer requirement, and no point-of-sale answer at all |
-| **WordPress** | Depends | POS exists only as third-party plugins &mdash; a thin foundation for a pharmacy counter. Fine if the counter and the website do not need shared stock |
-| **Shopify** | **Best fit** | POS is first-class: one inventory, one customer record, staff accounts, real hardware |
-
-### Where we are going: 15+ products + counter
-
-| | Verdict | |
-|---|---|---|
-| **Custom (Stripe)** | **Not viable** | Every catalogue feature becomes a build. The developer dependency compounds with each one |
-| **WordPress** | Strains | Possible, but it compounds &mdash; variants, stock, more plugins, more patching, POS still a plugin |
-| **Shopify** | **Built for it** | Bulk edit, CSV import, variants, multi-location inventory, staff permissions and reporting, out of the box |
-
-### Who actually does the work, day to day
-
-| The job | Custom | WordPress | Shopify |
-|---|---|---|---|
-| Publish an article | Payload admin &mdash; usable | **The most widely known publishing screen there is** | Basic blog, workable |
-| Add or edit a product | Payload admin &mdash; usable | WooCommerce product screen | **Best in class** |
-| Create a coupon code | Stripe Dashboard &mdash; genuinely fine | Built-in Woo coupons | Built-in discounts, richest options |
-| Refund an order | Stripe dashboard | Woo orders | **Best** |
-| Get unstuck | **No vendor support line** | Vast community; any freelancer | Vendor support + partner network |
-| Hire a replacement | **Specialist, not a commodity** | Easy | Easy |
-
-### Where the custom stack really fails: change, not use
-
-Payload generates a perfectly usable admin, and Stripe's dashboard handles
-coupons and refunds natively. **Day-to-day operation is genuinely fine** &mdash; this
-is not a case of staff being unable to work the software.
-
-The problem is that every later request &mdash; "can we do gift cards?", "Stripe
-deprecated an API" &mdash; is **a build rather than a setting.** That requires a
-permanent developer relationship, not a handover. And the hiring market is the
-real asymmetry: a WordPress or Shopify freelancer is a commodity, findable in a
-day at a known rate. A Next.js + Payload + Stripe developer willing to take a
-small ongoing maintenance contract is not. There is also no vendor support line
-when something breaks the evening before a promotion.
-
-**So the practical choice is WordPress or Shopify** &mdash; not because staff could not
-use a custom build, but because nobody would be there to change it.
-
-### The question that separates the two
-
-**Do the counter and the website need to share stock and customers?**
-
-If yes &mdash; Shopify, and the case only strengthens as the catalogue grows. If the
-counter runs its own stock and always will &mdash; WordPress stays right and stays
-cheapest.
-
-**Brick-and-mortar existing is not the same as brick-and-mortar needing to be
-unified.** That is the thing to establish in the room, and only they can answer
-it.
-
-### On "moving into the future"
-
-The honest version: **Shopify is the choice that assumes growth and pays for it
-now. WordPress is the choice that stays cheap and defers.** Neither is a mistake.
-What would be a mistake is a system only one person can operate.
-
----
-
-## 8. What this requires (be honest about it)
-
-**Ongoing, not one-time.**
-
-- **Clinical review of every article.** Health content requires a pharmacist and
-  sports-medicine sign-off before publishing, with named authors and reviewers on
-  the page. This is both an ethical obligation and an SEO requirement — Google
-  explicitly weights author credentials for health content.
-- **A publishing cadence.** A hub that stops updating stops ranking. This needs
-  an owner, not a launch.
-- **Editorial discipline.** The moment articles become disguised product pitches,
-  they stop ranking and stop earning trust. The restraint *is* the strategy.
-
-**What is already built and paid for:** the hub pages, the interactive tools, the
-CMS with its review workflow, and six articles drafted and awaiting clinical
-review.
-
----
-
-## 9. Risks worth naming
-
-| Risk | Reality |
-|---|---|
-| "This is a big change to a site that works" | The current site isn't failing — it just isn't acquiring anyone. This adds a channel; it doesn't remove the existing one. |
-| "SEO takes too long" | True. This is a 6–12 month investment, not a campaign. It compounds; ads stop the day you stop paying. |
-| "Health content is a liability" | Handled by clinical review, named reviewers and explicit non-diagnostic language — all already built into the content and the tools. |
-| "WooCommerce works, why change it" | It is not failing. But the hub is a Next.js app either way, abandoned cart is a plugin rather than a feature, and there is no POS answer for the counter. See section 6. |
-| "Both sites can just keep selling" | Two systems means two order streams, two stock counts and two discount systems for one product line. The reconciliation cost is ongoing and lands on operations, not on the build. |
-| "We'll write six articles and stop" | The most likely failure mode. Requires a named owner and a cadence before launch, not after. |
-
----
-
-## 10. What we'd measure
-
-Not traffic for its own sake:
-
-- **Organic sessions** to hub pages (leading indicator, months 3–12)
-- **Hub → product page** click-through (does education convert?)
-- **Contact-form enquiries** from hub pages (pharmacy consultations)
-- **Rankings** for the target question set
-- **Assisted conversions** — purchases where a hub visit came first
-
----
-
-## The decision
-
-1. **Approve the content-hub strategy** as a demand channel, not a redesign
-2. **Answer: how big is this store?** Three products on one site, or the company's commerce backbone. This decides Stripe vs Shopify more than any technical comparison does
-3. **Confirm wasabirub.com as the single store** &mdash; and accept that this means retiring WooCommerce as a selling system, with an owner and a migration
-4. **Confirm the domain split** — sportpharm.com (company) / wasabirub.com (product + hub),
-   or the sportpharm.com/athlete-hub alternative if faster results matter more
-5. **Name an owner** for clinical review and publishing cadence
-
-**Timing note:** the domain decision should be made *before* the article cluster
-publishes. Content that ranks at one address and later moves loses much of its
-earned value, and our current hosting cannot redirect properly. Deciding now is
-free; deciding in six months is not.
+ 1
+external call in the whole site — the contact form
+
+ 
+
+ 
+ What that means in practice
+
+ The hub drops into the WordPress install we already run. We audited every page: no server-side code, no build step, no API layer. The interactive tools are client-side JavaScript that runs identically inside a WordPress page template. Articles become posts — and pick up the draft → review → publish workflow the team already knows.
+
+ The store does not move. WooCommerce keeps its products, its orders, its customers and its plugins, exactly as they are. No migration, no new vendor, no new subscription, no retraining.
+
+ And no page builder is involved. A custom theme template renders our own markup verbatim — same CSS, same typography, same brand red. Elementor, Divi and off-the-shelf themes are where "dated and tacky" comes from; none are required or used.
+
+ 
+
+ 
+ The one real hazard
+
+ Drift. A plugin installed later that injects its own CSS can degrade a carefully built design. That is a governance rule, not a technical limit — but it needs a named owner.
+
+ 
+
+ 
+
+ 
+ Who runs this afterwards
+
+ The second concern, and the one that should shape the platform choice more than any feature comparison.
+
+ The build is contracted. The running of it — articles, products, coupon codes, orders — has to sit with a SportPharm employee. Whoever builds the hub is not operating it in a year. That is not a caveat; it is the requirement. Extra build effort is affordable. Extra operating effort is not.
+
+ 
+ 
+ The jobCustom buildWordPressShopify
+
+ 
+ Publish an article | Usable adminThe most widely known publishing screen there is | Basic blog, workable
+
+ Add or edit a product | Usable admin | WooCommerce product screenBest in class
+
+ Create a coupon code | Stripe dashboard — fineBuilt-in Woo couponsBuilt-in discounts
+
+ Refund an order | Stripe dashboard | Woo ordersBest
+
+ Get unstuckNo vendor support lineVast community; any freelancerVendor support + partners
+
+ Hire a replacementSpecialist, not a commodityEasyEasy
+
+ 
+ 
+ 
+
+ A custom build is not the answer here — and the reason matters. It is not that staff could not use it; the admin is genuinely fine and Stripe handles coupons and refunds natively. It is that every later request — "can we add gift cards?", "Stripe changed an API" — is a build rather than a setting, so it needs a permanent developer relationship rather than a handover. A WordPress freelancer is a commodity findable in a day. A Next.js + Payload + Stripe developer taking a small maintenance contract is not.
+
+ 
+ Which is an argument for WordPress
+
+ More people know the WordPress editor than any other publishing interface in the world. Articles, pages and coupons are all screens a marketing coordinator can be shown once. And if that person leaves, the replacement is easy to hire — which is the whole point.
+
+ 
+
+ 
+
+ 
+ The sequence
+
+ Three decisions have been travelling together. They do not need to — and separating them is what makes this safe.
+
+ 
+ 1
+ Decide now
+ The hub goes into the existing WordPress
+
+ Lowest risk, highest certainty, and it starts the clock that matters — search results take 6–12 months, and that clock has not begun. Nothing migrates, the store is untouched, and the design ships as designed.
+
+ 
+
+ 2
+ Decide later
+ The commerce platform, gated on one question
+
+ Do the counter and the website need to share stock and customers? If no — stay on WooCommerce and give abandoned cart a named owner. If yes — Shopify, and the case strengthens as the catalogue grows. Nothing is built on the commerce side yet, so this costs nothing to defer and gets expensive once real orders live somewhere.
+
+ 
+
+ 3
+ Decide later
+ The domain, on its own merits
+
+ WordPress runs the hub on either address, so the platform choice does not touch this. sportpharm.com/athlete-hub inherits years of search authority and ranks sooner. wasabirub.com builds brand equity from zero and takes longer. A business call, not a technical one — but it should be made before the article cluster earns its rankings, because content that moves address loses much of what it earned.
+
+ 
+
+ 
+
+ 
+ Why the sequence is the recommendation
+
+ Bundled, this asks leadership to approve a website rebuild, a store migration and a domain move on one vote. Three risks, one decision.
+
+ Unbundled, the ask on Tuesday is "add a content hub to the site we already run." Then commerce and domain get answered on their own merits, with time and evidence, instead of being rushed to unblock the content.
+
+ 
+
+ 
+
+ 
+ The commerce question, when we get to it
+
+ Not for Tuesday — but worth seeing the shape of it now, so deferring feels informed rather than avoidant.
+
+ 
+ Where we are3 products, online only
+
+ WordPressBest fit
+Already running. Nothing migrates, nothing new to learn.
+
+ ShopifyPremature
+A subscription and a migration for three products. Solves problems we do not have yet.
+
+ 
+
+ Where we likely are3 products + the counter
+
+ WordPressDepends
+POS exists only as third-party plugins. Fine if the counter and the website do not need shared stock.
+
+ ShopifyBest fit
+POS is first-class: one inventory, one customer record, staff accounts, real hardware.
+
+ 
+
+ Where we may go15+ products + counter
+
+ WordPressStrains
+Compounds — variants, stock, more plugins, more patching, POS still a plugin.
+
+ ShopifyBuilt for it
+Bulk edit, CSV import, variants, multi-location inventory, staff permissions, reporting.
+
+ 
+
+ 
+
+ Abandoned cart, since it matters to us
+
+ 
+ 
+ 
+ WordPress | Not a core feature. It needs a plugin or an ESP integration. Worth establishing which plugin runs on sportpharm.com today and whether anyone maintains it — "we have abandoned cart" often means a plugin nobody has updated in two years
+
+ Shopify | Native. A first-class object in admin with built-in recovery emails and configurable timing. Nothing to maintain
+
+ 
+ 
+ 
+
+ The constraint both share: recovery needs an email address. Anyone who fills a cart and leaves before entering contact details is invisible to every system. Nobody recovers a truly anonymous cart.
+
+ 
+ On prescriptions, since it will come up
+
+ Shopify prohibits prescription fulfilment; WordPress imposes no restriction. Mostly moot — Rx does not belong in a retail cart either way. Dispensing runs through a pharmacy management system, and what sits on a website is a refill or transfer request that hands off to it. It only becomes a real constraint if we want refills and OTC purchases inside one logged-in account. If that is on anyone's roadmap, say so — it changes the answer. Confirm specifics with compliance rather than with this document.
+
+ 
+
+ 
+
+ 
+ What it actually requires
+
+ Ongoing, not one-time. This is the part that decides whether it works.
+
+ 
+ 
+- Clinical review of every article. Pharmacist and sports-medicine sign-off, with named authors and reviewers published on the page. An ethical obligation and a ranking requirement — search engines explicitly weight author credentials for health content. Ten articles are live now and this gate has not yet been applied.
+
+ 
+- A publishing cadence. A hub that stops updating stops ranking. This needs an owner, not a launch date.
+
+ 
+- Editorial discipline. The moment articles become disguised product pitches they stop ranking and stop earning trust. The restraint is the strategy.
+
+ 
+- Plugin governance. One named person who decides what gets installed, so the design does not drift.
+
+ 
+ 
+
+ 
+ Risks, answered
+
+ 
+ 
+ The concernThe honest answer
+
+ 
+ "We would be switching platforms" | We would not. The hub goes into the WordPress we already run and the store is untouched. This is an addition.
+
+ "Who runs it when the contractor leaves?" | An employee, on WordPress — the most widely known publishing interface there is. And if they leave, a replacement is easy to hire. That requirement is why a custom build is not proposed.
+
+ "SEO takes too long" | True. 6–12 months. It compounds, and it keeps working after the spend stops — which advertising does not. That is an argument for starting now.
+
+ "Health content is a liability" | Addressed by clinical review, named reviewers and explicit non-diagnostic language already built into every tool and page. The review gate still needs applying to what is live.
+
+ "We'll publish ten articles and stop" | The most likely failure mode. Mitigated only by naming an owner and a cadence before launch.
+
+ 
+ 
+ 
+
+ 
+
+ 
+ How we'll know it's working
+
+ Not traffic for its own sake.
+
+ 
+ Organic sessions to hub pagesLeading indicator, months 3–12
+
+ Hub → product click-throughDoes education actually convert?
+
+ Enquiries from hub pagesPharmacy consultation demand
+
+ Assisted conversionsPurchases where a hub visit came first
+
+ 
+
+ 
+
+ 
+ 
+ The decision
+
+ 1Approve the hub, into our existing WordPressAn addition to the site we already run. The store is untouched and nothing migrates.
+
+ 2Name who runs itPublishing cadence, clinical review, and plugin governance. This is the decision that determines whether it still works in a year.
+
+ 3Agree commerce and domain are decided separatelyCommerce gated on whether the counter and the website need shared stock. Domain on brand equity versus search authority. Neither blocks the hub.
+
+ On timing: the domain decision should be made before the article cluster earns its rankings. Content that ranks at one address and later moves loses much of its earned value. Deciding in a month is free. Deciding in a year is not.
+
+ 
+
+ 
+
+SportPharm · Athlete Hub strategy · Prepared for leadership review
