@@ -1,36 +1,36 @@
 <title>wasabirub.com — A Product Site on the SportPharm Platform</title>
 <style>
   :root{
-    --navy:#0a203d; --navy-2:#071b35; --red:#E0312A; --ink:#12203a;
-    --muted:#5a6b83; --line:#dbe2ec; --paper:#f4f7fb; --white:#fff;
-    --good:#0c6b41; --warn:#b3261e; --blue:#174da0; --on-accent:#fff;
+    --navy:#15202b; --navy-2:#0e161e; --red:#d6202a; --ink:#24303c;
+    --muted:#4b5560; --line:#e0e3e6; --paper:#f4f5f6; --white:#fff;
+    --good:#0c6b41; --warn:#a3161e; --blue:#2b5f96; --on-accent:#fff;
   }
   @media (prefers-color-scheme: dark){
-    :root{ --ink:#e8edf5; --muted:#9fb0c6; --line:#22354f; --paper:#0d1726; --white:#111d2f; --navy:#0a203d;
+    :root{ --ink:#eef1f4; --muted:#aab7c2; --line:#2a3a49; --paper:#0e161e; --white:#18232e; --navy:#15202b;
       --good:#42d195; --warn:#ff9a90; --blue:#7fb0f5; --on-accent:#07131f; }
   }
-  :root[data-theme="dark"]{ --ink:#e8edf5; --muted:#9fb0c6; --line:#22354f; --paper:#0d1726; --white:#111d2f;
+  :root[data-theme="dark"]{ --ink:#eef1f4; --muted:#aab7c2; --line:#2a3a49; --paper:#0e161e; --white:#18232e;
     --good:#42d195; --warn:#ff9a90; --blue:#7fb0f5; --on-accent:#07131f; }
-  :root[data-theme="light"]{ --ink:#12203a; --muted:#5a6b83; --line:#dbe2ec; --paper:#f4f7fb; --white:#fff;
-    --good:#0c6b41; --warn:#b3261e; --blue:#174da0; --on-accent:#fff; }
+  :root[data-theme="light"]{ --ink:#24303c; --muted:#4b5560; --line:#e0e3e6; --paper:#f4f5f6; --white:#fff;
+    --good:#0c6b41; --warn:#a3161e; --blue:#2b5f96; --on-accent:#fff; }
 
   *{box-sizing:border-box}
   body{margin:0;background:var(--paper);color:var(--ink);
     font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
     line-height:1.65;-webkit-font-smoothing:antialiased}
-  .disp{font-family:"Arial Narrow","Helvetica Neue",Impact,sans-serif;font-stretch:condensed;
-    text-transform:uppercase;letter-spacing:-.02em;line-height:.94;font-weight:700}
+  .disp{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;font-stretch:condensed;
+    text-transform:uppercase;letter-spacing:-.025em;line-height:.94;font-weight:900}
   .wrap{width:min(940px,calc(100% - 10vw));margin:auto}
   a{color:inherit}
 
   /* header */
   header{background:var(--navy);color:#fff;padding:52px 0 46px}
-  .eyebrow{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#7fa3d8;margin:0 0 14px}
+  .eyebrow{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#93a0ab;margin:0 0 14px}
   header h1{font-size:clamp(40px,6vw,74px);margin:0 0 20px;color:#fff}
   header h1 span{color:var(--red)}
-  .lede{font-size:18px;color:#c9d8ec;max-width:640px;margin:0}
+  .lede{font-size:18px;color:#c2ccd6;max-width:640px;margin:0}
   .ask{display:inline-block;margin-top:26px;border-left:3px solid var(--red);padding:6px 0 6px 16px;
-    font-size:13.5px;color:#e4ecf7}
+    font-size:13.5px;color:#e8ecef}
   .ask b{color:#fff}
 
   section{padding:52px 0;border-bottom:1px solid var(--line)}
@@ -61,7 +61,7 @@
   .opt .tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
     padding:4px 9px;border-radius:20px;background:var(--paper);color:var(--muted);margin-bottom:12px}
   .opt.a .tag{background:var(--red);color:#fff}
-  .opt.b .tag{background:#174da0;color:#fff}
+  .opt.b .tag{background:#2b5f96;color:#fff}
   .opt .gain,.opt .cost{font-size:13px;padding-top:10px;margin-top:10px;border-top:1px solid var(--line);color:var(--muted)}
   .opt .gain b{color:var(--good)}
   .opt .cost b{color:var(--warn)}
@@ -87,11 +87,11 @@
   .dstep{display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start;
     padding:16px 0;border-top:1px solid rgba(255,255,255,.14)}
   .dstep:first-of-type{border-top:0;padding-top:0}
-  .dnum{font-family:"Arial Narrow",Impact,sans-serif;font-size:26px;font-weight:700;color:var(--red);line-height:1}
+  .dnum{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;font-size:26px;font-weight:900;color:var(--red);line-height:1}
   .dstep b{display:block;color:#fff;font-size:16px;margin-bottom:3px}
-  .dstep span{font-size:14px;color:#b9cce4}
+  .dstep span{font-size:14px;color:#aab7c2}
   .timing{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);
-    font-size:13.5px;color:#c9d8ec}
+    font-size:13.5px;color:#c2ccd6}
   .timing b{color:#fff}
 
   footer{padding:30px 0 44px;font-size:12.5px;color:var(--muted)}
@@ -102,7 +102,7 @@
   }
 
 .rec{background:var(--navy);color:#fff;border-radius:6px;padding:20px 24px;margin-top:20px}
-.rec p{margin:0;font-size:14.5px;line-height:1.6;color:#dbe3ee}
+.rec p{margin:0;font-size:14.5px;line-height:1.6;color:#c2ccd6}
 .rec b{color:#fff}
 
 .trap{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--warn);
@@ -119,14 +119,14 @@
 
 .verdict{background:var(--navy-2);color:#fff;border-radius:8px;padding:30px 32px;margin-top:8px}
 .verdict .hl{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
-  color:#7fa3d8;margin:0 0 12px}
+  color:#93a0ab;margin:0 0 12px}
 .verdict .big{font-size:20px;line-height:1.45;color:#fff;margin:0 0 14px;font-weight:600}
-.verdict p{color:#c2d3e8;font-size:14.5px;margin:0}
+.verdict p{color:#c2ccd6;font-size:14.5px;margin:0}
 .why{display:grid;gap:12px;margin-top:20px}
 .why > div{display:grid;grid-template-columns:30px 1fr;gap:14px;background:var(--white);
   border:1px solid var(--line);border-radius:6px;padding:16px 18px}
 .why > div > div{display:block}
-.why .n{font-family:"Arial Narrow",Impact,sans-serif;font-size:24px;font-weight:700;
+.why .n{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;font-size:24px;font-weight:900;
   color:var(--red);line-height:1.1}
 .why b{display:block;color:var(--ink);font-size:15px;margin-bottom:4px}
 .why span{font-size:14px;color:var(--muted);line-height:1.6}
@@ -310,11 +310,11 @@
         <div class="ph-h"><span class="lbl">In progress</span><b>sportpharm.com redesign</b></div>
         <div class="ph-b">
           <ul>
-            <li><b>12 pages designed and working</b> &mdash; services, products, Rx, about and compliance</li>
+            <li><b>13 pages designed and working</b> &mdash; services, products, Rx, about, compliance and contact</li>
             <li><b>6 services</b>, each with its own page</li>
             <li><b>5 top-level sections</b>, rebuilt navigation throughout</li>
           </ul>
-          <p class="state"><b>What remains:</b> product imagery, the full product catalogue, and employee headshots. Then a page-by-page pass to check links and detail, the remaining category page, the contact page, and the same WordPress port. <b>The structure is settled.</b></p>
+          <p class="state"><b>What remains:</b> product imagery, the full product catalogue, and employee headshots. Then a page-by-page pass to check links and detail, the remaining category page, a retail-location page, and the same WordPress port. <b>The structure is settled.</b></p>
         </div>
       </div>
     </div>
@@ -419,7 +419,7 @@
 
     <div class="proof" style="margin-top:0">
       <p class="hl">Ready for feedback &mdash; design and copy complete</p>
-      <p class="note"><b>The pharmacy side &mdash; 12 pages.</b> Everything here mirrors what sportpharm.com already offers, rebuilt on the new system. Copy is carried across from the live pages, so what is up for review is structure, hierarchy and design rather than wording.</p>
+      <p class="note"><b>The pharmacy side &mdash; 13 pages.</b> Everything here mirrors what sportpharm.com already offers, rebuilt on the new system. Copy is carried across from the live pages, so what is up for review is structure, hierarchy and design rather than wording.</p>
       <p class="note" style="line-height:2">
         <a href="https://kennadyscott.github.io/sportpharm-site/sports-medicine.html">Healthcare &amp; AT home</a> &middot;
         <a href="https://kennadyscott.github.io/sportpharm-site/services.html">Services</a> &middot;
@@ -432,7 +432,8 @@
         <a href="https://kennadyscott.github.io/sportpharm-site/products.html">Products</a> &middot;
         <a href="https://kennadyscott.github.io/sportpharm-site/rx-prescriptions.html">Rx prescriptions</a> &middot;
         <a href="https://kennadyscott.github.io/sportpharm-site/about.html">About</a> &middot;
-        <a href="https://kennadyscott.github.io/sportpharm-site/quality-compliance.html">Quality &amp; compliance</a>
+        <a href="https://kennadyscott.github.io/sportpharm-site/quality-compliance.html">Quality &amp; compliance</a> &middot;
+        <a href="https://kennadyscott.github.io/sportpharm-site/contact.html">Contact</a>
       </p>
       <p class="note" style="margin:0"><b>The athlete side.</b> <a href="https://kennadyscott.github.io/sportpharm-site/index.html">The Athlete Hub</a> and its four pathways, <a href="https://kennadyscott.github.io/sportpharm-site/pro-athlete.html">the professional athlete hub</a> and its five service pages, <a href="https://kennadyscott.github.io/sportpharm-site/wasabirub.html">the WasabiRub product site</a>, ten articles and four interactive tools.</p>
     </div>
@@ -449,7 +450,8 @@
       <p class="hl">Not finished &mdash; do not review yet</p>
       <p class="note"><b>The store.</b> No cart, no checkout, no payment. Product cards link to product pages; nothing adds to a basket. Commerce is the WooCommerce decision above and follows platform sign-off.</p>
       <p class="note"><b>Two category pages.</b> Rx Prescriptions has its page; a dedicated Compounding Pharmacy shop page is still to come. Until then that menu item points at the relevant section of the Products page, so nothing dead-ends.</p>
-      <p class="note"><b>The contact page.</b> Functional and delivering to info@sportpharm.com, but still on the older layout &mdash; it will look like a different site until it is rebuilt on the new one.</p>
+      
+      <p class="note"><b>A retail location page.</b> Neither the current site nor the rebuild has a page that treats SportPharm as somewhere you can walk into &mdash; the storefront, what is on the shelf, who is behind the counter. Brandon has pointed to <a href="https://www.apothecaryandcompany.com/">apothecaryandcompany.com</a> as the reference: an independent pharmacy whose site leads with the place and the people rather than with fulfilment. With a physical retail location opening, this is a page to design rather than a section to bolt on, and it needs storefront and interior photography before it can be built.</p>
       <p class="note"><b>Team, FAQ, Privacy and Terms.</b> Linked in the footer, not yet written.</p>
       <p class="note" style="margin:0"><b>Clinical review of the ten articles.</b> Written and live, but the pharmacist sign-off gate described below has not been applied. This is the one item on the list with a compliance dimension rather than a design one.</p>
     </div>
