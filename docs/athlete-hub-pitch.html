@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>wasabirub.com — A Product Site on the SportPharm Platform</title>
 <style>
   :root{
@@ -18,7 +19,7 @@
   body{margin:0;background:var(--paper);color:var(--ink);
     font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
     line-height:1.65;-webkit-font-smoothing:antialiased}
-  .disp{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;font-stretch:condensed;
+  .disp{font-family:"Arial Narrow","Roboto Condensed","Helvetica Neue Condensed",Impact,sans-serif;font-stretch:condensed;
     text-transform:uppercase;letter-spacing:-.025em;line-height:.94;font-weight:900}
   .wrap{width:min(940px,calc(100% - 10vw));margin:auto}
   a{color:inherit}
@@ -87,7 +88,7 @@
   .dstep{display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start;
     padding:16px 0;border-top:1px solid rgba(255,255,255,.14)}
   .dstep:first-of-type{border-top:0;padding-top:0}
-  .dnum{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;font-size:26px;font-weight:900;color:var(--red);line-height:1}
+  .dnum{font-family:"Arial Narrow","Roboto Condensed","Helvetica Neue Condensed",Impact,sans-serif;font-size:26px;font-weight:900;color:var(--red);line-height:1}
   .dstep b{display:block;color:#fff;font-size:16px;margin-bottom:3px}
   .dstep span{font-size:14px;color:#aab7c2}
   .timing{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);
@@ -126,7 +127,7 @@
 .why > div{display:grid;grid-template-columns:30px 1fr;gap:14px;background:var(--white);
   border:1px solid var(--line);border-radius:6px;padding:16px 18px}
 .why > div > div{display:block}
-.why .n{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;font-size:24px;font-weight:900;
+.why .n{font-family:"Arial Narrow","Roboto Condensed","Helvetica Neue Condensed",Impact,sans-serif;font-size:24px;font-weight:900;
   color:var(--red);line-height:1.1}
 .why b{display:block;color:var(--ink);font-size:15px;margin-bottom:4px}
 .why span{font-size:14px;color:var(--muted);line-height:1.6}
@@ -193,9 +194,25 @@
 .proof a{color:var(--red);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(224,49,42,.35)}
 .proof a:hover{border-bottom-color:var(--red)}
 .trap .hl{color:#b06a00}
+@media (prefers-color-scheme: dark){.trap .hl{color:#f0a94a}}
+:root[data-theme="dark"] .trap .hl{color:#f0a94a}
+:root[data-theme="light"] .trap .hl{color:#b06a00}
 .honest .hl{color:var(--warn)}
 .proof p a{color:var(--red);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(224,49,42,.3)}
 .proof p a:hover{border-bottom-color:var(--red)}
+.metrics.two{grid-template-columns:1fr 1fr}
+.metrics.one{grid-template-columns:1fr}
+@media(max-width:760px){.metrics,.metrics.two,.metrics.one{grid-template-columns:1fr}}
+
+/* dark-mode fixes verified by measurement */
+@media (prefers-color-scheme: dark){
+  .ph-h,.ph-h b,.ph-h .lbl{color:var(--on-accent)}
+  .proof p a{color:#ff6b73;border-bottom-color:rgba(255,107,115,.4)}
+  .proof p a:hover{border-bottom-color:#ff6b73}
+}
+:root[data-theme="dark"] .ph-h,:root[data-theme="dark"] .ph-h b,:root[data-theme="dark"] .ph-h .lbl{color:var(--on-accent)}
+:root[data-theme="dark"] .proof p a{color:#ff6b73;border-bottom-color:rgba(255,107,115,.4)}
+:root[data-theme="light"] .proof p a{color:var(--red)}
 </style>
 <style>
 .lead-in{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--good);
@@ -207,7 +224,7 @@
 .seq > div{display:grid;grid-template-columns:44px 1fr;gap:18px;background:var(--white);
   border:1px solid var(--line);border-radius:8px;padding:20px 22px}
 .seq > div > div{display:block}
-.seq .n{font-family:"Arial Narrow",Impact,sans-serif;font-size:30px;font-weight:700;
+.seq .n{font-family:"Arial Narrow","Roboto Condensed","Helvetica Neue Condensed",Impact,sans-serif;font-size:30px;font-weight:700;
   color:var(--red);line-height:1}
 .seq h4{margin:0 0 6px;font-size:17px;color:var(--ink)}
 .seq .when{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.1em;
@@ -286,7 +303,7 @@
 
     <div class="trap">
       <p class="hl">Two decisions to make at the start, not later</p>
-      <p class="note"><b>1. Classic checkout, not block checkout.</b> WooCommerce now ships two. The newer block-based checkout is significantly harder to customise deeply; the classic templates are fully overridable. If checkout is to match the design as thoroughly as the product pages, <b>this must be specified at build time</b> &mdash; retrofitting it later is painful.</p>
+      <p class="note"><b>1. Classic checkout, not block checkout.</b> WooCommerce now ships two. The newer block-based checkout is significantly harder to customize deeply; the classic templates are fully overridable. If checkout is to match the design as thoroughly as the product pages, <b>this must be specified at build time</b> &mdash; retrofitting it later is painful.</p>
       <p class="note" style="margin:0"><b>2. A plugin audit before scoping.</b> Existing plugins may inject their own markup and CSS that fights a new design, and one installed later can undo it. Both a scoping input and an ongoing governance rule that needs a named owner.</p>
     </div>
 
@@ -303,7 +320,7 @@
             <li><b>4 interactive tools</b> built and functioning</li>
             <li>A contact form already delivering to info@sportpharm.com</li>
           </ul>
-          <p class="state"><b>What remains:</b> the product pages are complete. The Athlete Hub needs a page-by-page pass to build out its internal links and refine the design. Then the WordPress port, WooCommerce for the OTC catalogue, and clinical review of the articles.</p>
+          <p class="state"><b>What remains:</b> the product pages are complete. The Athlete Hub needs a page-by-page pass to build out its internal links and refine the design. Then the WordPress port, WooCommerce for the OTC catalog, and clinical review of the articles.</p>
         </div>
       </div>
       <div class="ph two">
@@ -314,7 +331,7 @@
             <li><b>6 services</b>, each with its own page</li>
             <li><b>5 top-level sections</b>, rebuilt navigation throughout</li>
           </ul>
-          <p class="state"><b>What remains:</b> product imagery, the full product catalogue, and employee headshots. Then a page-by-page pass to check links and detail, the remaining category page, a retail-location page, and the same WordPress port. <b>The structure is settled.</b></p>
+          <p class="state"><b>What remains:</b> product imagery, the full product catalog, and employee headshots. Then a page-by-page pass to check links and detail, the remaining category page, a retail-location page, and the same WordPress port. <b>The structure is settled.</b></p>
         </div>
       </div>
     </div>
@@ -330,7 +347,7 @@
 
     <p class="note"><b>They are not two versions of the same site.</b> They sell different things to different people, and the split is what lets each one rank for what it is actually about.</p>
 
-    <div class="metrics" style="grid-template-columns:1fr 1fr">
+    <div class="metrics two">
       <div class="metric">
         <b>sportpharm.com &mdash; the pharmacy</b>
         <span>The company, the credentials, the services. Athletic trainers, team physicians, athletic directors and program staff. What it sells is a <i>relationship</i>: compounding to a specification, unit-dose supply, inventory that doesn&rsquo;t expire, a pharmacist who answers. Years of earned trust and an established search footprint.</span>
@@ -343,9 +360,9 @@
 
     <div class="proof">
       <p class="hl">How they connect</p>
-      <p class="note"><b>One design system, two child themes.</b> A visitor moving between them should recognise the same company &mdash; same typography, same red, same components &mdash; without either site pretending to be the other.</p>
+      <p class="note"><b>One design system, two child themes.</b> A visitor moving between them should recognize the same company &mdash; same typography, same red, same components &mdash; without either site pretending to be the other.</p>
       <p class="note"><b>The traffic flows one way on purpose.</b> The hub earns attention by answering questions people actually search, and points to the product beside it on the same domain. sportpharm.com links out to wasabirub.com for the range; wasabirub.com points back for prescription work, compounding and anything requiring a pharmacist. Neither site tries to do the other&rsquo;s job.</p>
-      <p class="note" style="margin:0"><b>The commerce lives on wasabirub.com.</b> That is the cart, the checkout, the products. sportpharm.com stays a services and credibility site with enquiry forms, not a store &mdash; which is what it already is, and what it should remain.</p>
+      <p class="note" style="margin:0"><b>The commerce lives on wasabirub.com.</b> That is the cart, the checkout, the products. sportpharm.com stays a services and credibility site with inquiry forms, not a store &mdash; which is what it already is, and what it should remain.</p>
     </div>
   </div>
 </section>
@@ -406,7 +423,7 @@
       <p class="note"><b>Palette.</b> Off the old navy onto a near-black ground, with a single red accent doing all the emphatic work and a darker red reserved for text on light backgrounds so it stays legible. Adjacent dark sections use different values so they read as separate rather than merging into one field.</p>
       <p class="note"><b>Typography.</b> A condensed display face at maximum weight for headlines, set tight and in caps, against a neutral face for body copy. Headlines use a two-tone treatment &mdash; the first clause in ink or white, the turn in red &mdash; which gives every page the same rhythm without repeating a layout.</p>
       <p class="note"><b>Hierarchy.</b> Full-bleed heroes with the headline set against the photograph rather than beside it, and the primary action above the fold on a laptop. Sections alternate light, white and near-black so the page has a cadence instead of one long scroll.</p>
-      <p class="note"><b>Accessibility, measured.</b> Every colour pair is checked in the browser against its actual composited background &mdash; not eyeballed, and not assumed from the source values. Text meets WCAG AA throughout. Several combinations that looked fine failed the check and were adjusted.</p>
+      <p class="note"><b>Accessibility, measured.</b> Every color pair is checked in the browser against its actual composited background &mdash; not eyeballed, and not assumed from the source values. Text meets WCAG AA throughout. Several combinations that looked fine failed the check and were adjusted.</p>
       <p class="note" style="margin:0"><b>Three audiences, one identity.</b> A persona switcher in the header moves between everyday athlete, professional athlete, and healthcare &amp; AT. The design system is shared; the tone, imagery and services shown are not. One voice cannot speak to a weekend runner and a Division I head trainer at the same time, and now it does not have to.</p>
     </div>
   </div>
@@ -443,7 +460,7 @@
       <p class="note"><b>The professional athlete side has no professional sport imagery.</b> It currently borrows endurance and lifestyle photography. For a section aimed at NBA, NFL, NHL and Olympic programs, that is the single biggest gap between how it reads now and how it should.</p>
       <p class="note"><b>Several pharmacy pages share the same two photographs.</b> The layouts are final; the images are placeholders standing in until we have distinct shots for compounding, repackaging, inventory and retail.</p>
       <p class="note"><b>Two team headshots are missing</b> &mdash; Dr. Kristal Potter and Hayden Lee are showing initials rather than a photo.</p>
-      <p class="note"><b>Product photography is the current catalogue imagery,</b> and the catalogue itself is not yet complete on the new pages. Consistent studio shots plus the full product list would lift the product and category pages more than any further layout work.</p><p class="note" style="margin:0"><b>Both sites still need a page-by-page pass</b> &mdash; checking every internal link, tightening detail, and finishing the cross-linking between sections. The structure is settled; this is the finishing work on top of it.</p>
+      <p class="note"><b>Product photography is the current catalog imagery,</b> and the catalog itself is not yet complete on the new pages. Consistent studio shots plus the full product list would lift the product and category pages more than any further layout work.</p><p class="note" style="margin:0"><b>Both sites still need a page-by-page pass</b> &mdash; checking every internal link, tightening detail, and finishing the cross-linking between sections. The structure is settled; this is the finishing work on top of it.</p>
     </div>
 
     <div class="honest">
@@ -451,12 +468,12 @@
       <p class="note"><b>The store.</b> No cart, no checkout, no payment. Product cards link to product pages; nothing adds to a basket. Commerce is the WooCommerce decision above and follows platform sign-off.</p>
       <p class="note"><b>Two category pages.</b> Rx Prescriptions has its page; a dedicated Compounding Pharmacy shop page is still to come. Until then that menu item points at the relevant section of the Products page, so nothing dead-ends.</p>
       
-      <p class="note"><b>A retail location page.</b> Neither the current site nor the rebuild has a page that treats SportPharm as somewhere you can walk into &mdash; the storefront, what is on the shelf, who is behind the counter. Brandon has pointed to <a href="https://www.apothecaryandcompany.com/">apothecaryandcompany.com</a> as the reference: an independent pharmacy whose site leads with the place and the people rather than with fulfilment. With a physical retail location opening, this is a page to design rather than a section to bolt on, and it needs storefront and interior photography before it can be built.</p>
+      <p class="note"><b>A retail location page.</b> Neither the current site nor the rebuild has a page that treats SportPharm as somewhere you can walk into &mdash; the storefront, what is on the shelf, who is behind the counter. Brandon has pointed to <a href="https://www.apothecaryandcompany.com/">apothecaryandcompany.com</a> as the reference: an independent pharmacy whose site leads with the place and the people rather than with fulfillment. With a physical retail location opening, this is a page to design rather than a section to bolt on, and it needs storefront and interior photography before it can be built.</p>
       <p class="note"><b>Team, FAQ, Privacy and Terms.</b> Linked in the footer, not yet written.</p>
       <p class="note" style="margin:0"><b>Clinical review of the ten articles.</b> Written and live, but the pharmacist sign-off gate described below has not been applied. This is the one item on the list with a compliance dimension rather than a design one.</p>
     </div>
 
-    <p class="note" style="margin-top:20px"><b>What is most useful to hear back.</b> Whether the structure is right &mdash; the three audiences, the six services, the way products are split into OTC, Rx and compounded. Layout and colour are quick to change. Structure is what everything else is built on, so it is worth settling first.</p>
+    <p class="note" style="margin-top:20px"><b>What is most useful to hear back.</b> Whether the structure is right &mdash; the three audiences, the six services, the way products are split into OTC, Rx and compounded. Layout and color are quick to change. Structure is what everything else is built on, so it is worth settling first.</p>
   </div>
 </section>
 
@@ -486,7 +503,7 @@
 
     <div class="lead-in">
       <p class="hl">Which points to WordPress</p>
-      <p class="note" style="margin:0">More people know the WordPress editor than any other publishing interface in the world &mdash; and <b>this team already uses it every day on sportpharm.com.</b> Articles, pages and coupons are screens a marketing coordinator can be shown once. If that person leaves, the replacement is easy and cheap to hire. Shopify wins on the store screens, and that advantage grows with the catalogue &mdash; but it is a second system to learn, on top of the one we would still be running.</p>
+      <p class="note" style="margin:0">More people know the WordPress editor than any other publishing interface in the world &mdash; and <b>this team already uses it every day on sportpharm.com.</b> Articles, pages and coupons are screens a marketing coordinator can be shown once. If that person leaves, the replacement is easy and cheap to hire. Shopify wins on the store screens, and that advantage grows with the catalog &mdash; but it is a second system to learn, on top of the one we would still be running.</p>
     </div>
   </div>
 </section>
@@ -494,7 +511,7 @@
 <section>
   <div class="wrap">
     <h2 class="disp">What we are deciding, and when</h2>
-    <p class="sub">Three questions have been travelling together. Separating them is what makes this safe.</p>
+    <p class="sub">Three questions have been traveling together. Separating them is what makes this safe.</p>
 
     <div class="seq">
       <div><span class="n">1</span><div>
@@ -510,14 +527,14 @@
       <div><span class="n">3</span><div>
         <span class="when later">Decide later</span>
         <h4>Whether sportpharm.com keeps selling</h4>
-        <p>Once wasabirub.com has a store, two properties selling the same catalogue means two order streams, two stock counts and two discount systems. <b>The clean answer is one store</b> &mdash; wasabirub.com sells, sportpharm.com carries a Store link to it. Not urgent, but it should not drift.</p>
+        <p>Once wasabirub.com has a store, two properties selling the same catalog means two order streams, two stock counts and two discount systems. <b>The clean answer is one store</b> &mdash; wasabirub.com sells, sportpharm.com carries a Store link to it. Not urgent, but it should not drift.</p>
       </div></div>
     </div>
 
     <div class="verdict" style="margin-top:26px">
       <p class="hl">Why WordPress rather than something new</p>
       <p class="big" style="font-size:18px">The strongest argument is not technical. It is that this company already runs WordPress, likes it, and can staff it.</p>
-      <p>A commerce platform like Shopify has real advantages at scale &mdash; native abandoned-cart recovery, and a point-of-sale system that would unify the pharmacy counter with the website. <b style="color:#fff">Those become compelling if retail unification matters, or once the catalogue grows well past its current size.</b> Neither is true today, and neither needs answering to start.</p>
+      <p>A commerce platform like Shopify has real advantages at scale &mdash; native abandoned-cart recovery, and a point-of-sale system that would unify the pharmacy counter with the website. <b style="color:#fff">Those become compelling if retail unification matters, or once the catalog grows well past its current size.</b> Neither is true today, and neither needs answering to start.</p>
     </div>
   </div>
 </section>
@@ -555,7 +572,7 @@
 
     <div class="honest">
       <p class="hl">On prescriptions, since it will come up</p>
-      <p class="note" style="margin:0">Shopify prohibits prescription fulfilment; WordPress imposes no restriction. Mostly moot &mdash; <b>Rx does not belong in a retail cart either way.</b> Dispensing runs through a pharmacy management system, and what sits on a website is a refill or transfer request that hands off to it. It only becomes a real constraint if we want refills and OTC purchases inside one logged-in account. If that is on anyone's roadmap, say so &mdash; it changes the answer. Confirm specifics with compliance rather than with this document.</p>
+      <p class="note" style="margin:0">Shopify prohibits prescription fulfillment; WordPress imposes no restriction. Mostly moot &mdash; <b>Rx does not belong in a retail cart either way.</b> Dispensing runs through a pharmacy management system, and what sits on a website is a refill or transfer request that hands off to it. It only becomes a real constraint if we want refills and OTC purchases inside one logged-in account. If that is on anyone's roadmap, say so &mdash; it changes the answer. Confirm specifics with compliance rather than with this document.</p>
     </div>
   </div>
 </section>
@@ -601,7 +618,7 @@
     <div class="metrics">
       <div class="metric"><b>Organic sessions to hub pages</b><span>Leading indicator, months 3&ndash;12</span></div>
       <div class="metric"><b>Hub &rarr; product click-through</b><span>Does education actually convert?</span></div>
-      <div class="metric"><b>Enquiries from hub pages</b><span>Pharmacy consultation demand</span></div>
+      <div class="metric"><b>Inquiries from hub pages</b><span>Pharmacy consultation demand</span></div>
       <div class="metric"><b>Assisted conversions</b><span>Purchases where a hub visit came first</span></div>
     </div>
   </div>

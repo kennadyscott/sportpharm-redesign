@@ -127,7 +127,7 @@
 .pback:hover{color:var(--ink)}
 @media(max-width:1000px){.cards4{grid-template-columns:1fr 1fr}.pcols{grid-template-columns:1fr;gap:18px}.stop-stage{min-height:0}.stop-panel{position:static;margin-top:18px}}
 </style>
-</head>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png"><meta name="theme-color" content="#15202b"></head>
 <body>
   <header class="header2">
     <div class="h2wrap">
@@ -320,7 +320,7 @@
           method:"POST",
           headers:{"Content-Type":"application/json","Accept":"application/json"},
           body:JSON.stringify({name:name,email:email,phone:phone,message:message,
-            _subject:"SportPharm enquiry — "+SOURCE+" — "+name, _template:"table", page:SOURCE, persona:"Everyday Athlete"})
+            _subject:"SportPharm inquiry — "+SOURCE+" — "+name, _template:"table", page:SOURCE, persona:"Everyday Athlete"})
         }).then(function(r){return r.json();}).then(function(){
           document.getElementById("successMsg").textContent="Thanks, "+(name.split(" ")[0]||"there")+" — your message is on its way to our team. We'll be in touch shortly.";
           wrap.hidden=true; success.hidden=false; form.reset();

@@ -109,7 +109,7 @@ wasabirub.com — A Product Site on the SportPharm Platform
  
  Two decisions to make at the start, not later
 
- 1. Classic checkout, not block checkout. WooCommerce now ships two. The newer block-based checkout is significantly harder to customise deeply; the classic templates are fully overridable. If checkout is to match the design as thoroughly as the product pages, this must be specified at build time — retrofitting it later is painful.
+ 1. Classic checkout, not block checkout. WooCommerce now ships two. The newer block-based checkout is significantly harder to customize deeply; the classic templates are fully overridable. If checkout is to match the design as thoroughly as the product pages, this must be specified at build time — retrofitting it later is painful.
 
  2. A plugin audit before scoping. Existing plugins may inject their own markup and CSS that fights a new design, and one installed later can undo it. Both a scoping input and an ongoing governance rule that needs a named owner.
 
@@ -188,9 +188,9 @@ They are not two versions of the same site. They sell different things to differ
 
 **How they connect**
 
-- **One design system, two child themes.** A visitor moving between them should recognise the same company — same typography, same red, same components — without either site pretending to be the other.
+- **One design system, two child themes.** A visitor moving between them should recognize the same company — same typography, same red, same components — without either site pretending to be the other.
 - **The traffic flows one way on purpose.** The hub earns attention by answering questions people actually search, and points to the product beside it on the same domain. sportpharm.com links out to wasabirub.com for the range; wasabirub.com points back for prescription work, compounding and anything requiring a pharmacist.
-- **The commerce lives on wasabirub.com.** That is the cart, the checkout, the products. sportpharm.com stays a services and credibility site with enquiry forms, not a store — which is what it already is, and what it should remain.
+- **The commerce lives on wasabirub.com.** That is the cart, the checkout, the products. sportpharm.com stays a services and credibility site with inquiry forms, not a store — which is what it already is, and what it should remain.
 
 ## What is actually built
 
@@ -233,7 +233,7 @@ This is not a reinvention of what SportPharm says about itself. The services are
 - **Palette.** Off the old navy onto a near-black ground, with a single red accent and a darker red reserved for text on light backgrounds. Adjacent dark sections use different values so they read as separate.
 - **Typography.** A condensed display face at maximum weight for headlines, caps and tight, against a neutral body face. Headlines use a two-tone treatment — first clause in ink or white, the turn in red.
 - **Hierarchy.** Full-bleed heroes with the headline set against the photograph, primary action above the fold on a laptop. Sections alternate light, white and near-black.
-- **Accessibility, measured.** Every colour pair checked in the browser against its actual composited background. WCAG AA throughout. Several combinations that looked fine failed and were adjusted.
+- **Accessibility, measured.** Every color pair checked in the browser against its actual composited background. WCAG AA throughout. Several combinations that looked fine failed and were adjusted.
 - **Three audiences, one identity.** A persona switcher moves between everyday athlete, professional athlete, and healthcare & AT. The current site asks one voice to speak to a weekend runner and a Division I head trainer at once.
 
 ## Who runs this afterwards
@@ -270,7 +270,7 @@ This is not a reinvention of what SportPharm says about itself. The services are
  
  Which points to WordPress
 
- More people know the WordPress editor than any other publishing interface in the world — and this team already uses it every day on sportpharm.com. Articles, pages and coupons are screens a marketing coordinator can be shown once. If that person leaves, the replacement is easy and cheap to hire. Shopify wins on the store screens, and that advantage grows with the catalogue — but it is a second system to learn, on top of the one we would still be running.
+ More people know the WordPress editor than any other publishing interface in the world — and this team already uses it every day on sportpharm.com. Articles, pages and coupons are screens a marketing coordinator can be shown once. If that person leaves, the replacement is easy and cheap to hire. Shopify wins on the store screens, and that advantage grows with the catalog — but it is a second system to learn, on top of the one we would still be running.
 
  
 
@@ -281,7 +281,7 @@ This is not a reinvention of what SportPharm says about itself. The services are
 
 ## What we are deciding, and when
 
- Three questions have been travelling together. Separating them is what makes this safe.
+ Three questions have been traveling together. Separating them is what makes this safe.
 
  
  1
@@ -318,7 +318,7 @@ This is not a reinvention of what SportPharm says about itself. The services are
 
  The strongest argument is not technical. It is that this company already runs WordPress, likes it, and can staff it.
 
- A commerce platform like Shopify has real advantages at scale — native abandoned-cart recovery, and a point-of-sale system that would unify the pharmacy counter with the website. Those become compelling if retail unification matters, or once the catalogue grows well past four products. Neither is true today, and neither needs answering to start.
+ A commerce platform like Shopify has real advantages at scale — native abandoned-cart recovery, and a point-of-sale system that would unify the pharmacy counter with the website. Those become compelling if retail unification matters, or once the catalog grows well past four products. Neither is true today, and neither needs answering to start.
 
  
 
@@ -384,7 +384,7 @@ Bulk edit, CSV import, variants, multi-location inventory, staff permissions, re
  
  On prescriptions, since it will come up
 
- Shopify prohibits prescription fulfilment; WordPress imposes no restriction. Mostly moot — Rx does not belong in a retail cart either way. Dispensing runs through a pharmacy management system, and what sits on a website is a refill or transfer request that hands off to it. It only becomes a real constraint if we want refills and OTC purchases inside one logged-in account. If that is on anyone's roadmap, say so — it changes the answer. Confirm specifics with compliance rather than with this document.
+ Shopify prohibits prescription fulfillment; WordPress imposes no restriction. Mostly moot — Rx does not belong in a retail cart either way. Dispensing runs through a pharmacy management system, and what sits on a website is a refill or transfer request that hands off to it. It only becomes a real constraint if we want refills and OTC purchases inside one logged-in account. If that is on anyone's roadmap, say so — it changes the answer. Confirm specifics with compliance rather than with this document.
 
  
 
@@ -458,7 +458,7 @@ Bulk edit, CSV import, variants, multi-location inventory, staff permissions, re
 
  Hub → product click-throughDoes education actually convert?
 
- Enquiries from hub pagesPharmacy consultation demand
+ Inquiries from hub pagesPharmacy consultation demand
 
  Assisted conversionsPurchases where a hub visit came first
 

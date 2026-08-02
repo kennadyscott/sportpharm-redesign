@@ -511,7 +511,7 @@ footer{background:#11181f;padding:40px 0;text-align:center}
 .dropdown .sf-arw{opacity:.6}
 .sf-note{margin:10px 0 0;font-size:11.5px;line-height:1.5;color:#7d8894;max-width:26ch}
 .sf-note b{color:#9aa5b1;font-weight:600}
-</style></head><body><header>
+</style><link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png"><meta name="theme-color" content="#15202b"></head><body><header>
   <div class="wrap nav">
     <a class="logo" href="sports-medicine.html"><img src="assets/wordmark-dark.png" alt="SportPharm"><span class="logo-tag">Behind every athlete you care for.</span></a>
     <nav class="mainnav">
@@ -890,7 +890,7 @@ footer{background:#11181f;padding:40px 0;text-align:center}
       method:"POST",
       headers:{"Content-Type":"application/json","Accept":"application/json"},
       body:JSON.stringify({name:v.name,email:v.email,role:v.role,topic:v.topic,message:v.details||"",
-        _subject:"SportPharm enquiry \u2014 "+SOURCE+" \u2014 "+v.name,
+        _subject:"SportPharm inquiry \u2014 "+SOURCE+" \u2014 "+v.name,
         _template:"table", page:SOURCE, persona:"Healthcare / AT"})
     }).then(function(r){return r.json();}).then(function(){
       f.hidden=true; d.hidden=false;

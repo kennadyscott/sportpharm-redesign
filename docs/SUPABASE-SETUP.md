@@ -24,7 +24,7 @@ Order matters: the second references `hq_is_member()` from the first.
 
 **3. Send me two values** — Project Settings → API:
 - **Project URL** (`https://xxxxx.supabase.co`)
-- **anon / public key** (the long one labelled `anon`)
+- **anon / public key** (the long one labeled `anon`)
 
 Both are safe to share and safe to embed in a webpage — they are designed to be
 public. Row-level security is what actually protects the data. **Do not send the

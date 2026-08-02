@@ -395,7 +395,7 @@
 .forwho div:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--red);flex:0 0 7px}
 @media(max-width:1000px){.tline,.pway,.forwho{grid-template-columns:1fr}
   .qual,.privacy{grid-template-columns:1fr}}
-</style></head><body><header class="header2">
+</style><link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png"><meta name="theme-color" content="#15202b"></head><body><header class="header2">
     <div class="h2wrap">
       <a class="logo2" href="pro-athlete.html"><img src="assets/wordmark-dark.png" alt="SportPharm"><span class="tag2">Compete with nothing left to chance.</span></a>
       <nav class="mainnav2"><div class="ni"><button class="nl">Athlete Services <svg class="crt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button><div class="dd"><a href="medication-supplement-review.html">Medication &amp; Supplement Review</a><a href="clean-sport.html">Clean Sport</a><a href="travel-competition.html">Travel &amp; Competition</a><a href="recovery-return.html">Recovery &amp; Return</a><a href="concierge-pharmacy.html">Concierge Pharmacy</a></div></div><a class="nl" href="pro-athlete.html#resources">Resources</a><a class="nl" href="#" data-intake>Contact SportPharm</a></nav>
@@ -469,7 +469,7 @@
       method:"POST",
       headers:{"Content-Type":"application/json","Accept":"application/json"},
       body:JSON.stringify({name:v.name,email:v.email,role:v.role,topic:v.topic,message:v.details||"",
-        _subject:"SportPharm enquiry \u2014 "+SOURCE+" \u2014 "+v.name,
+        _subject:"SportPharm inquiry \u2014 "+SOURCE+" \u2014 "+v.name,
         _template:"table", page:SOURCE, persona:"Pro Athlete"})
     }).then(function(r){return r.json();}).then(function(){
       f.hidden=true; d.hidden=false;
