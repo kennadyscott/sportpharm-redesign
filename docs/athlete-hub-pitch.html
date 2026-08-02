@@ -358,14 +358,14 @@
       <div class="metric"><b>10 articles</b><span>The demand engine, already written</span></div>
     </div>
 
-    <p class="note" style="margin-top:18px"><b>Why the page count is the SEO argument.</b> Search engines rank pages, not companies. Every question that gets its own page is a separate chance to appear when someone searches it. The current site answers &ldquo;what is compounding&rdquo; and &ldquo;are compounded medications allowed under anti-doping rules&rdquo; in an accordion that collapses on load &mdash; one URL, competing with itself.</p>
+    <p class="note" style="margin-top:18px"><b>Why the page count matters.</b> Search engines rank pages, not companies. The more distinct questions the site answers on their own pages, the more entry points it has. The current site already does this well at the service level &mdash; every service has its own URL and they are all in the sitemap. Where it loses ground is in what each of those pages tells a search engine about itself.</p>
 
     <div class="proof">
       <p class="hl">What we did about that</p>
-      <p class="note"><b>Every service is its own page.</b> Compounding, drug repackaging, inventory management, supplement support, retail pharmacy and concierge sports pharmacy each have a URL, a title, a description and their own content. Six entry points where the mockup had a single services list.</p>
+      <p class="note"><b>Every service page has a meta description. None of the current ones do.</b> We checked all six live service pages: not one carries a <i>description</i> tag, so Google writes its own snippet from whatever text it finds. That snippet is the advert for the page &mdash; it is the one piece of copy a searcher reads before deciding whether to click, and right now nobody at SportPharm is writing it. Yoast is installed and the field is simply empty.</p>
       <p class="note"><b>32 questions marked up as structured data.</b> The FAQs carry <i>FAQPage</i> schema, which is what lets a question and its answer appear directly in search results rather than only as a blue link. That markup does not exist on the current site.</p>
       <p class="note"><b>Every service page links to every other.</b> A crawler arriving on any one of them can reach the whole set. On the current site the service pages are reachable mainly from the menu; here they cross-link through the services rail, the nav and the drawer.</p>
-      <p class="note" style="margin:0"><b>Nothing important is JavaScript-only.</b> Links a crawler needs are real <i>&lt;a href&gt;</i> in the markup, not written in by script after the page loads. This is a real failure mode &mdash; we introduced it ourselves mid-build and caught it: the compounding page existed and was reachable by a human, but no search engine could have found it.</p>
+      <p class="note"><b>Nothing important is JavaScript-only.</b> Links a crawler needs are real <i>&lt;a href&gt;</i> in the markup, not written in by script after the page loads. This is a real failure mode &mdash; we introduced it ourselves mid-build and caught it: the compounding page existed and was reachable by a human, but no search engine could have found it.</p><p class="note" style="margin:0"><b>The sitemap is not the problem &mdash; I checked.</b> sportpharm.com has a properly configured Yoast sitemap, it is declared in robots.txt, all six service pages are listed in it, and every page carries a canonical tag. That groundwork is done and done correctly. The gap is not <i>whether</i> search engines can find the pages. It is what those pages say once found.</p>
     </div>
     <div class="proof" style="margin-top:18px">
       <p class="hl">See the rebuilt pharmacy side</p>
@@ -397,10 +397,17 @@
     <div class="metrics" style="grid-template-columns:1fr">
       <div class="metric"><b>&ldquo;USP // compliance&rdquo;</b><span>On the compounding page, in a sentence about quality standards. The USP chapter numbers were written as <i>&lt;795&gt;/&lt;797&gt;</i> without escaping, so the browser swallowed them as HTML tags and left the slashes stranded. A quality claim on a compounding pharmacy&rsquo;s page, rendering as a typo. Fixed.</span></div>
       <div class="metric"><b>Concierge shows repackaging&rsquo;s benefits</b><span>The &ldquo;Key Benefits&rdquo; block on the concierge page is the drug repackaging list, pasted in by mistake &mdash; &ldquo;medication pre-sorted into daily packets,&rdquo; &ldquo;tamper-evident packaging.&rdquo; Nothing to do with concierge care. Rewritten from SportPharm&rsquo;s own concierge copy.</span></div>
-      <div class="metric"><b>Testimonials with no attribution</b><span>Four service pages carry a five-star quote above a placeholder image and the words &ldquo;Placeholder / Athlete.&rdquo; An unattributed testimonial is weak proof at best. Running as role descriptors until real names are supplied.</span></div>
+      <div class="metric"><b>Testimonials attributed to nobody</b><span>Four service pages carry a five-star quote with no name, role or affiliation under it. The author block is in the page source &mdash; the page builder&rsquo;s default placeholder image, with the name field still reading &ldquo;Placeholder&rdquo; and the role &ldquo;Athlete&rdquo; &mdash; but it is hidden at every breakpoint, so a visitor sees a glowing quote from no one. Running as role descriptors here until real names are supplied.</span></div>
       <div class="metric"><b>&ldquo;SportPharmTM&rdquo;</b><span>The trademark is marked up as superscript text, so it reads as literal letters mid-sentence. Replaced with the actual &trade; character.</span></div>
       <div class="metric"><b>Buried distinctions</b><span>&ldquo;Unlike compounding, we&rsquo;re not altering the medication&rdquo; sits mid-paragraph on the repackaging page &mdash; the one line that stops a prescriber ordering the wrong service. Given its own callout with a link across.</span></div>
     </div>
+    <div class="proof" style="margin-top:20px">
+      <p class="hl">This lines up with the audit already commissioned</p>
+      <p class="note">The <a href="https://kennadyscott.github.io/sportpharm-site/docs/UX-BRAND-AUDIT.txt">SportPharm Website UX &amp; Brand Audit</a> reached the same conclusions independently, before this build started.</p>
+      <p class="note">It flagged the concierge page carrying drug repackaging&rsquo;s copy as a &ldquo;fix these first&rdquo; defect &mdash; we hit the same thing transcribing the page months later, which means it is still live. It also flagged a mislabeled link on the contact page sending &ldquo;Supplement Support&rdquo; to the blister packaging URL, and asked whether inventory management is even a service, since the footer lists it and the services menu did not.</p>
+      <p class="note" style="margin:0">Its central recommendation was to stop asking one homepage to serve three audiences and instead route by visitor intent &mdash; professional athlete, everyday athlete, sports medicine professional. <b>That is exactly what the three-persona structure in this build implements.</b> The work here is not a departure from that audit; it is the audit, built.</p>
+    </div>
+
   </div>
 </section>
 
