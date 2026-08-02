@@ -314,7 +314,106 @@ about before it is scoped as the easy part.
 and no working cart &mdash; the prototype went away with the WasabiRub layout revert.
 Every *Add to Cart* button currently on the site shows a toast and does nothing.
 
-## 5. What this requires (be honest about it)
+---
+
+## 5. The recommendation
+
+**One Shopify store as the commerce backend. The hub stays in Next.js + Payload,
+rendering products and cart against the Storefront API. Checkout lives on
+wasabirub.com. sportpharm.com stops selling and links to it.**
+
+Content, articles and the interactive tools never touch Shopify. It handles
+catalogue, cart, checkout, tax, shipping, inventory, refunds and abandoned cart.
+This is not the headless-WooCommerce trap described above &mdash; Shopify's Storefront
+API is a product built for exactly this, where WooCommerce's is a bolt-on.
+
+### What decided it
+
+**1. We have a physical pharmacy.** POS unifying in-store and online inventory,
+customers and orders is worth more than anything on the web side, and a custom
+build has no answer to it at all.
+
+**2. We are already asking whether the main site moves onto this.** That reframes
+everything. If sportpharm.com migrates to a bespoke Stripe build, the company's
+revenue runs on a system one person maintains. For a side project that is fine.
+For the company store it is a continuity risk &mdash; and Shopify is boring, hireable
+and operable by someone other than its builder.
+
+**3. Abandoned cart should work, not be built.** Native on Shopify. On a custom
+stack it is a scheduled job we own forever.
+
+### The honest cost
+
+Subscription, transaction fees if we do not use Shopify Payments, and app
+subscriptions &mdash; real money that scales with success. Less control over checkout
+UX on standard plans. And a migration: product data, customer accounts, order
+history, product-URL SEO and retraining. **None of that is trivial and none of it
+should be waved away.**
+
+### When this recommendation reverses
+
+**If retail POS is not in scope, sportpharm.com is never moving, and we stay at
+three or four products &mdash; use Stripe.** Do not buy a platform for that. The
+recommendation follows from the store-size answer, not the other way round.
+
+### A useful side effect
+
+This **frees the domain decision.** The cart-crossing concern raised earlier
+disappears with one backend and one checkout, so the domain choice returns to
+what it should be &mdash; brand equity versus search authority. On that basis,
+**wasabirub.com**.
+
+---
+
+## 6. "Why wouldn't we just stay on WooCommerce?"
+
+The most reasonable question in the room, and it deserves a straight answer
+rather than a brush-off.
+
+### The case for staying is genuinely strong
+
+It works today. Orders flow, money arrives, the team knows it, nothing has to be
+migrated, no new subscription appears on a budget line, and nobody has to learn
+anything. **"It is not broken" is a real argument and it wins meetings for good
+reasons.**
+
+There is even a coherent best version of it: **WooCommerce remains the only
+store, and the hub deep-links products to it.** That solves the two-stores
+problem from the opposite direction and costs almost nothing. It should be on the
+table honestly.
+
+### Why we would still move
+
+**Staying is not actually staying.** The hub is a Next.js application. Unless we
+rebuild it inside WordPress &mdash; losing the interactive tools and the review
+workflow, which are the reason the hub works &mdash; there are two systems either way.
+The status quo option is not "no change"; it is "change the hub instead."
+
+**WooCommerce has no credible POS story.** For a pharmacy with a counter, this is
+the gap that does not close with a plugin.
+
+**The feature leadership cares about most is a third-party plugin.** Abandoned
+cart is not in WooCommerce core. It is someone else's code that must be kept
+current, and it breaks quietly when it stops being maintained.
+
+**Self-hosted WordPress taking card payments is an ongoing obligation.** Security
+patching, plugin compatibility and PCI scope sit with us. Every plugin is another
+supply-chain dependency on a site handling payments.
+
+**And it undercuts the brand argument.** In the deep-link version, buyers leave
+wasabirub.com to purchase on sportpharm.com &mdash; the exact hop the domain strategy
+exists to avoid.
+
+### The fair summary
+
+WooCommerce is not failing us. **The reason to move is not that it is bad; it is
+that it does not reach where we are going** &mdash; retail, one catalogue across two
+brands, and recovery flows that work without maintenance. If we are not going
+there, staying is defensible and cheap.
+
+---
+
+## 7. What this requires (be honest about it)
 
 **Ongoing, not one-time.**
 
@@ -333,19 +432,20 @@ review.
 
 ---
 
-## 6. Risks worth naming
+## 8. Risks worth naming
 
 | Risk | Reality |
 |---|---|
 | "This is a big change to a site that works" | The current site isn't failing — it just isn't acquiring anyone. This adds a channel; it doesn't remove the existing one. |
 | "SEO takes too long" | True. This is a 6–12 month investment, not a campaign. It compounds; ads stop the day you stop paying. |
 | "Health content is a liability" | Handled by clinical review, named reviewers and explicit non-diagnostic language — all already built into the content and the tools. |
+| "WooCommerce works, why change it" | It is not failing. But the hub is a Next.js app either way, abandoned cart is a plugin rather than a feature, and there is no POS answer for the counter. See section 6. |
 | "Both sites can just keep selling" | Two systems means two order streams, two stock counts and two discount systems for one product line. The reconciliation cost is ongoing and lands on operations, not on the build. |
 | "We'll write six articles and stop" | The most likely failure mode. Requires a named owner and a cadence before launch, not after. |
 
 ---
 
-## 7. What we'd measure
+## 9. What we'd measure
 
 Not traffic for its own sake:
 

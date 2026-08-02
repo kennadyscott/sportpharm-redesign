@@ -4,13 +4,16 @@
   :root{
     --navy:#0a203d; --navy-2:#071b35; --red:#E0312A; --ink:#12203a;
     --muted:#5a6b83; --line:#dbe2ec; --paper:#f4f7fb; --white:#fff;
-    --good:#12925a; --warn:#b3261e;
+    --good:#0c6b41; --warn:#b3261e; --blue:#174da0;
   }
   @media (prefers-color-scheme: dark){
-    :root{ --ink:#e8edf5; --muted:#9fb0c6; --line:#22354f; --paper:#0d1726; --white:#111d2f; --navy:#0a203d; }
+    :root{ --ink:#e8edf5; --muted:#9fb0c6; --line:#22354f; --paper:#0d1726; --white:#111d2f; --navy:#0a203d;
+      --good:#42d195; --warn:#ff9a90; --blue:#7fb0f5; }
   }
-  :root[data-theme="dark"]{ --ink:#e8edf5; --muted:#9fb0c6; --line:#22354f; --paper:#0d1726; --white:#111d2f; }
-  :root[data-theme="light"]{ --ink:#12203a; --muted:#5a6b83; --line:#dbe2ec; --paper:#f4f7fb; --white:#fff; }
+  :root[data-theme="dark"]{ --ink:#e8edf5; --muted:#9fb0c6; --line:#22354f; --paper:#0d1726; --white:#111d2f;
+    --good:#42d195; --warn:#ff9a90; --blue:#7fb0f5; }
+  :root[data-theme="light"]{ --ink:#12203a; --muted:#5a6b83; --line:#dbe2ec; --paper:#f4f7fb; --white:#fff;
+    --good:#0c6b41; --warn:#b3261e; --blue:#174da0; }
 
   *{box-sizing:border-box}
   body{margin:0;background:var(--paper);color:var(--ink);
@@ -55,7 +58,7 @@
   .opt{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:22px 24px}
   .opt{border-top:3px solid var(--line)}
   .opt.a{border-top-color:var(--red)}
-  .opt.b{border-top-color:#174da0}
+  .opt.b{border-top-color:var(--blue)}
   .opt .tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
     padding:4px 9px;border-radius:20px;background:var(--paper);color:var(--muted);margin-bottom:12px}
   .opt.a .tag{background:var(--red);color:#fff}
@@ -127,6 +130,26 @@
 .proof ol{margin:0 0 12px;padding-left:20px;color:var(--muted);font-size:14px}
 .proof li{margin-bottom:6px}
 .proof p:last-child{margin:0}
+
+.verdict{background:var(--navy-2);color:#fff;border-radius:8px;padding:30px 32px;margin-top:8px}
+.verdict .hl{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  color:#7fa3d8;margin:0 0 12px}
+.verdict .big{font-size:20px;line-height:1.45;color:#fff;margin:0 0 14px;font-weight:600}
+.verdict p{color:#c2d3e8;font-size:14.5px;margin:0}
+.why{display:grid;gap:12px;margin-top:20px}
+.why > div{display:grid;grid-template-columns:30px 1fr;gap:14px;background:var(--white);
+  border:1px solid var(--line);border-radius:6px;padding:16px 18px}
+.why > div > div{display:block}
+.why .n{font-family:"Arial Narrow",Impact,sans-serif;font-size:24px;font-weight:700;
+  color:var(--red);line-height:1.1}
+.why b{display:block;color:var(--ink);font-size:15px;margin-bottom:4px}
+.why span{font-size:14px;color:var(--muted);line-height:1.6}
+.fair{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--blue);
+  border-radius:6px;padding:22px 24px;margin-top:20px}
+.fair .hl{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--blue);margin:0 0 10px}
+.fair p:last-child{margin:0}
+@media(max-width:620px){.why > div{grid-template-columns:1fr}}
 </style>
 
 <header>
@@ -389,6 +412,66 @@
 
 <section>
   <div class="wrap">
+    <h2 class="disp">The recommendation</h2>
+    <p class="sub">Contingent on the answer above &mdash; and reversible if that answer is &ldquo;small.&rdquo;</p>
+
+    <div class="verdict">
+      <p class="hl">Recommendation</p>
+      <p class="big">One Shopify store as the commerce backend. The hub stays in Next.js + Payload, rendering products and cart against the Storefront API. Checkout lives on wasabirub.com. sportpharm.com stops selling and links to it.</p>
+      <p>Content, articles and the interactive tools never touch Shopify. It handles catalogue, cart, checkout, tax, shipping, inventory, refunds and abandoned cart. This is not the headless-WooCommerce trap &mdash; Shopify's Storefront API is built for exactly this, where WooCommerce's is a bolt-on.</p>
+    </div>
+
+    <h3 style="margin-top:32px">What decided it</h3>
+    <div class="why">
+      <div><span class="n">1</span><div><b>We have a physical pharmacy</b><span>POS unifying in-store and online inventory, customers and orders is worth more than anything on the web side &mdash; and a custom build has no answer to it at all.</span></div></div>
+      <div><span class="n">2</span><div><b>We are already asking whether the main site moves onto this</b><span>If sportpharm.com migrates to a bespoke build, the company's revenue runs on a system one person maintains. For a side project that is fine. For the company store it is a continuity risk &mdash; and Shopify is boring, hireable and operable by someone other than its builder.</span></div></div>
+      <div><span class="n">3</span><div><b>Abandoned cart should work, not be built</b><span>Native on Shopify. On a custom stack it is a scheduled job we own forever.</span></div></div>
+    </div>
+
+    <div class="trap">
+      <p class="hl">The honest cost</p>
+      <p class="note" style="margin:0">Subscription, transaction fees if we do not use Shopify Payments, and app subscriptions &mdash; real money that scales with success. Less control over checkout UX on standard plans. And a migration: product data, customer accounts, order history, product-URL SEO and retraining. <b>None of that is trivial and none of it should be waved away.</b></p>
+    </div>
+
+    <div class="fair">
+      <p class="hl">When this recommendation reverses</p>
+      <p class="note" style="margin:0"><b>If retail POS is not in scope, sportpharm.com is never moving, and we stay at three or four products &mdash; use Stripe.</b> Do not buy a platform for that. The recommendation follows from the store-size answer, not the other way round.</p>
+    </div>
+
+    <p class="note" style="margin-top:20px"><b>A useful side effect:</b> this frees the domain decision. The cart-crossing concern disappears with one backend and one checkout, so the choice returns to what it should be &mdash; brand equity versus search authority. On that basis, <b>wasabirub.com</b>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="disp">&ldquo;Why wouldn't we just stay on WooCommerce?&rdquo;</h2>
+    <p class="sub">The most reasonable question in the room. It deserves a straight answer, not a brush-off.</p>
+
+    <div class="fair">
+      <p class="hl">The case for staying is genuinely strong</p>
+      <p class="note">It works today. Orders flow, money arrives, the team knows it, nothing has to be migrated, no new subscription appears on a budget line, and nobody has to learn anything. <b>&ldquo;It is not broken&rdquo; is a real argument and it wins meetings for good reasons.</b></p>
+      <p class="note" style="margin:0">There is even a coherent best version of it: <b>WooCommerce remains the only store and the hub deep-links products to it.</b> That solves the two-stores problem from the opposite direction and costs almost nothing. It belongs on the table honestly.</p>
+    </div>
+
+    <h3 style="margin-top:30px">Why we would still move</h3>
+    <div class="tbl-wrap">
+      <table>
+        <tbody>
+          <tr><td>Staying is not actually staying</td><td>The hub is a Next.js application. Unless we rebuild it inside WordPress &mdash; losing the interactive tools and the review workflow, which are the reason it works &mdash; there are two systems either way. The status quo option is not &ldquo;no change&rdquo;; it is <b>&ldquo;change the hub instead.&rdquo;</b></td></tr>
+          <tr><td>No credible POS story</td><td>For a pharmacy with a counter, this is the gap that does not close with a plugin</td></tr>
+          <tr><td>The feature they care about most is a plugin</td><td>Abandoned cart is not in WooCommerce core. It is someone else's code that must be kept current, and it breaks quietly when it stops being maintained</td></tr>
+          <tr><td>Self-hosted WordPress taking cards is an obligation</td><td>Security patching, plugin compatibility and PCI scope sit with us. Every plugin is another supply-chain dependency on a site handling payments</td></tr>
+          <tr><td>It undercuts the brand argument</td><td>In the deep-link version, buyers leave wasabirub.com to purchase on sportpharm.com &mdash; the exact hop the domain strategy exists to avoid</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rec"><p><b>The fair summary:</b> WooCommerce is not failing us. The reason to move is not that it is bad &mdash; it is that <b>it does not reach where we are going:</b> retail, one catalogue across two brands, and recovery flows that work without maintenance. If we are not going there, staying is defensible and cheap.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <h2 class="disp">What it actually requires</h2>
     <p class="sub">Ongoing, not one-time. This is the part that decides whether it works.</p>
     <ul>
@@ -407,6 +490,7 @@
       <table>
         <thead><tr><th>The concern</th><th>The honest answer</th></tr></thead>
         <tbody>
+          <tr><td>"WooCommerce works, why change it"</td><td>It is not failing. But the hub is a Next.js app either way, abandoned cart is a plugin rather than a feature, and there is no POS answer for the counter.</td></tr>
           <tr><td>"This is a big change to a site that works"</td><td>The current site isn't failing — it just isn't acquiring anyone new. This adds a channel; it doesn't remove the existing one.</td></tr>
           <tr><td>"SEO takes too long"</td><td>True. 6–12 months. It compounds, and it keeps working after the spend stops — which advertising does not.</td></tr>
           <tr><td>"Health content is a liability"</td><td>Addressed by clinical review, named reviewers, and explicit non-diagnostic language already built into every tool and page.</td></tr>
