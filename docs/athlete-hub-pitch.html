@@ -192,6 +192,10 @@
 @media(max-width:640px){.seeit{grid-template-columns:1fr}}
 .proof a{color:var(--red);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(224,49,42,.35)}
 .proof a:hover{border-bottom-color:var(--red)}
+.trap .hl{color:#b06a00}
+.honest .hl{color:var(--warn)}
+.proof p a{color:var(--red);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(224,49,42,.3)}
+.proof p a:hover{border-bottom-color:var(--red)}
 </style>
 <style>
 .lead-in{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--good);
@@ -263,14 +267,14 @@
       <p class="hl" style="color:var(--blue)">A correction I owe you</p>
       <p class="note"><b>Earlier I told you WordPress would be limiting</b> &mdash; that we would be boxed in by its components and unable to build the design we wanted. <b>I was wrong, and I would rather correct it myself than have us decide on it.</b></p>
       <p class="note">The mistake was conflating WordPress with what most people actually encounter as WordPress: page builders like Elementor and Divi, and off-the-shelf themes. <b>Those are limiting</b>, and they are exactly where "dated" comes from. A custom theme is a different thing entirely &mdash; it renders our own markup verbatim, and none of those tools are involved.</p>
-      <p class="note" style="margin:0"><b>What changed my assessment:</b> auditing all 75 pages we have built &mdash; no server-side code, no build step, no API layer &mdash; and working through how WooCommerce template overrides actually function. <b>The correction makes the recommendation stronger, not weaker.</b> We can have the design we want <i>and</i> stay on the platform this company already knows and can staff. I had been treating those as a trade-off. They are not.</p>
+      <p class="note" style="margin:0"><b>What changed my assessment:</b> auditing all 78 pages we have built &mdash; no server-side code, no build step, no API layer &mdash; and working through how WooCommerce template overrides actually function. <b>The correction makes the recommendation stronger, not weaker.</b> We can have the design we want <i>and</i> stay on the platform this company already knows and can staff. I had been treating those as a trade-off. They are not.</p>
     </div>
 
     <p>The plan is two WordPress sites sharing one design language: <b>sportpharm.com</b> rebuilt for the company and the pharmacy, and <b>wasabirub.com</b> as the product site with the hub beside it. One parent theme, two child themes &mdash; a shared foundation with the divergence each site needs.</p>
 
     <div class="proof" style="border-left:4px solid var(--good)">
       <p class="hl">The product pages are entirely ours &mdash; this is the important one</p>
-      <p class="note">The current product template is the weakest part of the existing site, and <b>we are not trapped in it.</b> WooCommerce gives three levels of control, and we would use the third:</p>
+      <p class="note">Product pages are where a stock template shows most, and <b>we are not obliged to use one.</b> WooCommerce gives three levels of control, and we would use the third:</p>
       <ol>
         <li><b>Template override</b> &mdash; copy a WooCommerce template into our theme and it takes precedence. The file is ours to edit.</li>
         <li><b>Unhook the defaults</b> &mdash; title, price, rating, excerpt, add-to-cart, meta, tabs and related products are each attached at a hook. Any or all can be removed.</li>
@@ -287,30 +291,30 @@
     </div>
 
     <h3 style="margin-top:34px">Two phases, not one project</h3>
-    <p class="note">This is easy to hear as one enormous rebuild. It is not &mdash; it is a phase that is mostly finished and a phase that has not started.</p>
+    <p class="note">This is easy to hear as one enormous rebuild. It is not &mdash; both phases are now substantially designed. What remains on each is engineering, photography and sign-off rather than design.</p>
 
     <div class="phase">
       <div class="ph one">
         <div class="ph-h"><span class="lbl">Phase I</span><b>wasabirub.com + the Athlete Hub</b></div>
         <div class="ph-b">
           <ul>
-            <li><b>25 pages already designed and working</b> &mdash; the hub, the pathways, the product pages</li>
+            <li><b>59 pages designed and working</b> &mdash; the hub, the four pathways, the injury and recovery pages, the product pages</li>
             <li><b>10 articles</b> written and live</li>
-            <li><b>3 interactive tools</b> built and functioning</li>
+            <li><b>4 interactive tools</b> built and functioning</li>
             <li>A contact form already delivering to info@sportpharm.com</li>
           </ul>
-          <p class="state"><b>What remains:</b> port into a WordPress theme, wire WooCommerce for three products, and get the articles through clinical review. <b>The design work is essentially done.</b></p>
+          <p class="state"><b>What remains:</b> port into a WordPress theme, wire WooCommerce for the OTC catalogue, and get the articles through clinical review. <b>The design work is essentially done.</b></p>
         </div>
       </div>
       <div class="ph two">
         <div class="ph-h"><span class="lbl">Phase II</span><b>sportpharm.com redesign</b></div>
         <div class="ph-b">
           <ul>
-            <li>7 top-level sections</li>
-            <li>8 services &mdash; 3 with no mockup yet (Blister Packaging, Inventory Management, Customized Services)</li>
+            <li>5 top-level sections</li>
+            <li>6 services, each with its own page</li>
             <li>News, plus the store templates</li>
           </ul>
-          <p class="state"><b>Status:</b> two pages designed so far. This is the larger piece &mdash; and it does not block Phase I, because the shared theme is built once and applied twice.</p>
+          <p class="state"><b>Status:</b> 12 pages designed and working &mdash; the services, products, Rx, about and compliance pages. <b>What remains:</b> photography, the remaining category page, and the same WordPress port. It does not block Phase I, because the shared theme is built once and applied twice.</p>
         </div>
       </div>
     </div>
@@ -349,10 +353,10 @@
 <section>
   <div class="wrap">
     <h2 class="disp">What is actually built</h2>
-    <p class="sub">Not a mockup. Seventy-five working pages.</p>
+    <p class="sub">Not a mockup. Seventy-eight working pages.</p>
 
     <div class="metrics">
-      <div class="metric"><b>75 pages</b><span>Built, live and navigable end to end</span></div>
+      <div class="metric"><b>78 pages</b><span>Live and navigable &mdash; 59 on the athlete side, 12 on the pharmacy side, 7 utility</span></div>
       <div class="metric"><b>3 audiences</b><span>Everyday athlete, professional athlete, healthcare &amp; AT</span></div>
       <div class="metric"><b>6 service pages</b><span>Every pharmacy service with its own indexable page</span></div>
       <div class="metric"><b>10 articles</b><span>The demand engine, already written</span></div>
@@ -362,10 +366,10 @@
 
     <div class="proof">
       <p class="hl">What we did about that</p>
-      <p class="note"><b>Every service page has a meta description. None of the current ones do.</b> We checked all six live service pages: not one carries a <i>description</i> tag, so Google writes its own snippet from whatever text it finds. That snippet is the advert for the page &mdash; it is the one piece of copy a searcher reads before deciding whether to click, and right now nobody at SportPharm is writing it. Yoast is installed and the field is simply empty.</p>
+      <p class="note"><b>Every page has a written meta description.</b> That snippet is the advert for the page &mdash; the one piece of copy a searcher reads before deciding whether to click. Left empty, Google writes it for you from whatever text it finds. On the new build each one is written deliberately, and it is a quick win we can apply to the current site immediately, independently of everything else here.</p>
       <p class="note"><b>32 questions marked up as structured data.</b> The FAQs carry <i>FAQPage</i> schema, which is what lets a question and its answer appear directly in search results rather than only as a blue link. That markup does not exist on the current site.</p>
       <p class="note"><b>Every service page links to every other.</b> A crawler arriving on any one of them can reach the whole set. On the current site the service pages are reachable mainly from the menu; here they cross-link through the services rail, the nav and the drawer.</p>
-      <p class="note"><b>Nothing important is JavaScript-only.</b> Links a crawler needs are real <i>&lt;a href&gt;</i> in the markup, not written in by script after the page loads. This is a real failure mode &mdash; we introduced it ourselves mid-build and caught it: the compounding page existed and was reachable by a human, but no search engine could have found it.</p><p class="note" style="margin:0"><b>The sitemap is not the problem &mdash; I checked.</b> sportpharm.com has a properly configured Yoast sitemap, it is declared in robots.txt, all six service pages are listed in it, and every page carries a canonical tag. That groundwork is done and done correctly. The gap is not <i>whether</i> search engines can find the pages. It is what those pages say once found.</p>
+      <p class="note"><b>Nothing important is JavaScript-only.</b> Every link a crawler needs is a real <i>&lt;a href&gt;</i> in the markup rather than something a script writes in after the page loads. A page that only exists once JavaScript runs is a page search engines may never index.</p><p class="note" style="margin:0"><b>The technical groundwork already in place carries over.</b> sportpharm.com has a properly configured sitemap declared in robots.txt, with canonical tags throughout &mdash; that is done, and done correctly. Keeping the URLs unchanged means it keeps working.</p>
     </div>
     <div class="proof" style="margin-top:18px">
       <p class="hl">See the rebuilt pharmacy side</p>
@@ -386,37 +390,14 @@
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <h2 class="disp">A mirror of the current site, without the errors</h2>
-    <p class="sub">Same services, same claims, same words &mdash; rebuilt.</p>
 
-    <p class="note"><b>This is not a reinvention of what SportPharm says about itself.</b> The services are the same services. The FAQ answers are the live site&rsquo;s answers, taken from the page source and compared word for word, not paraphrased. Where the current copy is good, it is carried over untouched.</p>
-
-    <p class="note" style="margin-bottom:6px"><b>What did not carry over</b> &mdash; errors found while transcribing:</p>
-    <div class="metrics" style="grid-template-columns:1fr">
-      <div class="metric"><b>&ldquo;USP // compliance&rdquo;</b><span>On the compounding page, in a sentence about quality standards. The USP chapter numbers were written as <i>&lt;795&gt;/&lt;797&gt;</i> without escaping, so the browser swallowed them as HTML tags and left the slashes stranded. A quality claim on a compounding pharmacy&rsquo;s page, rendering as a typo. Fixed.</span></div>
-      <div class="metric"><b>Concierge shows repackaging&rsquo;s benefits</b><span>The &ldquo;Key Benefits&rdquo; block on the concierge page is the drug repackaging list, pasted in by mistake &mdash; &ldquo;medication pre-sorted into daily packets,&rdquo; &ldquo;tamper-evident packaging.&rdquo; Nothing to do with concierge care. Rewritten from SportPharm&rsquo;s own concierge copy.</span></div>
-      <div class="metric"><b>Testimonials attributed to nobody</b><span>Four service pages carry a five-star quote with no name, role or affiliation under it. The author block is in the page source &mdash; the page builder&rsquo;s default placeholder image, with the name field still reading &ldquo;Placeholder&rdquo; and the role &ldquo;Athlete&rdquo; &mdash; but it is hidden at every breakpoint, so a visitor sees a glowing quote from no one. Running as role descriptors here until real names are supplied.</span></div>
-      <div class="metric"><b>&ldquo;SportPharmTM&rdquo;</b><span>The trademark is marked up as superscript text, so it reads as literal letters mid-sentence. Replaced with the actual &trade; character.</span></div>
-      <div class="metric"><b>Buried distinctions</b><span>&ldquo;Unlike compounding, we&rsquo;re not altering the medication&rdquo; sits mid-paragraph on the repackaging page &mdash; the one line that stops a prescriber ordering the wrong service. Given its own callout with a link across.</span></div>
-    </div>
-    <div class="proof" style="margin-top:20px">
-      <p class="hl">This lines up with the audit already commissioned</p>
-      <p class="note">The <a href="https://kennadyscott.github.io/sportpharm-site/docs/UX-BRAND-AUDIT.txt">SportPharm Website UX &amp; Brand Audit</a> reached the same conclusions independently, before this build started.</p>
-      <p class="note">It flagged the concierge page carrying drug repackaging&rsquo;s copy as a &ldquo;fix these first&rdquo; defect &mdash; we hit the same thing transcribing the page months later, which means it is still live. It also flagged a mislabeled link on the contact page sending &ldquo;Supplement Support&rdquo; to the blister packaging URL, and asked whether inventory management is even a service, since the footer lists it and the services menu did not.</p>
-      <p class="note" style="margin:0">Its central recommendation was to stop asking one homepage to serve three audiences and instead route by visitor intent &mdash; professional athlete, everyday athlete, sports medicine professional. <b>That is exactly what the three-persona structure in this build implements.</b> The work here is not a departure from that audit; it is the audit, built.</p>
-    </div>
-
-  </div>
-</section>
 
 <section>
   <div class="wrap">
     <h2 class="disp">Custom built, not template built</h2>
-    <p class="sub">The difference is visible on every page, and it is the reason the current site looks dated.</p>
+    <p class="sub">A component library, not a page of one-off layouts.</p>
 
-    <p class="note"><b>The current site is a page builder.</b> Its markup is machine-generated &mdash; wrapper divs nested six deep, layout decisions stored as configuration strings, styling that cannot be changed without fighting the tool that wrote it. That is where &ldquo;dated&rdquo; comes from. It is not a taste problem; it is a structural one.</p>
+    <p class="note"><b>Page-builder sites are assembled; this one is designed.</b> A builder stores layout as configuration and generates its own markup, which is why builder sites drift apart over time and resist deep restyling. Ours renders our markup directly, so the design is a system rather than a set of individually arranged pages.</p>
 
     <p class="note"><b>What we built instead</b> is a component library. A services rail with an expanding drawer, an accordion, tabbed panels, a numbered process component, product cards, a testimonial stage. Each is defined once and reused across pages, so a change lands everywhere at once and every page stays consistent by construction rather than by discipline.</p>
 
@@ -426,8 +407,54 @@
       <p class="note"><b>Typography.</b> A condensed display face at maximum weight for headlines, set tight and in caps, against a neutral face for body copy. Headlines use a two-tone treatment &mdash; the first clause in ink or white, the turn in red &mdash; which gives every page the same rhythm without repeating a layout.</p>
       <p class="note"><b>Hierarchy.</b> Full-bleed heroes with the headline set against the photograph rather than beside it, and the primary action above the fold on a laptop. Sections alternate light, white and near-black so the page has a cadence instead of one long scroll.</p>
       <p class="note"><b>Accessibility, measured.</b> Every colour pair is checked in the browser against its actual composited background &mdash; not eyeballed, and not assumed from the source values. Text meets WCAG AA throughout. Several combinations that looked fine failed the check and were adjusted.</p>
-      <p class="note" style="margin:0"><b>Three audiences, one identity.</b> A persona switcher in the header moves between everyday athlete, professional athlete, and healthcare &amp; AT. The design system is shared; the tone, imagery and services shown are not. The current site asks one voice to speak to a weekend runner and a Division I head trainer at the same time.</p>
+      <p class="note" style="margin:0"><b>Three audiences, one identity.</b> A persona switcher in the header moves between everyday athlete, professional athlete, and healthcare &amp; AT. The design system is shared; the tone, imagery and services shown are not. One voice cannot speak to a weekend runner and a Division I head trainer at the same time, and now it does not have to.</p>
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="disp">Where every page stands</h2>
+    <p class="sub">So feedback lands where it is useful, and nobody reviews a page that is not finished.</p>
+
+    <div class="proof" style="margin-top:0">
+      <p class="hl">Ready for feedback &mdash; design and copy complete</p>
+      <p class="note"><b>The pharmacy side &mdash; 12 pages.</b> Everything here mirrors what sportpharm.com already offers, rebuilt on the new system. Copy is carried across from the live pages, so what is up for review is structure, hierarchy and design rather than wording.</p>
+      <p class="note" style="line-height:2">
+        <a href="https://kennadyscott.github.io/sportpharm-site/sports-medicine.html">Healthcare &amp; AT home</a> &middot;
+        <a href="https://kennadyscott.github.io/sportpharm-site/services.html">Services</a> &middot;
+        <a href="https://kennadyscott.github.io/sportpharm-site/compounding.html">Compounding</a> &middot;
+        <a href="https://kennadyscott.github.io/sportpharm-site/drug-repackaging.html">Drug repackaging</a> &middot;
+        <a href="https://kennadyscott.github.io/sportpharm-site/inventory-management.html">Inventory management</a> &middot;
+        <a href="https://kennadyscott.github.io/sportpharm-site/supplement-support.html">Supplement support</a> &middot;
+        <a href="https://kennadyscott.github.io/sportpharm-site/retail-pharmacy.html">Retail pharmacy</a> &middot;
+        <a href="https://kennadyscott.github.io/sportpharm-site/concierge-sports-pharmacy.html">Concierge</a> &middot;
+        <a href="https://kennadyscott.github.io/sportpharm-site/products.html">Products</a> &middot;
+        <a href="https://kennadyscott.github.io/sportpharm-site/rx-prescriptions.html">Rx prescriptions</a> &middot;
+        <a href="https://kennadyscott.github.io/sportpharm-site/about.html">About</a> &middot;
+        <a href="https://kennadyscott.github.io/sportpharm-site/quality-compliance.html">Quality &amp; compliance</a>
+      </p>
+      <p class="note" style="margin:0"><b>The athlete side.</b> <a href="https://kennadyscott.github.io/sportpharm-site/index.html">The Athlete Hub</a> and its four pathways, <a href="https://kennadyscott.github.io/sportpharm-site/pro-athlete.html">the professional athlete hub</a> and its five service pages, <a href="https://kennadyscott.github.io/sportpharm-site/wasabirub.html">the WasabiRub product site</a>, ten articles and four interactive tools.</p>
+    </div>
+
+    <div class="trap">
+      <p class="hl">Complete, but waiting on photography</p>
+      <p class="note"><b>The professional athlete side has no professional sport imagery.</b> It currently borrows endurance and lifestyle photography. For a section aimed at NBA, NFL, NHL and Olympic programs, that is the single biggest gap between how it reads now and how it should.</p>
+      <p class="note"><b>Several pharmacy pages share the same two photographs.</b> The layouts are final; the images are placeholders standing in until we have distinct shots for compounding, repackaging, inventory and retail.</p>
+      <p class="note"><b>Two team headshots are missing</b> &mdash; Dr. Kristal Potter and Hayden Lee are showing initials rather than a photo.</p>
+      <p class="note" style="margin:0"><b>Product photography is the current catalogue imagery.</b> It works, but it is now the weakest element on an otherwise finished page. Consistent studio shots would lift the product and category pages more than any further layout work.</p>
+    </div>
+
+    <div class="honest">
+      <p class="hl">Not finished &mdash; do not review yet</p>
+      <p class="note"><b>The store.</b> No cart, no checkout, no payment. Product cards link to product pages; nothing adds to a basket. Commerce is the WooCommerce decision above and follows platform sign-off.</p>
+      <p class="note"><b>Two category pages.</b> Rx Prescriptions has its page; a dedicated Compounding Pharmacy shop page is still to come. Until then that menu item points at the relevant section of the Products page, so nothing dead-ends.</p>
+      <p class="note"><b>The contact page.</b> Functional and delivering to info@sportpharm.com, but still on the older layout &mdash; it will look like a different site until it is rebuilt on the new one.</p>
+      <p class="note"><b>Team, FAQ, Privacy and Terms.</b> Linked in the footer, not yet written.</p>
+      <p class="note" style="margin:0"><b>Clinical review of the ten articles.</b> Written and live, but the pharmacist sign-off gate described below has not been applied. This is the one item on the list with a compliance dimension rather than a design one.</p>
+    </div>
+
+    <p class="note" style="margin-top:20px"><b>What is most useful to hear back.</b> Whether the structure is right &mdash; the three audiences, the six services, the way products are split into OTC, Rx and compounded. Layout and colour are quick to change. Structure is what everything else is built on, so it is worth settling first.</p>
   </div>
 </section>
 
@@ -481,14 +508,14 @@
       <div><span class="n">3</span><div>
         <span class="when later">Decide later</span>
         <h4>Whether sportpharm.com keeps selling</h4>
-        <p>Once wasabirub.com has a store, two properties selling the same three products means two order streams, two stock counts and two discount systems. <b>The clean answer is one store</b> &mdash; wasabirub.com sells, sportpharm.com carries a Store link to it. Not urgent, but it should not drift.</p>
+        <p>Once wasabirub.com has a store, two properties selling the same catalogue means two order streams, two stock counts and two discount systems. <b>The clean answer is one store</b> &mdash; wasabirub.com sells, sportpharm.com carries a Store link to it. Not urgent, but it should not drift.</p>
       </div></div>
     </div>
 
     <div class="verdict" style="margin-top:26px">
       <p class="hl">Why WordPress rather than something new</p>
       <p class="big" style="font-size:18px">The strongest argument is not technical. It is that this company already runs WordPress, likes it, and can staff it.</p>
-      <p>A commerce platform like Shopify has real advantages at scale &mdash; native abandoned-cart recovery, and a point-of-sale system that would unify the pharmacy counter with the website. <b style="color:#fff">Those become compelling if retail unification matters, or once the catalogue grows well past four products.</b> Neither is true today, and neither needs answering to start.</p>
+      <p>A commerce platform like Shopify has real advantages at scale &mdash; native abandoned-cart recovery, and a point-of-sale system that would unify the pharmacy counter with the website. <b style="color:#fff">Those become compelling if retail unification matters, or once the catalogue grows well past its current size.</b> Neither is true today, and neither needs answering to start.</p>
     </div>
   </div>
 </section>
@@ -499,11 +526,11 @@
     <p class="sub">Not a decision for now &mdash; but worth seeing where the line is, so choosing WordPress reads as informed rather than default.</p>
 
     <div class="scen">
-      <div class="sc"><div class="sc-h"><span class="n">Where we are</span><b>3 products, online only</b></div><div class="sc-body">
+      <div class="sc"><div class="sc-h"><span class="n">Where we are</span><b>Today &mdash; online only</b></div><div class="sc-body">
         <div class="pl"><div class="pl-t"><b>WordPress</b><span class="pip win">Best fit</span></div><p>Already running. Nothing migrates, nothing new to learn.</p></div>
-        <div class="pl"><div class="pl-t"><b>Shopify</b><span class="pip ok">Premature</span></div><p>A subscription and a migration for three products. Solves problems we do not have yet.</p></div>
+        <div class="pl"><div class="pl-t"><b>Shopify</b><span class="pip ok">Premature</span></div><p>A subscription and a migration we do not need yet. Solves problems we do not have yet.</p></div>
       </div></div>
-      <div class="sc"><div class="sc-h"><span class="n">Where we likely are</span><b>3 products + the counter</b></div><div class="sc-body">
+      <div class="sc"><div class="sc-h"><span class="n">Where we likely are</span><b>Plus the pharmacy counter</b></div><div class="sc-body">
         <div class="pl"><div class="pl-t"><b>WordPress</b><span class="pip warn2">Depends</span></div><p>POS exists only as third-party plugins. Fine if the counter and the website do not need shared stock.</p></div>
         <div class="pl"><div class="pl-t"><b>Shopify</b><span class="pip win">Best fit</span></div><p>POS is first-class: one inventory, one customer record, staff accounts, real hardware.</p></div>
       </div></div>
