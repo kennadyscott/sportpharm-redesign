@@ -485,7 +485,83 @@ content**:
 answer** &mdash; cheapest, one system, and it keeps an editorial workflow we would
 otherwise rebuild. It should not be treated as the consolation prize.
 
-## 7. What this requires (be honest about it)
+---
+
+## 7. Choosing for the long view
+
+**The build is contracted. The running of it &mdash; store, articles, coupon codes,
+orders &mdash; has to sit with a SportPharm employee.**
+
+Whoever builds the hub is not operating it in a year. That is not a caveat, it is
+the requirement. A platform is only the right answer here if **someone on staff
+can run it without the person who built it** &mdash; and if that person leaves, a
+replacement can be hired. Extra build effort is affordable. Extra *operating*
+effort is not.
+
+### Where we are: 3 products, online only
+
+| | Verdict | |
+|---|---|---|
+| **Custom (Stripe)** | **Rules out** | An employee inherits software with one former author. No one to extend it, hard to hire for |
+| **WordPress** | **Best fit** | Already running. Nothing migrates, nothing new to learn. Articles and coupons are screens the team can already use |
+| **Shopify** | Premature | A subscription and a store migration for three products. Works, but solves problems we do not have yet |
+
+### Where we likely are: 3 products + the pharmacy counter
+
+| | Verdict | |
+|---|---|---|
+| **Custom (Stripe)** | **Rules out** | Same handover problem, and no point-of-sale answer at all |
+| **WordPress** | Depends | POS exists only as third-party plugins &mdash; a thin foundation for a pharmacy counter. Fine if the counter and the website do not need shared stock |
+| **Shopify** | **Best fit** | POS is first-class: one inventory, one customer record, staff accounts, real hardware |
+
+### Where we are going: 15+ products + counter
+
+| | Verdict | |
+|---|---|---|
+| **Custom (Stripe)** | **Rules out** | Every catalogue feature becomes something we build and someone else maintains |
+| **WordPress** | Strains | Possible, but it compounds &mdash; variants, stock, more plugins, more patching, POS still a plugin |
+| **Shopify** | **Built for it** | Bulk edit, CSV import, variants, multi-location inventory, staff permissions and reporting, out of the box |
+
+### Who actually does the work, day to day
+
+| The job | Custom | WordPress | Shopify |
+|---|---|---|---|
+| Publish an article | Bespoke admin | **The most widely known publishing screen there is** | Basic blog, workable |
+| Add or edit a product | Bespoke admin | WooCommerce product screen | **Best in class** |
+| Create a coupon code | **Build it, or hand them Stripe** | Built-in Woo coupons | Built-in discounts, richest options |
+| Refund an order | Stripe dashboard | Woo orders | **Best** |
+| Get unstuck | **Ask the person who left** | Vast community; any freelancer | Vendor support + partner network |
+| Hire a replacement | **Very hard** | Easy | Easy |
+
+### The custom stack is out
+
+It was defensible while the question was cost and control. Once the requirement
+is "an employee runs this after the builder is gone," **a bespoke admin with one
+former author is the weakest option on the board, at every scale.**
+
+**The real choice is WordPress or Shopify.**
+
+### The question that separates the two
+
+**Do the counter and the website need to share stock and customers?**
+
+If yes &mdash; Shopify, and the case only strengthens as the catalogue grows. If the
+counter runs its own stock and always will &mdash; WordPress stays right and stays
+cheapest.
+
+**Brick-and-mortar existing is not the same as brick-and-mortar needing to be
+unified.** That is the thing to establish in the room, and only they can answer
+it.
+
+### On "moving into the future"
+
+The honest version: **Shopify is the choice that assumes growth and pays for it
+now. WordPress is the choice that stays cheap and defers.** Neither is a mistake.
+What would be a mistake is a system only one person can operate.
+
+---
+
+## 8. What this requires (be honest about it)
 
 **Ongoing, not one-time.**
 
@@ -504,7 +580,7 @@ review.
 
 ---
 
-## 8. Risks worth naming
+## 9. Risks worth naming
 
 | Risk | Reality |
 |---|---|
@@ -517,7 +593,7 @@ review.
 
 ---
 
-## 9. What we'd measure
+## 10. What we'd measure
 
 Not traffic for its own sake:
 

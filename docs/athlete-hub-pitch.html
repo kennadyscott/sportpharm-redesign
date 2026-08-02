@@ -4,16 +4,16 @@
   :root{
     --navy:#0a203d; --navy-2:#071b35; --red:#E0312A; --ink:#12203a;
     --muted:#5a6b83; --line:#dbe2ec; --paper:#f4f7fb; --white:#fff;
-    --good:#0c6b41; --warn:#b3261e; --blue:#174da0;
+    --good:#0c6b41; --warn:#b3261e; --blue:#174da0; --on-accent:#fff;
   }
   @media (prefers-color-scheme: dark){
     :root{ --ink:#e8edf5; --muted:#9fb0c6; --line:#22354f; --paper:#0d1726; --white:#111d2f; --navy:#0a203d;
-      --good:#42d195; --warn:#ff9a90; --blue:#7fb0f5; }
+      --good:#42d195; --warn:#ff9a90; --blue:#7fb0f5; --on-accent:#07131f; }
   }
   :root[data-theme="dark"]{ --ink:#e8edf5; --muted:#9fb0c6; --line:#22354f; --paper:#0d1726; --white:#111d2f;
-    --good:#42d195; --warn:#ff9a90; --blue:#7fb0f5; }
+    --good:#42d195; --warn:#ff9a90; --blue:#7fb0f5; --on-accent:#07131f; }
   :root[data-theme="light"]{ --ink:#12203a; --muted:#5a6b83; --line:#dbe2ec; --paper:#f4f7fb; --white:#fff;
-    --good:#0c6b41; --warn:#b3261e; --blue:#174da0; }
+    --good:#0c6b41; --warn:#b3261e; --blue:#174da0; --on-accent:#fff; }
 
   *{box-sizing:border-box}
   body{margin:0;background:var(--paper);color:var(--ink);
@@ -150,6 +150,29 @@
   color:var(--blue);margin:0 0 10px}
 .fair p:last-child{margin:0}
 @media(max-width:620px){.why > div{grid-template-columns:1fr}}
+
+.scen{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.sc{background:var(--white);border:1px solid var(--line);border-radius:8px;overflow:hidden;
+  display:flex;flex-direction:column}
+.sc-h{background:var(--paper);padding:16px 18px;border-bottom:1px solid var(--line)}
+.sc-h .n{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);display:block;margin-bottom:5px}
+.sc-h b{font-size:15px;color:var(--ink);line-height:1.3;display:block}
+.sc-body{padding:6px 18px 16px;flex:1}
+.pl{padding:13px 0;border-bottom:1px solid var(--line)}
+.pl:last-child{border-bottom:0}
+.pl-t{display:flex;align-items:center;gap:8px;margin-bottom:5px}
+.pl-t b{font-size:13.5px;color:var(--ink)}
+.pip{font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  padding:2px 7px;border-radius:20px;white-space:nowrap}
+.pip.win{background:var(--good);color:var(--on-accent)}
+.pip.ok{background:var(--paper);color:var(--muted);border:1px solid var(--line)}
+.pip.no{background:var(--warn);color:var(--on-accent)}
+.pl p{margin:0;font-size:12.5px;line-height:1.55;color:var(--muted)}
+.ops td:first-child{width:34%}
+.ops .y{color:var(--good);font-weight:700}
+.ops .n2{color:var(--warn);font-weight:700}
+@media(max-width:900px){.scen{grid-template-columns:1fr}}
 </style>
 
 <header>
@@ -498,6 +521,48 @@
 </section>
 
 
+
+<section>
+  <div class="wrap">
+    <h2 class="disp">Choosing for the long view</h2>
+    <p class="sub">The build is contracted. The <b>running</b> of it &mdash; store, articles, coupon codes, orders &mdash; has to sit with a SportPharm employee.</p>
+
+    <div class="trap">
+      <p class="hl">The constraint that decides this</p>
+      <p class="note" style="margin:0">Whoever builds the hub is not operating it in a year. That is not a caveat, it is the requirement. <b>A platform is only the right answer here if someone on staff can run it without the person who built it</b> &mdash; and if that person leaves, if a replacement can be hired. Extra build effort is affordable. Extra <i>operating</i> effort is not.</p>
+    </div>
+
+    <div class="scen">
+      <div class="sc"><div class="sc-h"><span class="n">Where we are</span><b>3 products, online only</b></div><div class="sc-body"><div class="pl"><div class="pl-t"><b>Custom (Stripe)</b><span class="pip no">Rules out</span></div><p>An employee inherits software with one former author. No one to extend it, hard to hire for.</p></div><div class="pl"><div class="pl-t"><b>WordPress</b><span class="pip win">Best fit</span></div><p>Already running. Nothing migrates, nothing new to learn. Articles and coupons are screens the team can already use.</p></div><div class="pl"><div class="pl-t"><b>Shopify</b><span class="pip ok">Premature</span></div><p>A subscription and a store migration for three products. Works, but solves problems we do not have yet.</p></div></div></div>
+      <div class="sc"><div class="sc-h"><span class="n">Where we likely are</span><b>3 products + the pharmacy counter</b></div><div class="sc-body"><div class="pl"><div class="pl-t"><b>Custom (Stripe)</b><span class="pip no">Rules out</span></div><p>Same handover problem, and no point-of-sale answer at all.</p></div><div class="pl"><div class="pl-t"><b>WordPress</b><span class="pip ok">Depends</span></div><p>POS exists only as third-party plugins &mdash; a thin foundation for a pharmacy counter. Fine if the counter and the website do not need shared stock.</p></div><div class="pl"><div class="pl-t"><b>Shopify</b><span class="pip win">Best fit</span></div><p>POS is first-class: one inventory, one customer record, staff accounts, real hardware. This is where it starts genuinely winning.</p></div></div></div>
+      <div class="sc"><div class="sc-h"><span class="n">Where we are going</span><b>15+ products + counter</b></div><div class="sc-body"><div class="pl"><div class="pl-t"><b>Custom (Stripe)</b><span class="pip no">Rules out</span></div><p>Every catalogue feature becomes something we build and someone else maintains.</p></div><div class="pl"><div class="pl-t"><b>WordPress</b><span class="pip no">Strains</span></div><p>Possible, but it compounds &mdash; variants, stock, more plugins, more patching, POS still a plugin.</p></div><div class="pl"><div class="pl-t"><b>Shopify</b><span class="pip win">Built for it</span></div><p>Bulk edit, CSV import, variants, multi-location inventory, staff permissions and reporting, out of the box.</p></div></div></div>
+    </div>
+
+    <h3 style="margin-top:34px">Who actually does the work, day to day</h3>
+    <div class="tbl-wrap">
+      <table class="ops">
+        <thead><tr><th>The job</th><th>Custom</th><th>WordPress</th><th>Shopify</th></tr></thead>
+        <tbody>
+          <tr><td>Publish an article</td><td>Bespoke admin</td><td class="y">The most widely known publishing screen there is</td><td>Basic blog, workable</td></tr>
+          <tr><td>Add or edit a product</td><td>Bespoke admin</td><td>WooCommerce product screen</td><td class="y">Best in class</td></tr>
+          <tr><td>Create a coupon code</td><td class="n2">Build it, or hand them Stripe</td><td class="y">Built-in Woo coupons</td><td class="y">Built-in discounts, richest options</td></tr>
+          <tr><td>Refund an order</td><td>Stripe dashboard</td><td>Woo orders</td><td class="y">Best</td></tr>
+          <tr><td>Get unstuck</td><td class="n2">Ask the person who left</td><td class="y">Vast community; any freelancer</td><td class="y">Vendor support + partner network</td></tr>
+          <tr><td>Hire a replacement</td><td class="n2">Very hard</td><td class="y">Easy</td><td class="y">Easy</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rec"><p><b>The custom stack is out.</b> It was defensible while the question was cost and control. Once the requirement is &ldquo;an employee runs this after the builder is gone,&rdquo; a bespoke admin with one former author is the weakest option on the board, at every scale. <b>The real choice is WordPress or Shopify.</b></p></div>
+
+    <div class="fair">
+      <p class="hl">The question that separates the two</p>
+      <p class="note" style="margin:0"><b>Do the counter and the website need to share stock and customers?</b> If yes, Shopify &mdash; and the case only strengthens as the catalogue grows. If the counter runs its own stock and always will, WordPress stays right and stays cheapest. <b>Brick-and-mortar existing is not the same as brick-and-mortar needing to be unified</b> &mdash; that is the thing to establish in the room, and only they can answer it.</p>
+    </div>
+
+    <p class="note" style="margin-top:20px"><b>On &ldquo;moving into the future&rdquo;:</b> the honest version is that Shopify is the choice that assumes growth and pays for it now, and WordPress is the choice that stays cheap and defers. Neither is a mistake. What would be a mistake is a system only one person can operate.</p>
+  </div>
+</section>
 
 <section>
   <div class="wrap">
