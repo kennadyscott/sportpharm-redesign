@@ -220,23 +220,6 @@ footer{background:#11181f;padding:40px 0;text-align:center}
 .logo{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-decoration:none}
 .logo img{width:150px;height:auto;display:block}
 .logo-tag{font-family:Georgia,serif;font-weight:400;font-size:10.5px;letter-spacing:.005em;color:#24303c;white-space:nowrap}
-
-/* ===== services: card rail ===== */
-/* ===== testimonials ===== */
-.h-proof{max-width:900px;margin:0 auto;text-align:center;position:relative}
-.h-qm{font-family:Georgia,serif;font-size:64px;line-height:.4;color:#d6202a;margin-bottom:14px}
-.h-car{display:grid;transition:height .35s cubic-bezier(.4,.01,.2,1);align-items:start}
-.h-slide{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .5s ease;
-  display:flex;flex-direction:column;align-items:center}
-.h-slide.on{opacity:1;visibility:visible}
-.h-slide blockquote{margin:0;font-size:19px;line-height:1.62;color:#24303c;max-width:70ch}
-.h-sec.dark .h-slide blockquote{color:#fff}
-.h-stars{margin-top:16px;color:#d6202a;font-size:15px;letter-spacing:5px}
-.h-attr{margin-top:16px}
-.h-attr b{display:block;font-size:14.5px;color:#24303c}
-.h-sec.dark .h-attr b{color:#fff}
-.h-attr span{display:block;font-size:13px;color:#656e77;margin-top:3px}
-.h-sec.dark .h-attr span{color:#bec3c8}
 .h-dots{display:flex;gap:8px;justify-content:center;margin-top:22px}
 .h-dot{width:7px;height:7px;padding:0;border:0;border-radius:50%;background:#c9ced2;cursor:pointer;transition:.2s}
 .h-sec.dark .h-dot{background:rgba(255,255,255,.3)}
@@ -420,7 +403,43 @@ footer{background:#11181f;padding:40px 0;text-align:center}
 .pa-btn.dark:hover{filter:brightness(1.15)}
 .pa-eyebrow{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#a3161e;margin:0 0 12px}
 .pa-sec.navy .pa-eyebrow,.pa-hero .pa-eyebrow,.pa-final .pa-eyebrow{color:#aab7b1}
-.pa-panel .pa-btn{margin-top:4px}</style></head><body><header>
+.pa-panel .pa-btn{margin-top:4px}
+.t-wrap{max-width:1220px;margin:0 auto;display:grid;grid-template-columns:.86fr 1.14fr;gap:64px;align-items:start}
+.t-rail .h-eyebrow{margin:0 0 12px}
+.t-rail .h-h2{margin:0 0 18px;max-width:14ch}
+.t-lede{margin:0;font-size:14.5px;line-height:1.66;color:#93a0ab;max-width:34ch}
+.t-nav{display:flex;align-items:center;gap:22px;margin-top:34px}
+.t-count{font-family:'Inter',system-ui,sans-serif;display:flex;align-items:baseline;gap:5px}
+.t-count b{font-size:30px;font-weight:800;color:#fff;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.t-count i{font-style:normal;font-size:13px;font-weight:600;color:#8f9ca8;font-variant-numeric:tabular-nums}
+.t-arrows{display:flex;gap:8px}
+.t-arrows button{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:transparent;color:#fff;font-size:15px;line-height:1;cursor:pointer;transition:.18s ease}
+.t-arrows button:hover{background:#d6202a;border-color:#d6202a}
+.t-arrows button:focus-visible{outline:2px solid #d6202a;outline-offset:3px}
+.t-dots{display:flex;gap:7px;margin-top:26px}
+
+.t-stage{position:relative;border-left:2px solid #d6202a;padding:4px 0 4px 40px}
+.t-mark{position:absolute;left:24px;top:-26px;font-family:Georgia,serif;font-size:96px;line-height:1;color:rgba(255,255,255,.07);pointer-events:none}
+.t-car{display:grid;align-items:start;transition:height .38s cubic-bezier(.4,.01,.2,1)}
+.t-slide{grid-area:1/1;margin:0;opacity:0;visibility:hidden;transition:opacity .45s ease}
+.t-slide.on{opacity:1;visibility:visible}
+.t-slide blockquote{margin:0;font-size:21px;line-height:1.6;color:#fff;font-weight:400;letter-spacing:-.006em}
+.t-attr{display:flex;align-items:center;gap:15px;margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12)}
+.t-ini{flex:0 0 46px;height:46px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);display:grid;place-items:center;font-family:'Inter',system-ui,sans-serif;font-size:14px;font-weight:800;letter-spacing:.03em;color:#fff}
+.t-who{display:flex;flex-direction:column;gap:2px;min-width:0}
+.t-who b{font-size:15px;font-weight:700;color:#fff;line-height:1.35}
+.t-role{font-size:13.5px;color:#93a0ab;line-height:1.4}
+.t-org{font-size:11px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#ec636b;margin-top:4px}
+@media(max-width:980px){
+  .t-wrap{grid-template-columns:1fr;gap:34px}
+  .t-rail .h-h2{max-width:none}
+  .t-lede{max-width:60ch}
+  .t-nav{margin-top:24px}
+  .t-dots{margin-top:18px}
+  .t-stage{padding-left:26px}
+  .t-mark{left:12px;top:-22px;font-size:74px}
+  .t-slide blockquote{font-size:18.5px}}
+@media(max-width:560px){.t-attr{flex-wrap:wrap;gap:12px}}</style></head><body><header>
   <div class="wrap nav">
     <a class="logo" href="sports-medicine.html"><img src="assets/wordmark-dark.png" alt="SportPharm"><span class="logo-tag">Behind every athlete you care for.</span></a>
     <nav class="mainnav">
@@ -507,14 +526,21 @@ footer{background:#11181f;padding:40px 0;text-align:center}
   </div>
 </section>
 
-<section class="h-sec dark tight" id="proof">
-  <div class="h-wrap">
-    <p class="h-eyebrow" style="text-align:center">From the sideline</p>
-    <h2 class="h-h2" style="text-align:center">Trusted by the people who use it every day.</h2>
-    <div class="h-proof">
-      <div class="h-qm">&ldquo;</div>
-      <div class="h-car" id="hcar"><div class="h-slide on"><blockquote>“We’ve had good results with a variety of SportPharm’s topicals and compounded medications. WasabiRub helps manage muscle soreness and minor strains so our athletes can stay available and ready.”</blockquote><div class="h-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="h-attr"><b>Joel Lockhart</b><span>Assistant Athletic Trainer, St. Louis City Soccer Club</span></div></div><div class="h-slide"><blockquote>“With our match schedule and constant travel, we needed something fast, portable, and effective. WasabiRub helps manage muscle soreness and minor strains so our athletes can stay available and ready.”</blockquote><div class="h-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="h-attr"><b>Najeeb Emmanuel, MS, LAT, ATC, PES</b><span>Assistant Athletic Trainer, FIU Soccer</span></div></div><div class="h-slide"><blockquote>“WasabiRub is in our kit every day. It gives players fast, localized relief and helps them stay game-ready.”</blockquote><div class="h-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="h-attr"><b>Dr. Javier García, DAT, ATC, SMTC</b><span>Head Athletic Trainer, Seton Hall Basketball</span></div></div><div class="h-slide"><blockquote>“Our guys absolutely love using WasabiRub. The cooling and heating sensation lasts much longer than most products we’ve tried, and the feedback from our players has been outstanding. It helps take the edge off soreness and pain quickly while keeping our athletes feeling ready to perform. It has become a staple in our training room.”</blockquote><div class="h-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="h-attr"><b>Michael Feliciano, MS, ATC, PES</b><span>Minor League Athletic Training, Boston Red Sox</span></div></div><div class="h-slide"><blockquote>“The WasabiRub is constantly being used by several players right now. The feedback has been really positive from them all, and even helped a guy with neck and shoulder issues get through a few workdays. The biggest talking point has been the longevity of its use each time — no multiple applications on game days.”</blockquote><div class="h-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="h-attr"><b>Daniel Medd</b><span>Head Coach, South West Sydney Academy of Sport Inc.</span></div></div><div class="h-slide"><blockquote>“Fast, reliable service and competitive pricing. SportPharm makes it easy to get our athletes the medications they need without delays.”</blockquote><div class="h-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="h-attr"><b>James Tuffy, MHA, LAT, ATC</b><span>Assistant Athletic Director, St. Thomas University</span></div></div></div>
-      <div class="h-dots" id="hdots"></div>
+<section class="h-sec dark" id="proof">
+  <div class="h-wrap t-wrap">
+    <div class="t-rail">
+      <p class="h-eyebrow">From the sideline</p>
+      <h2 class="h-h2">Trusted by the people who use it every day.</h2>
+      <p class="t-lede">Athletic trainers, team physicians and coaches across pro, collegiate and academy sport.</p>
+      <div class="t-nav">
+        <span class="t-count"><b id="tNum">01</b><i>/ 06</i></span>
+        <span class="t-arrows"><button type="button" id="tPrev" aria-label="Previous testimonial">&#8592;</button><button type="button" id="tNext" aria-label="Next testimonial">&#8594;</button></span>
+      </div>
+      <div class="t-dots" id="hdots"></div>
+    </div>
+    <div class="t-stage">
+      <span class="t-mark" aria-hidden="true">&ldquo;</span>
+      <div class="t-car" id="hcar"><figure class="t-slide on"><blockquote>We’ve had good results with a variety of SportPharm’s topicals and compounded medications. WasabiRub helps manage muscle soreness and minor strains so our athletes can stay available and ready.</blockquote><figcaption class="t-attr"><span class="t-ini" aria-hidden="true">JL</span><span class="t-who"><b>Joel Lockhart</b><span class="t-role">Assistant Athletic Trainer</span><span class="t-org">St. Louis City Soccer Club</span></span></figcaption></figure><figure class="t-slide"><blockquote>With our match schedule and constant travel, we needed something fast, portable, and effective. WasabiRub helps manage muscle soreness and minor strains so our athletes can stay available and ready.</blockquote><figcaption class="t-attr"><span class="t-ini" aria-hidden="true">NE</span><span class="t-who"><b>Najeeb Emmanuel, MS, LAT, ATC, PES</b><span class="t-role">Assistant Athletic Trainer</span><span class="t-org">FIU Soccer</span></span></figcaption></figure><figure class="t-slide"><blockquote>WasabiRub is in our kit every day. It gives players fast, localized relief and helps them stay game-ready.</blockquote><figcaption class="t-attr"><span class="t-ini" aria-hidden="true">JG</span><span class="t-who"><b>Dr. Javier García, DAT, ATC, SMTC</b><span class="t-role">Head Athletic Trainer</span><span class="t-org">Seton Hall Basketball</span></span></figcaption></figure><figure class="t-slide"><blockquote>Our guys absolutely love using WasabiRub. The cooling and heating sensation lasts much longer than most products we’ve tried, and the feedback from our players has been outstanding. It has become a staple in our training room.</blockquote><figcaption class="t-attr"><span class="t-ini" aria-hidden="true">MF</span><span class="t-who"><b>Michael Feliciano, MS, ATC, PES</b><span class="t-role">Minor League Athletic Training</span><span class="t-org">Boston Red Sox</span></span></figcaption></figure><figure class="t-slide"><blockquote>The WasabiRub is constantly being used by several players right now. The feedback has been really positive, and it even helped a guy with neck and shoulder issues get through a few workdays. The biggest talking point has been the longevity of each application — no reapplying on game days.</blockquote><figcaption class="t-attr"><span class="t-ini" aria-hidden="true">DM</span><span class="t-who"><b>Daniel Medd</b><span class="t-role">Head Coach</span><span class="t-org">South West Sydney Academy of Sport</span></span></figcaption></figure><figure class="t-slide"><blockquote>Fast, reliable service and competitive pricing. SportPharm makes it easy to get our athletes the medications they need without delays.</blockquote><figcaption class="t-attr"><span class="t-ini" aria-hidden="true">JT</span><span class="t-who"><b>James Tuffy, MHA, LAT, ATC</b><span class="t-role">Assistant Athletic Director</span><span class="t-org">St. Thomas University</span></span></figcaption></figure></div>
     </div>
   </div>
 </section>
@@ -646,8 +672,32 @@ footer{background:#11181f;padding:40px 0;text-align:center}
     <p><strong>Medical disclaimer:</strong> The content on this site is provided for general educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the guidance of a qualified healthcare provider for an official diagnosis and recovery plan.</p>
   </div>
 </footer><script>
-(function(){var D={"compounding": {"t": "Compounding", "d": "Customized medications formulated to meet the unique needs of each patient &mdash; ideal for topical pain relief, dosage adjustments, and ingredient sensitivities.", "h": "#contact", "l": "Learn more &rarr;"}, "repackaging": {"t": "Drug Repackaging", "d": "Efficiently repackage bulk medications into unit-dose or team-specific formats, ensuring accuracy, compliance, and ease of distribution for athletic and clinical use.", "h": "#contact", "l": "Learn more &rarr;"}, "concierge": {"t": "Concierge Pharmacy", "d": "Our pharmacists work one-on-one with athletes, offering services focused on optimizing performance and long-term athlete health.", "h": "#contact", "l": "Learn more &rarr;"}, "supplements": {"t": "Supplements", "d": "Pharmacist-guided supplement support for athletes, delivering evidence-based recommendations to optimize performance, recovery, and wellness.", "h": "#contact", "l": "Learn more &rarr;"}, "retail": {"t": "Retail Pharmacy", "d": "Full-service pharmacy solutions offering both prescription and over-the-counter medications, with a focus on athlete wellness and proactive care.", "h": "#contact", "l": "Learn more &rarr;"}, "customized": {"t": "Customized Services", "d": "Customized healthcare and pharmacy programs built for athletes, teams, and sports organizations, for specialized needs beyond traditional pharmacy services.", "h": "#contact", "l": "Learn more &rarr;"}, "blister": {"t": "Blister Packaging", "d": "Blister-pack formats that support organized distribution and compliance tracking across a roster or a clinic.", "h": "#contact", "l": "Learn more &rarr;"}, "inventory": {"t": "Inventory Management", "d": "Smart tracking, monitoring and replenishment so clinics stay stocked and waste stays low.", "h": "#contact", "l": "Learn more &rarr;"}},tr=document.getElementById("svcTrack"),panel=document.getElementById("svcPanel");var cards=[].slice.call(tr.children),prev=document.getElementById("svcPrev"),next=document.getElementById("svcNext"),page=0;function per(){var w=innerWidth;return w<=600?2:w<=860?3:w<=1100?4:5;}function pages(){return Math.max(1,Math.ceil(cards.length/per()));}function go(p){var n=pages();page=((p%n)+n)%n;var step=cards[0].getBoundingClientRect().width+12;tr.style.transform="translateX("+(-page*per()*step)+"px)";}function close(){panel.hidden=true;cards.forEach(function(c){c.setAttribute("aria-expanded","false");});}cards.forEach(function(c){c.addEventListener("click",function(){if(c.getAttribute("aria-expanded")==="true"){close();return;}var d=D[c.dataset.svc];cards.forEach(function(o){o.setAttribute("aria-expanded","false");});c.setAttribute("aria-expanded","true");panel.innerHTML='<div class="h-spanel-in"><button class="h-spanel-x" type="button" aria-label="Close">&times;</button>'+"<h3>"+d.t+"</h3><p>"+d.d+"</p>"+'<a href="'+d.h+'">'+d.l+"</a></div>";panel.hidden=false;panel.querySelector(".h-spanel-x").addEventListener("click",close);});});document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-openservice]");if(!a)return;var k=a.getAttribute("data-openservice"),c=cards.filter(function(x){return x.dataset.svc===k;})[0];if(!c)return;e.preventDefault();go(Math.floor(cards.indexOf(c)/per()));document.getElementById("services").scrollIntoView({behavior:"smooth",block:"start"});setTimeout(function(){if(c.getAttribute("aria-expanded")!=="true")c.click();},420);});prev.addEventListener("click",function(){go(page-1);});next.addEventListener("click",function(){go(page+1);});var t;addEventListener("resize",function(){clearTimeout(t);t=setTimeout(function(){go(0);},140);});go(0);})();
-(function(){var car=document.getElementById("hcar");if(!car)return;var sl=[].slice.call(car.querySelectorAll(".h-slide")),dw=document.getElementById("hdots"),i=0,t=null,DELAY=7000;sl.forEach(function(_,k){var d=document.createElement("button");d.className="h-dot"+(k===0?" on":"");d.type="button";d.setAttribute("aria-label","Testimonial "+(k+1));d.addEventListener("click",function(){go(k);reset();});dw.appendChild(d);});var dots=[].slice.call(dw.children);function fit(){car.style.height="auto";var h=sl[i].getBoundingClientRect().height;car.style.height=Math.ceil(h)+"px";}function go(n){sl[i].classList.remove("on");dots[i].classList.remove("on");i=(n+sl.length)%sl.length;sl[i].classList.add("on");dots[i].classList.add("on");fit();}function reset(){clearInterval(t);t=setInterval(function(){go(i+1);},DELAY);}fit();addEventListener("resize",fit);if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches)reset();car.addEventListener("mouseenter",function(){clearInterval(t);});car.addEventListener("mouseleave",reset);})();
+(function(){
+  var car=document.getElementById("hcar"); if(!car) return;
+  var sl=[].slice.call(car.querySelectorAll(".t-slide")),
+      dw=document.getElementById("hdots"), num=document.getElementById("tNum"),
+      i=0, t=null, DELAY=7000;
+  sl.forEach(function(_,k){
+    var d=document.createElement("button"); d.className="h-dot"+(k===0?" on":"");
+    d.type="button"; d.setAttribute("aria-label","Testimonial "+(k+1));
+    d.addEventListener("click",function(){go(k);reset();}); dw.appendChild(d);
+  });
+  var dots=[].slice.call(dw.children);
+  function fit(){ car.style.height="auto"; var h=sl[i].getBoundingClientRect().height; car.style.height=Math.ceil(h)+"px"; }
+  function go(n){
+    sl[i].classList.remove("on"); dots[i].classList.remove("on");
+    i=(n+sl.length)%sl.length;
+    sl[i].classList.add("on"); dots[i].classList.add("on");
+    num.textContent=("0"+(i+1)).slice(-2); fit();
+  }
+  function reset(){ clearInterval(t); t=setInterval(function(){go(i+1);},DELAY); }
+  document.getElementById("tPrev").addEventListener("click",function(){go(i-1);reset();});
+  document.getElementById("tNext").addEventListener("click",function(){go(i+1);reset();});
+  fit(); addEventListener("resize",fit);
+  if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches) reset();
+  car.addEventListener("mouseenter",function(){clearInterval(t);});
+  car.addEventListener("mouseleave",reset);
+})();
 </script><div class="pa-modal" id="paIntake" role="dialog" aria-modal="true" aria-labelledby="paIntakeTitle">
   <div class="pa-dialog">
     <button class="pa-x" type="button" data-close aria-label="Close">&times;</button>
