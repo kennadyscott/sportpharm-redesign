@@ -66,41 +66,6 @@ wasabirub.com — A Product Site on the SportPharm Platform
  
  
 
-## Built and working today
-
- Not a concept deck. Open any of these in the meeting.
-
- 
- 
-
-### Try it live
-
- Four educational pathways, two interactive tools, and a contact form that already delivers to info@sportpharm.com.
-
- 
- Athlete Hub homeThe four pathways
-→
- Recovery plan builder5 questions, personalised output
-→
- Push Through or Stop?Guided support finder
-→
- Pain-Relief OptionsWhere WasabiRub sits
-→
- Sports Pharmacy, ExplainedThe pharmacy advantage
-→
- Is This for Me?Identity & orientation
-→
- 
-
- 
-
- Also built: ten articles published, a guided support finder, a recovery-plan builder, and a contact form already delivering to info@sportpharm.com.
-
- 
-
- 
- 
-
 ## The platform stays. The design changes.
 
  Both sites move to the new design system. Neither moves to a new platform.
@@ -170,6 +135,9 @@ wasabirub.com — A Product Site on the SportPharm Platform
 
  
 - 3 interactive tools built and functioning
+
+ 
+- A contact form already delivering to info@sportpharm.com
 
  
 
