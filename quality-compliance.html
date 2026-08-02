@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Drug Repackaging | SportPharm</title><meta name="description" content="Drug repackaging for athletes and teams &mdash; prescribed medications organized into pre-portioned blister packs and convenience containers, labelled with batch and lot, and verified by a pharmacist."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Roboto+Condensed:wght@700;900&family=Roboto+Slab:wght@700;800&display=swap" rel="stylesheet"><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Quality &amp; Compliance | SportPharm</title><meta name="description" content="SportPharm quality and compliance &mdash; USP-compliant compounding, batch documentation, pharmacist verification, anti-doping review against WADA, USADA and NCAA, and our code of ethics."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Roboto+Condensed:wght@700;900&family=Roboto+Slab:wght@700;800&display=swap" rel="stylesheet"><style>
 :root{
   --sp-red:#d6202a;--sp-red-2:#a3161e;
   --navy-900:#18232e;--navy-800:#22303e;
@@ -644,14 +644,68 @@ footer{background:#11181f;padding:40px 0;text-align:center}
 .faq-ul li::marker{color:#d6202a}
 .rp-vs{border-left:3px solid #d6202a}
 .rp-vs-p{margin:0 0 16px;font-size:14px;line-height:1.62;color:#4b5560}
+
+.cs-item{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start;list-style:none}
+.cs-tick{width:34px;height:34px;border-radius:50%;background:#d6202a;position:relative;margin-top:2px}
+.cs-tick:after{content:"";position:absolute;left:12px;top:10px;width:7px;height:13px;
+  border-right:2.6px solid #fff;border-bottom:2.6px solid #fff;transform:rotate(42deg)}
+.cs-steps .cs-item:not(:last-child){padding-bottom:0}
+@media(max-width:700px){.cs-item{grid-template-columns:28px 1fr;gap:11px}
+  .cs-tick{width:28px;height:28px}.cs-tick:after{left:10px;top:8px;width:6px;height:11px}}
 .dropdown .sf-ext{display:flex;align-items:center;gap:6px}
 .dropdown .sf-arw{opacity:.6}
-</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is drug repackaging, and how does it differ from compounding?", "acceptedAnswer": {"@type": "Answer", "text": "Drug repackaging organizes already-manufactured medications into custom dose formats (e.g., daily blister packs, convenience containers). Unlike compounding, we’re not altering the medication—just improving how you take it, especially for travel or strict dosing schedules."}}, {"@type": "Question", "name": "Can all medications be repackaged?", "acceptedAnswer": {"@type": "Answer", "text": "Most oral solid-dose meds qualify, but injectable, sterile, or sensitive drug forms may be excluded. Our pharmacist reviews your Rx to ensure packaging suitability and compliance with storage guidelines."}}, {"@type": "Question", "name": "Who manages the anti-doping compliance in repackaged products?", "acceptedAnswer": {"@type": "Answer", "text": "Our pharmacists verify each medication’s status with respect to WADA, USADA, NCAA (or your athlete-governing body). Packets are clearly labeled with medication name, strength, batch/lot, and dosing instructions—ideal documentation for testing scenarios."}}, {"@type": "Question", "name": "How do you handle refills and changing training schedules?", "acceptedAnswer": {"@type": "Answer", "text": "We set up automatic refill reminders tied to your athletic calendar. If schedules shift—tournaments, travel, recovery blocks—we adapt your packaging plan accordingly to prevent missed doses."}}, {"@type": "Question", "name": "How quickly will I receive my repackaged medication?", "acceptedAnswer": {"@type": "Answer", "text": "Standard turnaround is 3–5 business days from Rx receipt—1–2 days for repackaging, plus 1–3 days shipping. Expedited shipping outpaces even tight travel plans."}}]}</script></head><body><header>
+
+.ab-facts{display:flex;flex-direction:column;gap:14px}
+.ab-facts div{display:flex;align-items:baseline;gap:16px}
+.ab-facts b{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;font-stretch:condensed;font-weight:900;
+  font-size:30px;line-height:1;color:#d6202a;min-width:66px;font-variant-numeric:tabular-nums}
+.ab-facts span{font-size:13.5px;line-height:1.5;color:#4b5560}
+.tm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tm-card{background:#fff;border:1px solid #e0e3e6;border-radius:12px;padding:22px;display:flex;gap:18px;align-items:flex-start}
+.tm-ph{flex:0 0 84px;width:84px;height:84px;border-radius:50%;overflow:hidden;background:#d6202a;display:block}
+.tm-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.tm-ini{display:grid;place-items:center}
+.tm-ini span{font-family:'Inter',system-ui,sans-serif;font-size:24px;font-weight:800;color:#fff;letter-spacing:.02em}
+.tm-bd{min-width:0}
+.tm-bd b{display:block;font-size:15.5px;font-weight:700;color:#24303c;line-height:1.3}
+.tm-role{display:block;margin-top:3px;font-size:13px;line-height:1.45;color:#656e77}
+.tm-note{display:block;margin-top:8px;font-size:12.5px;line-height:1.5;color:#4b5560;padding-left:11px;border-left:2px solid #d6202a}
+.tm-mail{display:inline-block;margin-top:10px;font-size:12.5px;color:#a3161e;text-decoration:none;word-break:break-all;border-bottom:1px solid rgba(163,22,30,.3)}
+.tm-mail:hover{border-bottom-color:#a3161e}
+@media(max-width:1080px){.tm-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.tm-grid{grid-template-columns:1fr}}
+.qc-vals{margin:0;padding:0}
+.qc-vals .cs-scard{background:#fff;border:1px solid #e0e3e6}
+#ethics .cs-scard b{font-size:16px}
+#ethics .cs-step:not(:last-child):before{background:#e0e3e6}
+
+
+/* ===== products landing ===== */
+.pl-hero{background:linear-gradient(180deg,#f7f9fb 0%,#eef2f6 100%);padding:56px 0 46px;border-bottom:1px solid #e0e3e6}
+.pl-h1{margin:0 0 16px;font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;font-stretch:condensed;font-weight:900;
+  text-transform:uppercase;letter-spacing:-.025em;font-size:clamp(34px,4.6vw,64px);line-height:.94;color:#24303c}
+.pl-h1 em{font-style:normal;color:#d6202a}
+.pl-lede{margin:0 0 30px;font-size:16px;line-height:1.66;color:#4b5560;max-width:62ch}
+
+.pl-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:26px}
+.pl-hlede{margin:0;font-size:15px;line-height:1.66;color:#4b5560;max-width:52ch}
+.pl-hlede.dark{color:#c2ccd6}
+
+.pl-cmp{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.pl-ul{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:11px}
+.pl-ul li{position:relative;padding-left:26px;font-size:15px;line-height:1.6;color:#4b5560}
+.pl-ul li:before{content:"";position:absolute;left:0;top:8px;width:9px;height:9px;border-radius:50%;border:2px solid #d6202a}
+.pl-cmp-l{min-width:0}
+.pl-cmp-r img{width:100%;height:auto;border-radius:12px;display:block}
+
+@media(max-width:980px){
+  .pl-head{grid-template-columns:1fr;gap:16px;align-items:start}
+  .pl-cmp{grid-template-columns:1fr;gap:26px}}</style></head><body><header>
   <div class="wrap nav">
     <a class="logo" href="sports-medicine.html"><img src="assets/wordmark-dark.png" alt="SportPharm"><span class="logo-tag">Behind every athlete you care for.</span></a>
     <nav class="mainnav">
       <div class="navitem">
-        <a class="navlink active" href="services.html">Services <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+        <a class="navlink" href="services.html">Services <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
         <div class="dropdown">
           <a href="compounding.html">Specialized Compounding</a>
           <a href="drug-repackaging.html">Drug Repackaging</a>
@@ -670,7 +724,7 @@ footer{background:#11181f;padding:40px 0;text-align:center}
         <div class="dropdown"><a href="articles.html">Articles</a><a class="sf-ext" href="https://sportsrxnetwork.com/" target="_blank" rel="noopener">SportsRx Network<span class="sf-arw" aria-hidden="true"></span><span class="sr-only"> (opens in a new tab)</span></a></div>
       </div>
       <div class="navitem">
-        <a class="navlink" href="about.html">About Us <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+        <a class="navlink active" href="about.html">About Us <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
         <div class="dropdown"><a href="about.html">Our Story</a><a href="quality-compliance.html">Quality &amp; Compliance</a><a href="about.html#team">Our Team</a></div>
       </div>
       <div class="navitem"><a class="navlink" href="contact.html">Contact</a></div>
@@ -684,91 +738,66 @@ footer{background:#11181f;padding:40px 0;text-align:center}
     </div>
     <button class="menu-btn" aria-label="Menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
   </div>
-</header><main><section class="h-hero">
-  <img class="h-hero-bg" src="assets/spx-routine.jpg" alt="Athlete sorting medications and supplements on a kitchen counter">
+</header><main><section class="pl-hero">
   <div class="h-wrap">
-    <div class="h-hero-copy">
-      <p class="h-eyebrow">Drug repackaging</p>
-      <h1>Same medication.<br><em>A format that travels.</em></h1>
-      <p>Prescribed medications delivered in clear, pre-portioned packets or containers &mdash; built for travel, training camps and competition schedules.</p>
-      <div class="h-row">
-        <a class="h-btn solid" href="#" data-intake>Set up repackaging &rarr;</a>
-        <a class="h-btn line" href="#benefits">See what you get</a>
-      </div>
-      <div class="h-trust"><span>Tamper-evident</span><span>Batch &amp; lot labelled</span><span>Pharmacist verified</span></div>
+    <p class="h-eyebrow on-light">Quality &amp; compliance</p>
+    <h1 class="pl-h1">Compliance is the<br><em>foundation, not a step.</em></h1>
+    <p class="pl-lede">The standards behind every prescription we fill, every formulation we compound, and every product we put in a training room &mdash; and the code of ethics the business runs on.</p>
+    <div class="h-row">
+      <a class="h-btn solid" href="#standards">The standards</a>
+      <a class="h-btn line" href="#ethics">Code of ethics</a>
     </div>
   </div>
 </section>
 
-<section class="h-sec" id="overview">
-  <div class="h-wrap">
-    <div class="h-support">
-      <div>
-        <p class="h-eyebrow on-light">Overview</p>
-        <h2 class="h-h2">What is <em>drug repackaging?</em></h2>
-        <p class="h-lede">Drug repackaging organizes already-manufactured medications into custom dose formats &mdash; daily blister packs, convenience containers. At SportPharm&trade;, we understand that dosing convenience, compliance and anti-doping assurance are essential for athletes. Our repackaging service delivers your prescribed medications in clear, easy-to-follow, pre-portioned packets or containers, ideal for travel, training camps and competition schedules.</p>
-        <div class="h-row"><a class="h-btn solid" href="#" data-intake>Ask about repackaging &rarr;</a></div>
-      </div>
-      <div class="cp-areas rp-vs">
-        <p class="cs-sublab">Repackaging is not compounding</p>
-        <p class="rp-vs-p">Unlike compounding, we&rsquo;re not altering the medication &mdash; just improving how you take it, especially for travel or strict dosing schedules.</p>
-        <a class="lnk" href="compounding.html">See compounding instead<span class="lnk-a" aria-hidden="true"></span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="h-sec wide cs-sec" id="benefits">
+<section class="h-sec wide cs-sec" id="standards">
   <div class="h-wrap">
     <div class="cs-grid">
       <div class="cs-left">
-        <p class="cs-eyebrow"><i aria-hidden="true"></i>Key benefits</p>
-        <h3>Every dose, already<br><em>counted and labelled.</em></h3>
-        <p class="cs-lede">Four things change the moment a prescription arrives pre-portioned rather than in a bottle &mdash; for the athlete carrying it and for the staff accounting for it.</p>
-        <p class="cs-fine">Most oral solid-dose medications qualify. Injectable, sterile or sensitive forms may be excluded &mdash; a pharmacist reviews every prescription for packaging suitability.</p>
+        <p class="cs-eyebrow"><i aria-hidden="true"></i>How we work</p>
+        <h3>What &ldquo;pharmacy-grade&rdquo;<br><em>actually means here.</em></h3>
+        <p class="cs-lede">Anyone can print the phrase on a label. These are the specific checks a product passes before it reaches an athlete &mdash; and the documentation that follows it.</p>
+        <p class="cs-fine">Compounded medications require a patient-specific prescription and are not FDA-approved products. Sport status can depend on the ingredient, route, dose and governing body.</p>
       </div>
       <div class="cs-hub">
-        <p class="cs-hub-eyebrow">What repackaging delivers</p>
-        <h4>Pre-sorted, verified, ready to travel.</h4>
-        <p class="cs-hub-sub">Standard turnaround is three to five business days from prescription receipt.</p>
-        <ol class="cs-steps"><li class="cs-step"><span class="cs-dot red">01</span><div class="cs-scard"><b>Precision &amp; Convenience</b><span class="cs-sdesc">Medication pre-sorted into daily/training-block packets.</span></div></li><li class="cs-step"><span class="cs-dot blue">02</span><div class="cs-scard"><b>Safety &amp; Compliance</b><span class="cs-sdesc">Standardized labeling, tamper-evident packaging, and easy transport.</span></div></li><li class="cs-step"><span class="cs-dot blue">03</span><div class="cs-scard"><b>Pharmacist Oversight</b><span class="cs-sdesc">Final checks ensure accuracy, dosing correctness, and athlete-specific compliance.</span></div></li><li class="cs-step"><span class="cs-dot red">04</span><div class="cs-scard"><b>Travel/Competition Ready</b><span class="cs-sdesc">Ideal for travel bags, training camps, race kits, and team use.</span></div></li></ol>
-        <p class="cs-note-dot"><span aria-hidden="true"></span>Packets are labelled with medication name, strength, batch and lot, and dosing instructions.</p>
+        <p class="cs-hub-eyebrow">Standards</p>
+        <h4>Six checks, every time.</h4>
+        <p class="cs-hub-sub">Applied to compounding, repackaging and anything we dispense.</p>
+        <ul class="cs-steps"><li class="cs-item"><span class="cs-tick" aria-hidden="true"></span><div class="cs-scard"><b>USP-compliant compounding</b><span class="cs-sdesc">Prepared using USP &lt;795&gt;/&lt;797&gt; techniques and ingredients, in a licensed facility.</span></div></li><li class="cs-item"><span class="cs-tick" aria-hidden="true"></span><div class="cs-scard"><b>Batch documentation</b><span class="cs-sdesc">Beyond-use date, storage conditions and lot numbers on every label, with records retained.</span></div></li><li class="cs-item"><span class="cs-tick" aria-hidden="true"></span><div class="cs-scard"><b>Pharmacist verification</b><span class="cs-sdesc">A final check for accuracy, quality, documentation and labelling before anything ships.</span></div></li><li class="cs-item"><span class="cs-tick" aria-hidden="true"></span><div class="cs-scard"><b>Pharmaceutical-grade ingredients</b><span class="cs-sdesc">Sourced for compounding, not repackaged from consumer supply.</span></div></li><li class="cs-item"><span class="cs-tick" aria-hidden="true"></span><div class="cs-scard"><b>Anti-doping review</b><span class="cs-sdesc">Formulations checked against WADA, USADA and NCAA requirements, with TUE support where needed.</span></div></li><li class="cs-item"><span class="cs-tick" aria-hidden="true"></span><div class="cs-scard"><b>TruShield&trade; certification</b><span class="cs-sdesc">Third-party certification on the topical range, with documentation your compliance staff can file.</span></div></li></ul>
+        <p class="cs-note-dot"><span aria-hidden="true"></span>Athletes are ultimately responsible for what they ingest. We support informed, risk-aware decision-making.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="h-sec light-proof" id="proof">
-  <div class="h-wrap t-wrap">
-    <div class="t-rail">
-      <p class="h-eyebrow on-light">What our athletes say</p>
-      <h2 class="h-h2">A medication coach<br><em>in the race kit.</em></h2>
-      <p class="t-lede">One athlete on what changed once every dose arrived pre-packed.</p>
-    </div>
-    <div class="t-stage">
-      <span class="t-mark" aria-hidden="true">&ldquo;</span>
-      <div class="t-car">
-        <figure class="t-slide on">
-          <div class="t-stars" aria-label="Rated 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <blockquote>Managing multiple supplements, prescription meds, and recovery protocols during race season is a logistical nightmare&mdash;until I started using SportPharm&trade;&rsquo;s drug repackaging. Every dose is pre-packed with clear instructions, timing aligned with my training blocks, and I never have to worry about anti-doping issues. Their pharmacist even coordinates changes when race schedules shift. It&rsquo;s like having a medication coach in my race kit.</blockquote>
-          <figcaption class="t-attr"><span class="t-ini" aria-hidden="true">SP</span>
-            <span class="t-who"><b>Endurance athlete</b><span class="t-role">Race season, multi-medication schedule</span>
-            <span class="t-org">SportPharm athlete</span></span></figcaption>
-        </figure>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="h-sec wide tight-who" id="faq">
+<section class="h-sec wide tight-who" id="ethics">
   <div class="h-wrap w-wrap">
     <div class="w-rail">
-      <p class="h-eyebrow on-light"><i class="w-rule" aria-hidden="true"></i>Frequently asked questions</p>
-      <h2 class="h-h2">What to expect with<br><em>drug repackaging.</em></h2>
-      <p class="w-lede">Not sure whether your prescription qualifies? Ask a pharmacist directly.</p>
-      <div class="h-row"><a class="h-btn solid" href="#" data-intake>Ask a pharmacist &rarr;</a></div>
+      <p class="h-eyebrow on-light"><i class="w-rule" aria-hidden="true"></i>Code of ethics and values</p>
+      <h2 class="h-h2">Four principles,<br><em>in that order.</em></h2>
+      <p class="w-lede">In pursuing our mission to advance pharmaceutical excellence in sports medicine, SportPharm&trade; conducts its business guided by the following principles.</p>
+      <div class="h-row"><a class="h-btn solid" href="about.html">About SportPharm &rarr;</a></div>
     </div>
-    <div class="w-list"><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq0"><span class="w-num">01</span><span class="w-mid"><span class="w-name">What is drug repackaging, and how does it differ from compounding?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq0" hidden><p>Drug repackaging organizes already-manufactured medications into custom dose formats (e.g., daily blister packs, convenience containers). Unlike compounding, we’re not altering the medication—just improving how you take it, especially for travel or strict dosing schedules.</p></div></div><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq1"><span class="w-num">02</span><span class="w-mid"><span class="w-name">Can all medications be repackaged?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq1" hidden><p>Most oral solid-dose meds qualify, but injectable, sterile, or sensitive drug forms may be excluded. Our pharmacist reviews your Rx to ensure packaging suitability and compliance with storage guidelines.</p></div></div><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq2"><span class="w-num">03</span><span class="w-mid"><span class="w-name">Who manages the anti-doping compliance in repackaged products?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq2" hidden><p>Our pharmacists verify each medication’s status with respect to WADA, USADA, NCAA (or your athlete-governing body). Packets are clearly labeled with medication name, strength, batch/lot, and dosing instructions—ideal documentation for testing scenarios.</p></div></div><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq3"><span class="w-num">04</span><span class="w-mid"><span class="w-name">How do you handle refills and changing training schedules?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq3" hidden><p>We set up automatic refill reminders tied to your athletic calendar. If schedules shift—tournaments, travel, recovery blocks—we adapt your packaging plan accordingly to prevent missed doses.</p></div></div><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq4"><span class="w-num">05</span><span class="w-mid"><span class="w-name">How quickly will I receive my repackaged medication?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq4" hidden><p>Standard turnaround is 3–5 business days from Rx receipt—1–2 days for repackaging, plus 1–3 days shipping. Expedited shipping outpaces even tight travel plans.</p></div></div></div>
+    <div class="w-list" style="border:0"><ol class="cs-steps qc-vals"><li class="cs-step"><span class="cs-dot red">01</span><div class="cs-scard"><b>Operate with integrity (obey the law)</b><span class="cs-sdesc">Compliance is the foundation to all business activity. We must adhere to all pharmacy and medical laws, regulations, and ethical standards, ensuring transparency and accountability in every action.</span></div></li><li class="cs-step"><span class="cs-dot blue">02</span><div class="cs-scard"><b>Empower our team</b><span class="cs-sdesc">We foster a culture of respect, growth, and collaboration, recognizing that our people are our greatest asset.</span></div></li><li class="cs-step"><span class="cs-dot blue">03</span><div class="cs-scard"><b>Prioritize our partners and patients</b><span class="cs-sdesc">We are dedicated to delivering safe, effective, and evidence-based solutions that protect and enhance the health and safety of every patient we serve.</span></div></li><li class="cs-step"><span class="cs-dot red">04</span><div class="cs-scard"><b>Respect our collaborators and suppliers</b><span class="cs-sdesc">We build lasting, honest relationships with those who share our commitment to quality, innovation, and ethical business practices.</span></div></li></ol></div>
+  </div>
+</section>
+
+<section class="h-sec dark wide" id="ask">
+  <div class="h-wrap">
+    <div class="pl-cmp">
+      <div class="pl-cmp-l">
+        <p class="h-eyebrow">Due diligence</p>
+        <h2 class="h-h2">Need documentation<br><em>for a file?</em></h2>
+        <p class="h-lede dark">Compliance staff, procurement teams and governing bodies ask for different things. Tell us what you need &mdash; certificates, batch records, ingredient disclosures, or a formulation reviewed against a specific banned list.</p>
+        <div class="h-row">
+          <a class="h-btn solid" href="contact.html">Contact us &rarr;</a>
+          <a class="h-btn line" href="compounding.html">How compounding works</a>
+        </div>
+      </div>
+      <div class="pl-cmp-r">
+        <img src="assets/ea-medication.jpg" alt="Athlete reading a prescription label" loading="lazy">
+      </div>
+    </div>
   </div>
 </section>
 
