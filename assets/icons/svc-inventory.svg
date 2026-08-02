@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title id="title">Inventory shelves</title>
+  <g fill="#d6202a">
+    <rect x="26" y="34" width="204" height="26" rx="6"/>
+    <rect x="26" y="115" width="204" height="26" rx="6"/>
+    <rect x="26" y="196" width="204" height="26" rx="6"/>
+    <rect x="52" y="72" width="34" height="34" rx="5"/>
+    <rect x="98" y="72" width="34" height="34" rx="5"/>
+    <rect x="144" y="72" width="34" height="34" rx="5"/>
+    <rect x="52" y="153" width="34" height="34" rx="5"/>
+    <rect x="98" y="153" width="34" height="34" rx="5"/>
+  </g>
+  <rect x="144" y="153" width="34" height="34" rx="5" fill="#d6202a" opacity=".45"/>
+</svg>
