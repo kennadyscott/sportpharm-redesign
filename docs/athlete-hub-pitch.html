@@ -168,6 +168,7 @@
 .pip.win{background:var(--good);color:var(--on-accent)}
 .pip.ok{background:var(--paper);color:var(--muted);border:1px solid var(--line)}
 .pip.no{background:var(--warn);color:var(--on-accent)}
+.pip.warn2{background:transparent;color:var(--warn);border:1px solid var(--warn)}
 .pl p{margin:0;font-size:12.5px;line-height:1.55;color:var(--muted)}
 .ops td:first-child{width:34%}
 .ops .y{color:var(--good);font-weight:700}
@@ -533,9 +534,9 @@
     </div>
 
     <div class="scen">
-      <div class="sc"><div class="sc-h"><span class="n">Where we are</span><b>3 products, online only</b></div><div class="sc-body"><div class="pl"><div class="pl-t"><b>Custom (Stripe)</b><span class="pip no">Rules out</span></div><p>An employee inherits software with one former author. No one to extend it, hard to hire for.</p></div><div class="pl"><div class="pl-t"><b>WordPress</b><span class="pip win">Best fit</span></div><p>Already running. Nothing migrates, nothing new to learn. Articles and coupons are screens the team can already use.</p></div><div class="pl"><div class="pl-t"><b>Shopify</b><span class="pip ok">Premature</span></div><p>A subscription and a store migration for three products. Works, but solves problems we do not have yet.</p></div></div></div>
-      <div class="sc"><div class="sc-h"><span class="n">Where we likely are</span><b>3 products + the pharmacy counter</b></div><div class="sc-body"><div class="pl"><div class="pl-t"><b>Custom (Stripe)</b><span class="pip no">Rules out</span></div><p>Same handover problem, and no point-of-sale answer at all.</p></div><div class="pl"><div class="pl-t"><b>WordPress</b><span class="pip ok">Depends</span></div><p>POS exists only as third-party plugins &mdash; a thin foundation for a pharmacy counter. Fine if the counter and the website do not need shared stock.</p></div><div class="pl"><div class="pl-t"><b>Shopify</b><span class="pip win">Best fit</span></div><p>POS is first-class: one inventory, one customer record, staff accounts, real hardware. This is where it starts genuinely winning.</p></div></div></div>
-      <div class="sc"><div class="sc-h"><span class="n">Where we are going</span><b>15+ products + counter</b></div><div class="sc-body"><div class="pl"><div class="pl-t"><b>Custom (Stripe)</b><span class="pip no">Rules out</span></div><p>Every catalogue feature becomes something we build and someone else maintains.</p></div><div class="pl"><div class="pl-t"><b>WordPress</b><span class="pip no">Strains</span></div><p>Possible, but it compounds &mdash; variants, stock, more plugins, more patching, POS still a plugin.</p></div><div class="pl"><div class="pl-t"><b>Shopify</b><span class="pip win">Built for it</span></div><p>Bulk edit, CSV import, variants, multi-location inventory, staff permissions and reporting, out of the box.</p></div></div></div>
+      <div class="sc"><div class="sc-h"><span class="n">Where we are</span><b>3 products, online only</b></div><div class="sc-body"><div class="pl"><div class="pl-t"><b>Custom (Stripe)</b><span class="pip warn2">Ongoing dependency</span></div><p>Payload's admin is fine to <i>use</i> &mdash; the problem is <i>changing</i> it. Every later request is a build, so it needs a permanent developer relationship.</p></div><div class="pl"><div class="pl-t"><b>WordPress</b><span class="pip win">Best fit</span></div><p>Already running. Nothing migrates, nothing new to learn. Articles and coupons are screens the team can already use.</p></div><div class="pl"><div class="pl-t"><b>Shopify</b><span class="pip ok">Premature</span></div><p>A subscription and a store migration for three products. Works, but solves problems we do not have yet.</p></div></div></div>
+      <div class="sc"><div class="sc-h"><span class="n">Where we likely are</span><b>3 products + the pharmacy counter</b></div><div class="sc-body"><div class="pl"><div class="pl-t"><b>Custom (Stripe)</b><span class="pip warn2">Ongoing dependency</span></div><p>Same permanent-developer requirement, and no point-of-sale answer at all.</p></div><div class="pl"><div class="pl-t"><b>WordPress</b><span class="pip ok">Depends</span></div><p>POS exists only as third-party plugins &mdash; a thin foundation for a pharmacy counter. Fine if the counter and the website do not need shared stock.</p></div><div class="pl"><div class="pl-t"><b>Shopify</b><span class="pip win">Best fit</span></div><p>POS is first-class: one inventory, one customer record, staff accounts, real hardware. This is where it starts genuinely winning.</p></div></div></div>
+      <div class="sc"><div class="sc-h"><span class="n">Where we are going</span><b>15+ products + counter</b></div><div class="sc-body"><div class="pl"><div class="pl-t"><b>Custom (Stripe)</b><span class="pip no">Not viable</span></div><p>Every catalogue feature becomes a build. The developer dependency compounds with each one.</p></div><div class="pl"><div class="pl-t"><b>WordPress</b><span class="pip no">Strains</span></div><p>Possible, but it compounds &mdash; variants, stock, more plugins, more patching, POS still a plugin.</p></div><div class="pl"><div class="pl-t"><b>Shopify</b><span class="pip win">Built for it</span></div><p>Bulk edit, CSV import, variants, multi-location inventory, staff permissions and reporting, out of the box.</p></div></div></div>
     </div>
 
     <h3 style="margin-top:34px">Who actually does the work, day to day</h3>
@@ -543,17 +544,17 @@
       <table class="ops">
         <thead><tr><th>The job</th><th>Custom</th><th>WordPress</th><th>Shopify</th></tr></thead>
         <tbody>
-          <tr><td>Publish an article</td><td>Bespoke admin</td><td class="y">The most widely known publishing screen there is</td><td>Basic blog, workable</td></tr>
-          <tr><td>Add or edit a product</td><td>Bespoke admin</td><td>WooCommerce product screen</td><td class="y">Best in class</td></tr>
-          <tr><td>Create a coupon code</td><td class="n2">Build it, or hand them Stripe</td><td class="y">Built-in Woo coupons</td><td class="y">Built-in discounts, richest options</td></tr>
+          <tr><td>Publish an article</td><td>Payload admin &mdash; usable</td><td class="y">The most widely known publishing screen there is</td><td>Basic blog, workable</td></tr>
+          <tr><td>Add or edit a product</td><td>Payload admin &mdash; usable</td><td>WooCommerce product screen</td><td class="y">Best in class</td></tr>
+          <tr><td>Create a coupon code</td><td>Stripe Dashboard &mdash; genuinely fine</td><td class="y">Built-in Woo coupons</td><td class="y">Built-in discounts, richest options</td></tr>
           <tr><td>Refund an order</td><td>Stripe dashboard</td><td>Woo orders</td><td class="y">Best</td></tr>
-          <tr><td>Get unstuck</td><td class="n2">Ask the person who left</td><td class="y">Vast community; any freelancer</td><td class="y">Vendor support + partner network</td></tr>
-          <tr><td>Hire a replacement</td><td class="n2">Very hard</td><td class="y">Easy</td><td class="y">Easy</td></tr>
+          <tr><td>Get unstuck</td><td class="n2">No vendor support line</td><td class="y">Vast community; any freelancer</td><td class="y">Vendor support + partner network</td></tr>
+          <tr><td>Hire a replacement</td><td class="n2">Specialist, not a commodity</td><td class="y">Easy</td><td class="y">Easy</td></tr>
         </tbody>
       </table>
     </div>
 
-    <div class="rec"><p><b>The custom stack is out.</b> It was defensible while the question was cost and control. Once the requirement is &ldquo;an employee runs this after the builder is gone,&rdquo; a bespoke admin with one former author is the weakest option on the board, at every scale. <b>The real choice is WordPress or Shopify.</b></p></div>
+    <div class="rec"><p><b>Where the custom stack really fails is change, not use.</b> Payload generates a perfectly usable admin, and Stripe's dashboard handles coupons and refunds natively &mdash; day-to-day operation is genuinely fine. But every later request (&ldquo;can we do gift cards?&rdquo;, &ldquo;Stripe deprecated an API&rdquo;) is a build rather than a setting, so it requires a <b>permanent developer relationship</b> rather than a handover. And the hiring market is the real asymmetry: a WordPress or Shopify freelancer is a commodity findable in a day; a Next.js + Payload + Stripe developer willing to take a small maintenance contract is not. <b>On that basis the practical choice is WordPress or Shopify</b> &mdash; not because staff could not use a custom build, but because nobody would be there to change it.</p></div>
 
     <div class="fair">
       <p class="hl">The question that separates the two</p>

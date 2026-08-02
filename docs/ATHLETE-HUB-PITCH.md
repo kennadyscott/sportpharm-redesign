@@ -502,7 +502,7 @@ effort is not.
 
 | | Verdict | |
 |---|---|---|
-| **Custom (Stripe)** | **Rules out** | An employee inherits software with one former author. No one to extend it, hard to hire for |
+| **Custom (Stripe)** | Ongoing dependency | Payload's admin is fine to *use* &mdash; the problem is *changing* it. Every later request is a build, so it needs a permanent developer relationship |
 | **WordPress** | **Best fit** | Already running. Nothing migrates, nothing new to learn. Articles and coupons are screens the team can already use |
 | **Shopify** | Premature | A subscription and a store migration for three products. Works, but solves problems we do not have yet |
 
@@ -510,7 +510,7 @@ effort is not.
 
 | | Verdict | |
 |---|---|---|
-| **Custom (Stripe)** | **Rules out** | Same handover problem, and no point-of-sale answer at all |
+| **Custom (Stripe)** | Ongoing dependency | Same permanent-developer requirement, and no point-of-sale answer at all |
 | **WordPress** | Depends | POS exists only as third-party plugins &mdash; a thin foundation for a pharmacy counter. Fine if the counter and the website do not need shared stock |
 | **Shopify** | **Best fit** | POS is first-class: one inventory, one customer record, staff accounts, real hardware |
 
@@ -518,7 +518,7 @@ effort is not.
 
 | | Verdict | |
 |---|---|---|
-| **Custom (Stripe)** | **Rules out** | Every catalogue feature becomes something we build and someone else maintains |
+| **Custom (Stripe)** | **Not viable** | Every catalogue feature becomes a build. The developer dependency compounds with each one |
 | **WordPress** | Strains | Possible, but it compounds &mdash; variants, stock, more plugins, more patching, POS still a plugin |
 | **Shopify** | **Built for it** | Bulk edit, CSV import, variants, multi-location inventory, staff permissions and reporting, out of the box |
 
@@ -526,20 +526,29 @@ effort is not.
 
 | The job | Custom | WordPress | Shopify |
 |---|---|---|---|
-| Publish an article | Bespoke admin | **The most widely known publishing screen there is** | Basic blog, workable |
-| Add or edit a product | Bespoke admin | WooCommerce product screen | **Best in class** |
-| Create a coupon code | **Build it, or hand them Stripe** | Built-in Woo coupons | Built-in discounts, richest options |
+| Publish an article | Payload admin &mdash; usable | **The most widely known publishing screen there is** | Basic blog, workable |
+| Add or edit a product | Payload admin &mdash; usable | WooCommerce product screen | **Best in class** |
+| Create a coupon code | Stripe Dashboard &mdash; genuinely fine | Built-in Woo coupons | Built-in discounts, richest options |
 | Refund an order | Stripe dashboard | Woo orders | **Best** |
-| Get unstuck | **Ask the person who left** | Vast community; any freelancer | Vendor support + partner network |
-| Hire a replacement | **Very hard** | Easy | Easy |
+| Get unstuck | **No vendor support line** | Vast community; any freelancer | Vendor support + partner network |
+| Hire a replacement | **Specialist, not a commodity** | Easy | Easy |
 
-### The custom stack is out
+### Where the custom stack really fails: change, not use
 
-It was defensible while the question was cost and control. Once the requirement
-is "an employee runs this after the builder is gone," **a bespoke admin with one
-former author is the weakest option on the board, at every scale.**
+Payload generates a perfectly usable admin, and Stripe's dashboard handles
+coupons and refunds natively. **Day-to-day operation is genuinely fine** &mdash; this
+is not a case of staff being unable to work the software.
 
-**The real choice is WordPress or Shopify.**
+The problem is that every later request &mdash; "can we do gift cards?", "Stripe
+deprecated an API" &mdash; is **a build rather than a setting.** That requires a
+permanent developer relationship, not a handover. And the hiring market is the
+real asymmetry: a WordPress or Shopify freelancer is a commodity, findable in a
+day at a known rate. A Next.js + Payload + Stripe developer willing to take a
+small ongoing maintenance contract is not. There is also no vendor support line
+when something breaks the evening before a promotion.
+
+**So the practical choice is WordPress or Shopify** &mdash; not because staff could not
+use a custom build, but because nobody would be there to change it.
 
 ### The question that separates the two
 
