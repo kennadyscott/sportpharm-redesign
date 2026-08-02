@@ -1,4 +1,4 @@
-# The Athlete Hub — leadership brief
+# wasabirub.com — leadership brief
 
 > Visual version: https://claude.ai/code/artifact/b3b4a9a5-96ff-4466-ad99-faf67546840c
 
@@ -7,19 +7,19 @@ The Athlete Hub — A Demand Engine for WasabiRub
  
  Prepared for leadership · Decision requested
 
- Add an athlete hubto the site we already run.
+ wasabirub.comneeds a reason to rank.
 
- A customer-acquisition channel that puts WasabiRub in front of people at the moment they are deciding what to do about pain — built on the platform SportPharm already uses, with the store untouched.
+ A new domain starts with no search authority. The Athlete Hub is how the product site earns it — educational content that answers what athletes actually search, on the same domain that sells them the answer.
 
- Three decisions: approve the hub, confirm who runs it, and agree that the commerce and domain questions are answered separately — later.
-
- 
+ Three decisions: approve the hub as the demand engine for wasabirub.com, confirm the platform it runs on, and name who operates it.
 
  
- 
- SportPharm sells to people who are hurting. Those people are already searching — and finding someone else's answer.
 
- The hub answers the question honestly, earns the search traffic, and builds the trust that makes a purchase reasonable. We are a pharmacy — answering medication and pain questions credibly is an asset we already own and do not use. A competitor can copy a design. They cannot copy a pharmacist.
+ 
+ 
+ sportpharm.com has years of earned trust. wasabirub.com has none — it is a new address, starting at zero.
+
+ Nobody searches for a product they have not heard of. They search for their problem. The hub answers those questions honestly, earns the traffic, and puts WasabiRub in front of someone at the moment they are deciding what to do about pain. We are a pharmacy — answering medication and pain questions credibly is an asset we already own and do not use. A competitor can copy a design. They cannot copy a pharmacist.
 
  
 
@@ -38,17 +38,26 @@ The Athlete Hub — A Demand Engine for WasabiRub
  
  
 
- Every one of those is a person with pain, actively looking for guidance, who could reasonably end up buying a topical rub. Today we are not in that conversation.
+ 
+ Why the hub and the product belong on the same domain
+
+ This is the part that makes the arrangement work. Every article that ranks, every link someone shares, every mention earned — all of it accrues to wasabirub.com, and internal links carry that authority straight to the product pages sitting beside it. Content on one domain cannot lend its authority to a product on another. Splitting them would mean earning the traffic and then handing it away at the moment of purchase.
 
  
 
  
- Built and working today
+
+ 
+ 
+
+## Built and working today
 
  Not a concept deck. Open any of these in the meeting.
 
  
- Try it live
+ 
+
+### Try it live
 
  Four educational pathways, two interactive tools, and a contact form that already delivers to info@sportpharm.com.
 
@@ -74,47 +83,58 @@ The Athlete Hub — A Demand Engine for WasabiRub
  
 
  
- This is an addition, not a replacement
+ 
 
- The first concern, answered directly: nothing gets switched off, and nothing migrates.
+## sportpharm.com does not change
+
+ The first concern, answered directly: this is a new site on a familiar platform, not a migration of the one that works.
 
  
+ 0
+changes to sportpharm.com
+
+ 0
+new platforms to learn
+
  63
-pages, all static HTML
+pages already built and working
 
  0
-lines of server-side code
-
- 0
-changes to the store
-
- 1
-external call in the whole site — the contact form
+lines of server-side code in them
 
  
 
  
- What that means in practice
+ What we are actually proposing
 
- The hub drops into the WordPress install we already run. We audited every page: no server-side code, no build step, no API layer. The interactive tools are client-side JavaScript that runs identically inside a WordPress page template. Articles become posts — and pick up the draft → review → publish workflow the team already knows.
+ sportpharm.com stays exactly as it is — the company and pharmacy site, on the WordPress the team knows and likes. Nothing is migrated, rebuilt or switched off.
 
- The store does not move. WooCommerce keeps its products, its orders, its customers and its plugins, exactly as they are. No migration, no new vendor, no new subscription, no retraining.
+ wasabirub.com is a new site on the same platform. Another WordPress install, running WooCommerce, holding the product pages and the hub together. Not a new technology to learn — the same admin screens, the same publishing workflow, the same skills the team already has.
 
- And no page builder is involved. A custom theme template renders our own markup verbatim — same CSS, same typography, same brand red. Elementor, Divi and off-the-shelf themes are where "dated and tacky" comes from; none are required or used.
+ The hub itself needs almost nothing. We audited all 63 pages: no server-side code, no build step, no API layer. The interactive tools are client-side JavaScript that runs identically inside a WordPress template. Articles become posts and pick up the draft → review → publish workflow that already exists.
+
+ 
+
+ 
+ And no page builder is involved
+
+ A custom theme template renders our own markup verbatim — same CSS, same typography, same brand red. Elementor, Divi and off-the-shelf themes are where "dated and tacky" comes from, and none of them are required or used. The approved design ships as designed.
 
  
 
  
  The one real hazard
 
- Drift. A plugin installed later that injects its own CSS can degrade a carefully built design. That is a governance rule, not a technical limit — but it needs a named owner.
+ Drift. A plugin installed later that injects its own CSS can degrade a carefully built design. A governance rule, not a technical limit — but it needs a named owner.
 
  
 
  
 
  
- Who runs this afterwards
+ 
+
+## Who runs this afterwards
 
  The second concern, and the one that should shape the platform choice more than any feature comparison.
 
@@ -153,52 +173,59 @@ external call in the whole site — the contact form
  
 
  
- The sequence
+ 
 
- Three decisions have been travelling together. They do not need to — and separating them is what makes this safe.
+## What we are deciding, and when
+
+ Three questions have been travelling together. Separating them is what makes this safe.
 
  
  1
  Decide now
- The hub goes into the existing WordPress
+ 
 
- Lowest risk, highest certainty, and it starts the clock that matters — search results take 6–12 months, and that clock has not begun. Nothing migrates, the store is untouched, and the design ships as designed.
+**Build wasabirub.com on WordPress + WooCommerce**
+ The same platform running sportpharm.com today. The product pages and the hub live together on the new domain, so everything the content earns accrues to the site that sells the product. No new technology, no new skills, and an easy hire if the person running it moves on.
 
  
 
  2
- Decide later
- The commerce platform, gated on one question
+ Decide now
+ 
 
- Do the counter and the website need to share stock and customers? If no — stay on WooCommerce and give abandoned cart a named owner. If yes — Shopify, and the case strengthens as the catalogue grows. Nothing is built on the commerce side yet, so this costs nothing to defer and gets expensive once real orders live somewhere.
+**Name who runs it**
+ Publishing cadence, clinical review of health content, and plugin governance. This is the decision that determines whether the hub still works in a year — and the one most often skipped.
 
  
 
  3
  Decide later
- The domain, on its own merits
+ 
 
- WordPress runs the hub on either address, so the platform choice does not touch this. sportpharm.com/athlete-hub inherits years of search authority and ranks sooner. wasabirub.com builds brand equity from zero and takes longer. A business call, not a technical one — but it should be made before the article cluster earns its rankings, because content that moves address loses much of what it earned.
+**Whether sportpharm.com keeps selling**
+ Once wasabirub.com has a store, two properties selling the same three products means two order streams, two stock counts and two discount systems. The clean answer is one store — wasabirub.com sells, sportpharm.com carries a Store link to it. Not urgent, but it should not drift.
 
  
 
  
 
  
- Why the sequence is the recommendation
+ Why WordPress rather than something new
 
- Bundled, this asks leadership to approve a website rebuild, a store migration and a domain move on one vote. Three risks, one decision.
+ The strongest argument is not technical. It is that this company already runs WordPress, likes it, and can staff it.
 
- Unbundled, the ask on Tuesday is "add a content hub to the site we already run." Then commerce and domain get answered on their own merits, with time and evidence, instead of being rushed to unblock the content.
-
- 
+ A commerce platform like Shopify has real advantages at scale — native abandoned-cart recovery, and a point-of-sale system that would unify the pharmacy counter with the website. Those become compelling if retail unification matters, or once the catalogue grows well past four products. Neither is true today, and neither needs answering to start.
 
  
 
  
- The commerce question, when we get to it
 
- Not for Tuesday — but worth seeing the shape of it now, so deferring feels informed rather than avoidant.
+ 
+ 
+
+## When WordPress stops being the right answer
+
+ Not a decision for Tuesday — but leadership should see where the line is, so choosing WordPress now reads as informed rather than default.
 
  
  Where we are3 products, online only
@@ -233,7 +260,9 @@ Bulk edit, CSV import, variants, multi-location inventory, staff permissions, re
 
  
 
- Abandoned cart, since it matters to us
+ 
+
+### Abandoned cart, since it matters to us
 
  
  
@@ -258,7 +287,9 @@ Bulk edit, CSV import, variants, multi-location inventory, staff permissions, re
  
 
  
- What it actually requires
+ 
+
+## What it actually requires
 
  Ongoing, not one-time. This is the part that decides whether it works.
 
@@ -273,37 +304,43 @@ Bulk edit, CSV import, variants, multi-location inventory, staff permissions, re
 - Editorial discipline. The moment articles become disguised product pitches they stop ranking and stop earning trust. The restraint is the strategy.
 
  
-- Plugin governance. One named person who decides what gets installed, so the design does not drift.
+- Plugin governance. One named person deciding what gets installed on wasabirub.com, so the design does not drift.
 
  
  
 
  
- Risks, answered
+ 
+
+## Risks, answered
 
  
  
  The concernThe honest answer
 
  
- "We would be switching platforms" | We would not. The hub goes into the WordPress we already run and the store is untouched. This is an addition.
+ "We would be switching platforms" | We would not. sportpharm.com does not change, and wasabirub.com runs on the same WordPress the team already uses. It is a second install, not a new technology.
 
- "Who runs it when the contractor leaves?" | An employee, on WordPress — the most widely known publishing interface there is. And if they leave, a replacement is easy to hire. That requirement is why a custom build is not proposed.
+ "Who runs it when the contractor leaves?" | An employee, on WordPress — the most widely known publishing interface there is. If they move on, a replacement is easy and cheap to hire. That requirement is exactly why a bespoke custom build is not proposed.
 
- "SEO takes too long" | True. 6–12 months. It compounds, and it keeps working after the spend stops — which advertising does not. That is an argument for starting now.
+ "A new domain will never rank" | It will not on its own — which is the point of the hub. Content is how a new domain earns authority. Expect 6–12 months, and note it compounds and keeps working after the spend stops, which advertising does not.
 
- "Health content is a liability" | Addressed by clinical review, named reviewers and explicit non-diagnostic language already built into every tool and page. The review gate still needs applying to what is live.
+ "Why not just put it on sportpharm.com?" | It would rank sooner on the older domain. But the traffic would land on SportPharm and the equity would build there — not on the product site we are trying to establish. If wasabirub.com is where we sell, it is where the content has to live.
 
- "We'll publish ten articles and stop" | The most likely failure mode. Mitigated only by naming an owner and a cadence before launch.
+ "Health content is a liability" | Addressed by clinical review, named reviewers and explicit non-diagnostic language already built into every tool and page. The review gate still needs applying to the ten articles now live.
+
+ "We'll publish ten articles and stop" | The most likely failure mode by some distance. Mitigated only by naming an owner and a cadence before launch.
+
+ 
+ 
+ 
+
+ 
 
  
  
- 
 
- 
-
- 
- How we'll know it's working
+## How we'll know it's working
 
  Not traffic for its own sake.
 
@@ -322,15 +359,17 @@ Bulk edit, CSV import, variants, multi-location inventory, staff permissions, re
 
  
  
- The decision
+ 
 
- 1Approve the hub, into our existing WordPressAn addition to the site we already run. The store is untouched and nothing migrates.
+## The decision
 
- 2Name who runs itPublishing cadence, clinical review, and plugin governance. This is the decision that determines whether it still works in a year.
+ 1Approve the hub as the demand engine for wasabirub.comEducational content that earns the search traffic a new domain cannot get on its own — on the same site that sells the product.
 
- 3Agree commerce and domain are decided separatelyCommerce gated on whether the counter and the website need shared stock. Domain on brand equity versus search authority. Neither blocks the hub.
+ 2Build it on WordPress + WooCommerceThe platform we already run and can already staff. sportpharm.com is untouched.
 
- On timing: the domain decision should be made before the article cluster earns its rankings. Content that ranks at one address and later moves loses much of its earned value. Deciding in a month is free. Deciding in a year is not.
+ 3Name who runs itPublishing cadence, clinical review, plugin governance. The decision that determines whether this still works in a year.
+
+ On timing: the search clock has not started. A new domain earns authority slowly, and every month without published, reviewed content is a month the competition keeps the answer. Ten articles are written and live — they need clinical sign-off, not more drafting.
 
  
 
