@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Inventory Management | SportPharm</title><meta name="description" content="Pharmacy inventory management for athletic programs and clinics &mdash; sport-vetted stock lists, emergency kits, expiry and low-stock alerts, and storage protocols aligned with NCAA and WADA guidelines."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Roboto+Condensed:wght@700;900&family=Roboto+Slab:wght@700;800&display=swap" rel="stylesheet"><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FAQ | SportPharm</title><meta name="description" content="SportPharm FAQ &mdash; pharmacy services offered, how to get started, WADA and league compliance, nationwide availability, licensing, and how to reach us."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Roboto+Condensed:wght@700;900&family=Roboto+Slab:wght@700;800&display=swap" rel="stylesheet"><style>
 :root{
   --sp-red:#d6202a;--sp-red-2:#a3161e;
   --navy-900:#18232e;--navy-800:#22303e;
@@ -644,16 +644,70 @@ footer{background:#11181f;padding:40px 0;text-align:center}
 .faq-ul li::marker{color:#d6202a}
 .rp-vs{border-left:3px solid #d6202a}
 .rp-vs-p{margin:0 0 16px;font-size:14px;line-height:1.62;color:#4b5560}
+
+.cs-item{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start;list-style:none}
+.cs-tick{width:34px;height:34px;border-radius:50%;background:#d6202a;position:relative;margin-top:2px}
+.cs-tick:after{content:"";position:absolute;left:12px;top:10px;width:7px;height:13px;
+  border-right:2.6px solid #fff;border-bottom:2.6px solid #fff;transform:rotate(42deg)}
+.cs-steps .cs-item:not(:last-child){padding-bottom:0}
+@media(max-width:700px){.cs-item{grid-template-columns:28px 1fr;gap:11px}
+  .cs-tick{width:28px;height:28px}.cs-tick:after{left:10px;top:8px;width:6px;height:11px}}
 .dropdown .sf-ext{display:flex;align-items:center;gap:6px}
 .dropdown .sf-arw{opacity:.6}
-.sf-note{margin:10px 0 0;font-size:11.5px;line-height:1.5;color:#7d8894;max-width:26ch}
+
+.ab-facts{display:flex;flex-direction:column;gap:14px}
+.ab-facts div{display:flex;align-items:baseline;gap:16px}
+.ab-facts b{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;font-stretch:condensed;font-weight:900;
+  font-size:30px;line-height:1;color:#d6202a;min-width:66px;font-variant-numeric:tabular-nums}
+.ab-facts span{font-size:13.5px;line-height:1.5;color:#4b5560}
+.tm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tm-card{background:#fff;border:1px solid #e0e3e6;border-radius:12px;padding:22px;display:flex;gap:18px;align-items:flex-start}
+.tm-ph{flex:0 0 84px;width:84px;height:84px;border-radius:50%;overflow:hidden;background:#d6202a;display:block}
+.tm-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.tm-ini{display:grid;place-items:center}
+.tm-ini span{font-family:'Inter',system-ui,sans-serif;font-size:24px;font-weight:800;color:#fff;letter-spacing:.02em}
+.tm-bd{min-width:0}
+.tm-bd b{display:block;font-size:15.5px;font-weight:700;color:#24303c;line-height:1.3}
+.tm-role{display:block;margin-top:3px;font-size:13px;line-height:1.45;color:#656e77}
+.tm-note{display:block;margin-top:8px;font-size:12.5px;line-height:1.5;color:#4b5560;padding-left:11px;border-left:2px solid #d6202a}
+.tm-mail{display:inline-block;margin-top:10px;font-size:12.5px;color:#a3161e;text-decoration:none;word-break:break-all;border-bottom:1px solid rgba(163,22,30,.3)}
+.tm-mail:hover{border-bottom-color:#a3161e}
+@media(max-width:1080px){.tm-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.tm-grid{grid-template-columns:1fr}}
+.qc-vals{margin:0;padding:0}
+.qc-vals .cs-scard{background:#fff;border:1px solid #e0e3e6}
+#ethics .cs-scard b{font-size:16px}
+#ethics .cs-step:not(:last-child):before{background:#e0e3e6}
+
+
+/* ===== products landing ===== */
+.pl-hero{background:linear-gradient(180deg,#f7f9fb 0%,#eef2f6 100%);padding:56px 0 46px;border-bottom:1px solid #e0e3e6}
+.pl-h1{margin:0 0 16px;font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;font-stretch:condensed;font-weight:900;
+  text-transform:uppercase;letter-spacing:-.025em;font-size:clamp(34px,4.6vw,64px);line-height:.94;color:#24303c}
+.pl-h1 em{font-style:normal;color:#d6202a}
+.pl-lede{margin:0 0 30px;font-size:16px;line-height:1.66;color:#4b5560;max-width:62ch}
+
+.pl-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:26px}
+.pl-hlede{margin:0;font-size:15px;line-height:1.66;color:#4b5560;max-width:52ch}
+.pl-hlede.dark{color:#c2ccd6}
+
+.pl-cmp{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.pl-ul{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:11px}
+.pl-ul li{position:relative;padding-left:26px;font-size:15px;line-height:1.6;color:#4b5560}
+.pl-ul li:before{content:"";position:absolute;left:0;top:8px;width:9px;height:9px;border-radius:50%;border:2px solid #d6202a}
+.pl-cmp-l{min-width:0}
+.pl-cmp-r img{width:100%;height:auto;border-radius:12px;display:block}
+
+@media(max-width:980px){
+  .pl-head{grid-template-columns:1fr;gap:16px;align-items:start}
+  .pl-cmp{grid-template-columns:1fr;gap:26px}}.sf-note{margin:10px 0 0;font-size:11.5px;line-height:1.5;color:#7d8894;max-width:26ch}
 .sf-note b{color:#9aa5b1;font-weight:600}
-</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What types of medications or products do you help us manage?", "acceptedAnswer": {"@type": "Answer", "text": "We manage everything from prescription and OTC medications (e.g., NSAIDs, rescue inhalers) to supplements, injectables, first aid supplies, and topical compounds. We tailor your inventory to your athletes’ needs."}}, {"@type": "Question", "name": "Do you offer inventory solutions for both large and small programs?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! Whether you’re a Division I university or a private training gym, we scale our inventory support to your environment and budget. We can even provide starter kits for new facilities."}}, {"@type": "Question", "name": "Do you offer emergency stock kits or sideline supplies?", "acceptedAnswer": {"@type": "Answer", "text": "Yes—we prepare emergency med kits, trainer bags, and travel packs customized for your sport. Everything is labeled, organized, and restocked on a regular cycle."}}, {"@type": "Question", "name": "Can you help us comply with specific requirements for storage and access?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. We guide you on secure storage, labeling, temperature controls, and access protocols that align with NCAA, WADA, and other league guidelines."}}, {"@type": "Question", "name": "How do you help us avoid expired or wasted medications?", "acceptedAnswer": {"@type": "Answer", "text": "We track expiration dates, usage patterns, and upcoming competition schedules. You’ll receive alerts for low stock or approaching expirations so you can rotate or replenish before waste occurs."}}, {"@type": "Question", "name": "Can our athletic trainer or team physician order restocks directly?", "acceptedAnswer": {"@type": "Answer", "text": "Yes—authorized staff can place orders via phone, email, or our portal. We also offer standing order templates to simplify the process for frequently used items."}}]}</script><link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png"><meta name="theme-color" content="#15202b"></head><body><header>
+</style><link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png"><meta name="theme-color" content="#15202b"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What pharmacy services does SportPharm™ offer?", "acceptedAnswer": {"@type": "Answer", "text": "We provide compounding, drug repackaging, blister packing, dispensing, inventory management, and retail pharmacy support. Our services are tailored specifically to the needs of sports medicine clinics and athletic programs."}}, {"@type": "Question", "name": "How do I get started with SportPharm™ services?", "acceptedAnswer": {"@type": "Answer", "text": "Simply contact us by phone, email, or through our website and our team will guide you through our various service options."}}, {"@type": "Question", "name": "Do you work with concierge or general wellness clinics?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. While we specialize in sports medicine, our services are ideal for any clinic seeking personalized pharmaceutical support."}}, {"@type": "Question", "name": "Are your products compliant with professional sports regulations?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We understand WADA and professional league guidelines, and we work to ensure compliance in all custom formulations and packaging."}}, {"@type": "Question", "name": "Are your services available nationwide?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We serve clients across the U.S., subject to state-specific pharmacy licensing requirements."}}, {"@type": "Question", "name": "Are your facilities licensed and inspected?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Our pharmacy operations meet all federal and state requirements for safety, quality, and licensing."}}, {"@type": "Question", "name": "How can I get in touch for routine inquiries?", "acceptedAnswer": {"@type": "Answer", "text": "You can use our contact form anytime. For urgent matters, please use the emergency contact number listed in our footer."}}]}</script></head><body><header>
   <div class="wrap nav">
     <a class="logo" href="sports-medicine.html"><img src="assets/wordmark-dark.png" alt="SportPharm"><span class="logo-tag">Behind every athlete you care for.</span></a>
     <nav class="mainnav">
       <div class="navitem">
-        <a class="navlink active" href="services.html">Services <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+        <a class="navlink" href="services.html">Services <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
         <div class="dropdown">
           <a href="compounding.html">Specialized Compounding</a>
           <a href="drug-repackaging.html">Drug Repackaging</a>
@@ -672,7 +726,7 @@ footer{background:#11181f;padding:40px 0;text-align:center}
         <div class="dropdown"><a href="articles.html">Articles</a><a class="sf-ext" href="https://sportsrxnetwork.com/" target="_blank" rel="noopener">SportsRx Network<span class="sf-arw" aria-hidden="true"></span><span class="sr-only"> (opens in a new tab)</span></a></div>
       </div>
       <div class="navitem">
-        <a class="navlink" href="about.html">About Us <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+        <a class="navlink active" href="about.html">About Us <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
         <div class="dropdown"><a href="about.html">Our Story</a><a href="quality-compliance.html">Quality &amp; Compliance</a><a href="about.html#team">Our Team</a></div>
       </div>
       <div class="navitem"><a class="navlink" href="contact.html">Contact</a></div>
@@ -686,78 +740,14 @@ footer{background:#11181f;padding:40px 0;text-align:center}
     </div>
     <button class="menu-btn" aria-label="Menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
   </div>
-</header><main><section class="h-hero">
-  <img class="h-hero-bg" src="assets/hcp-hero.jpg" alt="Athletic trainer working with an athlete in a training room">
+</header><main><section class="pl-hero">
   <div class="h-wrap">
-    <div class="h-hero-copy">
-      <p class="h-eyebrow">Inventory management</p>
-      <h1>Never short.<br><em>Never expired.</em></h1>
-      <p>Smart tracking, storing and replenishing so the training room has what it needs on the day it needs it &mdash; without a closet full of write-offs.</p>
-      <div class="h-row">
-        <a class="h-btn solid" href="#" data-intake>Review our stock &rarr;</a>
-        <a class="h-btn line" href="#benefits">See how it works</a>
-      </div>
-      <div class="h-trust"><span>Sport-vetted products</span><span>Expiry alerts</span><span>Scales to any program</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="h-sec" id="overview">
-  <div class="h-wrap">
-    <div class="h-support">
-      <div>
-        <p class="h-eyebrow on-light">Overview</p>
-        <h2 class="h-h2">What is <em>inventory management?</em></h2>
-        <p class="h-lede">Inventory management is the process of efficiently tracking, storing and replenishing products so stock levels meet demand without excessive overstocking. For SportPharm&trade;, that means smart systems monitoring pharmaceutical and medical supplies, so medications and other products are ready when athletes, clinics and sports teams need them.</p>
-        <p class="h-lede">Effective inventory management minimizes waste, reduces the risk of stockouts and supports timely delivery. We keep your inventory organized, accurate and cost-effective.</p>
-        <div class="h-row"><a class="h-btn solid" href="#" data-intake>Ask about your program &rarr;</a></div>
-      </div>
-      <div class="cp-areas rp-vs">
-        <p class="cs-sublab">What we manage</p>
-        <div class="cp-chips"><span class="cp-chip">Prescription medications</span><span class="cp-chip">OTC &amp; NSAIDs</span><span class="cp-chip">Rescue inhalers</span><span class="cp-chip">Supplements</span><span class="cp-chip">Injectables</span><span class="cp-chip">First aid supplies</span><span class="cp-chip">Topical compounds</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="h-sec wide cs-sec" id="benefits">
-  <div class="h-wrap">
-    <div class="cs-grid">
-      <div class="cs-left">
-        <p class="cs-eyebrow"><i aria-hidden="true"></i>Why teams use SportPharm for inventory</p>
-        <h3>A stock list that knows<br><em>what season it is.</em></h3>
-        <p class="cs-lede">Inventory built around a roster and a calendar, not a generic par list &mdash; vetted for sport safety, organized by how your athletes actually get injured, and watched for expiry before it becomes waste.</p>
-        <p class="cs-fine">We scale to the program: a Division I athletics department or a private training gym, including starter kits for new facilities.</p>
-      </div>
-      <div class="cs-hub">
-        <p class="cs-hub-eyebrow">What you get</p>
-        <h4>Stocked, vetted and watched.</h4>
-        <p class="cs-hub-sub">Alerts for low stock and approaching expirations, so you rotate or replenish before anything is written off.</p>
-        <ol class="cs-steps"><li class="cs-step"><span class="cs-dot red">01</span><div class="cs-scard"><b>Compliant stock lists</b><span class="cs-sdesc">We vet every product for sport safety.</span></div></li><li class="cs-step"><span class="cs-dot blue">02</span><div class="cs-scard"><b>Customized for your athletes</b><span class="cs-sdesc">Stock organized by sport, gender, season, or injury profile.</span></div></li><li class="cs-step"><span class="cs-dot blue">03</span><div class="cs-scard"><b>Emergency ready</b><span class="cs-sdesc">Code cart meds, rescue inhalers, and epinephrine on standby.</span></div></li><li class="cs-step"><span class="cs-dot red">04</span><div class="cs-scard"><b>Budget-conscious</b><span class="cs-sdesc">Eliminate over-ordering and reduce expired waste.</span></div></li></ol>
-        <p class="cs-note-dot"><span aria-hidden="true"></span>Storage, labeling, temperature controls and access protocols aligned with NCAA, WADA and other league guidelines.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="h-sec light-proof" id="proof">
-  <div class="h-wrap t-wrap">
-    <div class="t-rail">
-      <p class="h-eyebrow on-light">What our athletes say</p>
-      <h2 class="h-h2">From a closet of expired meds<br><em>to a real system.</em></h2>
-      <p class="t-lede">One program on what changed after the first audit.</p>
-    </div>
-    <div class="t-stage">
-      <span class="t-mark" aria-hidden="true">&ldquo;</span>
-      <div class="t-car">
-        <figure class="t-slide on">
-          <div class="t-stars" aria-label="Rated 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <blockquote>Before working with SportPharm&trade;, we had a closet full of expired meds and no system in place. Now we have a real-time inventory, clean sport&ndash;vetted products, and restock alerts built into our calendar. It&rsquo;s efficient, compliant, and saves us so much time during travel prep and injury season.</blockquote>
-          <figcaption class="t-attr"><span class="t-ini" aria-hidden="true">AT</span>
-            <span class="t-who"><b>Athletic training staff</b><span class="t-role">Collegiate athletics program</span>
-            <span class="t-org">SportPharm client</span></span></figcaption>
-        </figure>
-      </div>
+    <p class="h-eyebrow on-light">Frequently asked questions</p>
+    <h1 class="pl-h1">Get the<br><em>answers.</em></h1>
+    <p class="pl-lede">The questions clinics, programs and athletic trainers ask us most. If yours isn&rsquo;t here, ask a pharmacist directly &mdash; we answer within one business day.</p>
+    <div class="h-row">
+      <a class="h-btn solid" href="contact.html">Ask a question &rarr;</a>
+      <a class="h-btn line" href="services.html">See our services</a>
     </div>
   </div>
 </section>
@@ -765,12 +755,31 @@ footer{background:#11181f;padding:40px 0;text-align:center}
 <section class="h-sec wide tight-who" id="faq">
   <div class="h-wrap w-wrap">
     <div class="w-rail">
-      <p class="h-eyebrow on-light"><i class="w-rule" aria-hidden="true"></i>Frequently asked questions</p>
-      <h2 class="h-h2">What to expect with<br><em>inventory management.</em></h2>
-      <p class="w-lede">Wondering how this would work for your facility? Ask us directly.</p>
-      <div class="h-row"><a class="h-btn solid" href="#" data-intake>Ask a pharmacist &rarr;</a></div>
+      <p class="h-eyebrow on-light"><i class="w-rule" aria-hidden="true"></i>Common questions</p>
+      <h2 class="h-h2">What people ask<br><em>before they start.</em></h2>
+      <p class="w-lede">Everything below applies to sports medicine clinics, athletic programs and the clinicians who run them.</p>
+      <div class="h-row"><a class="h-btn solid" href="contact.html">Contact us &rarr;</a></div>
     </div>
-    <div class="w-list"><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq0"><span class="w-num">01</span><span class="w-mid"><span class="w-name">What types of medications or products do you help us manage?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq0" hidden><p>We manage everything from prescription and OTC medications (e.g., NSAIDs, rescue inhalers) to supplements, injectables, first aid supplies, and topical compounds. We tailor your inventory to your athletes’ needs.</p></div></div><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq1"><span class="w-num">02</span><span class="w-mid"><span class="w-name">Do you offer inventory solutions for both large and small programs?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq1" hidden><p>Yes! Whether you’re a Division I university or a private training gym, we scale our inventory support to your environment and budget. We can even provide starter kits for new facilities.</p></div></div><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq2"><span class="w-num">03</span><span class="w-mid"><span class="w-name">Do you offer emergency stock kits or sideline supplies?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq2" hidden><p>Yes—we prepare emergency med kits, trainer bags, and travel packs customized for your sport. Everything is labeled, organized, and restocked on a regular cycle.</p></div></div><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq3"><span class="w-num">04</span><span class="w-mid"><span class="w-name">Can you help us comply with specific requirements for storage and access?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq3" hidden><p>Absolutely. We guide you on secure storage, labeling, temperature controls, and access protocols that align with NCAA, WADA, and other league guidelines.</p></div></div><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq4"><span class="w-num">05</span><span class="w-mid"><span class="w-name">How do you help us avoid expired or wasted medications?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq4" hidden><p>We track expiration dates, usage patterns, and upcoming competition schedules. You’ll receive alerts for low stock or approaching expirations so you can rotate or replenish before waste occurs.</p></div></div><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq5"><span class="w-num">06</span><span class="w-mid"><span class="w-name">Can our athletic trainer or team physician order restocks directly?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq5" hidden><p>Yes—authorized staff can place orders via phone, email, or our portal. We also offer standing order templates to simplify the process for frequently used items.</p></div></div></div>
+    <div class="w-list"><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq0"><span class="w-num">01</span><span class="w-mid"><span class="w-name">What pharmacy services does SportPharm&trade; offer?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq0" hidden><p>We provide compounding, drug repackaging, blister packing, dispensing, inventory management, and retail pharmacy support. Our services are tailored specifically to the needs of sports medicine clinics and athletic programs.</p></div></div><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq1"><span class="w-num">02</span><span class="w-mid"><span class="w-name">How do I get started with SportPharm&trade; services?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq1" hidden><p>Simply contact us by phone, email, or through our website and our team will guide you through our various service options.</p></div></div><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq2"><span class="w-num">03</span><span class="w-mid"><span class="w-name">Do you work with concierge or general wellness clinics?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq2" hidden><p>Yes. While we specialize in sports medicine, our services are ideal for any clinic seeking personalized pharmaceutical support.</p></div></div><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq3"><span class="w-num">04</span><span class="w-mid"><span class="w-name">Are your products compliant with professional sports regulations?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq3" hidden><p>Yes. We understand WADA and professional league guidelines, and we work to ensure compliance in all custom formulations and packaging.</p></div></div><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq4"><span class="w-num">05</span><span class="w-mid"><span class="w-name">Are your services available nationwide?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq4" hidden><p>Yes. We serve clients across the U.S., subject to state-specific pharmacy licensing requirements.</p></div></div><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq5"><span class="w-num">06</span><span class="w-mid"><span class="w-name">Are your facilities licensed and inspected?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq5" hidden><p>Yes. Our pharmacy operations meet all federal and state requirements for safety, quality, and licensing.</p></div></div><div class="w-row"><button class="w-head" type="button" aria-expanded="false" aria-controls="faq6"><span class="w-num">07</span><span class="w-mid"><span class="w-name">How can I get in touch for routine inquiries?</span></span><span class="w-chev" aria-hidden="true"></span></button><div class="w-body" id="faq6" hidden><p>You can use our contact form anytime. For urgent matters, please use the emergency contact number listed in our footer.</p></div></div></div>
+  </div>
+</section>
+
+<section class="h-sec dark wide" id="more">
+  <div class="h-wrap">
+    <div class="pl-cmp">
+      <div class="pl-cmp-l">
+        <p class="h-eyebrow">Still have a question?</p>
+        <h2 class="h-h2">Ask a pharmacist,<br><em>not a search box.</em></h2>
+        <p class="h-lede dark">Routine questions go through the contact form and come back within one business day. For anything urgent, the emergency line is staffed outside business hours.</p>
+        <div class="h-row">
+          <a class="h-btn solid" href="contact.html">Contact us &rarr;</a>
+          <a class="h-btn line" href="quality-compliance.html">Quality &amp; compliance</a>
+        </div>
+      </div>
+      <div class="pl-cmp-r">
+        <img src="assets/hcp-hero.jpg" alt="Athletic trainer working with an athlete" loading="lazy">
+      </div>
+    </div>
   </div>
 </section>
 
