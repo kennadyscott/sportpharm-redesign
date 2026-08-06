@@ -412,61 +412,10 @@ a{color:inherit;text-decoration:none}
   <section class="section shell" id="support"><p class="eyebrow centered">YOUR NEXT STEP</p><h2 class="centered">READY TO GET IT CHECKED?</h2><p class="centered intro">These are common starting points—not a diagnosis. Tap any one to see what it’s good for.</p>
     <div class="support-grid"><button class="pcard" data-prov="primary" aria-expanded="false" aria-controls="panel-primary"><img class="pcard-icon" src="assets/icons/primary-care.svg" alt="" aria-hidden="true"><span>Primary Care</span><i class="pcard-more">Learn more</i></button><button class="pcard" data-prov="sportsmed" aria-expanded="false" aria-controls="panel-sportsmed"><img class="pcard-icon" src="assets/icons/sports-medicine.svg" alt="" aria-hidden="true"><span>Sports Medicine</span><i class="pcard-more">Learn more</i></button><button class="pcard" data-prov="pt" aria-expanded="false" aria-controls="panel-pt"><img class="pcard-icon" src="assets/icons/physical-therapy.svg" alt="" aria-hidden="true"><span>Physical Therapy</span><i class="pcard-more">Learn more</i></button><button class="pcard" data-prov="at" aria-expanded="false" aria-controls="panel-at"><img class="pcard-icon" src="assets/icons/athletic-trainer.svg" alt="" aria-hidden="true"><span>Athletic Trainer</span><i class="pcard-more">Learn more</i></button><button class="pcard" data-prov="pharmacist" aria-expanded="false" aria-controls="panel-pharmacist"><img class="pcard-icon" src="assets/icons/pharmacist.svg" alt="" aria-hidden="true"><span>Pharmacist</span><i class="pcard-more">Learn more</i></button></div>
     <div class="ppanel" id="panel-primary" data-panel="primary" hidden><div class="ppanel-in"><button class="ppanel-x" data-close-panel aria-label="Close">&times;</button><h3>Primary Care</h3><p class="ppanel-desc">A good place to start when you’re unsure where to go.</p><div class="ppanel-cols"><div><h4>Best for</h4><ul><li>Symptoms that are difficult to categorize</li><li>Pain combined with other health concerns</li><li>Coordinating referrals or imaging</li></ul></div><div><h4>Referral typically needed?</h4><p>Usually not needed — most plans let you book directly.</p><h4>What to expect at the first visit</h4><p>A general assessment, questions about your health history, and referrals or imaging if they’re warranted.</p></div></div></div></div><div class="ppanel" id="panel-sportsmed" data-panel="sportsmed" hidden><div class="ppanel-in"><button class="ppanel-x" data-close-panel aria-label="Close">&times;</button><h3>Sports Medicine</h3><p class="ppanel-desc">Activity-related pain, injuries and return-to-training guidance.</p><div class="ppanel-cols"><div><h4>Best for</h4><ul><li>Pain caused or aggravated by sport</li><li>Recurring injuries</li><li>Questions about returning to activity</li></ul></div><div><h4>Referral typically needed?</h4><p>Sometimes — some clinics take self-referrals, others want one from primary care.</p><h4>What to expect at the first visit</h4><p>An injury and movement assessment focused on your sport, plus a plan for training and return.</p></div></div></div></div><div class="ppanel" id="panel-pt" data-panel="pt" hidden><div class="ppanel-in"><button class="ppanel-x" data-close-panel aria-label="Close">&times;</button><h3>Physical Therapy</h3><p class="ppanel-desc">Movement, strength, mobility and rehabilitation.</p><div class="ppanel-cols"><div><h4>Best for</h4><ul><li>Pain that changes how you move</li><li>Rebuilding strength after an injury</li><li>Recurring mobility or movement limitations</li></ul></div><div><h4>Referral typically needed?</h4><p>Varies by state and plan — many allow direct access, some require a referral.</p><h4>What to expect at the first visit</h4><p>A movement evaluation, hands-on assessment, and an exercise program you progress over time.</p></div></div></div></div><div class="ppanel" id="panel-at" data-panel="at" hidden><div class="ppanel-in"><button class="ppanel-x" data-close-panel aria-label="Close">&times;</button><h3>Athletic Trainer</h3><p class="ppanel-desc">On-the-ground injury evaluation and activity modification.</p><div class="ppanel-cols"><div><h4>Best for</h4><ul><li>School, club or organized-team athletes</li><li>Immediate guidance during training or competition</li><li>Return-to-play planning</li></ul></div><div><h4>Referral typically needed?</h4><p>Not needed — if your team or school has one, go straight to them.</p><h4>What to expect at the first visit</h4><p>An on-site evaluation, immediate activity modifications, and help coordinating further care.</p></div></div></div></div><div class="ppanel" id="panel-pharmacist" data-panel="pharmacist" hidden><div class="ppanel-in"><button class="ppanel-x" data-close-panel aria-label="Close">&times;</button><h3>Pharmacist</h3><p class="ppanel-desc">Medication and pain-relief guidance.</p><div class="ppanel-cols"><div><h4>Best for</h4><ul><li>Choosing an OTC or topical product</li><li>Checking interactions or overlapping ingredients</li><li>Understanding how medications may affect training</li><li>Clean-sport or banned-substance questions</li></ul></div><div><h4>Referral typically needed?</h4><p>Never needed — ask a pharmacist any time, no appointment.</p><h4>What to expect at the first visit</h4><p>A conversation about what you’re taking, what you’re considering, and what fits your situation.</p></div></div><a class="btn primary" href="#contact" data-open-contact>Ask SportPharm</a></div></div>
-    <div class="centered support-cta"><button class="btn primary" id="openGuide">Find the Right Support</button><p class="support-note">Not sure which fits? Answer three questions.</p></div>
+    
   </section>
 
-  <div class="guide-overlay" id="guideOverlay" role="dialog" aria-modal="true" aria-labelledby="guideTitle">
-    <div class="guide">
-      <button class="guide-x" data-guide-close aria-label="Close">&times;</button>
-      <div class="guide-progress"><i data-step-bar="1"></i><i data-step-bar="2"></i><i data-step-bar="3"></i></div>
-
-      <div class="guide-step" data-step="1">
-        <p class="guide-eyebrow">Question 1 of 3</p>
-        <h3 id="guideTitle">What best describes what’s happening?</h3>
-        <div class="guide-opts">
-          <button data-q1="started">It just started</button>
-          <button data-q1="returning">It keeps returning</button>
-          <button data-q1="moving">It is changing how I move</button>
-          <button data-q1="relief">I have questions about pain relief</button>
-          <button data-q1="unsure">I’m not sure</button>
-        </div>
-      </div>
-
-      <div class="guide-step" data-step="2" hidden>
-        <p class="guide-eyebrow">Question 2 of 3</p>
-        <h3>Did it happen during a specific incident?</h3>
-        <p class="guide-sub">A fall, a collision, a twist, or a moment you can point to.</p>
-        <div class="guide-opts">
-          <button data-q2="yes">Yes — I can point to a moment</button>
-          <button data-q2="no">No — it came on gradually</button>
-          <button data-q2="unsure">I’m not sure</button>
-        </div>
-        <button class="guide-back" data-back="1">← Back</button>
-      </div>
-
-      <div class="guide-step" data-step="3" hidden>
-        <p class="guide-eyebrow">Question 3 of 3</p>
-        <h3>Are any of these present?</h3>
-        <p class="guide-sub">Select all that apply.</p>
-        <div class="guide-checks">
-          <label><input type="checkbox" data-warn value="Significant swelling"> Significant swelling</label>
-          <label><input type="checkbox" data-warn value="Inability to bear weight"> Inability to bear weight</label>
-          <label><input type="checkbox" data-warn value="Numbness or weakness"> Numbness or weakness</label>
-          <label><input type="checkbox" data-warn value="Head-impact symptoms"> Head-impact symptoms</label>
-          <label><input type="checkbox" data-warn value="Severe or worsening pain"> Severe or worsening pain</label>
-          <label class="none-opt"><input type="checkbox" id="warnNone"> None of these</label>
-        </div>
-        <p class="guide-hint" id="guideHint" hidden>Choose at least one option — or “None of these”.</p>
-        <button class="btn primary guide-next" id="seeResult" disabled>See my starting point</button>
-        <button class="guide-back" data-back="2">← Back</button>
-      </div>
-
-      <div class="guide-step" data-step="result" hidden>
-        <div id="resultBody"></div>
-        <button class="guide-back" id="restartGuide">← Choose a different starting point</button>
-      </div>
-    </div>
-  </div>
+  
 
   <section class="pharmacy shell" id="pharmacy"><div class="pharmacy-copy"><p class="eyebrow red">BEFORE YOU REACH FOR SOMETHING FOR THE PAIN</p><h2>PAIN RELIEF ISN’T<br>ONE-SIZE-FITS-ALL.</h2>
     <p>What works depends on where you hurt, what may be causing it, your medications and how you intend to use the product.</p>
@@ -490,120 +439,7 @@ a{color:inherit;text-decoration:none}
     (function(){var b=document.querySelector(".header2 .menu"),m=document.getElementById("mobilemenu2");
       if(b&&m)b.addEventListener("click",function(){m.classList.toggle("open");});})();
   </script>
-<script>
-/* Provider cards (accordion) + guided support pathway */
-(function(){
-  var cards=[].slice.call(document.querySelectorAll(".pcard"));
-  var panels=[].slice.call(document.querySelectorAll(".ppanel"));
-  function closeAll(){cards.forEach(function(c){c.setAttribute("aria-expanded","false");});panels.forEach(function(p){p.hidden=true;});}
-  cards.forEach(function(c){
-    c.addEventListener("click",function(){
-      var id=c.dataset.prov, open=c.getAttribute("aria-expanded")==="true";
-      closeAll();
-      if(!open){c.setAttribute("aria-expanded","true");
-        var p=document.querySelector('[data-panel="'+id+'"]'); p.hidden=false;
-        p.scrollIntoView({behavior:"smooth",block:"nearest"});}
-    });
-  });
-  document.querySelectorAll("[data-close-panel]").forEach(function(b){b.addEventListener("click",closeAll);});
 
-  /* ---- guided pathway ---- */
-  var ov=document.getElementById("guideOverlay"); if(!ov) return;
-  var answers={q1:null,q2:null,warn:[]};
-  var bars=[].slice.call(ov.querySelectorAll("[data-step-bar]"));
-  var warns=[].slice.call(ov.querySelectorAll("[data-warn]"));
-  var none=document.getElementById("warnNone");
-  var seeBtn=document.getElementById("seeResult");
-  var hint=document.getElementById("guideHint");
-
-  /* the pain-relief path skips the incident question */
-  function path(){ return answers.q1==="relief" ? [1,3] : [1,2,3]; }
-
-  function show(step){
-    ov.querySelectorAll(".guide-step").forEach(function(el){el.hidden=String(el.dataset.step)!==String(step);});
-    var p=path(), n=Number(step), isQ=!isNaN(n), idx=p.indexOf(n);
-    /* progress bar reflects the ACTUAL number of questions on this path */
-    bars.forEach(function(b,i){
-      b.style.display = i<p.length ? "" : "none";
-      b.classList.toggle("on", isQ ? i<=idx : true);
-    });
-    /* label reads correctly for the path being taken */
-    if(isQ && idx>-1){
-      var eb=ov.querySelector('.guide-step[data-step="'+step+'"] .guide-eyebrow');
-      if(eb) eb.textContent="Question "+(idx+1)+" of "+p.length;
-      /* back goes to the previous step ON THIS PATH, not a skipped one */
-      var bk=ov.querySelector('.guide-step[data-step="'+step+'"] [data-back]');
-      if(bk){ if(idx>0){ bk.hidden=false; bk.dataset.back=String(p[idx-1]); } else { bk.hidden=true; } }
-    }
-    if(String(step)==="3") syncQ3();
-  }
-  function mark(sel,val){
-    ov.querySelectorAll(sel).forEach(function(b){b.classList.toggle("sel", b.dataset[val.k]===val.v);});
-  }
-  function syncQ3(){
-    var any = warns.some(function(w){return w.checked;}) || none.checked;
-    seeBtn.disabled=!any; hint.hidden=any;
-  }
-  function open(){
-    answers={q1:null,q2:null,warn:[]};
-    ov.querySelectorAll("input[type=checkbox]").forEach(function(i){i.checked=false;});
-    ov.querySelectorAll(".guide-opts button").forEach(function(b){b.classList.remove("sel");});
-    syncQ3(); show(1); ov.classList.add("open"); document.body.style.overflow="hidden";
-  }
-  function close(){ov.classList.remove("open"); document.body.style.overflow="";}
-  document.getElementById("openGuide").addEventListener("click",open);
-  ov.querySelectorAll("[data-guide-close]").forEach(function(b){b.addEventListener("click",close);});
-  ov.addEventListener("click",function(e){if(e.target===ov)close();});
-  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&ov.classList.contains("open"))close();});
-  ov.querySelectorAll("[data-back]").forEach(function(b){b.addEventListener("click",function(){show(b.dataset.back);});});
-
-  ov.querySelectorAll("[data-q1]").forEach(function(b){b.addEventListener("click",function(){
-    answers.q1=b.dataset.q1; mark("[data-q1]",{k:"q1",v:answers.q1});
-    show(answers.q1==="relief" ? 3 : 2);});});
-  ov.querySelectorAll("[data-q2]").forEach(function(b){b.addEventListener("click",function(){
-    answers.q2=b.dataset.q2; mark("[data-q2]",{k:"q2",v:answers.q2}); show(3);});});
-
-  warns.forEach(function(w){w.addEventListener("change",function(){if(w.checked)none.checked=false;syncQ3();});});
-  none.addEventListener("change",function(){if(none.checked)warns.forEach(function(w){w.checked=false;});syncQ3();});
-
-  var R={
-    urgent:{flag:"Seek care now",cls:"flag-care",h:"Get this checked promptly.",
-      p:"What you selected can point to something that needs hands-on evaluation. Rather than working through a self-guided path, contact a healthcare professional now — or use urgent or emergency care if symptoms are severe, rapidly worsening, or followed a head impact.",
-      a:[["See the Warning Signs","#warning"],["Talk to SportPharm","#contact"]]},
-    pharmacist:{flag:"Starting point",cls:"flag-start",h:"Start with a pharmacist.",
-      p:"A pharmacist can help you compare pain-relief options, identify overlapping ingredients and account for your current medications.",
-      a:[["Ask SportPharm","mailto:info@sportpharm.com"],["Explore Topical Pain Relief","wasabirub.html"],["Learn About WasabiRub","wasabirub.html"]]},
-    sportsmed:{flag:"Starting point",cls:"flag-start",h:"Sports medicine may be a helpful starting point.",
-      p:"Because this is tied to activity and continues to affect you, a sports-medicine evaluation may help you understand what\u2019s happening and how to return safely.",
-      a:[["See What to Bring to Your Appointment","coming-soon.html?f=What+to+Bring+to+Your+Appointment"]]},
-    pt:{flag:"Starting point",cls:"flag-start",h:"Physical therapy may be a helpful starting point.",
-      p:"When pain changes how you move, a movement-focused evaluation can identify what\u2019s limiting you and build a plan to rebuild strength and mobility.",
-      a:[["See What to Bring to Your Appointment","coming-soon.html?f=What+to+Bring+to+Your+Appointment"]]},
-    primary:{flag:"Starting point",cls:"flag-start",h:"Primary care is a solid place to start.",
-      p:"When symptoms are hard to categorize or you\u2019re not sure where to begin, primary care can assess broadly and coordinate referrals or imaging if they\u2019re needed.",
-      a:[["See What to Bring to Your Appointment","coming-soon.html?f=What+to+Bring+to+Your+Appointment"]]}
-  };
-  function decide(){
-    if(answers.warn.length) return R.urgent;              /* safety override */
-    if(answers.q1==="relief") return R.pharmacist;
-    if(answers.q1==="moving") return answers.q2==="yes" ? R.sportsmed : R.pt;
-    if(answers.q1==="returning") return R.sportsmed;
-    if(answers.q1==="started") return answers.q2==="yes" ? R.sportsmed : R.primary;
-    return R.primary;
-  }
-  seeBtn.addEventListener("click",function(){
-    if(seeBtn.disabled) return;
-    answers.warn=warns.filter(function(w){return w.checked;}).map(function(w){return w.value;});
-    var r=decide();
-    document.getElementById("resultBody").innerHTML=
-      '<div class="result-body"><span class="result-flag '+r.cls+'">'+r.flag+'</span><h3>'+r.h+'</h3><p>'+r.p+'</p>'+
-      '<div class="result-actions">'+r.a.map(function(x){return '<a href="'+x[1]+'"'+(x[1]==="#contact"?' data-open-contact':'')+'>'+x[0]+' <span>\u2192</span></a>';}).join("")+'</div>'+
-      '<p class="result-note">This is general guidance, not a diagnosis. SportPharm doesn\u2019t evaluate or treat injuries \u2014 a qualified professional should assess anything that concerns you.</p></div>';
-    show("result");
-  });
-  document.getElementById("restartGuide").addEventListener("click",open);
-})();
-</script>
 <div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
     <div class="modal">
       <button class="modal-close" type="button" aria-label="Close" data-close>&times;</button>

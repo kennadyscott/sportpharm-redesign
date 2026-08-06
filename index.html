@@ -126,7 +126,28 @@
 .pback{display:block;margin:auto auto 0;padding-top:18px;border:0;background:none;font:inherit;font-size:12px;font-weight:800;color:var(--muted);cursor:pointer}
 .pback:hover{color:var(--ink)}
 @media(max-width:1000px){.cards4{grid-template-columns:1fr 1fr}.pcols{grid-template-columns:1fr;gap:18px}.stop-stage{min-height:0}.stop-panel{position:static;margin-top:18px}}
-</style>
+
+    .shell{width:min(1180px,calc(100% - 40px));margin:auto}
+    footer{padding:48px 0 26px;background:#07100d;color:#aab7b1}
+    .footer-top{display:flex;align-items:flex-start;justify-content:space-between;gap:48px;flex-wrap:wrap;padding-bottom:34px;border-bottom:1px solid #24312d}
+    .footer-brand img{display:block;width:200px;margin-bottom:14px}
+    .footer-brand p{margin:0;font-size:10px;font-weight:900;letter-spacing:.12em;line-height:1.7}
+    .footer-col{display:flex;flex-direction:column;gap:13px}
+    .footer-heading{margin:0 0 2px;font-size:9px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:#6d7b75}
+    .footer-menu{display:flex;flex-direction:column;gap:13px;font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+    .footer-menu a:hover{color:var(--red)}
+    .footer-email{font-size:15px;font-weight:900;color:#fff}
+    .footer-email:hover{color:var(--red)}
+    .footer-social{display:flex;gap:11px;margin-top:20px}
+    .footer-social a{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid #24312d;border-radius:50%;color:#aab7b1;transition:.2s}
+    .footer-social a:hover{color:#fff;border-color:var(--red);background:var(--red)}
+    .footer-social svg{width:16px;height:16px;display:block}
+    .footer-legal{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:24px;flex-wrap:wrap}
+    .footer-legal a{font-size:10px;font-weight:900;letter-spacing:.1em;white-space:nowrap}
+    .footer-legal a:hover{color:var(--red)}
+    .footer-legal small{color:#68756f;font-size:9px;line-height:1.6}
+    @media(max-width:900px){.footer-top{flex-direction:column;gap:30px}}
+    @media(max-width:600px){.shell{width:min(100% - 28px,1180px)}.footer-brand img{width:180px}}</style>
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png"><meta name="theme-color" content="#15202b"></head>
 <body>
   <header class="header2">
@@ -233,11 +254,44 @@
 
     <section class="cta"><h2>You don’t need all the answers. You need the right next step<span>.</span></h2></section>
   </main>
-  <footer class="footer" id="footer">
-    <div><a class="brand" href="#top">SPORTPHARM<small style="color:#aab5c4">EVERYDAY ATHLETE</small></a><p>Sports pharmacy expertise. Practical guidance for real life.</p></div>
-    <div><h3>Athletes</h3><a href="#pathways">Start here</a><a href="push-through-or-stop.html">Pain & injury</a><a href="#recovery">Recovery basics</a></div>
-    <div><h3>Sports Pharmacy</h3><a href="#pharmacy">Medication guidance</a><a href="#pharmacy">Supplement review</a><a href="#contact" data-open-contact>Ask a question</a></div>
-    <div><h3>Company</h3><a href="https://sportpharm.com/about/">About us</a><a href="https://sportpharm.com/contact/">Contact</a><p>© 2026 SportPharm</p></div>
+  <footer>
+    <div class="shell footer-top">
+      <div class="footer-brand">
+        <a href="wasabirub.html"><img src="assets/wordmark-white.png" alt="SportPharm"></a>
+        <p>FORMULATED BY SPORTS PHARMACISTS.<br>TRUSTED BY ATHLETES.</p>
+        <div class="footer-social">
+          <a href="coming-soon.html?f=Instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line></svg></a>
+          <a href="coming-soon.html?f=Facebook" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"></path></svg></a>
+          <a href="coming-soon.html?f=X" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.3 8.3L23 22h-6.6l-5.2-6.8L5.3 22H2l7.8-8.9L1.5 2h6.8l4.7 6.2L18.9 2zm-1.2 18h1.7L7.4 3.8H5.6L17.7 20z"></path></svg></a>
+          <a href="coming-soon.html?f=TikTok" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8a4.3 4.3 0 0 1-1-2.8h-3v12.1a2.4 2.4 0 1 1-2.4-2.4c.2 0 .5 0 .7.1V9.7a5.5 5.5 0 1 0 4.7 5.4V9a7.3 7.3 0 0 0 4.3 1.4V7.4a4.3 4.3 0 0 1-3.3-1.6z"></path></svg></a>
+        </div>
+      </div>
+      <nav class="footer-col" aria-label="Footer menu">
+        <p class="footer-heading">Menu</p>
+        <div class="footer-menu">
+          <a href="find-your-rub.html">Products</a>
+          <a href="coming-soon.html?f=About">About</a>
+          <a href="coming-soon.html?f=FAQ">FAQ</a>
+          <a href="#contact" data-open-contact>Contact</a>
+          <a href="https://sportpharm.com">Pharmacy</a>
+        </div>
+      </nav>
+      <nav class="footer-col" aria-label="Support">
+        <p class="footer-heading">Support</p>
+        <div class="footer-menu">
+          <a href="coming-soon.html?f=Shipping+%26+Returns">Shipping &amp; Returns</a>
+          <a href="coming-soon.html?f=Terms+of+Service">Terms of Service</a>
+          <a href="https://sportpharm.com/privacy-policy/">Privacy Policy</a>
+        </div>
+      </nav>
+      <div class="footer-col">
+        <p class="footer-heading">General Inquiries</p>
+        <a class="footer-email" href="mailto:info@sportpharm.com">info@sportpharm.com</a>
+      </div>
+    </div>
+    <div class="shell footer-legal">
+      <small>© 2026 SportPharm. For external use only. Temporarily relieves minor aches and pains of muscles and joints. Use only as directed.</small>
+    </div>
   </footer>
   <script>
     const menu=document.querySelector(".menu"),nav=document.getElementById("mobilemenu2");

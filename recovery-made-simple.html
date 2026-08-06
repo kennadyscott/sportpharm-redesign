@@ -222,6 +222,10 @@ section{padding:70px 0}
 @media(max-width:600px){.acar-track>article{flex:0 0 100%}
   .acar-btn{top:70px}.acar-btn.prev{left:-6px}.acar-btn.next{right:-6px}}
 @media(prefers-reduced-motion:reduce){.acar-track{transition:none}}
+.article-visual{position:relative;overflow:hidden}
+.art-thumb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0}
+.article-visual:after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(160deg,rgba(11,17,23,.62),rgba(11,17,23,.30))}
+.article-visual .article-index,.article-visual .article-line{position:relative;z-index:2}
 </style>
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png"><meta name="theme-color" content="#15202b"></head>
 <body>
@@ -348,22 +352,22 @@ section{padding:70px 0}
       <div class="section-intro"><p class="kicker">Recovery, explained</p><h2>KNOW MORE. RECOVER SMARTER.</h2></div>
       <a class="text-link" href="articles.html">View all recovery articles <span aria-hidden="true">→</span></a>
     </div>
-    <div class="acar" data-acar ><div class="acar-vp"><div class="acar-track"><article class="article-card"><div class="article-visual red"><span class="article-index">01</span><span class="article-line"></span></div>
+    <div class="acar" data-acar ><div class="acar-vp"><div class="acar-track"><article class="article-card"><div class="article-visual red"><img class="art-thumb" src="assets/ea-recover.jpg" alt="Athlete resting after a session" decoding="async"><span class="article-index">01</span><span class="article-line"></span></div>
         <div class="article-content"><p class="card-eyebrow">Recovery basics</p><h3>5 Recovery Habits That Make a Real Difference</h3>
         <p>A realistic recovery routine for people with jobs, families, and workouts squeezed into real life.</p>
-        <a href="article-recovery-habits.html">Read article <span aria-hidden="true">→</span></a></div></article><article class="article-card"><div class="article-visual blue"><span class="article-index">02</span><span class="article-line"></span></div>
+        <a href="article-recovery-habits.html">Read article <span aria-hidden="true">→</span></a></div></article><article class="article-card"><div class="article-visual blue"><img class="art-thumb" src="assets/itfm-time.jpg" alt="Athlete checking the time mid-run" decoding="async"><span class="article-index">02</span><span class="article-line"></span></div>
         <div class="article-content"><p class="card-eyebrow">Training load</p><h3>How Much Recovery Time Do You Actually Need?</h3>
         <p>Why recovery needs change with intensity, training history, sleep, stress, and the rest of your week.</p>
-        <a href="coming-soon.html?f=How+Much+Recovery+Time+Do+You+Actually+Need">Read article <span aria-hidden="true">→</span></a></div></article><article class="article-card"><div class="article-visual navy"><span class="article-index">03</span><span class="article-line"></span></div>
+        <a href="article-how-much-recovery-time.html">Read article <span aria-hidden="true">→</span></a></div></article><article class="article-card"><div class="article-visual navy"><img class="art-thumb" src="assets/pts-art-soreness.jpg" alt="Athlete assessing post-workout soreness" decoding="async"><span class="article-index">03</span><span class="article-line"></span></div>
         <div class="article-content"><p class="card-eyebrow">Soreness</p><h3>Sore Today? How to Decide What Tomorrow’s Workout Should Be</h3>
         <p>A simple way to choose between training normally, modifying the session, or taking more time.</p>
-        <a href="coming-soon.html?f=Sore+Today+What+Tomorrows+Workout+Should+Be">Read article <span aria-hidden="true">→</span></a></div></article><article class="article-card"><div class="article-visual blue"><span class="article-index">04</span><span class="article-line"></span></div>
+        <a href="article-sore-today-what-tomorrow.html">Read article <span aria-hidden="true">→</span></a></div></article><article class="article-card"><div class="article-visual blue"><img class="art-thumb" src="assets/ea-medication.jpg" alt="Topical and oral pain relief options" decoding="async"><span class="article-index">04</span><span class="article-line"></span></div>
         <div class="article-content"><p class="card-eyebrow">Pain relief</p><h3>Topical vs. Oral Pain Relief: What’s the Difference?</h3>
         <p>A plain-language look at common options, label basics, and questions to ask your pharmacist.</p>
-        <a href="pain-relief-options.html">Read article <span aria-hidden="true">→</span></a></div></article><article class="article-card"><div class="article-visual navy"><span class="article-index">05</span><span class="article-line"></span></div>
+        <a href="pain-relief-options.html">Read article <span aria-hidden="true">→</span></a></div></article><article class="article-card"><div class="article-visual navy"><img class="art-thumb" src="assets/ea-recovery.jpg" alt="Athlete winding down for sleep" decoding="async"><span class="article-index">05</span><span class="article-line"></span></div>
         <div class="article-content"><p class="card-eyebrow">Sleep</p><h3>Why Sleep Is Part of Your Training Plan</h3>
         <p>Recovery does not begin with a foam roller. It begins with the systems that help you adapt.</p>
-        <a href="coming-soon.html?f=Why+Sleep+Is+Part+of+Your+Training+Plan">Read article <span aria-hidden="true">→</span></a></div></article><article class="article-card"><div class="article-visual red"><span class="article-index">06</span><span class="article-line"></span></div>
+        <a href="coming-soon.html?f=Why+Sleep+Is+Part+of+Your+Training+Plan">Read article <span aria-hidden="true">→</span></a></div></article><article class="article-card"><div class="article-visual red"><img class="art-thumb" src="assets/ea-recurring.jpg" alt="Recurring pain that keeps returning" decoding="async"><span class="article-index">06</span><span class="article-line"></span></div>
         <div class="article-content"><p class="card-eyebrow">Returning</p><h3>When Rest Isn’t Fixing the Problem</h3>
         <p>What a recurring pattern can tell you—and when it is time to stop repeating the same cycle.</p>
         <a href="coming-soon.html?f=When+Rest+Isnt+Fixing+the+Problem">Read article <span aria-hidden="true">→</span></a></div></article></div></div><button class="acar-btn prev" type="button" aria-label="Previous articles"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button><button class="acar-btn next" type="button" aria-label="Next articles"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><div class="acar-dots"></div></div>
