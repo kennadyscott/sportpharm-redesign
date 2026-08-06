@@ -201,11 +201,15 @@ h2{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;
   border-radius: 50%;
   color: white;
   display: flex;
-  font-size: 21px;
   height: 60px;
   justify-content: center;
   margin: 0 auto 13px;
   width: 60px;}
+.spectrum-icon img{display: block;
+  height: 57%;
+  object-fit: contain;
+  width: 57%;}
+.spectrum-icon img.nudge{margin-left: 5%;}
 .spectrum-icon.red{background: var(--red);}
 .spectrum-icon.blue{background: var(--blue);}
 .spectrum-icon.navy{background: #26647c;}
@@ -575,27 +579,27 @@ h1,h2,h3,.display{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-seri
 
         <div class="spectrum-line">
           <article>
-            <span class="spectrum-icon red">▶</span>
+            <span class="spectrum-icon red"><img class="nudge" src="assets/icons/sp-start.png" alt="" decoding="async"></span>
             <h3>Starting</h3>
           </article>
           <i aria-hidden="true"></i>
           <article>
-            <span class="spectrum-icon blue">⌁</span>
+            <span class="spectrum-icon blue"><img src="assets/icons/sp-active.png" alt="" decoding="async"></span>
             <h3>Staying active</h3>
           </article>
           <i aria-hidden="true"></i>
           <article>
-            <span class="spectrum-icon navy">↗</span>
+            <span class="spectrum-icon navy"><img src="assets/icons/sp-training.png" alt="" decoding="async"></span>
             <h3>Training</h3>
           </article>
           <i aria-hidden="true"></i>
           <article>
-            <span class="spectrum-icon blue">★</span>
+            <span class="spectrum-icon blue"><img src="assets/icons/sp-performing.png" alt="" decoding="async"></span>
             <h3>Performing</h3>
           </article>
           <i aria-hidden="true"></i>
           <article>
-            <span class="spectrum-icon red">↻</span>
+            <span class="spectrum-icon red"><img src="assets/icons/sp-returning.png" alt="" decoding="async"></span>
             <h3>Returning</h3>
           </article>
         </div>
