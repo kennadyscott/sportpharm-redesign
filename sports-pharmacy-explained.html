@@ -259,17 +259,26 @@ h2{font-family: "Arial Narrow","Roboto Condensed",Impact,sans-serif;
   gap: 10px;
   grid-template-columns: repeat(3, 1fr);
   margin-top: 28px;}
-.category-grid article{border: 1px solid var(--line);
-  min-height: 115px;
-  padding: 16px;}
-.category-grid span{color: var(--blue);
-  font-family: Georgia, serif;
-  font-size: 16px;
-  font-weight: 900;}
+.category-grid article{align-items: center;
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  justify-content: center;
+  min-height: 142px;
+  padding: 20px 14px;
+  text-align: center;}
+.category-grid i{display: block;
+  height: 44px;
+  width: 44px;}
+.category-grid i img{display: block;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;}
 .category-grid h3{color: var(--navy);
   font-size: 12px;
   line-height: 1.35;
-  margin: 16px 0 0;}
+  margin: 0;}
 .routine-callout{align-items: center;
   border-left: 3px solid var(--red);
   display: grid;
@@ -304,8 +313,18 @@ h2{font-family: "Arial Narrow","Roboto Condensed",Impact,sans-serif;
   margin: 0 auto 34px;
   max-width: 1400px;}
 .scenario-grid article{border: 1px solid rgba(255, 255, 255, 0.3);
-  min-height: 185px;
+  display: flex;
+  flex-direction: column;
+  min-height: 245px;
   padding: 22px;}
+.scenario-grid i{display: block;
+  height: 52px;
+  margin: 22px auto 0;
+  width: 52px;}
+.scenario-grid i img{display: block;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;}
 .scenario-grid span{color: var(--red);
   font-family: Georgia, serif;
   font-size: 34px;}
@@ -313,8 +332,6 @@ h2{font-family: "Arial Narrow","Roboto Condensed",Impact,sans-serif;
   font-size: 13px;
   line-height: 1.55;
   margin-top: 10px;}
-.center-action{display: flex;
-  justify-content: center;}
 .clean-sport{display: grid;
   grid-template-columns: 1fr 1.08fr;
   min-height: 680px;}
@@ -327,19 +344,28 @@ h2{font-family: "Arial Narrow","Roboto Condensed",Impact,sans-serif;
   font-size: 16px;
   line-height: 1.7;}
 .clean-points{border-top: 1px solid var(--line);
-  margin: 30px 0;}
-.clean-points article{align-items: start;
-  border-bottom: 1px solid var(--line);
   display: grid;
-  gap: 18px;
-  grid-template-columns: 40px 1fr;
-  padding: 17px 0;}
-.clean-points article > span{color: var(--red);
-  font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;
-  font-size: 23px;}
+  grid-template-columns: repeat(3, 1fr);
+  margin: 30px 0 34px;
+  padding-top: 28px;}
+.clean-points article{border-left: 1px solid var(--line);
+  padding: 0 22px;}
+.clean-points article:first-child{border-left: 0;
+  padding-left: 0;}
+.clean-points i{display: block;
+  height: 46px;
+  margin-bottom: 15px;
+  width: 46px;}
+.clean-points i img{display: block;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;}
 .clean-points h3{color: var(--navy);
-  font-size: 14px;
-  margin: 0 0 5px;}
+  font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;
+  font-size: 15px;
+  letter-spacing: .02em;
+  margin: 0 0 6px;
+  text-transform: uppercase;}
 .clean-points p{color: var(--muted);
   font-size: 12px;
   line-height: 1.55;
@@ -491,11 +517,11 @@ h2{font-family: "Arial Narrow","Roboto Condensed",Impact,sans-serif;
   .category-grid,
   .scenario-grid,
   .closing-cta,
-  footer{grid-template-columns: 1fr;}.question-card{min-height: 285px;}.whole-athlete{padding: 70px 22px;}.athlete-diagram{height: 400px;
-    transform: scale(0.78);
-    transform-origin: center;}.routine{padding: 0;}.routine-copy,
+  footer{grid-template-columns: 1fr;}.question-card{min-height: 285px;}.whole-athlete{padding: 70px 22px;}.routine{padding: 0;}.routine-copy,
   .clean-copy{padding: 70px 22px;}.routine-image,
-  .clean-image{min-height: 430px;}.ask-section{padding: 70px 20px;}.scenario-grid article{min-height: 135px;}.relief{padding: 70px 20px;}.product-scene{height: 420px;}.closing-cta,
+  .clean-image{min-height: 430px;}.ask-section{padding: 70px 20px;}.clean-points{grid-template-columns: 1fr;
+    gap: 26px;}.clean-points article{border-left: 0;
+    padding: 0;}.scenario-grid article{min-height: 135px;}.relief{padding: 70px 20px;}.product-scene{height: 420px;}.closing-cta,
   footer{padding: 62px 22px;}}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior: auto;}.button,
   .question-card,
@@ -603,7 +629,7 @@ h1,h2,h3,.display{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-seri
   gap:3px;padding:6px;text-align:center;z-index:2;box-shadow:0 6px 18px -12px rgba(16,32,60,.45)}
 .satellite i{display:block;width:34%;height:26%;flex:0 0 auto}
 .satellite i img{width:100%;height:100%;object-fit:contain;display:block}
-.satellite span{font-size:clamp(9px,1.9vw,12.5px);line-height:1.2;color:#16305c;font-weight:600}
+.satellite span{font-size:clamp(11.5px,1.9vw,12.5px);line-height:1.2;color:#16305c;font-weight:600}
 .satellite.medication{left:50%;top:14%}
 .satellite.recovery{left:84.2%;top:38.9%}
 .satellite.safety{left:71.2%;top:79.1%}
@@ -783,27 +809,27 @@ h1,h2,h3,.display{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-seri
           </p>
           <div class="category-grid">
             <article>
-              <span>Rx</span>
+              <i><img src="assets/icons/rt-rx.png" alt="" decoding="async"></i>
               <h3>Prescription medications</h3>
             </article>
             <article>
-              <span>OTC</span>
+              <i><img src="assets/icons/rt-otc.png" alt="" decoding="async"></i>
               <h3>Over-the-counter medications</h3>
             </article>
             <article>
-              <span>+</span>
+              <i><img src="assets/icons/rt-vitamins.png" alt="" decoding="async"></i>
               <h3>Vitamins + supplements</h3>
             </article>
             <article>
-              <span>⚡</span>
+              <i><img src="assets/icons/rt-protein.png" alt="" decoding="async"></i>
               <h3>Protein + pre-workout</h3>
             </article>
             <article>
-              <span>○</span>
+              <i><img src="assets/icons/rt-topical.png" alt="" decoding="async"></i>
               <h3>Topical pain relief</h3>
             </article>
             <article>
-              <span>☾</span>
+              <i><img src="assets/icons/rt-sleep.png" alt="" decoding="async"></i>
               <h3>Sleep + recovery products</h3>
             </article>
           </div>
@@ -833,32 +859,33 @@ h1,h2,h3,.display{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-seri
           <article>
             <span>“</span>
             <p>My workouts feel different since I started a medication.</p>
+            <i><img src="assets/icons/sc-medication.png" alt="" decoding="async"></i>
           </article>
           <article>
             <span>“</span>
             <p>I’m taking several supplements and don’t know what I need.</p>
+            <i><img src="assets/icons/sc-supplements.png" alt="" decoding="async"></i>
           </article>
           <article>
             <span>“</span>
             <p>I use pain relievers often enough that I’m wondering about it.</p>
+            <i><img src="assets/icons/sc-painrelief.png" alt="" decoding="async"></i>
           </article>
           <article>
             <span>“</span>
             <p>I compete and need to understand banned-substance risk.</p>
+            <i><img src="assets/icons/sc-compete.png" alt="" decoding="async"></i>
           </article>
           <article>
             <span>“</span>
             <p>I train in the heat and take a medication.</p>
+            <i><img src="assets/icons/sc-heat.png" alt="" decoding="async"></i>
           </article>
           <article>
             <span>“</span>
             <p>I don’t know whether these products can be taken together.</p>
+            <i><img src="assets/icons/sc-together.png" alt="" decoding="async"></i>
           </article>
-        </div>
-        <div class="center-action">
-          <a class="button primary" href="#contact" data-open-contact>
-            Ask a Sports Pharmacist
-          </a>
         </div>
       </section>
 
@@ -879,34 +906,26 @@ h1,h2,h3,.display{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-seri
           </p>
           <div class="clean-points">
             <article>
-              <span>01</span>
-              <div>
-                <h3>Third-party testing</h3>
-                <p>
-                  Understand what a certification may reduce—and what it cannot
-                  guarantee.
-                </p>
-              </div>
+              <i><img src="assets/icons/cs-testing.png" alt="" decoding="async"></i>
+              <h3>Third-party testing</h3>
+              <p>
+                Look for products tested by trusted programs to reduce
+                contamination risk.
+              </p>
             </article>
             <article>
-              <span>02</span>
-              <div>
-                <h3>Ingredient awareness</h3>
-                <p>
-                  Know what is in your products and where ingredients may
-                  overlap.
-                </p>
-              </div>
+              <i><img src="assets/icons/cs-ingredients.png" alt="" decoding="async"></i>
+              <h3>Ingredient awareness</h3>
+              <p>
+                Know what is in your products and how it can affect you.
+              </p>
             </article>
             <article>
-              <span>03</span>
-              <div>
-                <h3>Banned-substance risk</h3>
-                <p>
-                  Stay informed and protect your eligibility before you take
-                  something.
-                </p>
-              </div>
+              <i><img src="assets/icons/cs-banned.png" alt="" decoding="async"></i>
+              <h3>Banned-substance risk</h3>
+              <p>
+                Ingredients change. Stay informed and protect your eligibility.
+              </p>
             </article>
           </div>
           <a class="button outline" href="#learn">
@@ -929,11 +948,8 @@ h1,h2,h3,.display{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-seri
             minor muscle and joint aches. Always use the product as directed.
           </p>
           <div class="actions">
-            <a class="button primary" href="#learn">
-              Compare Pain-Relief Options
-            </a>
-            <a class="text-link" href="wasabirub.html">
-              Explore WasabiRub →
+            <a class="button primary" href="wasabirub-product.html">
+              See WasabiRub
             </a>
           </div>
         </div>
@@ -1023,9 +1039,6 @@ h1,h2,h3,.display{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-seri
         <div class="closing-actions">
           <a class="button primary" href="#contact" data-open-contact>
             Ask a Sports Pharmacist
-          </a>
-          <a class="button outline-light" href="coming-soon.html?f=Medication+Guidance">
-            Explore Medication Guidance
           </a>
         </div>
       </section>
