@@ -170,18 +170,15 @@ h2{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;
 .fit-card:hover{border-color: var(--red);
   box-shadow: 0 17px 38px rgba(16, 35, 66, 0.1);
   transform: translateY(-4px);}
-.fit-icon{align-items: center;
-  border: 1.5px solid var(--blue);
-  border-radius: 50%;
-  color: var(--blue);
-  display: flex;
-  font-family: Georgia, serif;
-  font-size: 17px;
-  font-weight: 900;
-  height: 48px;
-  justify-content: center;
+.fit-icon{display: grid;
+  height: 54px;
   margin-bottom: 20px;
-  width: 48px;}
+  place-items: center;
+  width: 54px;}
+.fit-icon img{display: block;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;}
 .fit-card p{color: var(--navy);
   font-size: 14px;
   font-weight: 700;
@@ -532,35 +529,35 @@ h1,h2,h3,.display{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-seri
 
         <div class="fit-grid">
           <a class="fit-card" href="#pain">
-            <span class="fit-icon">!</span>
+            <span class="fit-icon"><img src="assets/icons/fit-hurt.png" alt="" decoding="async"></span>
             <p>Something hurts, and I’m not sure what to do next.</p>
           </a>
           <a class="fit-card" href="#recovery">
-            <span class="fit-icon">↻</span>
+            <span class="fit-icon"><img src="assets/icons/fit-recover.png" alt="" decoding="async"></span>
             <p>I want to recover better between workouts.</p>
           </a>
           <a class="fit-card" href="#pharmacy">
-            <span class="fit-icon">Rx</span>
+            <span class="fit-icon"><img src="assets/icons/fit-medication.png" alt="" decoding="async"></span>
             <p>I have questions about medications or supplements.</p>
           </a>
           <a class="fit-card" href="#return">
-            <span class="fit-icon">↗</span>
+            <span class="fit-icon"><img src="assets/icons/fit-injury.png" alt="" decoding="async"></span>
             <p>I’m returning after an injury or long break.</p>
           </a>
           <a class="fit-card" href="#support">
-            <span class="fit-icon">○</span>
+            <span class="fit-icon"><img src="assets/icons/fit-time.png" alt="" decoding="async"></span>
             <p>I want to improve without making fitness my whole life.</p>
           </a>
           <a class="fit-card" href="#pharmacy">
-            <span class="fit-icon">✓</span>
+            <span class="fit-icon"><img src="assets/icons/fit-safety.png" alt="" decoding="async"></span>
             <p>I compete and need to understand product safety.</p>
           </a>
           <a class="fit-card" href="#support">
-            <span class="fit-icon">+</span>
+            <span class="fit-icon"><img src="assets/icons/fit-changes.png" alt="" decoding="async"></span>
             <p>I’m trying to stay active as my body or life changes.</p>
           </a>
           <a class="fit-card" href="#pain">
-            <span class="fit-icon">◇</span>
+            <span class="fit-icon"><img src="assets/icons/fit-relief.png" alt="" decoding="async"></span>
             <p>I need trustworthy pain-relief guidance.</p>
           </a>
         </div>
