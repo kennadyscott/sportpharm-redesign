@@ -585,6 +585,31 @@ h1,h2,h3,.display{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-seri
 @media(max-width:600px){.acar-track>article{flex:0 0 100%}
   .acar-btn{top:70px}.acar-btn.prev{left:-6px}.acar-btn.next{right:-6px}}
 @media(prefers-reduced-motion:reduce){.acar-track{transition:none}}
+.question-icon img{width:100%;height:100%;object-fit:contain;display:block}
+.question-icon{overflow:visible;border:0;background:none;display:grid;place-items:center;width:58px;height:58px}
+@media(max-width:700px){.question-icon{width:48px;height:48px}}
+
+.athlete-diagram{position:relative;width:min(100%,470px);height:0;padding-bottom:min(100%,470px);margin:0 auto;align-self:center;justify-self:center}
+.ad-lines{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.center-node{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:37%;height:37%;border-radius:50%;background:#fff;border:3px solid #16305c;
+  display:grid;place-content:center;text-align:center;z-index:2;box-shadow:0 8px 22px -12px rgba(16,32,60,.4)}
+.center-node span{display:block;font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;font-stretch:condensed;
+  font-weight:900;text-transform:uppercase;font-size:clamp(15px,3.4vw,22px);line-height:1;color:#16305c}
+.center-node strong{display:block;font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;font-stretch:condensed;
+  font-weight:900;text-transform:uppercase;font-size:clamp(19px,4.4vw,29px);line-height:1;color:#16305c}
+.satellite{position:absolute;transform:translate(-50%,-50%);width:27%;height:27%;border-radius:50%;
+  background:#fff;border:2px solid #1e4b8f;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:3px;padding:6px;text-align:center;z-index:2;box-shadow:0 6px 18px -12px rgba(16,32,60,.45)}
+.satellite i{display:block;width:34%;height:26%;flex:0 0 auto}
+.satellite i img{width:100%;height:100%;object-fit:contain;display:block}
+.satellite span{font-size:clamp(9px,1.9vw,12.5px);line-height:1.2;color:#16305c;font-weight:600}
+.satellite.medication{left:50%;top:14%}
+.satellite.recovery{left:84.2%;top:38.9%}
+.satellite.safety{left:71.2%;top:79.1%}
+.satellite.compliance{left:28.8%;top:79.1%}
+.satellite.performance{left:15.8%;top:38.9%}
+@media(max-width:700px){.athlete-diagram{width:min(100%,340px)}.satellite{width:30%}}
 </style>
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png"><meta name="theme-color" content="#15202b"></head>
   <body>
@@ -654,7 +679,7 @@ h1,h2,h3,.display{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-seri
 
         <div class="question-grid">
           <a class="question-card" href="medications-and-performance.html">
-            <div class="question-icon" aria-hidden="true">Rx</div>
+            <div class="question-icon" aria-hidden="true"><img src="assets/icons/q-medication.png" alt=""></div>
             <span class="number">01</span>
             <h3>Could my medication affect my training?</h3>
             <p>
@@ -665,7 +690,7 @@ h1,h2,h3,.display{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-seri
           </a>
 
           <a class="question-card" href="supplement-review.html">
-            <div class="question-icon" aria-hidden="true">+</div>
+            <div class="question-icon" aria-hidden="true"><img src="assets/icons/q-supplement.png" alt=""></div>
             <span class="number">02</span>
             <h3>Is this supplement actually right for me?</h3>
             <p>
@@ -676,7 +701,7 @@ h1,h2,h3,.display{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-seri
           </a>
 
           <a class="question-card" href="clean-sport-safety.html">
-            <div class="question-icon shield" aria-hidden="true">✓</div>
+            <div class="question-icon shield" aria-hidden="true"><img src="assets/icons/q-competition.png" alt=""></div>
             <span class="number">03</span>
             <h3>Is this product safe for competition?</h3>
             <p>
@@ -687,7 +712,7 @@ h1,h2,h3,.display{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-seri
           </a>
 
           <a class="question-card" href="pain-relief-options.html">
-            <div class="question-icon" aria-hidden="true">○</div>
+            <div class="question-icon" aria-hidden="true"><img src="assets/icons/q-painrelief.png" alt=""></div>
             <span class="number">04</span>
             <h3>What should I use for pain relief?</h3>
             <p>
@@ -720,29 +745,29 @@ h1,h2,h3,.display{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-seri
           role="img"
           aria-label="The athlete connected to medication management, recovery, performance, safety, and sport compliance"
         >
-          <div class="orbit"></div>
+          <svg class="ad-lines" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="43" fill="none" stroke="#d6202a" stroke-width="0.7" stroke-dasharray="2.2 2.6" opacity=".85"/><circle cx="50" cy="50" r="30" fill="none" stroke="#c9d2dc" stroke-width="0.5" stroke-dasharray="1 2"/><line x1="50" y1="50" x2="50.00" y2="14.00" stroke="#1e4b8f" stroke-width="0.8"/><line x1="50" y1="50" x2="84.24" y2="38.88" stroke="#1e4b8f" stroke-width="0.8"/><line x1="50" y1="50" x2="71.16" y2="79.12" stroke="#1e4b8f" stroke-width="0.8"/><line x1="50" y1="50" x2="28.84" y2="79.12" stroke="#1e4b8f" stroke-width="0.8"/><line x1="50" y1="50" x2="15.76" y2="38.88" stroke="#1e4b8f" stroke-width="0.8"/></svg>
           <div class="center-node">
             <span>The</span>
             <strong>Athlete</strong>
           </div>
           <div class="satellite medication">
-            <i>Rx</i>
+            <i><img src="assets/icons/wa-medication.png" alt="" decoding="async"></i>
             <span>Medication<br />Management</span>
           </div>
           <div class="satellite recovery">
-            <i>↻</i>
+            <i><img src="assets/icons/wa-recovery.png" alt="" decoding="async"></i>
             <span>Recovery</span>
           </div>
           <div class="satellite safety">
-            <i>✓</i>
+            <i><img src="assets/icons/wa-safety.png" alt="" decoding="async"></i>
             <span>Safety</span>
           </div>
           <div class="satellite compliance">
-            <i>⚑</i>
+            <i><img src="assets/icons/wa-compliance.png" alt="" decoding="async"></i>
             <span>Sport<br />Compliance</span>
           </div>
           <div class="satellite performance">
-            <i>↗</i>
+            <i><img src="assets/icons/wa-performance.png" alt="" decoding="async"></i>
             <span>Performance</span>
           </div>
         </div>
