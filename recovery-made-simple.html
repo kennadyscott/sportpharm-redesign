@@ -489,7 +489,7 @@ section{padding:70px 0}
 })();
 </script>
 <script>
-/* article carousel: pages by whole view, 3 / 2 / 1 across */
+/* article carousel: pages by whole view, 3 / 2 / 1 across; wraps both ways */
 (function(){
   document.querySelectorAll("[data-acar]").forEach(function(root){
     var track=root.querySelector(".acar-track"),
@@ -500,10 +500,11 @@ section{padding:70px 0}
     function per(){ return window.innerWidth<=600?1:(window.innerWidth<=950?2:3); }
     function pages(){ return Math.max(1,Math.ceil(items.length/per())); }
     function go(p){
-      page=Math.max(0,Math.min(p,pages()-1));
+      var n=pages();
+      page=((p%n)+n)%n;
       var step=items[0].getBoundingClientRect().width+18;
       track.style.transform="translateX("+(-page*per()*step)+"px)";
-      prev.disabled=page===0; next.disabled=page===pages()-1;
+      prev.disabled=next.disabled=(n<2);
       [].slice.call(dots.children).forEach(function(d,i){d.setAttribute("aria-current",i===page?"true":"false");});
       items.forEach(function(it,i){
         var vis=i>=page*per() && i<(page+1)*per();

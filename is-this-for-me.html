@@ -303,33 +303,6 @@ h2{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;
   font-size: 10px;
   margin-top: auto;
   text-transform: uppercase;}
-.story-grid{display: grid;
-  gap: 17px;
-  grid-template-columns: repeat(4, 1fr);
-  margin: 0 auto;
-  max-width: 1360px;}
-.story-grid article{border: 1px solid var(--line);
-  min-height: 355px;}
-.story-image{background-size: cover;
-  height: 165px;}
-.story-image.runner{background-image: url("images/everyday-athlete-hero.png");
-  background-position: 55% center;}
-.story-image.soccer{background-image: url("images/everyday-athlete-hero.png");
-  background-position: 92% center;}
-.story-image.strength{background-image: url("images/real-life-workout.png");
-  background-position: center;}
-.story-image.pickleball{background-image: url("images/everyday-athlete-hero.png");
-  background-position: 72% center;}
-.story-grid blockquote{color: var(--navy);
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.55;
-  margin: 20px 20px 14px;}
-.story-grid p{color: var(--red);
-  font-size: 9px;
-  font-weight: 900;
-  margin: 0 20px 20px;
-  text-transform: uppercase;}
 .closing-cta{align-items: center;
   background:
     linear-gradient(90deg, rgba(6, 22, 45, 0.98), rgba(23, 55, 95, 0.96)),
@@ -347,8 +320,7 @@ h2{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;
   flex-direction: column;
   gap: 12px;}
 @media (max-width: 1080px){.lifestyle-grid{grid-template-columns:repeat(5,1fr);gap:16px;align-items:start}.fit-grid,
-  .pathway-grid,
-  .story-grid{grid-template-columns: repeat(2, 1fr);}.support{grid-template-columns: 1fr;}}
+  .pathway-grid{grid-template-columns: repeat(2, 1fr);}.support{grid-template-columns: 1fr;}}
 @media (max-width: 700px){.hero{min-height: 720px;}.hero > img{object-position: 65% center;}.hero-overlay{background: linear-gradient(
       90deg,
       rgba(4, 18, 37, 0.96),
@@ -358,7 +330,6 @@ h2{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-serif;
   .sounds-like-you{padding: 70px 20px;}.lifestyle-grid,
   .fit-grid,
   .pathway-grid,
-  .story-grid,
   .closing-cta,
   footer{grid-template-columns: 1fr;}.lifestyle-image{aspect-ratio:4/5;height:auto;overflow:hidden;border-radius:6px;background:#f0f2f3}
 .lifestyle-image img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block;transition:transform .35s ease}
@@ -694,48 +665,6 @@ h1,h2,h3,.display{font-family:"Arial Narrow","Roboto Condensed",Impact,sans-seri
             <h3>Rebuild confidence and activity.</h3>
             <strong>Enter the Athlete Hub →</strong>
           </a>
-        </div>
-      </section>
-
-      <section class="stories section" id="stories">
-        <div class="section-heading centered">
-          <p class="eyebrow">Real athletes. Real lives.</p>
-          <h2>MOVEMENT LOOKS DIFFERENT ON EVERYONE.</h2>
-        </div>
-
-        <div class="story-grid">
-          <article>
-            <div class="story-image runner"></div>
-            <blockquote>
-              “I’m a teacher training for my first half-marathon. I need simple
-              guidance that fits my life.”
-            </blockquote>
-            <p>Marissa, 34 · New runner</p>
-          </article>
-          <article>
-            <div class="story-image soccer"></div>
-            <blockquote>
-              “Thursday nights are my game. I want to keep my knees happy so I
-              can keep playing.”
-            </blockquote>
-            <p>Carlos, 41 · Recreational soccer</p>
-          </article>
-          <article>
-            <div class="story-image strength"></div>
-            <blockquote>
-              “I started strength training in my 50s. I’m getting stronger and
-              learning what my body needs.”
-            </blockquote>
-            <p>Sue, 57 · Strength beginner</p>
-          </article>
-          <article>
-            <div class="story-image pickleball"></div>
-            <blockquote>
-              “I take a prescription medication. I wanted to understand how
-              heat affects me when I play.”
-            </blockquote>
-            <p>Darryl, 45 · Pickleball player</p>
-          </article>
         </div>
       </section>
 
