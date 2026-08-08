@@ -176,12 +176,11 @@ footer{background:#0f1d33;padding:40px 0;text-align:center}
 .h-sec.dark .h-sub{color:#bec3c8}
 .h-eyebrow.on-light{color:#a3161e}
 
-/* support + contact */
-.h-support{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:start}
-.h-support p{color:#656e77;font-size:16px;line-height:1.8;margin:0}
-.h-contact{background:#fff;border:1px solid #e0e3e6;border-radius:12px;padding:30px 32px}
-.h-contact h3{font-family:"Bebas Neue","Arial Narrow",sans-serif;font-size:28px;margin:0 0 8px;color:#24303c;letter-spacing:.01em}
-.h-contact p{font-size:14.5px;color:#656e77;line-height:1.6;margin:0 0 22px}
+
+
+
+
+
 
 /* services */
 
@@ -205,7 +204,7 @@ footer{background:#0f1d33;padding:40px 0;text-align:center}
 
 @media(max-width:1000px){
   .h-cred{grid-template-columns:repeat(2,1fr)}
-  .h-support,.h-rub{grid-template-columns:1fr;gap:32px}}
+  .h-rub{grid-template-columns:1fr;gap:32px}}
 .logo{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-decoration:none}
 .logo img{width:150px;height:auto;display:block}
 .logo-tag{font-family:Georgia,serif;font-weight:400;font-size:10.5px;letter-spacing:.005em;color:#24303c;white-space:nowrap}
@@ -230,13 +229,11 @@ footer{background:#0f1d33;padding:40px 0;text-align:center}
 
     .pmodal-card .psub2{font-size:13px;color:#69717a;margin:0 auto 24px}
 
-/* ===== newsletter ===== */
-.h-news{background:#0f1d33;border-radius:14px;padding:40px 44px;display:grid;
-  grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;max-width:1220px;margin:0 auto}
-.h-news h2{margin:0 0 10px;color:#fff}
-.h-news h2 em{color:#d6202a}
-.h-news .h-eyebrow{color:#aab7b1}
-.h-news p{color:#bec3c8;font-size:15px;line-height:1.65;margin:0;max-width:46ch}
+
+
+
+
+
 .h-nform{display:flex;gap:10px;flex-wrap:wrap}
 .h-nform input{flex:1;min-width:220px;padding:15px 16px;border:1px solid rgba(255,255,255,.24);
   border-radius:8px;background:rgba(255,255,255,.06);color:#fff;font:inherit;font-size:15px}
@@ -263,7 +260,7 @@ footer{background:#0f1d33;padding:40px 0;text-align:center}
 .h-art .meta{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#656e77}
 /* ===== info band ===== */
 .h-info{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;max-width:1220px;margin:0 auto}
-@media(max-width:900px){.h-news,.h-arts,.h-info{grid-template-columns:1fr}}
+@media(max-width:900px){.h-arts,.h-info{grid-template-columns:1fr}}
 
 /* ===== services: card rail + panel below (mirrors the everyday-athlete pattern) ===== */
 .h-rail{position:relative;max-width:1220px;margin:0 auto}
@@ -507,6 +504,17 @@ footer{background:#0f1d33;padding:40px 0;text-align:center}
 .dropdown .sf-arw{opacity:.6}
 .sf-note{margin:10px 0 0;font-size:11.5px;line-height:1.5;color:#7d8894;max-width:26ch}
 .sf-note b{color:#9aa5b1;font-weight:600}
+
+.h-lede{max-width:820px;margin:0 0 34px}
+.h-lede .h-h2{margin-bottom:14px}
+.h-lede p{margin:0;font-size:1.02rem;line-height:1.7;color:#4a5568}
+.h-two{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px;align-items:start}
+.h-tcard{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:26px 26px 28px}
+.h-tcard h3{margin:0 0 8px;font-size:1.18rem;letter-spacing:-.01em}
+.h-tcard p{margin:0 0 18px;color:#4a5568;line-height:1.65;font-size:.97rem}
+.h-tcard .h-nform{margin:0}
+.h-tcard .h-nfine{margin:12px 0 0;font-size:.82rem}
+@media(max-width:760px){.h-two{grid-template-columns:1fr}}
 </style><link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png"><meta name="theme-color" content="#0f1d33"></head><body><header>
   <div class="wrap nav">
     <a class="logo" href="sports-medicine.html"><img src="assets/wordmark-dark.png" alt="SportPharm"><span class="logo-tag">Behind every athlete you care for.</span></a>
@@ -550,35 +558,19 @@ footer{background:#0f1d33;padding:40px 0;text-align:center}
       <p>Compounding, repackaging, supply and concierge coordination &mdash; built for training rooms, clinics and professional programs.</p>
       <div class="h-row">
         <a class="h-btn solid" href="#services">See what we do &rarr;</a>
-        <a class="h-btn line" href="#how-we-support">How we help</a>
+        <a class="h-btn line" href="#services">How we help</a>
       </div>
       <div class="h-trust"><span>Licensed sports pharmacy</span><span>Unit-dose &amp; team formats</span><span>East &amp; West divisions</span></div>
     </div>
   </div>
 </section>
 
-<section class="h-sec" id="how-we-support">
-  <div class="h-wrap">
-    <div class="h-support">
-      <div>
-        <h2 class="h-h2">How our pharmacy supports<br><em>all athletes and their care teams.</em></h2>
-        <p>SportPharm partners with sports medicine clinics, athletic programs, and professional sports teams to simplify medication management, enhance athlete safety, and deliver fast, compliant pharmaceutical support across sports medicine settings. We serve athletes at every level &mdash; supporting athletic trainers, sports medicine physicians, and allied healthcare professionals both on and off the field.</p>
-      </div>
-      <div class="h-contact" id="contact">
-        <p class="h-eyebrow on-light">Connect with us</p>
-        <h3>Tell us what you need</h3>
-        <p>Tell us about your program and a member of our team will follow up directly.</p>
-        <div>
-          <a class="h-btn solid" href="#" data-intake>Contact our team &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <section class="h-sec wide soft" id="services">
   <div class="h-wrap">
-    <h2 class="h-h2">Personalized pharmacy services for<br><em>athletes and sports medicine teams.</em></h2>
+    <div class="h-lede"><h2 class="h-h2">How our pharmacy supports<br><em>all athletes and their care teams.</em></h2>
+<p>SportPharm partners with sports medicine clinics, athletic programs, and professional sports teams to simplify medication management, enhance athlete safety, and deliver fast, compliant pharmaceutical support across sports medicine settings.</p></div>
     <div class="h-rail"><div class="h-rail-vp"><div class="h-rail-tr" id="svcTrack"><a class="h-sc" href="compounding.html" data-svc="compounding" aria-expanded="false"><span class="ic"><img src="assets/icons/svc-compounding.svg" alt="" width="24" height="24"></span><b>Compounding</b><i>Learn more</i></a><a class="h-sc" href="drug-repackaging.html" data-svc="repackaging" aria-expanded="false"><span class="ic"><img src="assets/icons/svc-repackaging.svg" alt="" width="24" height="24"></span><b>Drug Repackaging</b><i>Learn more</i></a><a class="h-sc" href="concierge-sports-pharmacy.html" data-svc="concierge" aria-expanded="false"><span class="ic"><img src="assets/icons/svc-concierge.svg" alt="" width="24" height="24"></span><b>Concierge Pharmacy</b><i>Learn more</i></a><a class="h-sc" href="supplement-support.html" data-svc="supplements" aria-expanded="false"><span class="ic"><img src="assets/icons/svc-supplements.svg" alt="" width="24" height="24"></span><b>Supplements</b><i>Learn more</i></a><a class="h-sc" href="retail-pharmacy.html" data-svc="retail" aria-expanded="false"><span class="ic"><img src="assets/icons/svc-retail.svg" alt="" width="24" height="24"></span><b>Retail Pharmacy</b><i>Learn more</i></a><a class="h-sc" href="inventory-management.html" data-svc="inventory" aria-expanded="false"><span class="ic"><img src="assets/icons/svc-inventory.svg" alt="" width="24" height="24"></span><b>Inventory Management</b><i>Learn more</i></a></div></div><button class="h-rbtn prev" type="button" id="svcPrev" aria-label="Previous services"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button><button class="h-rbtn next" type="button" id="svcNext" aria-label="More services"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div><div class="h-spanel" id="svcPanel" hidden></div>
   </div>
 </section>
@@ -621,7 +613,7 @@ footer{background:#0f1d33;padding:40px 0;text-align:center}
           <p class="h-pan-lede">Topical analgesics your athletes already ask for &mdash; stocked by the unit or by the roster.</p>
           <ul>
             <li>Single units or team bundles, priced for a full roster</li>
-            <li>TruShield certified, with documentation for compliance staff</li>
+            
             <li>Menthol, capsaicin and methyl salicylate formulations</li>
             <li>Ships alongside the rest of your SportPharm order</li>
           </ul>
@@ -629,7 +621,7 @@ footer{background:#0f1d33;padding:40px 0;text-align:center}
           <div class="h-pgrid">
             <a class="h-pc" href="wasabirub.html" style="--pc:#2f7d4f"><b>WasabiRub&trade;</b><span class="h-pcs">3-way</span><span class="h-pcg">capsaicin &middot; methyl salicylate &middot; menthol</span><span class="h-pcd">4 oz (113.4 g)</span></a>
             <a class="h-pc" href="superhot.html" style="--pc:#d6202a"><b>Super Hot&trade;</b><span class="h-pcs">Max</span><span class="h-pcg">higher-capsaicin formulation</span><span class="h-pcd">4 oz (113.4 g)</span></a>
-            <a class="h-pc" href="icetrarub.html" style="--pc:#3d7ea6"><b>IcetraRub&trade;</b><span class="h-pcs">16%</span><span class="h-pcg">menthol topical cream</span><span class="h-pcd">4 oz (113.4 g)</span></a>
+            <a class="h-pc" href="icetrarub.html" style="--pc:#3d7ea6"><b>WasabiRub Super Cold&trade;</b><span class="h-pcs">16%</span><span class="h-pcg">menthol topical cream</span><span class="h-pcd">4 oz (113.4 g)</span></a>
             <a class="h-pc" href="products.html" style="--pc:#8a939c"><b>Team bundles</b><span class="h-pcs">Roster</span><span class="h-pcg">multi-unit packs and duos</span><span class="h-pcd">Priced per roster</span></a>
           </div>
           <div class="h-row">
@@ -686,22 +678,26 @@ footer{background:#0f1d33;padding:40px 0;text-align:center}
   </div>
 </section>
 
-<section class="h-sec wide">
-  <div class="h-wrap">
-    <div class="h-news">
-      <div>
-        <h2 class="h-h2">Sports pharmacy, <em>in your inbox.</em></h2>
-        <p>Clean-sport updates, formulation notes and practical guidance for training rooms &mdash; a few times a month, never more.</p>
-      </div>
-      <div>
-        <form class="h-nform" id="nlForm" novalidate>
-          <input id="nlEmail" name="email" type="email" placeholder="Work email" required aria-label="Work email">
-          <button type="submit">Sign up</button>
-        </form>
-        <p class="h-nfine" id="nlFine">For athletic trainers, physicians and program staff. Unsubscribe any time.</p>
-      </div>
-    </div>
-  </div>
+<section class="h-sec wide" id="contact">
+<div class="h-wrap">
+<h2 class="h-h2">Work with <em>our pharmacy.</em></h2>
+<div class="h-two">
+<div class="h-tcard">
+<h3>Tell us what you need</h3>
+<p>Tell us about your program and a member of our team will follow up directly.</p>
+<a class="h-btn solid" href="#" data-intake>Contact our team &rarr;</a>
+</div>
+<div class="h-tcard">
+<h3>Sports pharmacy, in your inbox</h3>
+<p>Clean-sport updates, formulation notes and practical guidance for training rooms &mdash; a few times a month, never more.</p>
+<form class="h-nform" id="nlForm" novalidate>
+<input id="nlEmail" name="email" type="email" placeholder="Work email" required aria-label="Work email">
+<button type="submit">Sign up</button>
+</form>
+<p class="h-nfine" id="nlFine">For athletic trainers, physicians and program staff. Unsubscribe any time.</p>
+</div>
+</div>
+</div>
 </section>
 
 <section class="h-sec soft wide">
@@ -751,7 +747,7 @@ footer{background:#0f1d33;padding:40px 0;text-align:center}
       <ul>
         <li><a href="wasabirub.html">WasabiRub</a></li>
         <li><a href="superhot.html">WasabiRub Super Hot</a></li>
-        <li><a href="icetrarub.html">IcetraRub</a></li>
+        <li><a href="icetrarub.html">WasabiRub Super Cold</a></li>
         <li><a href="https://sportpharm.com/rx/">Prescription line</a></li>
         <li><a href="products.html">All products</a></li>
       </ul>
